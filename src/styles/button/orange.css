@@ -1,0 +1,55 @@
+:root {
+  --btn-orange-focus: #200700;
+}
+
+@theme {
+  --color-btn-orange-focus: var(--btn-orange-focus);
+}
+
+.conic-orange-btn {
+  --angle: 92.7deg;
+
+  border: none;
+  background: linear-gradient(
+      var(--angle),
+      rgba(229, 77, 36, 0.12) 0.64%,
+      rgba(229, 77, 36, 0) 25.12%,
+      rgba(229, 77, 36, 0.8) 52.25%,
+      rgba(229, 77, 36, 0) 80.45%,
+      rgba(229, 77, 36, 0.8) 101.2%
+  );
+}
+
+.trigger-animate-orange-button:has(:hover) {
+  animation:
+      rotate-angle 2.8s cubic-bezier(.2, .8, .8, .2) both,
+      shadowOrangeTransition .5s ease-in-out both;
+      /*rotateShadow 2.8s ease-in-out both;*/
+}
+
+@keyframes shadowOrangeTransition {
+  0% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+  100% {
+    box-shadow: 0 4px 8px 0 #E54D2480;
+  }
+}
+
+@keyframes rotateShadow {
+  0% {
+    box-shadow: 0 6px 8px 0 #E54D2480;
+  }
+  25% {
+    box-shadow: 6px 0 8px 0 #E54D2480;
+  }
+  50% {
+    box-shadow: 0 -6px 8px 0 #E54D2480;
+  }
+  75% {
+    box-shadow: -6px 0 8px 0 #E54D2480;
+  }
+  100% {
+    box-shadow: 0 6px 8px 0 #E54D2480;
+  }
+}

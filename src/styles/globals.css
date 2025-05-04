@@ -1,26 +1,54 @@
 @import "tailwindcss";
+@import "./button/orange.css";
+@import "./button/violet.css";
+@import "./button/pink.css";
+@import "./button/red.css";
+@import "./button/yellow.css";
+@import "./button/yellow-dark.css";
+
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #030708; /* c'est la bonne couleur récupérée depuis le Figma */
+
+  /* global colors */
+  --color-text-primary: #FEFFFF;
+  --color-dark-primary: #030708;
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* global colors */
+  --color-text-primary: var(--color-text-primary);
+  --color-dark-primary: var(--color-dark-primary);
+
+  /* spacing */
+  --spacing-9: 0.563rem; /* 9px */
+  --spacing-12: 0.75rem; /* 12px */
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
+  color: var(--color-text-primary);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.animate-gradient-rotate {
+  animation-name: rotate-angle;
+  animation-duration: 2.8s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(.2, .8, .8, .2);
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotate-angle {
+  to {
+    --angle: 452.7deg;
+  }
 }

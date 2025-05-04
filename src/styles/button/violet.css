@@ -1,0 +1,36 @@
+:root {
+  --btn-violet-focus: #0C001F;
+}
+
+@theme {
+  --color-btn-violet-focus: var(--btn-violet-focus);
+}
+
+.conic-violet-btn {
+  --angle: 92.7deg;
+
+  border: none;
+  background: linear-gradient(
+      var(--angle),
+      rgba(111, 82, 159, 0.15) 0.67%,
+      rgba(111, 82, 159, 0) 25.91%,
+      #6F529F 53.89%,
+      rgba(111, 82, 159, 0) 82.96%,
+      #6F529F 104.35%
+  );
+}
+
+.trigger-animate-violet-button:has(:hover) {
+  animation:
+      rotate-angle 2.8s cubic-bezier(.2, .8, .8, .2) both,
+      shadowVioletTransition .5s ease-in-out both;
+}
+
+@keyframes shadowVioletTransition {
+  0% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+  100% {
+    box-shadow: 0 4px 8px 0 #6F529F80;
+  }
+}
