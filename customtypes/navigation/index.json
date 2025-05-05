@@ -1,0 +1,105 @@
+{
+  "format": "custom",
+  "id": "navigation",
+  "label": "Navigation",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "logo": {
+        "type": "Image",
+        "config": {
+          "label": "Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "principal": {
+        "type": "Group",
+        "config": {
+          "label": "principal",
+          "repeat": true,
+          "fields": {
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "Lien",
+                "select": null,
+                "allowTargetBlank": true,
+                "allowText": true,
+                "repeat": false
+              }
+            },
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": "Libellé"
+              }
+            }
+          }
+        }
+      },
+      "dropdown": {
+        "type": "Group",
+        "config": {
+          "label": "Dropdown ",
+          "repeat": true,
+          "fields": {
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": "Libellé"
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "Lien",
+                "select": null,
+                "allowTargetBlank": true,
+                "allowText": true,
+                "repeat": false
+              }
+            }
+          }
+        }
+      },
+      "lang": {
+        "type": "Group",
+        "config": {
+          "label": "Lang",
+          "repeat": true,
+          "fields": {
+            "code": {
+              "type": "Text",
+              "config": {
+                "label": "Code",
+                "placeholder": "Code de la langue"
+              }
+            },
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": "Libellé"
+              }
+            },
+            "active": {
+              "type": "Boolean",
+              "config": {
+                "label": "Active",
+                "placeholder_false": "false",
+                "placeholder_true": "true",
+                "default_value": false
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

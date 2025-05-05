@@ -1,0 +1,66 @@
+{
+  "id": "project_showcase",
+  "type": "SharedSlice",
+  "name": "ProjectShowcase",
+  "description": "ProjectShowcase",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": "Titre de la section"
+          }
+        },
+        "client": {
+          "type": "Text",
+          "config": {
+            "label": "Client",
+            "placeholder": "Nom de la marque / client"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "Description",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "medias": {
+          "type": "Group",
+          "config": {
+            "label": "Medias",
+            "repeat": true,
+            "fields": {
+              "media": {
+                "type": "Image",
+                "config": {
+                  "label": "Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "video": {
+                "type": "Embed",
+                "config": {
+                  "label": "Video",
+                  "placeholder": "Vidéo"
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

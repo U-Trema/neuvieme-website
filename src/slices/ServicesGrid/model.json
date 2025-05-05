@@ -1,0 +1,79 @@
+{
+  "id": "services_grid",
+  "type": "SharedSlice",
+  "name": "ServicesGrid",
+  "description": "ServicesGrid",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": "Titre de la section"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "Description",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "services": {
+          "type": "Group",
+          "config": {
+            "label": "Services",
+            "repeat": true,
+            "fields": {
+              "section_title": {
+                "type": "Text",
+                "config": {
+                  "label": "Section Title",
+                  "placeholder": "Titre du service"
+                }
+              },
+              "service_description": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Service Description",
+                  "placeholder": "Description du serviec",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "service_image": {
+                "type": "Image",
+                "config": {
+                  "label": "Service Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "service_link": {
+                "type": "Link",
+                "config": {
+                  "label": "Service Link",
+                  "placeholder": "Lien vers le service",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

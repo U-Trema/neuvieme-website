@@ -1,0 +1,40 @@
+{
+  "id": "contact_info",
+  "type": "SharedSlice",
+  "name": "ContactInfo",
+  "description": "ContactInfo",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "adress": {
+          "type": "Text",
+          "config": {
+            "label": "Adress",
+            "placeholder": "Adresse"
+          }
+        },
+        "phone": {
+          "type": "Text",
+          "config": {
+            "label": "Phone",
+            "placeholder": "Téléphone"
+          }
+        },
+        "mail": {
+          "type": "Text",
+          "config": {
+            "label": "Mail",
+            "placeholder": "E-mail"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
