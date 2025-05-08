@@ -10,7 +10,7 @@ export const dropDownClasses = {
     }
   }),
   root: cva([`min-w-[250px] py-9 px-12 m-px bg-dark-primary text-text-primary rounded-[7px]`]),
-  list: cva([`p-12 hover:bg-[#1F1C23] rounded-md [&:not(:last-child)]:mb-4 cursor-pointer transition-all duration-300`], {
+  list: cva([`p-12 hover:bg-[#1F1C23] rounded-md [&:not(:last-child)]:mb-4 cursor-pointer transition-all duration-300 font-semibold text-sm`], {
     variants: {
       active: {
         true: 'flex justify-between items-center',

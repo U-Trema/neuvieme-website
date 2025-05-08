@@ -4,6 +4,7 @@ import {dropDownClasses} from "./dropdown.classes";
 import {ChevronDown} from "../icons/ChevronDown";
 import Check from "../icons/Check";
 import {useOutsideClick} from "../../hooks/useOutsideClick";
+import Link from "next/link";
 
 type Item = {
   as: 'a' | 'p'
@@ -43,7 +44,13 @@ export const DropDown: FC<Props> = ({ list, label }) => {
               return (
                 <li key={index} className={dropDownClasses.list({ active: item.active })}>
                   {createElement(
-                    item.as,
+                    item.as === 'a'
+                      ? () => {
+                        return (
+                          <Link href={item.href || '#'} onClick={item.onClick} className='relative z-1 block select-none'>{item.label}</Link>
+                        )
+                      }
+                      : item.as,
                     {
                       className: 'relative z-1 block select-none',
                       ...((item.href) && { href: item?.href }),
