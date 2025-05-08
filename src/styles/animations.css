@@ -1,0 +1,20 @@
+@keyframes fade-in-down {
+  0% {
+    display: none;
+    opacity: 0;
+    transform: translateY(0);
+  }
+  10% {
+    display: block;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+}
+
+@keyframes rotate-angle {
+  to {
+    --angle: 452.7deg;
+  }
+}

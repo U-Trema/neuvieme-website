@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "./animations.css";
+@import "./utilities.css";
 @import "./button/orange.css";
 @import "./button/violet.css";
 @import "./button/pink.css";
@@ -24,6 +26,7 @@
   --color-dark-primary: var(--color-dark-primary);
 
   /* spacing */
+  --spacing-4: 0.25rem; /* 4px */
   --spacing-9: 0.563rem; /* 9px */
   --spacing-12: 0.75rem; /* 12px */
 }
@@ -45,10 +48,4 @@ body {
   syntax: '<angle>';
   initial-value: 0deg;
   inherits: false;
-}
-
-@keyframes rotate-angle {
-  to {
-    --angle: 452.7deg;
-  }
 }

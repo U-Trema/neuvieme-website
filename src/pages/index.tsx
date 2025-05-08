@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
-import {Button} from "@/components/Button/Button";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -64,23 +63,6 @@ export default function Home() {
           </a>
         </div>
       </main>
-      <div>
-
-        <Button>
-          En savoir plus
-        </Button>
-<br/>
-<br/>
-<br/>
-        <Button>
-          Bouton sans animation
-        </Button>
-        <br/>
-        <br/>
-        <br/>
-        <Button>Mon Bouton</Button>
-
-      </div>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
