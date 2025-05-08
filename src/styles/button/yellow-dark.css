@@ -22,7 +22,7 @@
 
 .trigger-animate-yellow-dark-button:has(:hover) {
   animation:
-      rotate-angle 2.8s cubic-bezier(.2, .8, .8, .2) both,
+      rotate-angle 2s cubic-bezier(.2, .8, .8, .2) both,
       shadowYellowDarkTransition .5s ease-in-out both;
 }
 
