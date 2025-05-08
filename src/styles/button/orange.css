@@ -22,7 +22,7 @@
 
 .trigger-animate-orange-button:has(:hover) {
   animation:
-      rotate-angle 2.8s cubic-bezier(.2, .8, .8, .2) both,
+      rotate-angle 2s cubic-bezier(.2, .8, .8, .2) both,
       shadowOrangeTransition .5s ease-in-out both;
       /*rotateShadow 2.8s ease-in-out both;*/
 }
