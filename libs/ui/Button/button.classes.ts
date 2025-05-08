@@ -30,32 +30,32 @@ const containerCompoundClasses = [
 const rootCompoundClasses = [
   {
     variant: 'orange',
-    class: 'focus:bg-btn-orange-focus'
+    class: 'active:bg-btn-orange-focus'
   },
   {
     variant: 'violet',
-    class: 'focus:bg-btn-violet-focus'
+    class: 'active:bg-btn-violet-focus'
   },
   {
     variant: 'pink',
-    class: 'focus:bg-btn-pink-focus'
+    class: 'active:bg-btn-pink-focus'
   },
   {
     variant: 'red',
-    class: 'focus:bg-btn-red-focus'
+    class: 'active:bg-btn-red-focus'
   },
   {
     variant: 'yellowDark',
-    class: 'focus:bg-btn-yellow-dark-focus'
+    class: 'active:bg-btn-yellow-dark-focus'
   },
   {
     variant: 'yellow',
-    class: 'focus:bg-btn-yellow-focus'
+    class: 'active:bg-btn-yellow-focus'
   }
 ] as const
 
 export const buttonClasses = {
-  root: cva([`relative block rounded-[198px] z-1 m-px px-12 py-9 bg-dark-primary text-text-primary cursor-pointer transition-colors duration-300 ease-in-out select-none`], {
+  root: cva([`relative block rounded-[198px] z-1 m-px px-12 py-9 bg-dark-primary text-text-primary cursor-pointer ease-in-out select-none items-center`], {
     variants: {
       variant: {
         orange: '',
