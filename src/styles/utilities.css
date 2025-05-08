@@ -1,0 +1,10 @@
+@layer utilities {
+  .border-gradient-purple {
+    border: none;
+    background: linear-gradient(92.7deg, rgba(111, 82, 159, 0.12) 0.64%, rgba(111, 82, 159, 0) 25.12%, rgba(111, 82, 159, 0.8) 52.25%, rgba(111, 82, 159, 0) 80.45%, rgba(111, 82, 159, 0.8) 101.2%);
+  }
+
+  .fade-in-down {
+    animation: fade-in-down 0.5s ease-in-out forwards;
+  }
+}

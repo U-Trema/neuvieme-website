@@ -55,7 +55,7 @@ const rootCompoundClasses = [
 ] as const
 
 export const buttonClasses = {
-  root: cva([`relative block rounded-[198px] z-1 m-px px-12 py-9 bg-dark-primary text-text-primary cursor-pointer transition-colors duration-300 ease-in-out`], {
+  root: cva([`relative block rounded-[198px] z-1 m-px px-12 py-9 bg-dark-primary text-text-primary cursor-pointer transition-colors duration-300 ease-in-out select-none`], {
     variants: {
       variant: {
         orange: '',
@@ -64,11 +64,15 @@ export const buttonClasses = {
         red: '',
         yellow: '',
         yellowDark: ''
+      },
+      withRightIcon: {
+        true: 'flex gap-[4px]',
+        false: ''
       }
     },
     compoundVariants: [...rootCompoundClasses]
   }),
-  container: cva([`relative inline-block rounded-[200px] overflow-hidden shadow-transparent`], {
+  container: cva([`relative block rounded-[200px] overflow-hidden shadow-transparent`], {
     variants: {
       variant: {
         orange: '',
@@ -80,6 +84,5 @@ export const buttonClasses = {
       }
     },
     compoundVariants: [...containerCompoundClasses]
-  }),
-  gradient: cva(['absolute inset-0 cursor-pointer z-0']),
+  })
 }
