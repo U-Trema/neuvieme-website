@@ -11,6 +11,7 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
+  // TODO supprimer ça après avoir mis bien les slices du fichier: src/slices/index.ts
   ...compat.config({
     extends: ['next'],
     rules: {
