@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
+import {useRouter} from "next/router";
 
 export const useElementPosition = () => {
+  const router = useRouter()
   const elementRef = useRef<any>(null);
 
   const [scrollInfo, setScrollInfo] = useState({
@@ -16,6 +18,7 @@ export const useElementPosition = () => {
   };
 
   useEffect(() => {
+    if (router.route !== '/') return
     updatePositions();
 
     window.addEventListener('scroll', updatePositions);
