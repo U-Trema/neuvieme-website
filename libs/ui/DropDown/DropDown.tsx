@@ -47,7 +47,18 @@ export const DropDown: FC<Props> = ({ list, label }) => {
                     item.as === 'a'
                       ? () => {
                         return (
-                          <Link href={item.href || '#'} onClick={item.onClick} className='relative z-1 block select-none'>{item.label}</Link>
+                          <Link
+                            href={item.href || '#'}
+                            onClick={() => {
+                              if (item.onClick) {
+                                item.onClick()
+                              }
+                              setIsOpen(false)
+                            }}
+                            className='relative z-1 block select-none'
+                          >
+                            {item.label}
+                          </Link>
                         )
                       }
                       : item.as,
