@@ -1,10 +1,16 @@
-import {Nav} from "../../libs/ui/Nav/Nav";
-
 export default function Home() {
   return (
     <>
-      {/* TODO mettre la nav dans un layout */}
-      <Nav />
+      <video
+        src="/video_placeholder.mp4"
+        className='aspect-video w-full h-[90vh] object-cover'
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
+
+      <div style={{ width: '100vw', height: '100vh' }} />
     </>
   );
 }
