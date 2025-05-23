@@ -25,6 +25,7 @@
   --spacing-4: 0.25rem; /* 4px */
   --spacing-9: 0.563rem; /* 9px */
   --spacing-12: 0.75rem; /* 12px */
+  --spacing-24: 1.5rem; /* 24px */
   --spacing-32: 2rem; /* 32px */
   --spacing-40: 2.5rem; /* 40px */
 }
@@ -33,6 +34,9 @@ body {
   background: var(--background);
   color: var(--color-text-primary);
   font-family: Montserrat, sans-serif;
+}
+body.overflow-hidden {
+  overflow: hidden;
 }
 
 @property --angle {
