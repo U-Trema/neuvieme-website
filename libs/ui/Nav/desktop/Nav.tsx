@@ -1,11 +1,11 @@
 import React, {FC, useEffect, useState} from 'react';
-import {Logo} from "../icons/Logo";
+import {Logo} from "../../icons/Logo";
 import Link from "next/link";
-import {DropDown} from "../DropDown/DropDown";
+import {DropDown} from "../../DropDown/DropDown";
 import {useRouter} from "next/router";
-import {Button} from "../Button/Button";
+import {Button} from "../../Button/Button";
 import {navClasses} from "./nav.classes";
-import {combineClasses} from "../../utils/combineClasses";
+import {combineClasses} from "../../../utils/combineClasses";
 
 type Props = {
   scrollInfo: {
