@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import {useRouter} from "next/router";
 
-export const useElementPosition = () => {
+export const useElementPosition = (width: number) => {
   const router = useRouter()
   const elementRef = useRef<any>(null);
 
@@ -19,6 +19,7 @@ export const useElementPosition = () => {
 
   useEffect(() => {
     if (router.route !== '/') return
+    if (width < 768) return
     updatePositions();
 
     window.addEventListener('scroll', updatePositions);
@@ -28,7 +29,7 @@ export const useElementPosition = () => {
       window.removeEventListener('scroll', updatePositions);
       window.removeEventListener('resize', updatePositions);
     };
-  }, []);
+  }, [width]);
 
   return {
     elementRef,
