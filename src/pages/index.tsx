@@ -1,11 +1,18 @@
-import {Video} from "../../libs/ui/Video/Video";
+import {Scroll} from "../../libs/ui/Scroll/Scroll";
+import {Hero} from "../../libs/ui/Hero/Hero";
 
 export default function Home() {
   return (
     <>
-      <Video source='/video_placeholder.mp4' />
+      <Hero />
 
-      <div style={{ width: '100vw', height: '100vh' }} />
+      <div style={{ position: 'relative' }}>
+        <Scroll />
+
+        <div style={{ width: '100%', height: '100vh', background: 'black' }} />
+        <div style={{ width: '100%', height: '100vh', background: 'black' }} />
+        <div style={{ width: '100%', height: '100vh', background: 'black' }} />
+      </div>
     </>
   );
 }

@@ -3,6 +3,7 @@ import {Button} from "../../libs/ui/Button/Button";
 import {DropDown} from "../../libs/ui/DropDown/DropDown";
 
 import { useRouter } from 'next/router'
+import {Scroll} from "../../libs/ui/Scroll/Scroll";
 
 const Test = () => {
   const router = useRouter()
@@ -29,7 +30,9 @@ const Test = () => {
   ]
 
   return (
-    <div>
+    <div style={{ background: 'darkslateblue', position: 'relative' }}>
+      <Scroll />
+
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 200, gap: 20 }}>
         <Button label='Label' variant='orange' as='a' href='#' />
         <Button label='Label' variant='violet' as='a' href='#' />
@@ -39,6 +42,7 @@ const Test = () => {
         <Button label='Label' variant='yellowDark' as='a' href='#' />
         <Button label='Label' variant='yellow' as='a' href='#' />
       </div>
+
     </div>
   );
 };

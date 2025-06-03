@@ -1,0 +1,16 @@
+.scroll {
+  position: absolute;
+  top: 0;
+  left: 149px;
+  z-index: 100;
+  width: 3px;
+  height: 100%;
+  background: var(--color-bg-primary);
+}
+
+.innerScroll {
+  background: linear-gradient(180deg, #FFB400 1.95%, #FFB400 20.09%, #F29200 38.23%, #EA5B0C 53.92%, #E30A12 70.59%, #961B81 81.37%, #7444C3 95.59%);
+  box-shadow: 0 1px 6px 0 var(--color-bg-violet);
+  width: 100%;
+  position: sticky;
+}
