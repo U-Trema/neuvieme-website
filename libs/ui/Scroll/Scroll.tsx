@@ -1,5 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import styles from './scroll.module.css';
+import {useViewportSize} from "@mantine/hooks";
 
 const SCROLLBAR_HEIGHT = 250
 
@@ -8,12 +9,13 @@ const SCROLLBAR_HEIGHT = 250
  * @constructor
  */
 export const Scroll = () => {
+  const { width } = useViewportSize()
   const parentRef = useRef<HTMLDivElement>(null)
   const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
+    if (width < 768) return
     if (!parentRef.current) return
-
     const canScroll = document.body.offsetHeight > window.innerHeight;
 
     const handleScroll = () => {
@@ -36,7 +38,7 @@ export const Scroll = () => {
         window.removeEventListener('scroll', handleScroll);
       }
     };
-  }, [parentRef]);
+  }, [parentRef, width]);
 
   return (
     <div

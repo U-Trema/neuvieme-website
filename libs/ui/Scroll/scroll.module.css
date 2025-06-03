@@ -14,3 +14,9 @@
   width: 100%;
   position: sticky;
 }
+
+@media screen and (max-width: 767px) {
+  .scroll, .innerScroll {
+    display: none;
+  }
+}
