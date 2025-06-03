@@ -12,6 +12,9 @@
   /* global colors */
   --color-text-primary: #FEFFFF;
   --color-dark-primary: #030708;
+
+  --color-bg-primary: #FEFFFF;
+  --color-bg-violet: #7444C3;
 }
 
 @theme {

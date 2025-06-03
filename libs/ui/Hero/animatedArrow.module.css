@@ -1,0 +1,79 @@
+.arrow {
+  --angle: 180deg;
+
+  border: none;
+  background: linear-gradient(var(--angle), rgba(255, 180, 0, 0.2) 24.53%, rgba(255, 180, 0, 0.2) 32.97%, rgba(242, 146, 0, 0.2) 41.41%, rgba(234, 91, 12, 0.2) 48.7%, rgba(227, 10, 18, 0.2) 56.46%, rgba(150, 27, 129, 0.2) 61.48%, rgba(116, 68, 195, 0.2) 68.09%);
+  border-radius: 200px;
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -100vh);
+  left: 50%;
+  bottom: 100px;
+  animation-name: fromTop;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-duration: .6s;
+  animation-delay: .9s;
+  animation-iteration-count: 1;
+  overflow: hidden;
+}
+
+@keyframes fromTop {
+  from {
+    transform: translate(-50%, -100vh);
+  }
+  to {
+    transform: translate(-50%, 0);
+  }
+}
+
+.arrow svg:first-of-type {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-name: chevron-animation;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-duration: 1.6s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes chevron-animation {
+  0%, 20% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, 30px);
+  }
+  80%, 100% {
+    transform: translate(-50%, 0);
+  }
+}
+
+.arrow svg:last-of-type {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  animation-name: chevron-animation-blink;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-duration: .8s;
+  animation-timing-function: linear;
+  animation-delay: .8s;
+}
+
+@keyframes chevron-animation-blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
