@@ -9,9 +9,9 @@ export default function Home() {
       <div style={{ position: 'relative' }}>
         <Scroll />
 
-        <div style={{ width: '100%', height: '100vh', background: 'black' }} />
-        <div style={{ width: '100%', height: '100vh', background: 'black' }} />
-        <div style={{ width: '100%', height: '100vh', background: 'black' }} />
+        <div style={{ width: '100%', height: '100vh', background: '#030708' }} />
+        <div style={{ width: '100%', height: '100vh', background: '#030708' }} />
+        <div style={{ width: '100%', height: '100vh', background: '#030708' }} />
       </div>
     </>
   );
