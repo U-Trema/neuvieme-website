@@ -30,7 +30,7 @@ const Test = () => {
   ]
 
   return (
-    <div style={{ background: 'darkslateblue', position: 'relative' }}>
+    <div style={{ position: 'relative' }}>
       <Scroll />
 
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 200, gap: 20 }}>
