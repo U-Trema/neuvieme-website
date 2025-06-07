@@ -4,6 +4,7 @@ export const useIntersectionObserver = (options: any = {}) => {
   const elementRef: any = useRef(null);
 
   const [isIntersecting, setIsIntersecting] = useState(false);
+  const [hasBeenVisible, setHasBeenVisible] = useState(false);
 
   const [entry, setEntry] = useState(null);
 
@@ -11,12 +12,17 @@ export const useIntersectionObserver = (options: any = {}) => {
     const element = elementRef.current;
 
     if (!element) return;
+    if (typeof window === 'undefined') return;
+    if (isIntersecting) return;
 
-    const handleIntersection = (entries: any, observer: any) => {
+    const handleIntersection = (entries: any) => {
       const entry = entries[0];
 
       setIsIntersecting(entry.isIntersecting);
       setEntry(entry);
+      if (entry.isIntersecting && !hasBeenVisible) {
+        setHasBeenVisible(true);
+      }
     };
 
     const observer = new IntersectionObserver(handleIntersection, {
@@ -35,5 +41,5 @@ export const useIntersectionObserver = (options: any = {}) => {
     };
   }, [options.threshold, options.root, options.rootMargin]);
 
-  return [elementRef, isIntersecting, entry];
+  return [elementRef, hasBeenVisible, isIntersecting, entry];
 };
