@@ -5,7 +5,6 @@ import {observerCVA} from "@/styles/global.classes";
 import {baseSectionClasses} from "./base.section.classes";
 
 export const BaseSection = () => {
-
   const [ elementRef, hasBeenVisible ] = useIntersectionObserver({
     options: {
       rootMargin: '80px 0px 0px 0px'

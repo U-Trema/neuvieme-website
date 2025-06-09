@@ -5,7 +5,7 @@ export const observerCVA = {
     variants: {
       isVisible: {
         true: 'opacity-100 transform translate-y-0',
-        false: 'opacity-0 transform translate-y-14'
+        false: 'opacity-0 transform translate-y-64'
       }
     }
   })
