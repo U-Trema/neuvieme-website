@@ -29,6 +29,14 @@
 						}
 					}
 				]
+			},
+			"project": {
+				"key": "00ca453f-24b8-4337-8c4f-538911688085",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "DocumentLink",
+					"id": "mock_document_id"
+				}
 			}
 		},
 		"items": []

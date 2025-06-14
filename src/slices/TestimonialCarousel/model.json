@@ -16,6 +16,17 @@
           "config": {
             "label": "Testimonials",
             "fields": {
+              "project": {
+                "type": "Link",
+                "config": {
+                  "label": "Project",
+                  "select": "document",
+                  "repeat": false,
+                  "customtypes": [
+                    "project"
+                  ]
+                }
+              },
               "logo": {
                 "type": "Image",
                 "config": {
@@ -38,13 +49,15 @@
               "organization": {
                 "type": "Text",
                 "config": {
-                  "label": "Organization"
+                  "label": "Organization",
+                  "placeholder": ""
                 }
               }
             }
           }
         }
-      }
+      },
+      "items": {}
     }
   ]
 }

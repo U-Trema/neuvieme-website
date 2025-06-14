@@ -18,22 +18,15 @@
             "label": "Contact Heading"
           }
         },
-        "address": {
-          "type": "Text",
+        "contact_info": {
+          "type": "Link",
           "config": {
-            "label": "Address"
-          }
-        },
-        "phone": {
-          "type": "Text",
-          "config": {
-            "label": "Phone"
-          }
-        },
-        "email": {
-          "type": "Text",
-          "config": {
-            "label": "Email"
+            "label": "Contact Info",
+            "select": "document",
+            "repeat": false,
+            "customtypes": [
+              "contact_info"
+            ]
           }
         },
         "social_heading": {
@@ -44,27 +37,14 @@
           }
         },
         "social_links": {
-          "type": "Group",
+          "type": "Link",
           "config": {
             "label": "Social Links",
-            "fields": {
-              "platform": {
-                "type": "Select",
-                "config": {
-                  "label": "Platform",
-                  "options": ["Facebook", "WhatsApp", "LinkedIn"]
-                }
-              },
-              "url": {
-                "type": "Link",
-                "config": {
-                  "label": "URL",
-                  "allowText": false,
-                  "repeat": false,
-                  "select": null
-                }
-              }
-            }
+            "select": "document",
+            "repeat": false,
+            "customtypes": [
+              "social_links"
+            ]
           }
         },
         "language_heading": {
@@ -75,29 +55,18 @@
           }
         },
         "languages": {
-          "type": "Group",
+          "type": "Link",
           "config": {
             "label": "Languages",
-            "fields": {
-              "code": {
-                "type": "Text",
-                "config": {
-                  "label": "Language Code"
-                }
-              },
-              "switch_link": {
-                "type": "Link",
-                "config": {
-                  "label": "Switch Link",
-                  "allowText": false,
-                  "repeat": false,
-                  "select": null
-                }
-              }
-            }
+            "select": "document",
+            "repeat": false,
+            "customtypes": [
+              "languages"
+            ]
           }
         }
-      }
+      },
+      "items": {}
     }
   ]
 }

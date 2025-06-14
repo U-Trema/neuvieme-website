@@ -84,6 +84,17 @@
 									},
 									"__TYPE__": "EmbedContent"
 								}
+							],
+							[
+								"project",
+								{
+									"key": "f84df594-115d-4640-b9f4-236c36eb5b9f",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "DocumentLink",
+										"id": "mock_document_id"
+									}
+								}
 							]
 						]
 					}
@@ -118,56 +129,6 @@
 						"content": {
 							"text": "Sound"
 						}
-					}
-				]
-			},
-			"address": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Laborum ut ullamco ullamco Lorem ut ad sint aute culpa est dolor nostrud. Enim quis mollit nulla duis id in do officia pariatur qui. Mollit qui est deserunt proident incididunt."
-						}
-					}
-				]
-			},
-			"phone": {
-				"__TYPE__": "FieldContent",
-				"value": "list",
-				"type": "Text"
-			},
-			"email": {
-				"__TYPE__": "FieldContent",
-				"value": "easier",
-				"type": "Text"
-			},
-			"social_links": {
-				"__TYPE__": "GroupContentType",
-				"value": [
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"icon",
-								{
-									"__TYPE__": "FieldContent",
-									"value": "linkedIn",
-									"type": "Select"
-								}
-							],
-							[
-								"url",
-								{
-									"key": "810a1254-202e-4baa-a025-63cf00d3f0de",
-									"__TYPE__": "LinkContent",
-									"value": {
-										"__TYPE__": "ExternalLink",
-										"url": "https://slicemachine.dev"
-									}
-								}
-							]
-						]
 					}
 				]
 			},
@@ -230,10 +191,37 @@
 									},
 									"__TYPE__": "EmbedContent"
 								}
+							],
+							[
+								"project",
+								{
+									"key": "2083d838-74de-4fa0-9ad5-bdbe96fb0fc6",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "DocumentLink",
+										"id": "mock_document_id"
+									}
+								}
 							]
 						]
 					}
 				]
+			},
+			"contact_info": {
+				"key": "81b767f4-9001-4190-b9b8-fff7d6684942",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "DocumentLink",
+					"id": "mock_document_id"
+				}
+			},
+			"social_links": {
+				"key": "89f76db7-ff70-45fd-9fb2-cd332dd464e2",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "DocumentLink",
+					"id": "mock_document_id"
+				}
 			}
 		},
 		"items": [
@@ -247,35 +235,6 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "socialsMediaRight",
 		"primary": {
-			"social_links": {
-				"__TYPE__": "GroupContentType",
-				"value": [
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"icon",
-								{
-									"__TYPE__": "FieldContent",
-									"value": "linkedIn",
-									"type": "Select"
-								}
-							],
-							[
-								"url",
-								{
-									"key": "a0894738-5680-40a3-b3d2-a7e69a3ef7c5",
-									"__TYPE__": "LinkContent",
-									"value": {
-										"__TYPE__": "ExternalLink",
-										"url": "https://slicemachine.dev"
-									}
-								}
-							]
-						]
-					}
-				]
-			},
 			"medias": {
 				"__TYPE__": "GroupContentType",
 				"value": [
@@ -335,10 +294,40 @@
 									},
 									"__TYPE__": "EmbedContent"
 								}
+							],
+							[
+								"project",
+								{
+									"key": "3f77b335-1e09-41df-899f-da3180445bd4",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "DocumentLink",
+										"id": "mock_document_id"
+									}
+								}
 							]
 						]
 					}
 				]
+			},
+			"headline": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Minim qui qui aliqua id ea excepteur irure anim pariatur sint."
+						}
+					}
+				]
+			},
+			"social_links": {
+				"key": "12bd27ce-7978-47c2-a91d-c7215aa67240",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "DocumentLink",
+					"id": "mock_document_id"
+				}
 			}
 		},
 		"items": [

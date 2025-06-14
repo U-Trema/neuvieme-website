@@ -58,6 +58,17 @@
             "label": "Medias",
             "repeat": true,
             "fields": {
+              "project": {
+                "type": "Link",
+                "config": {
+                  "label": "Project",
+                  "select": "document",
+                  "repeat": false,
+                  "customtypes": [
+                    "project"
+                  ]
+                }
+              },
               "image": {
                 "type": "Image",
                 "config": {
@@ -94,63 +105,26 @@
             "label": "Title"
           }
         },
-        "address": {
-          "type": "StructuredText",
+        "contact_info": {
+          "type": "Link",
           "config": {
-            "label": "Address",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,strong,em,hyperlink"
-          }
-        },
-        "phone": {
-          "type": "Text",
-          "config": {
-            "label": "Phone",
-            "placeholder": ""
-          }
-        },
-        "email": {
-          "type": "Text",
-          "config": {
-            "label": "Email",
-            "placeholder": ""
+            "label": "Contact Info",
+            "select": "document",
+            "repeat": false,
+            "customtypes": [
+              "contact_info"
+            ]
           }
         },
         "social_links": {
-          "type": "Group",
+          "type": "Link",
           "config": {
             "label": "Social Links",
-            "repeat": true,
-            "fields": {
-              "icon": {
-                "type": "Select",
-                "config": {
-                  "label": "Icon",
-                  "placeholder": "",
-                  "options": [
-                    "facebook",
-                    "whatsapp",
-                    "linkedin",
-                    "instagram",
-                    "x",
-                    "tiktok",
-                    "linkedIn"
-                  ]
-                }
-              },
-              "url": {
-                "type": "Link",
-                "config": {
-                  "label": "Profile URL",
-                  "placeholder": "",
-                  "select": null,
-                  "allowTargetBlank": true,
-                  "allowText": false,
-                  "repeat": false
-                }
-              }
-            }
+            "select": "document",
+            "repeat": false,
+            "customtypes": [
+              "social_links"
+            ]
           }
         },
         "medias": {
@@ -159,6 +133,17 @@
             "label": "Medias",
             "repeat": true,
             "fields": {
+              "project": {
+                "type": "Link",
+                "config": {
+                  "label": "Project",
+                  "select": "document",
+                  "repeat": false,
+                  "customtypes": [
+                    "project"
+                  ]
+                }
+              },
               "image": {
                 "type": "Image",
                 "config": {
@@ -188,40 +173,24 @@
       "imageUrl": "",
       "docURL": "...",
       "primary": {
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Headline",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink"
+          }
+        },
         "social_links": {
-          "type": "Group",
+          "type": "Link",
           "config": {
             "label": "Social Links",
-            "repeat": true,
-            "fields": {
-              "icon": {
-                "type": "Select",
-                "config": {
-                  "label": "Icon",
-                  "placeholder": "",
-                  "options": [
-                    "facebook",
-                    "whatsapp",
-                    "linkedin",
-                    "instagram",
-                    "x",
-                    "tiktok",
-                    "linkedIn"
-                  ]
-                }
-              },
-              "url": {
-                "type": "Link",
-                "config": {
-                  "label": "Profile URL",
-                  "placeholder": "",
-                  "select": null,
-                  "allowTargetBlank": true,
-                  "allowText": false,
-                  "repeat": false
-                }
-              }
-            }
+            "select": "document",
+            "repeat": false,
+            "customtypes": [
+              "social_links"
+            ]
           }
         },
         "medias": {
@@ -230,6 +199,17 @@
             "label": "Medias",
             "repeat": true,
             "fields": {
+              "project": {
+                "type": "Link",
+                "config": {
+                  "label": "Project",
+                  "select": "document",
+                  "repeat": false,
+                  "customtypes": [
+                    "project"
+                  ]
+                }
+              },
               "image": {
                 "type": "Image",
                 "config": {

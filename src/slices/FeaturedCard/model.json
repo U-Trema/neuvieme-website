@@ -11,35 +11,39 @@
       "imageUrl": "",
       "docURL": "...",
       "primary": {
-        "main_image": {
-          "type": "Image",
+        "projects": {
+          "type": "Group",
           "config": {
-            "label": "Main Image"
-          }
-        },
-        "title": {
-          "type": "StructuredText",
-          "config": {
-            "single": "heading3",
-            "label": "Title"
-          }
-        },
-        "subtitle": {
-          "type": "Text",
-          "config": {
-            "label": "Subtitle"
-          }
-        },
-        "button_link": {
-          "type": "Link",
-          "config": {
-            "label": "Button Link",
-            "allowText": true,
-            "repeat": false,
-            "select": null
+            "label": "Projects",
+            "repeat": true,
+            "fields": {
+              "project": {
+                "type": "Link",
+                "config": {
+                  "label": "Project",
+                  "select": "document",
+                  "repeat": false,
+                  "customtypes": [
+                    "project"
+                  ]
+                }
+              },
+              "button_link": {
+                "type": "Link",
+                "config": {
+                  "label": "Button Link",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false
+                }
+              }
+            }
           }
         }
-      }
+      },
+      "items": {}
     }
   ]
 }

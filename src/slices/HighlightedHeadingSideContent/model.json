@@ -11,6 +11,17 @@
       "imageUrl": "",
       "docURL": "...",
       "primary": {
+        "project": {
+          "type": "Link",
+          "config": {
+            "label": "Project",
+            "select": "document",
+            "repeat": false,
+            "customtypes": [
+              "project"
+            ]
+          }
+        },
         "title": {
           "type": "StructuredText",
           "config": {

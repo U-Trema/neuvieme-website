@@ -12,7 +12,6 @@
 							[
 								"logo",
 								{
-									"__TYPE__": "ImageContent",
 									"origin": {
 										"id": "main",
 										"url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa",
@@ -30,7 +29,9 @@
 										},
 										"background": "transparent"
 									},
-									"alt": "teach"
+									"alt": "teach",
+									"credits": null,
+									"__TYPE__": "ImageContent"
 								}
 							],
 							[
@@ -59,8 +60,19 @@
 								"organization",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "road",
+									"value": "sit",
 									"type": "Text"
+								}
+							],
+							[
+								"project",
+								{
+									"key": "869ddcdd-45f6-4b8f-8464-e2aa1cd6b04a",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "DocumentLink",
+										"id": "mock_document_id"
+									}
 								}
 							]
 						]

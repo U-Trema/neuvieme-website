@@ -61,15 +61,21 @@
 									},
 									"__TYPE__": "EmbedContent"
 								}
+							],
+							[
+								"project",
+								{
+									"key": "c784b51e-e7a2-4253-9068-6a5502ae446b",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "DocumentLink",
+										"id": "mock_document_id"
+									}
+								}
 							]
 						]
 					}
 				]
-			},
-			"title": {
-				"__TYPE__": "FieldContent",
-				"value": "station",
-				"type": "Text"
 			}
 		},
 		"items": []
@@ -146,6 +152,17 @@
 										"version": "1.0"
 									},
 									"__TYPE__": "EmbedContent"
+								}
+							],
+							[
+								"project",
+								{
+									"key": "f71268dd-e80e-4d36-b85b-aeb570b4bd9d",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "DocumentLink",
+										"id": "mock_document_id"
+									}
 								}
 							]
 						]
@@ -253,6 +270,17 @@
 									"__TYPE__": "FieldContent",
 									"value": "told",
 									"type": "Text"
+								}
+							],
+							[
+								"project",
+								{
+									"key": "64f51015-ad59-4eb1-ac1d-da053ce825cb",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "DocumentLink",
+										"id": "mock_document_id"
+									}
 								}
 							]
 						]

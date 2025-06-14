@@ -16,6 +16,17 @@
           "config": {
             "label": "Grid Items",
             "fields": {
+              "project": {
+                "type": "Link",
+                "config": {
+                  "label": "Project",
+                  "select": "document",
+                  "repeat": false,
+                  "customtypes": [
+                    "project"
+                  ]
+                }
+              },
               "media": {
                 "type": "Image",
                 "config": {

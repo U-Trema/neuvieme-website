@@ -16,6 +16,17 @@
           "config": {
             "label": "Cards",
             "fields": {
+              "project": {
+                "type": "Link",
+                "config": {
+                  "label": "Project",
+                  "select": "document",
+                  "repeat": false,
+                  "customtypes": [
+                    "project"
+                  ]
+                }
+              },
               "title": {
                 "type": "Text",
                 "config": {
@@ -31,7 +42,8 @@
             }
           }
         }
-      }
+      },
+      "items": {}
     }
   ]
 }
