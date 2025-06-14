@@ -1,0 +1,47 @@
+{
+  "format": "custom",
+  "id": "social_links",
+  "label": "Social Links",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "social_links": {
+        "type": "Group",
+        "config": {
+          "label": "Social Links",
+          "repeat": true,
+          "fields": {
+            "icon": {
+              "type": "Select",
+              "config": {
+                "label": "Icon",
+                "placeholder": "",
+                "options": [
+                  "facebook",
+                  "whatsapp",
+                  "linkedin",
+                  "instagram",
+                  "x",
+                  "tiktok",
+                  "linkedIn"
+                ]
+              }
+            },
+            "profile_url": {
+              "type": "Link",
+              "config": {
+                "label": "Profile URL",
+                "placeholder": "",
+                "select": null,
+                "allowTargetBlank": true,
+                "allowText": true,
+                "repeat": false
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

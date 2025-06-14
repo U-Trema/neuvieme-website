@@ -1,0 +1,43 @@
+{
+  "format": "custom",
+  "id": "languages",
+  "label": "Languages",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "lang": {
+        "type": "Group",
+        "config": {
+          "label": "Lang",
+          "repeat": true,
+          "fields": {
+            "code": {
+              "type": "Text",
+              "config": {
+                "label": "Code",
+                "placeholder": ""
+              }
+            },
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": ""
+              }
+            },
+            "active": {
+              "type": "Boolean",
+              "config": {
+                "label": "Active",
+                "placeholder_false": "false",
+                "placeholder_true": "true",
+                "default_value": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
