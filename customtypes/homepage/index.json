@@ -11,19 +11,7 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "social_media_icons": {
-              "type": "SharedSlice"
-            },
-            "call_to_action": {
-              "type": "SharedSlice"
-            },
             "hero_section": {
-              "type": "SharedSlice"
-            },
-            "services_grid": {
-              "type": "SharedSlice"
-            },
-            "text_section": {
               "type": "SharedSlice"
             }
           }

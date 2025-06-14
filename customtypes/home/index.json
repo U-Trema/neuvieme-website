@@ -1,7 +1,7 @@
 {
   "format": "page",
-  "id": "about",
-  "label": "About",
+  "id": "home",
+  "label": "Home",
   "repeatable": false,
   "status": true,
   "json": {
@@ -11,10 +11,16 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "contact_info_social_language": {
+              "type": "SharedSlice"
+            },
             "side_media_content": {
               "type": "SharedSlice"
             },
-            "headline_with_subtext": {
+            "intro_text_cta": {
+              "type": "SharedSlice"
+            },
+            "hero_section": {
               "type": "SharedSlice"
             }
           }

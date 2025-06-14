@@ -1,7 +1,7 @@
 {
   "format": "page",
-  "id": "about",
-  "label": "About",
+  "id": "advertising_production",
+  "label": "Advertising Production",
   "repeatable": false,
   "status": true,
   "json": {
@@ -11,7 +11,13 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "side_media_content": {
+            "featured_card": {
+              "type": "SharedSlice"
+            },
+            "asymmetrical_grid": {
+              "type": "SharedSlice"
+            },
+            "highlighted_heading_side_content": {
               "type": "SharedSlice"
             },
             "headline_with_subtext": {

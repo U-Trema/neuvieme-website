@@ -1,0 +1,39 @@
+{
+  "type": "SharedSlice",
+  "id": "asymmetrical_grid",
+  "name": "AsymmetricalGrid",
+  "variations": [
+    {
+      "id": "four_item_asymmetrical",
+      "name": "Four Item Asymmetrical Grid",
+      "description": "Displays a four-image asymmetrical layout: two large images on top, and two smaller images below, forming a visually dynamic arrangement.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "items": {
+          "type": "Group",
+          "config": {
+            "label": "Grid Items",
+            "fields": {
+              "media": {
+                "type": "Image",
+                "config": {
+                  "label": "Image"
+                }
+              },
+              "video": {
+                "type": "Embed",
+                "config": {
+                  "label": "Video",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

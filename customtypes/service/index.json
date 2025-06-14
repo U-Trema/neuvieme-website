@@ -42,26 +42,7 @@
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {
-            "text_section": {
-              "type": "SharedSlice"
-            },
-            "image_gallery": {
-              "type": "SharedSlice"
-            },
-            "project_showcase": {
-              "type": "SharedSlice"
-            },
-            "video_embed": {
-              "type": "SharedSlice"
-            },
-            "statistics_section": {
-              "type": "SharedSlice"
-            },
-            "call_to_action": {
-              "type": "SharedSlice"
-            }
-          }
+          "choices": {}
         }
       }
     }

@@ -1,0 +1,50 @@
+{
+  "type": "SharedSlice",
+  "id": "testimonial_carousel",
+  "name": "TestimonialCarousel",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Standard format of a testimonial carousel with client logo, quote, and organization name. Includes navigation controls.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "testimonials": {
+          "type": "Group",
+          "config": {
+            "label": "Testimonials",
+            "fields": {
+              "logo": {
+                "type": "Image",
+                "config": {
+                  "label": "Client Logo"
+                }
+              },
+              "client_name": {
+                "type": "Text",
+                "config": {
+                  "label": "Client Name"
+                }
+              },
+              "quote": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,strong,em",
+                  "label": "Quote"
+                }
+              },
+              "organization": {
+                "type": "Text",
+                "config": {
+                  "label": "Organization"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

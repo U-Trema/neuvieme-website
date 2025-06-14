@@ -43,8 +43,8 @@
 				"thumbnails": {}
 			},
 			"button": {
-				"__TYPE__": "LinkContent",
 				"key": "56c4df68-8a16-453b-b63f-5274d95dde54",
+				"__TYPE__": "LinkContent",
 				"value": {
 					"__TYPE__": "ExternalLink",
 					"url": "http://twitter.com",

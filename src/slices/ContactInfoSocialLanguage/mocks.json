@@ -1,0 +1,115 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default_grouped",
+		"primary": {
+			"contact_heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading3",
+						"content": {
+							"text": "Instrument"
+						}
+					}
+				]
+			},
+			"address": {
+				"__TYPE__": "FieldContent",
+				"value": "sent",
+				"type": "Text"
+			},
+			"phone": {
+				"__TYPE__": "FieldContent",
+				"value": "record",
+				"type": "Text"
+			},
+			"email": {
+				"__TYPE__": "FieldContent",
+				"value": "summer",
+				"type": "Text"
+			},
+			"social_heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading3",
+						"content": {
+							"text": "Whispered"
+						}
+					}
+				]
+			},
+			"social_links": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"platform",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "WhatsApp",
+									"type": "Select"
+								}
+							],
+							[
+								"url",
+								{
+									"__TYPE__": "LinkContent",
+									"key": "3cc7de7c-5005-441e-875b-b016fb63c7e5",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://twitter.com"
+									}
+								}
+							]
+						]
+					}
+				]
+			},
+			"language_heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading3",
+						"content": {
+							"text": "Heart"
+						}
+					}
+				]
+			},
+			"languages": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"code",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "fox",
+									"type": "Text"
+								}
+							],
+							[
+								"switch_link",
+								{
+									"__TYPE__": "LinkContent",
+									"key": "2583346f-f1a6-47e4-9aea-fa765721ce3a",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://prismic.io"
+									}
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

@@ -1,0 +1,54 @@
+{
+  "type": "SharedSlice",
+  "id": "centered_statement",
+  "name": "CenteredStatement",
+  "variations": [
+    {
+      "id": "centered_text_default",
+      "name": "Centered Text Default",
+      "description": "Displays a single centered statement or message, ideal for prominent communication between sections or above the fold.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "statement": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Statement"
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "centeredCta",
+      "name": "Centered Cta",
+      "description": "Displays a single centered statement or message, ideal for prominent communication between sections or above the fold.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "statement": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Statement"
+          }
+        },
+        "cta": {
+          "type": "Link",
+          "config": {
+            "label": "Cta",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

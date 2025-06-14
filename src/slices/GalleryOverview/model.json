@@ -1,0 +1,186 @@
+{
+  "type": "SharedSlice",
+  "id": "gallery_overview",
+  "name": "GalleryOverview",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Standard gallery overview section with text and a 2x2 plus 1 grid image arrangement.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Titre",
+            "placeholder": ""
+          }
+        },
+        "images": {
+          "type": "Group",
+          "config": {
+            "label": "Images",
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image"
+                }
+              },
+              "video": {
+                "type": "Embed",
+                "config": {
+                  "label": "Video",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "5X1",
+      "name": "5x1",
+      "description": "Standard gallery overview section with text and a 2x2 plus 1 grid image arrangement.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading1"
+          }
+        },
+        "images": {
+          "type": "Group",
+          "config": {
+            "label": "Images",
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image"
+                }
+              },
+              "video": {
+                "type": "Embed",
+                "config": {
+                  "label": "Video",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "1X1",
+      "name": "1x1",
+      "description": "Standard gallery overview section with text and a 2x2 plus 1 grid image arrangement.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "images": {
+          "type": "Group",
+          "config": {
+            "label": "Images",
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image"
+                }
+              },
+              "video": {
+                "type": "Embed",
+                "config": {
+                  "label": "Video",
+                  "placeholder": ""
+                }
+              },
+              "title_left": {
+                "type": "Text",
+                "config": {
+                  "label": "Title Left",
+                  "placeholder": ""
+                }
+              },
+              "sub_title_left": {
+                "type": "Text",
+                "config": {
+                  "label": "sub Title Left",
+                  "placeholder": ""
+                }
+              },
+              "title_rigth": {
+                "type": "Text",
+                "config": {
+                  "label": "Title Right",
+                  "placeholder": ""
+                }
+              },
+              "sub_title_rigth": {
+                "type": "Text",
+                "config": {
+                  "label": "Sub Title Right",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "2X1",
+      "name": "2x1",
+      "description": "Standard gallery overview section with text and a 2x2 plus 1 grid image arrangement.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading1",
+            "label": "Title"
+          }
+        },
+        "images": {
+          "type": "Group",
+          "config": {
+            "label": "Images",
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image"
+                }
+              },
+              "video": {
+                "type": "Embed",
+                "config": {
+                  "label": "Video",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

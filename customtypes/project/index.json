@@ -55,20 +55,7 @@
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {
-            "video_embed": {
-              "type": "SharedSlice"
-            },
-            "project_showcase": {
-              "type": "SharedSlice"
-            },
-            "image_gallery": {
-              "type": "SharedSlice"
-            },
-            "text_section": {
-              "type": "SharedSlice"
-            }
-          }
+          "choices": {}
         }
       }
     }

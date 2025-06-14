@@ -1,0 +1,40 @@
+{
+  "type": "SharedSlice",
+  "id": "intro_text_cta",
+  "name": "IntroTextCta",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Headline, description, and single call-to-action button.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow"
+          }
+        },
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading2,strong",
+            "label": "Headline"
+          }
+        },
+        "cta": {
+          "type": "Link",
+          "config": {
+            "label": "Call to Action",
+            "allowText": true,
+            "repeat": false,
+            "select": null
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "type": "SharedSlice",
+  "id": "interactive_card_sphere",
+  "name": "InteractiveCardSphere",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Standard presentation of cards within a 3D sphere layout for interactive exploration.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "cards": {
+          "type": "Group",
+          "config": {
+            "label": "Cards",
+            "fields": {
+              "title": {
+                "type": "Text",
+                "config": {
+                  "label": "Title"
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

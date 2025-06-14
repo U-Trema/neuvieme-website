@@ -1,0 +1,52 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "centered_text_default",
+		"primary": {
+			"statement": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Non ea exercitation in ut amet proident magna tempor esse consequat ullamco. Dolore tempor exercitation amet irure laboris ex mollit enim magna ad irure aliqua mollit."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "centeredCta",
+		"primary": {
+			"statement": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Enim deserunt aliqua qui proident non occaecat sint aute et ullamco officia ad excepteur aute minim. Duis sunt occaecat eiusmod commodo duis quis magna consequat consectetur cillum. Deserunt esse ex nisi ullamco anim veniam aute anim consequat voluptate."
+						}
+					}
+				]
+			},
+			"cta": {
+				"key": "61611744-9820-4db6-aa18-082536d297c2",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com",
+					"text": "daughter"
+				}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	}
+]

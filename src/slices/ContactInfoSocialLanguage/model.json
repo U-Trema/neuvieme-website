@@ -1,0 +1,103 @@
+{
+  "type": "SharedSlice",
+  "id": "contact_info_social_language",
+  "name": "ContactInfoSocialLanguage",
+  "variations": [
+    {
+      "id": "default_grouped",
+      "name": "Default Grouped",
+      "description": "Displays contact details, a group of social network links, and a language selector side by side.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "contact_heading": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading3",
+            "label": "Contact Heading"
+          }
+        },
+        "address": {
+          "type": "Text",
+          "config": {
+            "label": "Address"
+          }
+        },
+        "phone": {
+          "type": "Text",
+          "config": {
+            "label": "Phone"
+          }
+        },
+        "email": {
+          "type": "Text",
+          "config": {
+            "label": "Email"
+          }
+        },
+        "social_heading": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading3",
+            "label": "Social Heading"
+          }
+        },
+        "social_links": {
+          "type": "Group",
+          "config": {
+            "label": "Social Links",
+            "fields": {
+              "platform": {
+                "type": "Select",
+                "config": {
+                  "label": "Platform",
+                  "options": ["Facebook", "WhatsApp", "LinkedIn"]
+                }
+              },
+              "url": {
+                "type": "Link",
+                "config": {
+                  "label": "URL",
+                  "allowText": false,
+                  "repeat": false,
+                  "select": null
+                }
+              }
+            }
+          }
+        },
+        "language_heading": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading3",
+            "label": "Language Heading"
+          }
+        },
+        "languages": {
+          "type": "Group",
+          "config": {
+            "label": "Languages",
+            "fields": {
+              "code": {
+                "type": "Text",
+                "config": {
+                  "label": "Language Code"
+                }
+              },
+              "switch_link": {
+                "type": "Link",
+                "config": {
+                  "label": "Switch Link",
+                  "allowText": false,
+                  "repeat": false,
+                  "select": null
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
