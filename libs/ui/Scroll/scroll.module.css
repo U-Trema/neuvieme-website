@@ -1,9 +1,9 @@
 .scroll {
   position: absolute;
   top: 0;
-  left: 149px;
+  left: var(--scrollbar-position);
   z-index: 100;
-  width: 3px;
+  width: var(--scrollbar-width);
   height: 100%;
   background: var(--color-bg-primary);
 }

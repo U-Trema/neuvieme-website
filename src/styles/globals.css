@@ -15,6 +15,10 @@
 
   --color-bg-primary: #FEFFFF;
   --color-bg-violet: #7444C3;
+
+  /* various variables */
+  --scrollbar-position: 149px;
+  --scrollbar-width: 2px;
 }
 
 @theme {
@@ -28,13 +32,14 @@
   --spacing-4: 0.25rem; /* 4px */
   --spacing-9: 0.563rem; /* 9px */
   --spacing-12: 0.75rem; /* 12px */
+  --spacing-16: 1rem; /* 16px */
   --spacing-24: 1.5rem; /* 24px */
   --spacing-32: 2rem; /* 32px */
   --spacing-40: 2.5rem; /* 40px */
   --spacing-64: 4rem; /* 64px */
 
   /* font-size */
-  --text-2rem: 2rem;
+  --text-2rem: 2rem; /* 32px */
 }
 
 body {
