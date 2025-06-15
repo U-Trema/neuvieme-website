@@ -3,6 +3,7 @@ import {Hero} from "../../libs/ui/Hero/Hero";
 import {BaseSection} from "../../libs/ui/Sections/components/BaseSection/BaseSection";
 import {RealisationSection} from "../../libs/ui/Sections/components/RealisationSection/RealisationSection";
 import {useEffect, useRef} from "react";
+import {Footer} from "../../libs/ui/Footer/Footer";
 
 export default function Home() {
   const ref = useRef<any>(null)
@@ -31,7 +32,11 @@ export default function Home() {
       cursorFollower.style.opacity = '1';
     });
 
-    return () => pref.current.removeEventListener('mousemove', updateCursorPosition)
+    return () => {
+      if (pref.current) {
+        return pref.current.removeEventListener('mousemove', updateCursorPosition);
+      }
+    }
   }, [ref.current]);
 
   return (
@@ -66,6 +71,8 @@ export default function Home() {
           link='#'
           image='https://images.pexels.com/photos/23475/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
         />
+
+        <Footer />
         <div className='cursor-follower' ref={ref} />
       </div>
     </>

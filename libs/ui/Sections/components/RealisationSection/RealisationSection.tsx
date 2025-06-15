@@ -35,7 +35,7 @@ export const RealisationSection: FC<Props> = ({ title, description, btn, link, i
           {title}
         </h2>
 
-        <p className='leading-[150%] md:text-sm'>
+        <p className='leading-[150%] md:text-base'>
           {description}
         </p>
 
