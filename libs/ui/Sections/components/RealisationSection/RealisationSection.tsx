@@ -21,9 +21,17 @@ export const RealisationSection: FC<Props> = ({ title, description, btn, link, i
   })
 
   return (
-    <section className={realisationSectionClasses.root()}>
-      <div ref={elementRef} className={combineClasses(observerCVA.root({ isVisible: hasBeenVisible }), realisationSectionClasses.wrapper())}>
-        <h2 className={realisationSectionClasses.title()}>
+    <section className={combineClasses(realisationSectionClasses.root())}>
+      <div
+        ref={elementRef}
+        className={
+          combineClasses(
+            observerCVA.root({ isVisible: hasBeenVisible }),
+            realisationSectionClasses.wrapper()
+          )
+        }
+      >
+        <h2 className={combineClasses(realisationSectionClasses.title(), 'relative z-[2000]')}>
           {title}
         </h2>
 

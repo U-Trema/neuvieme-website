@@ -2,13 +2,43 @@ import {Scroll} from "../../libs/ui/Scroll/Scroll";
 import {Hero} from "../../libs/ui/Hero/Hero";
 import {BaseSection} from "../../libs/ui/Sections/components/BaseSection/BaseSection";
 import {RealisationSection} from "../../libs/ui/Sections/components/RealisationSection/RealisationSection";
+import {useEffect, useRef} from "react";
 
 export default function Home() {
+  const ref = useRef<any>(null)
+  const pref = useRef<any>(null)
+
+  useEffect(() => {
+    const cursorFollower = ref.current
+    if (!ref.current) return
+    if (!pref.current) return
+
+    function updateCursorPosition(e: any) {
+      const x = e.clientX;
+      const y = e.clientY;
+
+      cursorFollower.style.left = x + 'px';
+      cursorFollower.style.top = y + 'px';
+    }
+
+    pref.current.addEventListener('mousemove', updateCursorPosition);
+
+    pref.current.addEventListener('mouseleave', function() {
+      cursorFollower.style.opacity = '0';
+    });
+
+    pref.current.addEventListener('mouseenter', function() {
+      cursorFollower.style.opacity = '1';
+    });
+
+    return () => pref.current.removeEventListener('mousemove', updateCursorPosition)
+  }, [ref.current]);
+
   return (
     <>
       <Hero />
 
-      <div style={{ position: 'relative' }}>
+      <div ref={pref} style={{ position: 'relative' }}>
         <Scroll />
 
         <BaseSection />
@@ -36,6 +66,7 @@ export default function Home() {
           link='#'
           image='https://images.pexels.com/photos/23475/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
         />
+        <div className='cursor-follower' ref={ref} />
       </div>
     </>
   );
