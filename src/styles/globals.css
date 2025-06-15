@@ -56,3 +56,22 @@ body.overflow-hidden {
   initial-value: 0deg;
   inherits: false;
 }
+
+.cursor-follower {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  pointer-events: none;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out;
+  background: linear-gradient(149.67deg,
+    rgba(254, 205, 10, 0.6) 20.5%,
+    rgba(255, 180, 0, 0.6) 20.5%,
+    rgba(234, 91, 12, 0.6) 38.45%,
+    rgba(227, 10, 18, 0.6) 46.62%,
+    rgba(150, 27, 129, 0.6) 59.13%,
+    rgba(116, 68, 195, 0.6) 71.65%
+  );
+  filter: blur(35px);
+}
