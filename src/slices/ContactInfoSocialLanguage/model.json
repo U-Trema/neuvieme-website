@@ -1,0 +1,72 @@
+{
+  "type": "SharedSlice",
+  "id": "contact_info_social_language",
+  "name": "ContactInfoSocialLanguage",
+  "variations": [
+    {
+      "id": "default_grouped",
+      "name": "Default Grouped",
+      "description": "Displays contact details, a group of social network links, and a language selector side by side.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "contact_heading": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading3",
+            "label": "Contact Heading"
+          }
+        },
+        "contact_info": {
+          "type": "Link",
+          "config": {
+            "label": "Contact Info",
+            "select": "document",
+            "repeat": false,
+            "customtypes": [
+              "contact_info"
+            ]
+          }
+        },
+        "social_heading": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading3",
+            "label": "Social Heading"
+          }
+        },
+        "social_links": {
+          "type": "Link",
+          "config": {
+            "label": "Social Links",
+            "select": "document",
+            "repeat": false,
+            "customtypes": [
+              "social_links"
+            ]
+          }
+        },
+        "language_heading": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading3",
+            "label": "Language Heading"
+          }
+        },
+        "languages": {
+          "type": "Link",
+          "config": {
+            "label": "Languages",
+            "select": "document",
+            "repeat": false,
+            "customtypes": [
+              "languages"
+            ]
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

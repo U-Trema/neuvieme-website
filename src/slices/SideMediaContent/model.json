@@ -1,0 +1,219 @@
+{
+  "type": "SharedSlice",
+  "id": "side_media_content",
+  "name": "SideMediaContent",
+  "variations": [
+    {
+      "id": "media_right",
+      "name": "Media Right",
+      "description": "Displays content on the left and media (image or video) on the right.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading2",
+            "label": "Title"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Description"
+          }
+        },
+        "cta": {
+          "type": "Link",
+          "config": {
+            "label": "Cta",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false
+          }
+        },
+        "medias": {
+          "type": "Group",
+          "config": {
+            "label": "Medias",
+            "repeat": true,
+            "fields": {
+              "project": {
+                "type": "Link",
+                "config": {
+                  "label": "Project",
+                  "select": "document",
+                  "repeat": false,
+                  "customtypes": [
+                    "project"
+                  ]
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "video": {
+                "type": "Embed",
+                "config": {
+                  "label": "Video",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "contactInfoMediaRight",
+      "name": "Contact Info Media Right",
+      "description": "Displays content on the left and media (image or video) on the right.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading2",
+            "label": "Title"
+          }
+        },
+        "contact_info": {
+          "type": "Link",
+          "config": {
+            "label": "Contact Info",
+            "select": "document",
+            "repeat": false,
+            "customtypes": [
+              "contact_info"
+            ]
+          }
+        },
+        "social_links": {
+          "type": "Link",
+          "config": {
+            "label": "Social Links",
+            "select": "document",
+            "repeat": false,
+            "customtypes": [
+              "social_links"
+            ]
+          }
+        },
+        "medias": {
+          "type": "Group",
+          "config": {
+            "label": "Medias",
+            "repeat": true,
+            "fields": {
+              "project": {
+                "type": "Link",
+                "config": {
+                  "label": "Project",
+                  "select": "document",
+                  "repeat": false,
+                  "customtypes": [
+                    "project"
+                  ]
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "video": {
+                "type": "Embed",
+                "config": {
+                  "label": "video",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "socialsMediaRight",
+      "name": "Socials Media Right",
+      "description": "Displays content on the left and media (image or video) on the right.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Headline",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink"
+          }
+        },
+        "social_links": {
+          "type": "Link",
+          "config": {
+            "label": "Social Links",
+            "select": "document",
+            "repeat": false,
+            "customtypes": [
+              "social_links"
+            ]
+          }
+        },
+        "medias": {
+          "type": "Group",
+          "config": {
+            "label": "Medias",
+            "repeat": true,
+            "fields": {
+              "project": {
+                "type": "Link",
+                "config": {
+                  "label": "Project",
+                  "select": "document",
+                  "repeat": false,
+                  "customtypes": [
+                    "project"
+                  ]
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "video": {
+                "type": "Embed",
+                "config": {
+                  "label": "video",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

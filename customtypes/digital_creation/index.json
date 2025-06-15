@@ -1,7 +1,7 @@
 {
   "format": "page",
-  "id": "about",
-  "label": "About",
+  "id": "digital_creation",
+  "label": "Digital Creation",
   "repeatable": false,
   "status": true,
   "json": {
@@ -11,7 +11,19 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "testimonial_carousel": {
+              "type": "SharedSlice"
+            },
+            "gallery_overview": {
+              "type": "SharedSlice"
+            },
             "side_media_content": {
+              "type": "SharedSlice"
+            },
+            "icon_text_grid": {
+              "type": "SharedSlice"
+            },
+            "centered_statement": {
               "type": "SharedSlice"
             },
             "headline_with_subtext": {

@@ -1,0 +1,49 @@
+{
+  "type": "SharedSlice",
+  "id": "highlighted_heading_side_content",
+  "name": "HighlightedHeadingSideContent",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Default layout with heading and subheading left-aligned and main content right-aligned.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "project": {
+          "type": "Link",
+          "config": {
+            "label": "Project",
+            "select": "document",
+            "repeat": false,
+            "customtypes": [
+              "project"
+            ]
+          }
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading1",
+            "label": "Title"
+          }
+        },
+        "subtitle": {
+          "type": "Text",
+          "config": {
+            "label": "Subtitle"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Description"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

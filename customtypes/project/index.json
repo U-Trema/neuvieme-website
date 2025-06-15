@@ -12,28 +12,59 @@
           "label": "UID"
         }
       },
-      "project_title": {
-        "type": "StructuredText",
-        "config": {
-          "label": "Project Title",
-          "placeholder": "Titre du projet",
-          "allowTargetBlank": true,
-          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,embed,list-item,o-list-item,rtl"
-        }
-      },
-      "client": {
-        "type": "Text",
-        "config": {
-          "label": "Client",
-          "placeholder": "Nom du client"
-        }
-      },
       "project_main_image": {
         "type": "Image",
         "config": {
           "label": "Project Main Image",
           "constraint": {},
           "thumbnails": []
+        }
+      },
+      "project_title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Project Title",
+          "placeholder": "Titre du projet",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink"
+        }
+      },
+      "subtitle": {
+        "type": "Text",
+        "config": {
+          "label": "Subtitle",
+          "placeholder": ""
+        }
+      },
+      "client_logo": {
+        "type": "Image",
+        "config": {
+          "label": "Client Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "client_name": {
+        "type": "Text",
+        "config": {
+          "label": "Client Name",
+          "placeholder": "Nom du client"
+        }
+      },
+      "quote": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Quote",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,strong,em"
+        }
+      },
+      "organization": {
+        "type": "Text",
+        "config": {
+          "label": "Organization",
+          "placeholder": ""
         }
       },
       "date": {
@@ -48,27 +79,38 @@
         "config": {
           "label": "Category",
           "placeholder": "Catégorie",
-          "options": ["1", "2"]
+          "options": ["Audio", "Advertise", "Digital"]
+        }
+      },
+      "medias": {
+        "type": "Group",
+        "config": {
+          "label": "Medias",
+          "repeat": true,
+          "fields": {
+            "image": {
+              "type": "Image",
+              "config": {
+                "label": "Image",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "video": {
+              "type": "Embed",
+              "config": {
+                "label": "Video",
+                "placeholder": ""
+              }
+            }
+          }
         }
       },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {
-            "video_embed": {
-              "type": "SharedSlice"
-            },
-            "project_showcase": {
-              "type": "SharedSlice"
-            },
-            "image_gallery": {
-              "type": "SharedSlice"
-            },
-            "text_section": {
-              "type": "SharedSlice"
-            }
-          }
+          "choices": {}
         }
       }
     }

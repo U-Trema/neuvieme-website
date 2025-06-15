@@ -1,0 +1,37 @@
+{
+  "type": "SharedSlice",
+  "id": "icon_text_grid",
+  "name": "IconTextGrid",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Simple grid with icon and text below each icon.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "items": {
+          "type": "Group",
+          "config": {
+            "label": "Items",
+            "fields": {
+              "icon": {
+                "type": "Image",
+                "config": {
+                  "label": "Icon"
+                }
+              },
+              "label": {
+                "type": "Text",
+                "config": {
+                  "label": "Label"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

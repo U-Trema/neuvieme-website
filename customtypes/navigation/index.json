@@ -68,36 +68,13 @@
           }
         }
       },
-      "lang": {
-        "type": "Group",
+      "languages": {
+        "type": "Link",
         "config": {
-          "label": "Lang",
-          "repeat": true,
-          "fields": {
-            "code": {
-              "type": "Text",
-              "config": {
-                "label": "Code",
-                "placeholder": "Code de la langue"
-              }
-            },
-            "label": {
-              "type": "Text",
-              "config": {
-                "label": "Label",
-                "placeholder": "Libellé"
-              }
-            },
-            "active": {
-              "type": "Boolean",
-              "config": {
-                "label": "Active",
-                "placeholder_false": "false",
-                "placeholder_true": "true",
-                "default_value": false
-              }
-            }
-          }
+          "label": "Languages",
+          "select": "document",
+          "repeat": false,
+          "customtypes": ["languages"]
         }
       }
     }

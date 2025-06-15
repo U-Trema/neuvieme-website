@@ -1,0 +1,267 @@
+{
+  "type": "SharedSlice",
+  "id": "gallery_overview",
+  "name": "GalleryOverview",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Standard gallery overview section with text and a 2x2 plus 1 grid image arrangement.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "items": {
+          "type": "Group",
+          "config": {
+            "label": "Grid Items",
+            "repeat": true,
+            "fields": {
+              "project": {
+                "type": "Link",
+                "config": {
+                  "label": "Project",
+                  "select": "document",
+                  "repeat": false,
+                  "customtypes": [
+                    "project"
+                  ]
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image"
+                }
+              },
+              "video": {
+                "type": "Embed",
+                "config": {
+                  "label": "Video",
+                  "placeholder": ""
+                }
+              },
+              "caption": {
+                "type": "Text",
+                "config": {
+                  "label": "Caption",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "5X1",
+      "name": "5x1",
+      "description": "Standard gallery overview section with text and a 2x2 plus 1 grid image arrangement.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading1"
+          }
+        },
+        "items": {
+          "type": "Group",
+          "config": {
+            "label": "Grid Items",
+            "repeat": true,
+            "fields": {
+              "project": {
+                "type": "Link",
+                "config": {
+                  "label": "Project",
+                  "select": "document",
+                  "repeat": false,
+                  "customtypes": [
+                    "project"
+                  ]
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image"
+                }
+              },
+              "video": {
+                "type": "Embed",
+                "config": {
+                  "label": "Video",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "1X1",
+      "name": "1x1",
+      "description": "Standard gallery overview section with text and a 2x2 plus 1 grid image arrangement.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "items": {
+          "type": "Group",
+          "config": {
+            "label": "Items",
+            "repeat": true,
+            "fields": {
+              "project": {
+                "type": "Link",
+                "config": {
+                  "label": "Project",
+                  "select": "document",
+                  "repeat": false,
+                  "customtypes": [
+                    "project"
+                  ]
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image"
+                }
+              },
+              "video": {
+                "type": "Embed",
+                "config": {
+                  "label": "Video",
+                  "placeholder": ""
+                }
+              },
+              "title_left": {
+                "type": "Text",
+                "config": {
+                  "label": "Title Left",
+                  "placeholder": ""
+                }
+              },
+              "sub_title_left": {
+                "type": "Text",
+                "config": {
+                  "label": "sub Title Left",
+                  "placeholder": ""
+                }
+              },
+              "title_rigth": {
+                "type": "Text",
+                "config": {
+                  "label": "Title Right",
+                  "placeholder": ""
+                }
+              },
+              "sub_title_rigth": {
+                "type": "Text",
+                "config": {
+                  "label": "Sub Title Right",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "2X1",
+      "name": "2x1",
+      "description": "Standard gallery overview section with text and a 2x2 plus 1 grid image arrangement.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading1",
+            "label": "Title"
+          }
+        },
+        "items": {
+          "type": "Group",
+          "config": {
+            "label": "Grid Items",
+            "repeat": true,
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image"
+                }
+              },
+              "video": {
+                "type": "Embed",
+                "config": {
+                  "label": "Video",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "2X2",
+      "name": "2x2",
+      "description": "Standard gallery overview section with text and a 2x2 plus 1 grid image arrangement.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "items": {
+          "type": "Group",
+          "config": {
+            "label": "Grid Items",
+            "repeat": true,
+            "fields": {
+              "project": {
+                "type": "Link",
+                "config": {
+                  "label": "Project",
+                  "select": "document",
+                  "repeat": false,
+                  "customtypes": [
+                    "project"
+                  ]
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image"
+                }
+              },
+              "video": {
+                "type": "Embed",
+                "config": {
+                  "label": "Video",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

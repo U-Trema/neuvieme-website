@@ -1,0 +1,66 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default_grouped",
+		"primary": {
+			"contact_heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading3",
+						"content": {
+							"text": "Instrument"
+						}
+					}
+				]
+			},
+			"social_heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading3",
+						"content": {
+							"text": "Whispered"
+						}
+					}
+				]
+			},
+			"language_heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading3",
+						"content": {
+							"text": "Heart"
+						}
+					}
+				]
+			},
+			"contact_info": {
+				"key": "2b812c6f-56e6-490e-bb04-f2a02f3daa51",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "DocumentLink",
+					"id": "mock_document_id"
+				}
+			},
+			"social_links": {
+				"key": "ed65f320-2dc7-4adb-95d9-ce0e369b4015",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "DocumentLink",
+					"id": "mock_document_id"
+				}
+			},
+			"languages": {
+				"__TYPE__": "LinkContent",
+				"key": "6bbb9b08-d6c7-4e84-a1f9-a6de677f2d7e",
+				"value": {
+					"__TYPE__": "DocumentLink",
+					"id": "mock_document_id"
+				}
+			}
+		},
+		"items": []
+	}
+]

@@ -1,0 +1,85 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"testimonials": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"logo",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa",
+										"width": 2747,
+										"height": 4120
+									},
+									"url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa",
+									"width": 2747,
+									"height": 4120,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"alt": "teach",
+									"credits": null,
+									"__TYPE__": "ImageContent"
+								}
+							],
+							[
+								"client_name",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "breath",
+									"type": "Text"
+								}
+							],
+							[
+								"quote",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Mollit dolor mollit sint aliqua anim proident amet et laborum sunt est enim nisi."
+											}
+										}
+									]
+								}
+							],
+							[
+								"organization",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "sit",
+									"type": "Text"
+								}
+							],
+							[
+								"project",
+								{
+									"key": "869ddcdd-45f6-4b8f-8464-e2aa1cd6b04a",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "DocumentLink",
+										"id": "mock_document_id"
+									}
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

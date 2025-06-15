@@ -1,0 +1,49 @@
+{
+  "type": "SharedSlice",
+  "id": "featured_card",
+  "name": "FeaturedCard",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Image on the left, with title, subtitle, and button on the right.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "projects": {
+          "type": "Group",
+          "config": {
+            "label": "Projects",
+            "repeat": true,
+            "fields": {
+              "project": {
+                "type": "Link",
+                "config": {
+                  "label": "Project",
+                  "select": "document",
+                  "repeat": false,
+                  "customtypes": [
+                    "project"
+                  ]
+                }
+              },
+              "button_link": {
+                "type": "Link",
+                "config": {
+                  "label": "Button Link",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
