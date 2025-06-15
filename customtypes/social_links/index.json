@@ -18,13 +18,12 @@
                 "label": "Icon",
                 "placeholder": "",
                 "options": [
-                  "facebook",
-                  "whatsapp",
-                  "linkedin",
-                  "instagram",
-                  "x",
-                  "tiktok",
-                  "linkedIn"
+                  "Facebook",
+                  "Whatsapp",
+                  "Linkedin",
+                  "Instagram",
+                  "X",
+                  "Tiktok"
                 ]
               }
             },

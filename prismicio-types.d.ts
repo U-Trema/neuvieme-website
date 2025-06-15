@@ -758,13 +758,7 @@ export interface SocialLinksDocumentDataSocialLinksItem {
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   icon: prismic.SelectField<
-    | "facebook"
-    | "whatsapp"
-    | "linkedin"
-    | "instagram"
-    | "x"
-    | "tiktok"
-    | "linkedIn"
+    "Facebook" | "Whatsapp" | "Linkedin" | "Instagram" | "X" | "Tiktok"
   >;
 
   /**
