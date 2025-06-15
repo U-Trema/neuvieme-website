@@ -3,7 +3,6 @@
 import dynamic from "next/dynamic";
 
 export const components = {
-  asymmetrical_grid: dynamic(() => import("./AsymmetricalGrid")),
   centered_statement: dynamic(() => import("./CenteredStatement")),
   contact_info_social_language: dynamic(
     () => import("./ContactInfoSocialLanguage"),

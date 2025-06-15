@@ -11,10 +11,11 @@
       "imageUrl": "",
       "docURL": "...",
       "primary": {
-        "images": {
+        "items": {
           "type": "Group",
           "config": {
-            "label": "Images",
+            "label": "Grid Items",
+            "repeat": true,
             "fields": {
               "project": {
                 "type": "Link",
@@ -37,6 +38,13 @@
                 "type": "Embed",
                 "config": {
                   "label": "Video",
+                  "placeholder": ""
+                }
+              },
+              "caption": {
+                "type": "Text",
+                "config": {
+                  "label": "Caption",
                   "placeholder": ""
                 }
               }
@@ -63,10 +71,11 @@
             "single": "heading1"
           }
         },
-        "images": {
+        "items": {
           "type": "Group",
           "config": {
-            "label": "Images",
+            "label": "Grid Items",
+            "repeat": true,
             "fields": {
               "project": {
                 "type": "Link",
@@ -106,10 +115,10 @@
       "imageUrl": "",
       "docURL": "...",
       "primary": {
-        "images": {
+        "items": {
           "type": "Group",
           "config": {
-            "label": "Medias",
+            "label": "Items",
             "repeat": true,
             "fields": {
               "project": {
@@ -185,11 +194,56 @@
             "label": "Title"
           }
         },
-        "images": {
+        "items": {
           "type": "Group",
           "config": {
-            "label": "Images",
+            "label": "Grid Items",
+            "repeat": true,
             "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image"
+                }
+              },
+              "video": {
+                "type": "Embed",
+                "config": {
+                  "label": "Video",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "2X2",
+      "name": "2x2",
+      "description": "Standard gallery overview section with text and a 2x2 plus 1 grid image arrangement.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "items": {
+          "type": "Group",
+          "config": {
+            "label": "Grid Items",
+            "repeat": true,
+            "fields": {
+              "project": {
+                "type": "Link",
+                "config": {
+                  "label": "Project",
+                  "select": "document",
+                  "repeat": false,
+                  "customtypes": [
+                    "project"
+                  ]
+                }
+              },
               "image": {
                 "type": "Image",
                 "config": {

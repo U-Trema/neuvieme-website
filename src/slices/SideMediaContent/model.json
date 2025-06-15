@@ -36,22 +36,6 @@
             "repeat": false
           }
         },
-        "layout": {
-          "type": "Select",
-          "config": {
-            "label": "Layout",
-            "placeholder": "Disposition",
-            "options": [
-              "1x1",
-              "2x1",
-              "3x1",
-              "2x2",
-              "4x2",
-              "3x3"
-            ],
-            "default_value": "1x1"
-          }
-        },
         "medias": {
           "type": "Group",
           "config": {

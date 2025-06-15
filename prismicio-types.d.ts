@@ -68,8 +68,8 @@ export type AboutDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<AboutDocumentData>, "about", Lang>;
 
 type AdvertisingProductionDocumentDataSlicesSlice =
+  | GalleryOverviewSlice
   | FeaturedCardSlice
-  | AsymmetricalGridSlice
   | HighlightedHeadingSideContentSlice
   | HeadlineWithSubtextSlice;
 
@@ -831,89 +831,6 @@ export type AllDocumentTypes =
   | SocialLinksDocument;
 
 /**
- * Item in *AsymmetricalGrid → Four Item Asymmetrical Grid → Primary → Grid Items*
- */
-export interface AsymmetricalGridSliceFourItemAsymmetricalPrimaryItemsItem {
-  /**
-   * Project field in *AsymmetricalGrid → Four Item Asymmetrical Grid → Primary → Grid Items*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: asymmetrical_grid.four_item_asymmetrical.primary.items[].project
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  project: prismic.ContentRelationshipField<"project">;
-
-  /**
-   * Image field in *AsymmetricalGrid → Four Item Asymmetrical Grid → Primary → Grid Items*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: asymmetrical_grid.four_item_asymmetrical.primary.items[].media
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  media: prismic.ImageField<never>;
-
-  /**
-   * Video field in *AsymmetricalGrid → Four Item Asymmetrical Grid → Primary → Grid Items*
-   *
-   * - **Field Type**: Embed
-   * - **Placeholder**: *None*
-   * - **API ID Path**: asymmetrical_grid.four_item_asymmetrical.primary.items[].video
-   * - **Documentation**: https://prismic.io/docs/field#embed
-   */
-  video: prismic.EmbedField;
-}
-
-/**
- * Primary content in *AsymmetricalGrid → Four Item Asymmetrical Grid → Primary*
- */
-export interface AsymmetricalGridSliceFourItemAsymmetricalPrimary {
-  /**
-   * Grid Items field in *AsymmetricalGrid → Four Item Asymmetrical Grid → Primary*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: asymmetrical_grid.four_item_asymmetrical.primary.items[]
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  items: prismic.GroupField<
-    Simplify<AsymmetricalGridSliceFourItemAsymmetricalPrimaryItemsItem>
-  >;
-}
-
-/**
- * Four Item Asymmetrical Grid variation for AsymmetricalGrid Slice
- *
- * - **API ID**: `four_item_asymmetrical`
- * - **Description**: Displays a four-image asymmetrical layout: two large images on top, and two smaller images below, forming a visually dynamic arrangement.
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type AsymmetricalGridSliceFourItemAsymmetrical =
-  prismic.SharedSliceVariation<
-    "four_item_asymmetrical",
-    Simplify<AsymmetricalGridSliceFourItemAsymmetricalPrimary>,
-    never
-  >;
-
-/**
- * Slice variation for *AsymmetricalGrid*
- */
-type AsymmetricalGridSliceVariation = AsymmetricalGridSliceFourItemAsymmetrical;
-
-/**
- * AsymmetricalGrid Shared Slice
- *
- * - **API ID**: `asymmetrical_grid`
- * - **Description**: *None*
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type AsymmetricalGridSlice = prismic.SharedSlice<
-  "asymmetrical_grid",
-  AsymmetricalGridSliceVariation
->;
-
-/**
  * Primary content in *CenteredStatement → Centered Text Default → Primary*
  */
 export interface CenteredStatementSliceCenteredTextDefaultPrimary {
@@ -1175,170 +1092,215 @@ export type FeaturedCardSlice = prismic.SharedSlice<
 >;
 
 /**
- * Item in *GalleryOverview → Default → Primary → Images*
+ * Item in *GalleryOverview → Default → Primary → Grid Items*
  */
-export interface GalleryOverviewSliceDefaultPrimaryImagesItem {
+export interface GalleryOverviewSliceDefaultPrimaryItemsItem {
   /**
-   * Project field in *GalleryOverview → Default → Primary → Images*
+   * Project field in *GalleryOverview → Default → Primary → Grid Items*
    *
    * - **Field Type**: Content Relationship
    * - **Placeholder**: *None*
-   * - **API ID Path**: gallery_overview.default.primary.images[].project
+   * - **API ID Path**: gallery_overview.default.primary.items[].project
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   project: prismic.ContentRelationshipField<"project">;
 
   /**
-   * Image field in *GalleryOverview → Default → Primary → Images*
+   * Image field in *GalleryOverview → Default → Primary → Grid Items*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: gallery_overview.default.primary.images[].image
+   * - **API ID Path**: gallery_overview.default.primary.items[].image
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
 
   /**
-   * Video field in *GalleryOverview → Default → Primary → Images*
+   * Video field in *GalleryOverview → Default → Primary → Grid Items*
    *
    * - **Field Type**: Embed
    * - **Placeholder**: *None*
-   * - **API ID Path**: gallery_overview.default.primary.images[].video
-   * - **Documentation**: https://prismic.io/docs/field#embed
-   */
-  video: prismic.EmbedField;
-}
-
-/**
- * Item in *GalleryOverview → 5x1 → Primary → Images*
- */
-export interface GalleryOverviewSlice5X1PrimaryImagesItem {
-  /**
-   * Project field in *GalleryOverview → 5x1 → Primary → Images*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: gallery_overview.5X1.primary.images[].project
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  project: prismic.ContentRelationshipField<"project">;
-
-  /**
-   * Image field in *GalleryOverview → 5x1 → Primary → Images*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: gallery_overview.5X1.primary.images[].image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
-
-  /**
-   * Video field in *GalleryOverview → 5x1 → Primary → Images*
-   *
-   * - **Field Type**: Embed
-   * - **Placeholder**: *None*
-   * - **API ID Path**: gallery_overview.5X1.primary.images[].video
-   * - **Documentation**: https://prismic.io/docs/field#embed
-   */
-  video: prismic.EmbedField;
-}
-
-/**
- * Item in *GalleryOverview → 1x1 → Primary → Medias*
- */
-export interface GalleryOverviewSlice1X1PrimaryImagesItem {
-  /**
-   * Project field in *GalleryOverview → 1x1 → Primary → Medias*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: gallery_overview.1X1.primary.images[].project
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  project: prismic.ContentRelationshipField<"project">;
-
-  /**
-   * Image field in *GalleryOverview → 1x1 → Primary → Medias*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: gallery_overview.1X1.primary.images[].image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
-
-  /**
-   * Video field in *GalleryOverview → 1x1 → Primary → Medias*
-   *
-   * - **Field Type**: Embed
-   * - **Placeholder**: *None*
-   * - **API ID Path**: gallery_overview.1X1.primary.images[].video
+   * - **API ID Path**: gallery_overview.default.primary.items[].video
    * - **Documentation**: https://prismic.io/docs/field#embed
    */
   video: prismic.EmbedField;
 
   /**
-   * Title Left field in *GalleryOverview → 1x1 → Primary → Medias*
+   * Caption field in *GalleryOverview → Default → Primary → Grid Items*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: gallery_overview.1X1.primary.images[].title_left
+   * - **API ID Path**: gallery_overview.default.primary.items[].caption
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  caption: prismic.KeyTextField;
+}
+
+/**
+ * Item in *GalleryOverview → 5x1 → Primary → Grid Items*
+ */
+export interface GalleryOverviewSlice5X1PrimaryItemsItem {
+  /**
+   * Project field in *GalleryOverview → 5x1 → Primary → Grid Items*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery_overview.5X1.primary.items[].project
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  project: prismic.ContentRelationshipField<"project">;
+
+  /**
+   * Image field in *GalleryOverview → 5x1 → Primary → Grid Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery_overview.5X1.primary.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Video field in *GalleryOverview → 5x1 → Primary → Grid Items*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery_overview.5X1.primary.items[].video
+   * - **Documentation**: https://prismic.io/docs/field#embed
+   */
+  video: prismic.EmbedField;
+}
+
+/**
+ * Item in *GalleryOverview → 1x1 → Primary → Items*
+ */
+export interface GalleryOverviewSlice1X1PrimaryItemsItem {
+  /**
+   * Project field in *GalleryOverview → 1x1 → Primary → Items*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery_overview.1X1.primary.items[].project
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  project: prismic.ContentRelationshipField<"project">;
+
+  /**
+   * Image field in *GalleryOverview → 1x1 → Primary → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery_overview.1X1.primary.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Video field in *GalleryOverview → 1x1 → Primary → Items*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery_overview.1X1.primary.items[].video
+   * - **Documentation**: https://prismic.io/docs/field#embed
+   */
+  video: prismic.EmbedField;
+
+  /**
+   * Title Left field in *GalleryOverview → 1x1 → Primary → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery_overview.1X1.primary.items[].title_left
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   title_left: prismic.KeyTextField;
 
   /**
-   * sub Title Left field in *GalleryOverview → 1x1 → Primary → Medias*
+   * sub Title Left field in *GalleryOverview → 1x1 → Primary → Items*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: gallery_overview.1X1.primary.images[].sub_title_left
+   * - **API ID Path**: gallery_overview.1X1.primary.items[].sub_title_left
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   sub_title_left: prismic.KeyTextField;
 
   /**
-   * Title Right field in *GalleryOverview → 1x1 → Primary → Medias*
+   * Title Right field in *GalleryOverview → 1x1 → Primary → Items*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: gallery_overview.1X1.primary.images[].title_rigth
+   * - **API ID Path**: gallery_overview.1X1.primary.items[].title_rigth
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   title_rigth: prismic.KeyTextField;
 
   /**
-   * Sub Title Right field in *GalleryOverview → 1x1 → Primary → Medias*
+   * Sub Title Right field in *GalleryOverview → 1x1 → Primary → Items*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: gallery_overview.1X1.primary.images[].sub_title_rigth
+   * - **API ID Path**: gallery_overview.1X1.primary.items[].sub_title_rigth
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   sub_title_rigth: prismic.KeyTextField;
 }
 
 /**
- * Item in *GalleryOverview → 2x1 → Primary → Images*
+ * Item in *GalleryOverview → 2x1 → Primary → Grid Items*
  */
-export interface GalleryOverviewSlice2X1PrimaryImagesItem {
+export interface GalleryOverviewSlice2X1PrimaryItemsItem {
   /**
-   * Image field in *GalleryOverview → 2x1 → Primary → Images*
+   * Image field in *GalleryOverview → 2x1 → Primary → Grid Items*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: gallery_overview.2X1.primary.images[].image
+   * - **API ID Path**: gallery_overview.2X1.primary.items[].image
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
 
   /**
-   * Video field in *GalleryOverview → 2x1 → Primary → Images*
+   * Video field in *GalleryOverview → 2x1 → Primary → Grid Items*
    *
    * - **Field Type**: Embed
    * - **Placeholder**: *None*
-   * - **API ID Path**: gallery_overview.2X1.primary.images[].video
+   * - **API ID Path**: gallery_overview.2X1.primary.items[].video
+   * - **Documentation**: https://prismic.io/docs/field#embed
+   */
+  video: prismic.EmbedField;
+}
+
+/**
+ * Item in *GalleryOverview → 2x2 → Primary → Grid Items*
+ */
+export interface GalleryOverviewSlice2X2PrimaryItemsItem {
+  /**
+   * Project field in *GalleryOverview → 2x2 → Primary → Grid Items*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery_overview.2X2.primary.items[].project
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  project: prismic.ContentRelationshipField<"project">;
+
+  /**
+   * Image field in *GalleryOverview → 2x2 → Primary → Grid Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery_overview.2X2.primary.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Video field in *GalleryOverview → 2x2 → Primary → Grid Items*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery_overview.2X2.primary.items[].video
    * - **Documentation**: https://prismic.io/docs/field#embed
    */
   video: prismic.EmbedField;
@@ -1349,15 +1311,15 @@ export interface GalleryOverviewSlice2X1PrimaryImagesItem {
  */
 export interface GalleryOverviewSliceDefaultPrimary {
   /**
-   * Images field in *GalleryOverview → Default → Primary*
+   * Grid Items field in *GalleryOverview → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: gallery_overview.default.primary.images[]
+   * - **API ID Path**: gallery_overview.default.primary.items[]
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  images: prismic.GroupField<
-    Simplify<GalleryOverviewSliceDefaultPrimaryImagesItem>
+  items: prismic.GroupField<
+    Simplify<GalleryOverviewSliceDefaultPrimaryItemsItem>
   >;
 }
 
@@ -1389,16 +1351,14 @@ export interface GalleryOverviewSlice5X1Primary {
   title: prismic.TitleField;
 
   /**
-   * Images field in *GalleryOverview → 5x1 → Primary*
+   * Grid Items field in *GalleryOverview → 5x1 → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: gallery_overview.5X1.primary.images[]
+   * - **API ID Path**: gallery_overview.5X1.primary.items[]
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  images: prismic.GroupField<
-    Simplify<GalleryOverviewSlice5X1PrimaryImagesItem>
-  >;
+  items: prismic.GroupField<Simplify<GalleryOverviewSlice5X1PrimaryItemsItem>>;
 }
 
 /**
@@ -1419,16 +1379,14 @@ export type GalleryOverviewSlice5X1 = prismic.SharedSliceVariation<
  */
 export interface GalleryOverviewSlice1X1Primary {
   /**
-   * Medias field in *GalleryOverview → 1x1 → Primary*
+   * Items field in *GalleryOverview → 1x1 → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: gallery_overview.1X1.primary.images[]
+   * - **API ID Path**: gallery_overview.1X1.primary.items[]
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  images: prismic.GroupField<
-    Simplify<GalleryOverviewSlice1X1PrimaryImagesItem>
-  >;
+  items: prismic.GroupField<Simplify<GalleryOverviewSlice1X1PrimaryItemsItem>>;
 }
 
 /**
@@ -1459,16 +1417,14 @@ export interface GalleryOverviewSlice2X1Primary {
   title: prismic.TitleField;
 
   /**
-   * Images field in *GalleryOverview → 2x1 → Primary*
+   * Grid Items field in *GalleryOverview → 2x1 → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: gallery_overview.2X1.primary.images[]
+   * - **API ID Path**: gallery_overview.2X1.primary.items[]
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  images: prismic.GroupField<
-    Simplify<GalleryOverviewSlice2X1PrimaryImagesItem>
-  >;
+  items: prismic.GroupField<Simplify<GalleryOverviewSlice2X1PrimaryItemsItem>>;
 }
 
 /**
@@ -1485,13 +1441,42 @@ export type GalleryOverviewSlice2X1 = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *GalleryOverview → 2x2 → Primary*
+ */
+export interface GalleryOverviewSlice2X2Primary {
+  /**
+   * Grid Items field in *GalleryOverview → 2x2 → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery_overview.2X2.primary.items[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  items: prismic.GroupField<Simplify<GalleryOverviewSlice2X2PrimaryItemsItem>>;
+}
+
+/**
+ * 2x2 variation for GalleryOverview Slice
+ *
+ * - **API ID**: `2X2`
+ * - **Description**: Standard gallery overview section with text and a 2x2 plus 1 grid image arrangement.
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type GalleryOverviewSlice2X2 = prismic.SharedSliceVariation<
+  "2X2",
+  Simplify<GalleryOverviewSlice2X2Primary>,
+  never
+>;
+
+/**
  * Slice variation for *GalleryOverview*
  */
 type GalleryOverviewSliceVariation =
   | GalleryOverviewSliceDefault
   | GalleryOverviewSlice5X1
   | GalleryOverviewSlice1X1
-  | GalleryOverviewSlice2X1;
+  | GalleryOverviewSlice2X1
+  | GalleryOverviewSlice2X2;
 
 /**
  * GalleryOverview Shared Slice
@@ -1583,6 +1568,16 @@ export interface HeroSectionSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   description: prismic.RichTextField;
+
+  /**
+   * Video field in *HeroSection → Default → Primary*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.video
+   * - **Documentation**: https://prismic.io/docs/field#embed
+   */
+  video: prismic.EmbedField;
 
   /**
    * Background Image field in *HeroSection → Default → Primary*
@@ -2069,20 +2064,6 @@ export interface SideMediaContentSliceMediaRightPrimary {
   cta: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
 
   /**
-   * Layout field in *SideMediaContent → Media Right → Primary*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: Disposition
-   * - **Default Value**: 1x1
-   * - **API ID Path**: side_media_content.media_right.primary.layout
-   * - **Documentation**: https://prismic.io/docs/field#select
-   */
-  layout: prismic.SelectField<
-    "1x1" | "2x1" | "3x1" | "2x2" | "4x2" | "3x3",
-    "filled"
-  >;
-
-  /**
    * Medias field in *SideMediaContent → Media Right → Primary*
    *
    * - **Field Type**: Group
@@ -2395,11 +2376,6 @@ declare module "@prismicio/client" {
       SocialLinksDocumentData,
       SocialLinksDocumentDataSocialLinksItem,
       AllDocumentTypes,
-      AsymmetricalGridSlice,
-      AsymmetricalGridSliceFourItemAsymmetricalPrimaryItemsItem,
-      AsymmetricalGridSliceFourItemAsymmetricalPrimary,
-      AsymmetricalGridSliceVariation,
-      AsymmetricalGridSliceFourItemAsymmetrical,
       CenteredStatementSlice,
       CenteredStatementSliceCenteredTextDefaultPrimary,
       CenteredStatementSliceCenteredCtaPrimary,
@@ -2416,19 +2392,22 @@ declare module "@prismicio/client" {
       FeaturedCardSliceVariation,
       FeaturedCardSliceDefault,
       GalleryOverviewSlice,
-      GalleryOverviewSliceDefaultPrimaryImagesItem,
+      GalleryOverviewSliceDefaultPrimaryItemsItem,
       GalleryOverviewSliceDefaultPrimary,
-      GalleryOverviewSlice5X1PrimaryImagesItem,
+      GalleryOverviewSlice5X1PrimaryItemsItem,
       GalleryOverviewSlice5X1Primary,
-      GalleryOverviewSlice1X1PrimaryImagesItem,
+      GalleryOverviewSlice1X1PrimaryItemsItem,
       GalleryOverviewSlice1X1Primary,
-      GalleryOverviewSlice2X1PrimaryImagesItem,
+      GalleryOverviewSlice2X1PrimaryItemsItem,
       GalleryOverviewSlice2X1Primary,
+      GalleryOverviewSlice2X2PrimaryItemsItem,
+      GalleryOverviewSlice2X2Primary,
       GalleryOverviewSliceVariation,
       GalleryOverviewSliceDefault,
       GalleryOverviewSlice5X1,
       GalleryOverviewSlice1X1,
       GalleryOverviewSlice2X1,
+      GalleryOverviewSlice2X2,
       HeadlineWithSubtextSlice,
       HeadlineWithSubtextSliceDefaultPrimary,
       HeadlineWithSubtextSliceVariation,

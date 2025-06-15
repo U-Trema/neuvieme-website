@@ -11,10 +11,10 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "featured_card": {
+            "gallery_overview": {
               "type": "SharedSlice"
             },
-            "asymmetrical_grid": {
+            "featured_card": {
               "type": "SharedSlice"
             },
             "highlighted_heading_side_content": {

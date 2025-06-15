@@ -100,11 +100,6 @@
 					}
 				]
 			},
-			"layout": {
-				"__TYPE__": "FieldContent",
-				"value": "2x2",
-				"type": "Select"
-			},
 			"cta": {
 				"key": "d7e237f6-b3af-4dc7-80c6-a24c47eae771",
 				"__TYPE__": "LinkContent",
