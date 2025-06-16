@@ -38,6 +38,7 @@ export const createClient = ({
   ...config
 }: CreateClientConfig = {}) => {
   const client = baseCreateClient(repositoryName, {
+    accessToken: process.env.ACCESS_TOKEN,
     routes,
     ...config,
   });
