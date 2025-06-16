@@ -14,7 +14,8 @@ import {fetchNavigation} from "../../libs/utils/fetchNavigation";
 
 
 export default function Home({ page, nav }: any) {
-  console.log({ page, nav })  const ref = useRef<any>(null)
+  console.log({ page, nav })
+  const ref = useRef<any>(null)
   const pref = useRef<any>(null)
 
   useEffect(() => {
