@@ -1,18 +1,15 @@
+import {useEffect, useRef} from "react"
 import {GetStaticPropsContext} from "next"
 import {createClient} from "@/prismicio"
 import {SliceZone} from "@prismicio/react"
 import {components} from "@/slices"
 import {isFilled} from "@prismicio/client"
-import {useEffect, useRef} from "react"
 
 import {Scroll} from "../../libs/ui/Scroll/Scroll"
-import {RealisationSection} from "../../libs/ui/Sections/components/RealisationSection/RealisationSection"
-import {Footer} from "../../libs/ui/Footer/Footer"
 import {fetchNavigation} from "../../libs/utils/fetchNavigation"
 
 
-export default function Home({ page, nav }: any) {
-  console.log({ page, nav })
+export default function Home({ page }: any) {
   const ref = useRef<any>(null)
   const pref = useRef<any>(null)
   const [heroSlice, ...slices] = page.data.slices

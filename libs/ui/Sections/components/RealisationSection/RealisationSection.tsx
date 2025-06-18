@@ -1,5 +1,5 @@
 import {FC, ReactNode} from "react";
-import {PrismicRichText} from "@prismicio/react";
+import {PrismicImage, PrismicRichText} from "@prismicio/react";
 
 import {observerCVA} from "@/styles/global.classes";
 
@@ -40,13 +40,8 @@ export const RealisationSection: FC<Props> = ({ slice }) => {
         <PrismicRichText field={description} components={components}/>
 
         <div className={realisationSectionClasses.imageMobile()}>
-          {medias.map((image, index) => (
-            <img
-              key={index}
-              className='w-full h-full object-cover block'
-              src={image.url}
-              alt={image.alt || "Realisation image"}
-            />
+          {medias.map(({image}, index) => (
+            <PrismicImage className='w-full h-full object-cover block' key={index} field={image} />
           ))}
         </div>
 
@@ -62,13 +57,8 @@ export const RealisationSection: FC<Props> = ({ slice }) => {
           realisationSectionClasses.imageDesktop(),
           observerCVA.root({ isVisible: hasBeenVisible }))
       }>
-        {medias.map((image, index) => (
-          <img
-            key={index}
-            className='w-full h-full object-cover block'
-            src={image.url}
-            alt={image.alt || "Realisation image"}
-          />
+        {medias.map(({image}, index) => (
+          <PrismicImage className='w-full h-full object-cover block' key={index} field={image} />
         ))}
       </div>
     </section>

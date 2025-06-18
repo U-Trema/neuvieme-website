@@ -7,7 +7,7 @@ import {isFilled, PrismicDocument} from "@prismicio/client";
 import {fetchNavigation} from "../../libs/utils/fetchNavigation";
 
 
-export default function About({ nav, page }: any) {
+export default function About({ page }: any) {
 
   return (
     <div>

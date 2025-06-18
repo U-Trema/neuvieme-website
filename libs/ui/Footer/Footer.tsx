@@ -22,8 +22,6 @@ export const Footer: FC<Props> = ({ slice }) => {
   })
 
   const { contact_heading, contact_info, language_heading, languages, social_heading, social_links } = slice?.primary || {};
-  console.log({ social_links })
-
 
   return (
     <footer ref={elementRef} className={combineClasses(footerClasses.root(), observerCVA.root({ isVisible: hasBeenVisible }))}>

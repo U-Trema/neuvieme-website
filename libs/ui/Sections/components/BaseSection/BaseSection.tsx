@@ -37,7 +37,7 @@ export const BaseSection: FC<any> = memo(({ slice }) => {
             </div>
           )}
 
-          {cta?.text && cta?.href && (
+          {cta?.text && (
             <div className="w-fit">
               <Button label={cta.text} href={cta.href} variant='red' />
             </div>
