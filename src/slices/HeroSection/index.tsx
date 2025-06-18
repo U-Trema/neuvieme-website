@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
+import {Hero} from "../../../libs/ui/Hero/Hero";
 
 /**
  * Props for `HeroSection`.
@@ -16,8 +17,7 @@ const HeroSection: FC<HeroSectionProps> = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      Placeholder component for hero_section (variation: {slice.variation})
-      Slices
+      <Hero slice={slice}/>
     </section>
   );
 };

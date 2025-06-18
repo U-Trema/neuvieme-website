@@ -8,7 +8,6 @@ import {fetchNavigation} from "../../libs/utils/fetchNavigation";
 
 
 export default function About({ nav, page }: any) {
-  console.log({ nav, page })
 
   return (
     <div>

@@ -1,45 +1,76 @@
+import {FC, ReactNode} from "react";
+import {PrismicRichText} from "@prismicio/react";
+
+import {observerCVA} from "@/styles/global.classes";
+
 import {footerClasses} from "./footer.classes";
 import {Facebook} from "../icons/Facebook";
 import {useIntersectionObserver} from "../../hooks/useIntersectionObserver";
 import {combineClasses} from "../../utils/combineClasses";
-import {observerCVA} from "@/styles/global.classes";
 
-export const Footer = () => {
+type Props = any
+
+const components = {
+  heading3: ({ children }: { children: ReactNode }) => (<h3 className='mb-4 font-black'>{children}</h3>),
+};
+
+export const Footer: FC<Props> = ({ slice }) => {
   const [ elementRef, hasBeenVisible ] = useIntersectionObserver({
     options: {
-      rootMargin: '80px 0px 0px 0px'
+      rootMargin: '80px 0 0 0'
     }
   })
+
+  const { contact_heading, contact_info, language_heading, languages, social_heading, social_links } = slice?.primary || {};
+  console.log({ social_links })
+
 
   return (
     <footer ref={elementRef} className={combineClasses(footerClasses.root(), observerCVA.root({ isVisible: hasBeenVisible }))}>
       <div className='flex flex-col gap-32 md:gap-64 lg:flex-row'>
         <div>
-          <h3 className='mb-4 font-black'>Nous contacter</h3>
-          <address className='not-italic'>
-            <p>Boulevard du Général de Gaulle, Djibouti</p>
-            <p>+253 77 17 18 21</p>
-            <a href="mailto:contact@neuvieme.dj" className='block'>contact@neuvieme.dj</a>
-          </address>
+          {contact_heading && (
+            <PrismicRichText field={contact_heading} components={components}/>
+          )}
+          {contact_info?.data && (
+            <address className='not-italic'>
+              <p>{contact_info.data.address}</p>
+              <p>{contact_info.data.phone}</p>
+              <a href={`mailto:${contact_info.data.email}`} className='block'>{contact_info.data.email}</a>
+            </address>
+          )}
         </div>
 
         <div>
-          <h3 className='mb-4 font-black'>Nos réseaux</h3>
-          <div className='flex gap-16'>
-            <Facebook />
-            <Facebook />
-            <Facebook />
-          </div>
+          {social_heading && (
+            <PrismicRichText field={social_heading} components={components}/>
+          )}
+          {social_links?.data && (
+            <div className='flex gap-16'>
+              {social_links.data.social_links.map((social, index) => (
+                social.icon === 'Facebook' && <div key={index}><Facebook /></div>
+              ))}
+            </div>
+          )}
         </div>
 
         <div>
-          <h3 className='mb-4 font-black'>Langues</h3>
-          <div className='flex gap-12'>
-            <button className='leading-[150%] cursor-pointer'>FR</button>
-            <button className='leading-[150%] cursor-pointer'>EN</button>
-          </div>
+          {language_heading && (
+            <PrismicRichText field={language_heading} components={components}/>
+          )}
+          {languages?.data && (
+            <div className='flex gap-12'>
+              {languages.data.lang
+                .filter(({active}) => active)
+                .map((lang, index) => (
+                  <button key={index} className='leading-[150%] cursor-pointer'>{lang.label}</button>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </footer>
   )
 }
+
+Footer.displayName = "Footer";
