@@ -5,12 +5,10 @@ import {components} from "@/slices";
 
 import {fetchNavigation} from "../../libs/utils/fetchNavigation";
 
-export default function Audio({ nav, page }: any) {
-  console.log({ nav, page })
+export default function Audio({ page }: any) {
 
   return (
     <div>
-      Audio
       <SliceZone slices={page.data.slices} components={components} />
     </div>
   );

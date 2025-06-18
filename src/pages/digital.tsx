@@ -2,16 +2,14 @@ import {GetStaticPropsContext} from "next";
 import {createClient} from "@/prismicio";
 import {SliceZone} from "@prismicio/react";
 import {components} from "@/slices";
-
-import {fetchNavigation} from "../../libs/utils/fetchNavigation";
 import {isFilled} from "@prismicio/client";
 
-export default function Digital({ nav, page }: any) {
-  console.log({ nav, page })
+import {fetchNavigation} from "../../libs/utils/fetchNavigation";
+
+export default function Digital({ page }: any) {
 
   return (
     <div>
-      Digital
       <SliceZone slices={page.data.slices} components={components} />
     </div>
   );

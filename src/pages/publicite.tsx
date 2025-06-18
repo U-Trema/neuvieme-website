@@ -5,12 +5,10 @@ import {components} from "@/slices";
 
 import {fetchNavigation} from "../../libs/utils/fetchNavigation";
 
-export default function Advertising({ nav, page }: any) {
-  console.log({ nav, page })
+export default function Advertising({ page }: any) {
 
   return (
     <div>
-      Advertising
       <SliceZone slices={page.data.slices} components={components} />
     </div>
   );

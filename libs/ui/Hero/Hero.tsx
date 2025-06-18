@@ -1,16 +1,19 @@
-import React from 'react';
-import {Video} from "../Video/Video";
-import {AnimatedArrow} from "./AnimatedArrow";
+import { FC } from "react";
 
-/**
- * homepage hero
- * @constructor
- */
-export const Hero = () => {
+import { Video } from "../Video/Video";
+import { AnimatedArrow } from "./AnimatedArrow";
+
+const DEFAULT_VIDEO = "/video_placeholder.mp4";
+
+export const Hero: FC<any> = ({ slice }) => {
+  const videoSource = slice?.primary?.video?.url ?? DEFAULT_VIDEO;
+
   return (
-    <header className='relative'>
+    <header className="relative">
       <AnimatedArrow />
-      <Video source='/video_placeholder.mp4' />
+      <Video source={videoSource} />
     </header>
   );
 };
+
+Hero.displayName = "Hero";

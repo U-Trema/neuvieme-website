@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
+import {Footer} from "../../../libs/ui/Footer/Footer";
 
 /**
  * Props for `ContactInfoSocialLanguage`.
@@ -19,8 +20,7 @@ const ContactInfoSocialLanguage: FC<ContactInfoSocialLanguageProps> = ({
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      Placeholder component for contact_info_social_language (variation:{" "}
-      {slice.variation}) Slices
+      <Footer slice={slice} />
     </section>
   );
 };

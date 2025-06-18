@@ -1,63 +1,68 @@
+import {FC, ReactNode} from "react";
+import {PrismicImage, PrismicRichText} from "@prismicio/react";
+
+import {observerCVA} from "@/styles/global.classes";
+
 import {useIntersectionObserver} from "../../../../hooks/useIntersectionObserver";
 import {realisationSectionClasses} from "./realisation.section.classes";
 import {Button} from "../../../Button/Button";
-import {observerCVA} from "@/styles/global.classes";
 import {combineClasses} from "../../../../utils/combineClasses";
-import {FC} from "react";
 
-type Props = {
-  title: string
-  description: string
-  btn: string
-  link: string
-  image: string
-}
 
-export const RealisationSection: FC<Props> = ({ title, description, btn, link, image }) => {
+type Props = any
+
+const components = {
+  heading2: ({ children }: { children: ReactNode }) => (<h2 className={combineClasses(realisationSectionClasses.title(), 'relative z-[2000]')}>{children}</h2>),
+  p: ({ children }: { children: ReactNode }) => (<p className='leading-[150%] md:text-base'>{children}</p>),
+};
+
+export const RealisationSection: FC<Props> = ({ slice }) => {
   const [ elementRef, hasBeenVisible ] = useIntersectionObserver({
     options: {
-      rootMargin: '80px 0px 0px 0px'
+      rootMargin: '80px 0 0 0'
     }
   })
+  const { title, description, medias = [], cta } = slice?.primary || {};
 
   return (
-    <section className={realisationSectionClasses.root()}>
-      <div ref={elementRef} className={combineClasses(observerCVA.root({ isVisible: hasBeenVisible }), realisationSectionClasses.wrapper())}>
-        <h2 className={realisationSectionClasses.title()}>
-          {title}
-        </h2>
-
-        <p className='leading-[150%] md:text-sm'>
-          {description}
-        </p>
-
-        <div className={realisationSectionClasses.imageMobile()}>
-          <img
-            className='w-full h-full object-cover block'
-            src={image}
-            alt="alt"
-          />
-        </div>
-
-        <div className='flex justify-end md:mt-24'>
-          <Button label={btn} href={link} variant='violet' />
-        </div>
-      </div>
-
+    <section className={combineClasses(realisationSectionClasses.root())}>
       <div
+        ref={elementRef}
         className={
           combineClasses(
-            realisationSectionClasses.imageDesktop(),
-            observerCVA.root({ isVisible: hasBeenVisible })
+            observerCVA.root({ isVisible: hasBeenVisible }),
+            realisationSectionClasses.wrapper()
           )
         }
       >
-        <img
-          className='w-full h-full object-cover block'
-          src={image}
-          alt="alt"
-        />
+        <PrismicRichText field={title} components={components}/>
+
+        <PrismicRichText field={description} components={components}/>
+
+        <div className={realisationSectionClasses.imageMobile()}>
+          {medias.map(({image}, index) => (
+            <PrismicImage className='w-full h-full object-cover block' key={index} field={image} />
+          ))}
+        </div>
+
+        {cta?.text && (
+          <div className='flex justify-end md:mt-24'>
+            <Button label={cta.text} href={cta.href} variant='violet' />
+          </div>
+        )}
+      </div>
+
+      <div className={
+        combineClasses(
+          realisationSectionClasses.imageDesktop(),
+          observerCVA.root({ isVisible: hasBeenVisible }))
+      }>
+        {medias.map(({image}, index) => (
+          <PrismicImage className='w-full h-full object-cover block' key={index} field={image} />
+        ))}
       </div>
     </section>
   )
 }
+
+RealisationSection.displayName = "RealisationSection";
