@@ -3,7 +3,7 @@ import {createClient} from "@/prismicio";
 import {SliceZone} from "@prismicio/react";
 import {components} from "@/slices";
 
-import {fetchNavigation} from "../../libs/utils/fetchNavigation";
+import {fetchNavigation} from "../../../libs/utils/fetchNavigation";
 
 export default function Advertising({ page }: any) {
 
@@ -18,6 +18,8 @@ export async function getStaticProps({ previewData }: GetStaticPropsContext) {
   const client = createClient({ previewData });
   const nav = await fetchNavigation(previewData);
   const page = await client.getSingle("advertising_production");
+  const product = client.getByUID('assurances', params!.uid);
+
 
   return {
     props: {

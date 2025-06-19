@@ -67,53 +67,53 @@ interface AboutDocumentData {
 export type AboutDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<AboutDocumentData>, "about", Lang>;
 
-type AdvertisingProductionDocumentDataSlicesSlice =
-  | GalleryOverviewSlice
-  | FeaturedCardSlice
+type AdvertisingProductionsDocumentDataSlicesSlice =
+  | HeadlineWithSubtextSlice
   | HighlightedHeadingSideContentSlice
-  | HeadlineWithSubtextSlice;
+  | FeaturedCardSlice
+  | GalleryOverviewSlice;
 
 /**
- * Content for Advertising Production documents
+ * Content for Advertising Productions documents
  */
-interface AdvertisingProductionDocumentData {
+interface AdvertisingProductionsDocumentData {
   /**
-   * Slice Zone field in *Advertising Production*
+   * Slice Zone field in *Advertising Productions*
    *
    * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
-   * - **API ID Path**: advertising_production.slices[]
+   * - **API ID Path**: advertising_productions.slices[]
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<AdvertisingProductionDocumentDataSlicesSlice> /**
-   * Meta Title field in *Advertising Production*
+  slices: prismic.SliceZone<AdvertisingProductionsDocumentDataSlicesSlice> /**
+   * Meta Title field in *Advertising Productions*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: advertising_production.meta_title
+   * - **API ID Path**: advertising_productions.meta_title
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */;
   meta_title: prismic.KeyTextField;
 
   /**
-   * Meta Description field in *Advertising Production*
+   * Meta Description field in *Advertising Productions*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: advertising_production.meta_description
+   * - **API ID Path**: advertising_productions.meta_description
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   meta_description: prismic.KeyTextField;
 
   /**
-   * Meta Image field in *Advertising Production*
+   * Meta Image field in *Advertising Productions*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: advertising_production.meta_image
+   * - **API ID Path**: advertising_productions.meta_image
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#image
    */
@@ -121,18 +121,18 @@ interface AdvertisingProductionDocumentData {
 }
 
 /**
- * Advertising Production document from Prismic
+ * Advertising Productions document from Prismic
  *
- * - **API ID**: `advertising_production`
- * - **Repeatable**: `false`
+ * - **API ID**: `advertising_productions`
+ * - **Repeatable**: `true`
  * - **Documentation**: https://prismic.io/docs/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type AdvertisingProductionDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
-    Simplify<AdvertisingProductionDocumentData>,
-    "advertising_production",
+export type AdvertisingProductionsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<AdvertisingProductionsDocumentData>,
+    "advertising_productions",
     Lang
   >;
 
@@ -814,7 +814,7 @@ export type SocialLinksDocument<Lang extends string = string> =
 
 export type AllDocumentTypes =
   | AboutDocument
-  | AdvertisingProductionDocument
+  | AdvertisingProductionsDocument
   | AudioRealizationDocument
   | ContactInfoDocument
   | DigitalCreationDocument
@@ -2341,9 +2341,9 @@ declare module "@prismicio/client" {
       AboutDocument,
       AboutDocumentData,
       AboutDocumentDataSlicesSlice,
-      AdvertisingProductionDocument,
-      AdvertisingProductionDocumentData,
-      AdvertisingProductionDocumentDataSlicesSlice,
+      AdvertisingProductionsDocument,
+      AdvertisingProductionsDocumentData,
+      AdvertisingProductionsDocumentDataSlicesSlice,
       AudioRealizationDocument,
       AudioRealizationDocumentData,
       AudioRealizationDocumentDataSlicesSlice,
