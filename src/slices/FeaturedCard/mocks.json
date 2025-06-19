@@ -3,38 +3,22 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"projects": {
-				"__TYPE__": "GroupContentType",
-				"value": [
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"project",
-								{
-									"key": "48407c0c-fc3e-455d-8f99-7f3674914a7f",
-									"__TYPE__": "LinkContent",
-									"value": {
-										"__TYPE__": "DocumentLink",
-										"id": "mock_document_id"
-									}
-								}
-							],
-							[
-								"button_link",
-								{
-									"__TYPE__": "LinkContent",
-									"key": "342f56af-5aef-47d7-ae9e-34242ff4700b",
-									"value": {
-										"__TYPE__": "ExternalLink",
-										"url": "https://slicemachine.dev",
-										"text": "observe"
-									}
-								}
-							]
-						]
-					}
-				]
+			"project": {
+				"key": "7d38af80-16e8-4951-ad7d-827c1935e26f",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "DocumentLink",
+					"id": "mock_document_id"
+				}
+			},
+			"button_link": {
+				"key": "e56cd70b-89ad-4c6f-afdb-0c059d89c7e9",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com",
+					"text": "mix"
+				}
 			}
 		},
 		"items": []

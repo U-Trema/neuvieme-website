@@ -1,10 +1,10 @@
-import {GetStaticPropsContext} from "next";
-import {createClient} from "@/prismicio";
-import {SliceZone} from "@prismicio/react";
-import {components} from "@/slices";
-import {isFilled} from "@prismicio/client";
+import {GetStaticPropsContext} from "next"
+import {createClient} from "@/prismicio"
+import {SliceZone} from "@prismicio/react"
+import {components} from "@/slices"
+import {isFilled} from "@prismicio/client"
 
-import {fetchNavigation} from "../../libs/utils/fetchNavigation";
+import {fetchNavigation} from "../../libs/utils/fetchNavigation"
 
 export default function Digital({ page }: any) {
 
@@ -12,13 +12,13 @@ export default function Digital({ page }: any) {
     <div>
       <SliceZone slices={page.data.slices} components={components} />
     </div>
-  );
+  )
 }
 
 export async function getStaticProps({ previewData }: GetStaticPropsContext) {
-  const client = createClient({ previewData });
-  const nav = await fetchNavigation(previewData);
-  const page = await client.getSingle("digital_creation");
+  const client = createClient({ previewData })
+  const nav = await fetchNavigation(previewData)
+  const page = await client.getSingle("digital_creation")
 
   const enrichedSlices = await Promise.all(
     page.data.slices.map(async (slice) => {
@@ -26,7 +26,7 @@ export async function getStaticProps({ previewData }: GetStaticPropsContext) {
 
         const socialLinks = isFilled.link(slice.primary.social_links)
           ? await client.getByID(slice.primary.social_links.id)
-          : null;
+          : null
 
         return {
           ...slice,
@@ -34,12 +34,12 @@ export async function getStaticProps({ previewData }: GetStaticPropsContext) {
             ...slice.primary,
             social_links: socialLinks
           },
-        };
+        }
       }
 
-      return slice;
+      return slice
     })
-  );
+  )
 
   return {
     props: {
@@ -52,5 +52,5 @@ export async function getStaticProps({ previewData }: GetStaticPropsContext) {
         }
       }
     }
-  };
+  }
 }

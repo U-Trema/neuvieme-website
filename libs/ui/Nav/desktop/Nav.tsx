@@ -1,11 +1,12 @@
-import React, {FC, useEffect, useState} from 'react';
-import {Logo} from "../../icons/Logo";
-import Link from "next/link";
-import {DropDown} from "../../DropDown/DropDown";
-import {useRouter} from "next/router";
-import {Button} from "../../Button/Button";
-import {navClasses} from "./nav.classes";
-import {combineClasses} from "../../../utils/combineClasses";
+import React, {FC, useEffect, useState} from 'react'
+import Link from "next/link"
+import {useRouter} from "next/router"
+
+import {Logo} from "../../icons/Logo"
+import {DropDown} from "../../DropDown/DropDown"
+import {Button} from "../../Button/Button"
+import {navClasses} from "./nav.classes"
+import {combineClasses} from "../../../utils/combineClasses"
 
 type Props = {
   scrollInfo: {
@@ -16,14 +17,14 @@ type Props = {
 
 export const Nav: FC<Props> = ({ scrollInfo }) => {
   const router = useRouter()
-  const [top, setTop] = useState<string>('-100%');
+  const [top, setTop] = useState<string>('-100%')
 
   useEffect(() => {
     if (router.route !== '/') return
     if (scrollInfo.scrollY > 400) return
 
     setTop(`${-(100 - (scrollInfo.scrollY / 4))}%`)
-  }, [scrollInfo.scrollY]);
+  }, [scrollInfo.scrollY])
 
   const list = [
     {
@@ -63,5 +64,5 @@ export const Nav: FC<Props> = ({ scrollInfo }) => {
         </li>
       </ul>
     </nav>
-  );
-};
+  )
+}

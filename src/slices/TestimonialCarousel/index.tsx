@@ -1,12 +1,12 @@
-import { FC } from "react";
-import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { FC } from "react"
+import { Content } from "@prismicio/client"
+import { SliceComponentProps } from "@prismicio/react"
 
 /**
  * Props for `TestimonialCarousel`.
  */
 export type TestimonialCarouselProps =
-  SliceComponentProps<Content.TestimonialCarouselSlice>;
+  SliceComponentProps<Content.TestimonialCarouselSlice>
 
 /**
  * Component for "TestimonialCarousel" Slices.
@@ -20,7 +20,7 @@ const TestimonialCarousel: FC<TestimonialCarouselProps> = ({ slice }) => {
       Placeholder component for testimonial_carousel (variation:{" "}
       {slice.variation}) Slices
     </section>
-  );
-};
+  )
+}
 
-export default TestimonialCarousel;
+export default TestimonialCarousel

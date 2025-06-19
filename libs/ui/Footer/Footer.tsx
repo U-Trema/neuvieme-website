@@ -1,18 +1,18 @@
-import {FC, ReactNode} from "react";
-import {PrismicRichText} from "@prismicio/react";
+import {FC, ReactNode} from "react"
+import {PrismicRichText} from "@prismicio/react"
 
-import {observerCVA} from "@/styles/global.classes";
+import {observerCVA} from "@/styles/global.classes"
 
-import {footerClasses} from "./footer.classes";
-import {Facebook} from "../icons/Facebook";
-import {useIntersectionObserver} from "../../hooks/useIntersectionObserver";
-import {combineClasses} from "../../utils/combineClasses";
+import {footerClasses} from "./footer.classes"
+import {Facebook} from "../icons/Facebook"
+import {useIntersectionObserver} from "../../hooks/useIntersectionObserver"
+import {combineClasses} from "../../utils/combineClasses"
 
 type Props = any
 
 const components = {
   heading3: ({ children }: { children: ReactNode }) => (<h3 className='mb-4 font-black'>{children}</h3>),
-};
+}
 
 export const Footer: FC<Props> = ({ slice }) => {
   const [ elementRef, hasBeenVisible ] = useIntersectionObserver({
@@ -21,7 +21,7 @@ export const Footer: FC<Props> = ({ slice }) => {
     }
   })
 
-  const { contact_heading, contact_info, language_heading, languages, social_heading, social_links } = slice?.primary || {};
+  const { contact_heading, contact_info, language_heading, languages, social_heading, social_links } = slice?.primary || {}
 
   return (
     <footer ref={elementRef} className={combineClasses(footerClasses.root(), observerCVA.root({ isVisible: hasBeenVisible }))}>
@@ -71,4 +71,4 @@ export const Footer: FC<Props> = ({ slice }) => {
   )
 }
 
-Footer.displayName = "Footer";
+Footer.displayName = "Footer"

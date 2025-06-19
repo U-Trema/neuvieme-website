@@ -1,12 +1,12 @@
-import {FC, ReactNode} from "react";
-import {PrismicImage, PrismicRichText} from "@prismicio/react";
+import {FC, ReactNode} from "react"
+import {PrismicImage, PrismicRichText} from "@prismicio/react"
 
-import {observerCVA} from "@/styles/global.classes";
+import {observerCVA} from "@/styles/global.classes"
 
-import {useIntersectionObserver} from "../../../../hooks/useIntersectionObserver";
-import {realisationSectionClasses} from "./realisation.section.classes";
-import {Button} from "../../../Button/Button";
-import {combineClasses} from "../../../../utils/combineClasses";
+import {useIntersectionObserver} from "../../../../hooks/useIntersectionObserver"
+import {realisationSectionClasses} from "./realisation.section.classes"
+import {Button} from "../../../Button/Button"
+import {combineClasses} from "../../../../utils/combineClasses"
 
 
 type Props = any
@@ -14,7 +14,7 @@ type Props = any
 const components = {
   heading2: ({ children }: { children: ReactNode }) => (<h2 className={combineClasses(realisationSectionClasses.title(), 'relative z-[2000]')}>{children}</h2>),
   p: ({ children }: { children: ReactNode }) => (<p className='leading-[150%] md:text-base'>{children}</p>),
-};
+}
 
 export const RealisationSection: FC<Props> = ({ slice }) => {
   const [ elementRef, hasBeenVisible ] = useIntersectionObserver({
@@ -22,7 +22,7 @@ export const RealisationSection: FC<Props> = ({ slice }) => {
       rootMargin: '80px 0 0 0'
     }
   })
-  const { title, description, medias = [], cta } = slice?.primary || {};
+  const { title, description, medias = [], cta } = slice?.primary || {}
 
   return (
     <section className={combineClasses(realisationSectionClasses.root())}>
@@ -65,4 +65,4 @@ export const RealisationSection: FC<Props> = ({ slice }) => {
   )
 }
 
-RealisationSection.displayName = "RealisationSection";
+RealisationSection.displayName = "RealisationSection"

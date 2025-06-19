@@ -1,27 +1,27 @@
-import { ReactNode, memo, FC } from "react";
-import { PrismicRichText } from "@prismicio/react";
+import { ReactNode, memo, FC } from "react"
+import { PrismicRichText } from "@prismicio/react"
 
-import { observerCVA } from "@/styles/global.classes";
+import { observerCVA } from "@/styles/global.classes"
 
-import { baseSectionClasses } from "./base.section.classes";
-import { Button } from "../../../Button/Button";
-import { useIntersectionObserver } from "../../../../hooks/useIntersectionObserver";
-import { combineClasses } from "../../../../utils/combineClasses";
+import { baseSectionClasses } from "./base.section.classes"
+import { Button } from "../../../Button/Button"
+import { useIntersectionObserver } from "../../../../hooks/useIntersectionObserver"
+import { combineClasses } from "../../../../utils/combineClasses"
 
 
 const components = {
   heading2: ({ children }: { children: ReactNode }) => (<h2 className="inline text-3xl font-bold">{children}</h2>),
   strong: ({ children }: { children: ReactNode }) => (<strong className="font-black">{children}</strong>),
-};
+}
 
 export const BaseSection: FC<any> = memo(({ slice }) => {
   const [elementRef, hasBeenVisible] = useIntersectionObserver({
     options: {
       rootMargin: "80px 0 0 0",
     },
-  });
+  })
 
-  const { eyebrow, headline, cta } = slice.primary || {};
+  const { eyebrow, headline, cta } = slice.primary || {}
 
   return (
     <section className={baseSectionClasses.root()}>
@@ -45,7 +45,7 @@ export const BaseSection: FC<any> = memo(({ slice }) => {
         </div>
       </div>
     </section>
-  );
-});
+  )
+})
 
-BaseSection.displayName = "BaseSection";
+BaseSection.displayName = "BaseSection"

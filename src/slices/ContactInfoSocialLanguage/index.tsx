@@ -1,13 +1,14 @@
-import { FC } from "react";
-import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
-import {Footer} from "../../../libs/ui/Footer/Footer";
+import { FC } from "react"
+import { Content } from "@prismicio/client"
+import { SliceComponentProps } from "@prismicio/react"
+
+import {Footer} from "../../../libs/ui/Footer/Footer"
 
 /**
  * Props for `ContactInfoSocialLanguage`.
  */
 export type ContactInfoSocialLanguageProps =
-  SliceComponentProps<Content.ContactInfoSocialLanguageSlice>;
+  SliceComponentProps<Content.ContactInfoSocialLanguageSlice>
 
 /**
  * Component for "ContactInfoSocialLanguage" Slices.
@@ -22,7 +23,7 @@ const ContactInfoSocialLanguage: FC<ContactInfoSocialLanguageProps> = ({
     >
       <Footer slice={slice} />
     </section>
-  );
-};
+  )
+}
 
-export default ContactInfoSocialLanguage;
+export default ContactInfoSocialLanguage

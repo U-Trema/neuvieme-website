@@ -1,10 +1,10 @@
-import React, {createElement, FC, useState} from 'react';
-import {Button} from "../Button/Button";
-import {dropDownClasses} from "./dropdown.classes";
-import {ChevronDown} from "../icons/ChevronDown";
-import Check from "../icons/Check";
-import {useOutsideClick} from "../../hooks/useOutsideClick";
-import Link from "next/link";
+import React, {createElement, FC, useState} from 'react'
+import {Button} from "../Button/Button"
+import {dropDownClasses} from "./dropdown.classes"
+import {ChevronDown} from "../icons/ChevronDown"
+import Check from "../icons/Check"
+import {useOutsideClick} from "../../hooks/useOutsideClick"
+import Link from "next/link"
 
 type Item = {
   as: 'a' | 'p'
@@ -20,12 +20,12 @@ export type Props = {
 }
 
 export const DropDown: FC<Props> = ({ list, label }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => setIsOpen(!isOpen);
+  const [isOpen, setIsOpen] = useState(false)
+  const toggle = () => setIsOpen(!isOpen)
 
   const dropdownRef = useOutsideClick<HTMLDivElement>(() => {
-    setIsOpen(false);
-  });
+    setIsOpen(false)
+  })
 
   return (
     <div ref={dropdownRef} className='relative'>
@@ -81,5 +81,5 @@ export const DropDown: FC<Props> = ({ list, label }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

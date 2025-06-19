@@ -1,16 +1,17 @@
-import React, {useState} from 'react';
-import Link from "next/link";
-import {LogoMobile} from "../../icons/LogoMobile";
-import {navLinkClasses, navMobileClasses} from "./navMobile.classes";
-import {useRouter} from "next/router";
-import {BurgerMenu} from "../../BurgerMenu/BurgerMenu";
+import React, {useState} from 'react'
+import Link from "next/link"
+import {useRouter} from "next/router"
+
+import {LogoMobile} from "../../icons/LogoMobile"
+import {navLinkClasses, navMobileClasses} from "./navMobile.classes"
+import {BurgerMenu} from "../../BurgerMenu/BurgerMenu"
 
 export const NavMobile = () => {
   const router = useRouter()
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    setIsOpen(!isOpen)
     document.body.classList.toggle('overflow-hidden')
   }
 
@@ -36,5 +37,5 @@ export const NavMobile = () => {
         </ul>
       </div>
     </nav>
-  );
-};
+  )
+}

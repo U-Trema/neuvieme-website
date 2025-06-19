@@ -1,11 +1,11 @@
-import { FC } from "react";
-import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { FC } from "react"
+import { Content } from "@prismicio/client"
+import { SliceComponentProps } from "@prismicio/react"
 
 /**
  * Props for `IconTextGrid`.
  */
-export type IconTextGridProps = SliceComponentProps<Content.IconTextGridSlice>;
+export type IconTextGridProps = SliceComponentProps<Content.IconTextGridSlice>
 
 /**
  * Component for "IconTextGrid" Slices.
@@ -19,7 +19,7 @@ const IconTextGrid: FC<IconTextGridProps> = ({ slice }) => {
       Placeholder component for icon_text_grid (variation: {slice.variation})
       Slices
     </section>
-  );
-};
+  )
+}
 
-export default IconTextGrid;
+export default IconTextGrid

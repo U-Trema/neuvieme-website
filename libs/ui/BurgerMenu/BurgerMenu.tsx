@@ -1,6 +1,6 @@
-import React, {FC} from 'react';
-import styles from './burgerMenu.module.css';
-import {combineClasses} from "../../utils/combineClasses";
+import React, {FC} from 'react'
+import styles from './burgerMenu.module.css'
+import {combineClasses} from "../../utils/combineClasses"
 
 type Props = {
   onClick: () => void
@@ -17,5 +17,5 @@ export const BurgerMenu: FC<Props> = ({ onClick, isOpen }) => {
       <span />
       <span />
     </div>
-  );
-};
+  )
+}

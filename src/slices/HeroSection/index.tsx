@@ -1,12 +1,13 @@
-import { FC } from "react";
-import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
-import {Hero} from "../../../libs/ui/Hero/Hero";
+import { FC } from "react"
+import { Content } from "@prismicio/client"
+import { SliceComponentProps } from "@prismicio/react"
+
+import {Hero} from "../../../libs/ui/Hero/Hero"
 
 /**
  * Props for `HeroSection`.
  */
-export type HeroSectionProps = SliceComponentProps<Content.HeroSectionSlice>;
+export type HeroSectionProps = SliceComponentProps<Content.HeroSectionSlice>
 
 /**
  * Component for "HeroSection" Slices.
@@ -19,7 +20,7 @@ const HeroSection: FC<HeroSectionProps> = ({ slice }) => {
     >
       <Hero slice={slice}/>
     </section>
-  );
-};
+  )
+}
 
-export default HeroSection;
+export default HeroSection

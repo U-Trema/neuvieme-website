@@ -1,5 +1,5 @@
-import {ChevronDown} from "../icons/ChevronDown";
-import styles from "./animatedArrow.module.css";
+import {ChevronDown} from "../icons/ChevronDown"
+import styles from "./animatedArrow.module.css"
 
 export const AnimatedArrow = () => {
   return (

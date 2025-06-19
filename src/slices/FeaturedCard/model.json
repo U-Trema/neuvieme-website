@@ -11,35 +11,26 @@
       "imageUrl": "",
       "docURL": "...",
       "primary": {
-        "projects": {
-          "type": "Group",
+        "project": {
+          "type": "Link",
           "config": {
-            "label": "Projects",
-            "repeat": true,
-            "fields": {
-              "project": {
-                "type": "Link",
-                "config": {
-                  "label": "Project",
-                  "select": "document",
-                  "repeat": false,
-                  "customtypes": [
-                    "project"
-                  ]
-                }
-              },
-              "button_link": {
-                "type": "Link",
-                "config": {
-                  "label": "Button Link",
-                  "placeholder": "",
-                  "select": null,
-                  "allowTargetBlank": true,
-                  "allowText": true,
-                  "repeat": false
-                }
-              }
-            }
+            "label": "Project",
+            "select": "document",
+            "repeat": false,
+            "customtypes": [
+              "project"
+            ]
+          }
+        },
+        "button_link": {
+          "type": "Link",
+          "config": {
+            "label": "Button Link",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false
           }
         }
       },

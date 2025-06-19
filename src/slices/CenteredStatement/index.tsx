@@ -1,12 +1,12 @@
-import { FC } from "react";
-import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { FC } from "react"
+import { Content } from "@prismicio/client"
+import { SliceComponentProps } from "@prismicio/react"
 
 /**
  * Props for `CenteredStatement`.
  */
 export type CenteredStatementProps =
-  SliceComponentProps<Content.CenteredStatementSlice>;
+  SliceComponentProps<Content.CenteredStatementSlice>
 
 /**
  * Component for "CenteredStatement" Slices.
@@ -20,7 +20,7 @@ const CenteredStatement: FC<CenteredStatementProps> = ({ slice }) => {
       Placeholder component for centered_statement (variation: {slice.variation}
       ) Slices
     </section>
-  );
-};
+  )
+}
 
-export default CenteredStatement;
+export default CenteredStatement

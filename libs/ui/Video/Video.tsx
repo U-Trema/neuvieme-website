@@ -1,6 +1,7 @@
-import React, {FC} from 'react';
-import styles from './video.module.css';
-import {videoClasses} from "./video.classes";
+import React, {FC} from 'react'
+
+import styles from './video.module.css'
+import {videoClasses} from "./video.classes"
 
 type Props = {
   source: string
@@ -23,5 +24,5 @@ export const Video: FC<Props> = ({ source }) => {
         playsInline
       />
     </div>
-  );
-};
+  )
+}

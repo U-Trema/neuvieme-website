@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 export const LogoMobile = () => {
   return (
@@ -37,5 +37,5 @@ export const LogoMobile = () => {
       </defs>
     </svg>
 
-  );
-};
+  )
+}

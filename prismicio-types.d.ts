@@ -1008,25 +1008,25 @@ export type ContactInfoSocialLanguageSlice = prismic.SharedSlice<
 >;
 
 /**
- * Item in *FeaturedCard → Default → Primary → Projects*
+ * Primary content in *FeaturedCard → Default → Primary*
  */
-export interface FeaturedCardSliceDefaultPrimaryProjectsItem {
+export interface FeaturedCardSliceDefaultPrimary {
   /**
-   * Project field in *FeaturedCard → Default → Primary → Projects*
+   * Project field in *FeaturedCard → Default → Primary*
    *
    * - **Field Type**: Content Relationship
    * - **Placeholder**: *None*
-   * - **API ID Path**: featured_card.default.primary.projects[].project
+   * - **API ID Path**: featured_card.default.primary.project
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   project: prismic.ContentRelationshipField<"project">;
 
   /**
-   * Button Link field in *FeaturedCard → Default → Primary → Projects*
+   * Button Link field in *FeaturedCard → Default → Primary*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: featured_card.default.primary.projects[].button_link
+   * - **API ID Path**: featured_card.default.primary.button_link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   button_link: prismic.LinkField<
@@ -1035,23 +1035,6 @@ export interface FeaturedCardSliceDefaultPrimaryProjectsItem {
     unknown,
     prismic.FieldState,
     never
-  >;
-}
-
-/**
- * Primary content in *FeaturedCard → Default → Primary*
- */
-export interface FeaturedCardSliceDefaultPrimary {
-  /**
-   * Projects field in *FeaturedCard → Default → Primary*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: featured_card.default.primary.projects[]
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  projects: prismic.GroupField<
-    Simplify<FeaturedCardSliceDefaultPrimaryProjectsItem>
   >;
 }
 
@@ -2381,7 +2364,6 @@ declare module "@prismicio/client" {
       ContactInfoSocialLanguageSliceVariation,
       ContactInfoSocialLanguageSliceDefaultGrouped,
       FeaturedCardSlice,
-      FeaturedCardSliceDefaultPrimaryProjectsItem,
       FeaturedCardSliceDefaultPrimary,
       FeaturedCardSliceVariation,
       FeaturedCardSliceDefault,

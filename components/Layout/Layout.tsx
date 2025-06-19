@@ -1,8 +1,9 @@
-import {FC, ReactNode} from "react";
-import {Nav} from "../../libs/ui/Nav/desktop/Nav";
-import {useElementPosition} from "../../libs/hooks/useElementPosition";
-import {useViewportSize} from "@mantine/hooks";
-import {NavMobile} from "../../libs/ui/Nav/mobile/NavMobile";
+import {FC, ReactNode} from "react"
+import {useViewportSize} from "@mantine/hooks"
+
+import {Nav} from "../../libs/ui/Nav/desktop/Nav"
+import {useElementPosition} from "../../libs/hooks/useElementPosition"
+import {NavMobile} from "../../libs/ui/Nav/mobile/NavMobile"
 
 type Props = {
   children: ReactNode

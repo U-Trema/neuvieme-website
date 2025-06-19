@@ -1,8 +1,8 @@
-import React, {createElement, FC, ReactNode} from 'react';
-import Link from "next/link";
-import {buttonClasses} from "./button.classes";
-import {ChevronDown} from "../icons/ChevronDown";
-import {Variants} from "../../types/global.types";
+import React, {createElement, FC, ReactNode} from 'react'
+import Link from "next/link"
+import {buttonClasses} from "./button.classes"
+import {ChevronDown} from "../icons/ChevronDown"
+import {Variants} from "../../types/global.types"
 
 type Props = {
   label: string | ReactNode
@@ -12,7 +12,7 @@ type Props = {
   href?: string
   target?: '_blank' | '_self'
   rightIcon?: ReactNode
-};
+}
 
 export const Button: FC<Props> = ({ label, variant = 'orange', as = 'a', onClick, href = '/', target, rightIcon }) => {
   return (
@@ -33,5 +33,5 @@ export const Button: FC<Props> = ({ label, variant = 'orange', as = 'a', onClick
         rightIcon
       )}
     </div>
-  );
-};
+  )
+}

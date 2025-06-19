@@ -1,9 +1,9 @@
-import React from 'react';
-import {Button} from "../../libs/ui/Button/Button";
-import {DropDown} from "../../libs/ui/DropDown/DropDown";
-
+import React from 'react'
 import { useRouter } from 'next/router'
-import {Scroll} from "../../libs/ui/Scroll/Scroll";
+
+import {Button} from "../../libs/ui/Button/Button"
+import {DropDown} from "../../libs/ui/DropDown/DropDown"
+import {Scroll} from "../../libs/ui/Scroll/Scroll"
 
 const Test = () => {
   const router = useRouter()
@@ -44,7 +44,7 @@ const Test = () => {
       </div>
 
     </div>
-  );
-};
+  )
+}
 
-export default Test;
+export default Test

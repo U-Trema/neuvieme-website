@@ -1,44 +1,44 @@
-import React, {useEffect, useRef, useState} from 'react';
-import styles from './scroll.module.css';
-import {useViewportSize} from "@mantine/hooks";
+import React, {useEffect, useRef, useState} from 'react'
+import styles from './scroll.module.css'
+import {useViewportSize} from "@mantine/hooks"
 
 const SCROLLBAR_HEIGHT = 250
 
 /**
- * need to be wrapped in an element with position: relative;
+ * need to be wrapped in an element with position: relative
  * @constructor
  */
 export const Scroll = () => {
   const { width } = useViewportSize()
   const parentRef = useRef<HTMLDivElement>(null)
-  const [scrollPosition, setScrollPosition] = useState(0);
+  const [scrollPosition, setScrollPosition] = useState(0)
 
   useEffect(() => {
     if (width < 768) return
     if (!parentRef.current) return
-    const canScroll = document.body.offsetHeight > window.innerHeight;
+    const canScroll = document.body.offsetHeight > window.innerHeight
 
     const handleScroll = () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const maxTop = window.innerHeight - SCROLLBAR_HEIGHT;
-      const position = scrollHeight > 0 ? (scrollTop / scrollHeight) * maxTop : 0;
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight
+      const maxTop = window.innerHeight - SCROLLBAR_HEIGHT
+      const position = scrollHeight > 0 ? (scrollTop / scrollHeight) * maxTop : 0
 
-      setScrollPosition(position);
-    };
+      setScrollPosition(position)
+    }
 
     if (canScroll) {
-      window.addEventListener('scroll', handleScroll);
+      window.addEventListener('scroll', handleScroll)
     } else {
       parentRef.current.style.display = 'none'
     }
 
     return () => {
       if (canScroll) {
-        window.removeEventListener('scroll', handleScroll);
+        window.removeEventListener('scroll', handleScroll)
       }
-    };
-  }, [parentRef, width]);
+    }
+  }, [parentRef, width])
 
   return (
     <div
@@ -53,5 +53,5 @@ export const Scroll = () => {
         className={styles.innerScroll}
       />
     </div>
-  );
-};
+  )
+}
