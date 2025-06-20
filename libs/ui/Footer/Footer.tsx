@@ -7,6 +7,11 @@ import {footerClasses} from "./footer.classes"
 import {Facebook} from "../icons/Facebook"
 import {useIntersectionObserver} from "../../hooks/useIntersectionObserver"
 import {combineClasses} from "../../utils/combineClasses"
+import {Instagram} from "../icons/Instagram";
+import {LinkedIn} from "../icons/LinkedIn";
+import {Tiktok} from "../icons/Tiktok";
+import {WhatsApp} from "../icons/WhatsApp";
+import {X} from "../icons/X";
 
 type Props = any
 
@@ -45,9 +50,14 @@ export const Footer: FC<Props> = ({ slice }) => {
           )}
           {social_links?.data && (
             <div className='flex gap-16'>
-              {social_links.data.social_links.map((social, index) => (
-                social.icon === 'Facebook' && <div key={index}><Facebook /></div>
-              ))}
+              {social_links.data.social_links.map((social, index) => {
+                if (social.icon === 'Facebook') return <div key={index}><Facebook /></div>
+                if (social.icon === 'Instagram') return <div key={index}><Instagram /></div>
+                if (social.icon === 'Linkedin') return <div key={index}><LinkedIn /></div>
+                if (social.icon === 'Tiktok') return <div key={index}><Tiktok /></div>
+                if (social.icon === 'X') return <div key={index}><X /></div>
+                if (social.icon === 'Whatsapp') return <div key={index}><WhatsApp /></div>
+              })}
             </div>
           )}
         </div>
