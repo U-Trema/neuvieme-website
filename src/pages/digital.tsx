@@ -1,3 +1,4 @@
+import {useEffect, useRef} from "react";
 import {GetStaticPropsContext} from "next"
 import {createClient} from "@/prismicio"
 import {SliceZone} from "@prismicio/react"
@@ -5,12 +6,47 @@ import {components} from "@/slices"
 import {isFilled} from "@prismicio/client"
 
 import {fetchNavigation} from "../../libs/utils/fetchNavigation"
+import {Scroll} from "../../libs/ui/Scroll/Scroll";
 
 export default function Digital({ page }: any) {
+  const ref = useRef<any>(null)
+  const pref = useRef<any>(null)
+
+  useEffect(() => {
+    const cursorFollower = ref.current
+    if (!ref.current) return
+    if (!pref.current) return
+
+    function updateCursorPosition(e: any) {
+      const x = e.clientX
+      const y = e.clientY
+
+      cursorFollower.style.left = x + 'px'
+      cursorFollower.style.top = y + 'px'
+    }
+
+    pref.current.addEventListener('mousemove', updateCursorPosition)
+
+    pref.current.addEventListener('mouseleave', function() {
+      cursorFollower.style.opacity = '0'
+    })
+
+    pref.current.addEventListener('mouseenter', function() {
+      cursorFollower.style.opacity = '1'
+    })
+
+    return () => {
+      if (pref.current) {
+        return pref.current.removeEventListener('mousemove', updateCursorPosition)
+      }
+    }
+  }, [ref.current])
 
   return (
-    <div>
+    <div ref={pref} style={{ position: 'relative' }}>
+      <Scroll />
       <SliceZone slices={page.data.slices} components={components} />
+      <div className='cursor-follower' ref={ref} />
     </div>
   )
 }

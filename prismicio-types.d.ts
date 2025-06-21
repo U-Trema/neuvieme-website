@@ -462,31 +462,6 @@ export type LanguagesDocument<Lang extends string = string> =
   >;
 
 /**
- * Item in *Navigation → principal*
- */
-export interface NavigationDocumentDataPrincipalItem {
-  /**
-   * Link field in *Navigation → principal*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: Lien
-   * - **API ID Path**: navigation.principal[].link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
-
-  /**
-   * Label field in *Navigation → principal*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: Libellé
-   * - **API ID Path**: navigation.principal[].label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  label: prismic.KeyTextField;
-}
-
-/**
  * Item in *Navigation → Dropdown *
  */
 export interface NavigationDocumentDataDropdownItem {
@@ -512,6 +487,31 @@ export interface NavigationDocumentDataDropdownItem {
 }
 
 /**
+ * Item in *Navigation → principal*
+ */
+export interface NavigationDocumentDataPrincipalItem {
+  /**
+   * Link field in *Navigation → principal*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Lien
+   * - **API ID Path**: navigation.principal[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+
+  /**
+   * Label field in *Navigation → principal*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Libellé
+   * - **API ID Path**: navigation.principal[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+}
+
+/**
  * Content for Navigation documents
  */
 interface NavigationDocumentData {
@@ -527,15 +527,15 @@ interface NavigationDocumentData {
   logo: prismic.ImageField<never>;
 
   /**
-   * principal field in *Navigation*
+   * Dropdown Label field in *Navigation*
    *
-   * - **Field Type**: Group
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: navigation.principal[]
+   * - **API ID Path**: navigation.dropdown_label
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#group
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  principal: prismic.GroupField<Simplify<NavigationDocumentDataPrincipalItem>>;
+  dropdown_label: prismic.KeyTextField;
 
   /**
    * Dropdown  field in *Navigation*
@@ -547,6 +547,17 @@ interface NavigationDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#group
    */
   dropdown: prismic.GroupField<Simplify<NavigationDocumentDataDropdownItem>>;
+
+  /**
+   * principal field in *Navigation*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.principal[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  principal: prismic.GroupField<Simplify<NavigationDocumentDataPrincipalItem>>;
 
   /**
    * Languages field in *Navigation*
@@ -2343,8 +2354,8 @@ declare module "@prismicio/client" {
       LanguagesDocumentDataLangItem,
       NavigationDocument,
       NavigationDocumentData,
-      NavigationDocumentDataPrincipalItem,
       NavigationDocumentDataDropdownItem,
+      NavigationDocumentDataPrincipalItem,
       ProjectDocument,
       ProjectDocumentData,
       ProjectDocumentDataMediasItem,

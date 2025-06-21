@@ -9,15 +9,18 @@ import {navClasses} from "./nav.classes"
 import {combineClasses} from "../../../utils/combineClasses"
 
 type Props = {
+  nav: any
   scrollInfo: {
     scrollY: number
     scrollX: number
   }
 }
 
-export const Nav: FC<Props> = ({ scrollInfo }) => {
+export const Nav: FC<Props> = ({ nav, scrollInfo }) => {
   const router = useRouter()
   const [top, setTop] = useState<string>('-100%')
+
+  const { languages, principal, dropdown, dropdown_label } = nav || {}
 
   useEffect(() => {
     if (router.route !== '/') return
@@ -26,26 +29,12 @@ export const Nav: FC<Props> = ({ scrollInfo }) => {
     setTop(`${-(100 - (scrollInfo.scrollY / 4))}%`)
   }, [scrollInfo.scrollY])
 
-  const list = [
-    {
-      as: 'a' as const,
-      label: 'Digital',
-      href: '#',
-      active: false,
-    },
-    {
-      as: 'a' as const,
-      label: 'Publicité',
-      href: '/test',
-      active: router.route === '/test'
-    },
-    {
-      as: 'p' as const,
-      label: 'Production audiovisuelle',
-      onClick: () => console.log('test'),
-      active: false
-    },
-  ]
+  const list = dropdown.map(({link, label}) => ({
+    as: 'a' as const,
+    label,
+    href: link?.url,
+    active: router.asPath === link?.url
+  }))
 
   const style = router.route === '/' ? { '--before-top': top } as any : null
 
@@ -54,13 +43,16 @@ export const Nav: FC<Props> = ({ scrollInfo }) => {
       <Link href="/" className='table'><Logo /></Link>
 
       <ul className='items-center flex gap-32'>
-        <li><DropDown list={list} label='Réalisation' /></li>
+        <li><DropDown list={list} label={dropdown_label} /></li>
 
-        <li><Button label='À propos' variant='orange' as='a' href='/' /></li>
+        { principal.map(({label, link}, index) => (
+          <li key={index}><Button label={label} variant='orange' as='a' href={link?.url || '#'} /></li>
+        ))}
 
         <li className='flex gap-4'>
-          <Button label='FR' variant='yellowDark' as='button' onClick={() => console.log('change lang')} />
-          <Button label='EN' variant='yellowDark' as='button' onClick={() => console.log('change lang')} />
+          { languages.map((lang, index) => (
+            <Button key={index} label={lang.label} variant='yellowDark' as='button' onClick={() => console.log('change lang', lang.code)} />
+          ))}
         </li>
       </ul>
     </nav>

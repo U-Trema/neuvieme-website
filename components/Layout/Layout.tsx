@@ -18,8 +18,8 @@ export const Layout: FC<Props> = ({ children, nav }) => {
   return (
     <main ref={elementRef}>
       {width >= 768
-        ? <Nav scrollInfo={scrollInfo} />
-        : <NavMobile />
+        ? <Nav scrollInfo={scrollInfo} nav={nav} />
+        : <NavMobile nav={nav} />
       }
       {children}
     </main>

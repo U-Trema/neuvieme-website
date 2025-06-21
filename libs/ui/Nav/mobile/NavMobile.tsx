@@ -6,7 +6,8 @@ import {LogoMobile} from "../../icons/LogoMobile"
 import {navLinkClasses, navMobileClasses} from "./navMobile.classes"
 import {BurgerMenu} from "../../BurgerMenu/BurgerMenu"
 
-export const NavMobile = () => {
+
+export const NavMobile = ({ nav }: any) => {
   const router = useRouter()
   const [isOpen, setIsOpen] = useState(false)
 
