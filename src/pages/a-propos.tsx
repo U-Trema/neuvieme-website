@@ -1,15 +1,15 @@
+import React, {useEffect, useRef} from "react";
 import {GetStaticPropsContext} from "next"
 import {createClient} from "@/prismicio"
 import {SliceZone} from "@prismicio/react"
 import {components} from "@/slices"
-import {isFilled, PrismicDocument} from "@prismicio/client"
 
 import {fetchNavigation} from "../../libs/utils/fetchNavigation"
-import {useEffect, useRef} from "react";
 import {Scroll} from "../../libs/ui/Scroll/Scroll";
+import {enrichSlices} from "../../libs/utils/enrichSlices";
 
 
-export default function About({ page }: any) {
+export default function About({page}: any) {
   const ref = useRef<any>(null)
   const pref = useRef<any>(null)
 
@@ -56,33 +56,7 @@ export async function getStaticProps({ previewData }: GetStaticPropsContext) {
   const client = createClient({ previewData })
   const nav = await fetchNavigation(previewData)
   const page = await client.getSingle("about")
-
-  const enrichedSlices = await Promise.all(
-    page.data.slices.map(async (slice) => {
-      if (slice.slice_type === "side_media_content" && slice.variation === 'contactInfoMediaRight') {
-
-        const contactInfo = isFilled.link(slice.primary.contact_info)
-          ? await client.getByID(slice.primary.contact_info.id)
-          : null
-
-        const socialLinks = isFilled.link(slice.primary.social_links)
-          ? await client.getByID(slice.primary.social_links.id)
-          : null
-
-        return {
-          ...slice,
-          primary: {
-            ...slice.primary,
-            contact_info: contactInfo,
-            social_links: socialLinks
-
-          },
-        }
-      }
-
-      return slice
-    })
-  )
+  const enrichedSlices = await enrichSlices(page.data.slices, previewData)
 
   return {
     props: {

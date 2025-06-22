@@ -1,11 +1,12 @@
+import React, {useEffect, useRef} from "react";
 import {GetStaticPropsContext} from "next"
 import {createClient} from "@/prismicio"
 import {SliceZone} from "@prismicio/react"
 import {components} from "@/slices"
 
 import {fetchNavigation} from "../../libs/utils/fetchNavigation"
-import {useEffect, useRef} from "react";
 import {Scroll} from "../../libs/ui/Scroll/Scroll";
+import {enrichSlices} from "../../libs/utils/enrichSlices";
 
 export default function Audio({ page }: any) {
   const ref = useRef<any>(null)
@@ -54,11 +55,18 @@ export async function getStaticProps({ previewData }: GetStaticPropsContext) {
   const client = createClient({ previewData })
   const nav = await fetchNavigation(previewData)
   const page = await client.getSingle("audio_realization")
+  const enrichedSlices = await enrichSlices(page.data.slices, previewData)
 
   return {
     props: {
       nav,
-      page,
+      page: {
+        ...page,
+        data: {
+          ...page.data,
+          slices: enrichedSlices
+        }
+      }
     }
   }
 }

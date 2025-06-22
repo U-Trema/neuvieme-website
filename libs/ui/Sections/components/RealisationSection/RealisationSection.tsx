@@ -7,6 +7,12 @@ import {useIntersectionObserver} from "../../../../hooks/useIntersectionObserver
 import {realisationSectionClasses} from "./realisation.section.classes"
 import {Button} from "../../../Button/Button"
 import {combineClasses} from "../../../../utils/combineClasses"
+import {Facebook} from "../../../icons/Facebook";
+import {Instagram} from "../../../icons/Instagram";
+import {LinkedIn} from "../../../icons/LinkedIn";
+import {Tiktok} from "../../../icons/Tiktok";
+import {X} from "../../../icons/X";
+import {WhatsApp} from "../../../icons/WhatsApp";
 
 
 type Props = any
@@ -22,7 +28,7 @@ export const RealisationSection: FC<Props> = ({ slice }) => {
       rootMargin: '80px 0 0 0'
     }
   })
-  const { title, description, medias = [], cta } = slice?.primary || {}
+  const {title, description, medias = [], cta, contact_info, social_links, social_heading} = slice?.primary || {}
 
   return (
     <section className={combineClasses(realisationSectionClasses.root())}>
@@ -38,6 +44,32 @@ export const RealisationSection: FC<Props> = ({ slice }) => {
         <PrismicRichText field={title} components={components}/>
 
         <PrismicRichText field={description} components={components}/>
+
+        {contact_info?.data && (
+          <address className='not-italic'>
+            <p>{contact_info.data.address}</p>
+            <p>{contact_info.data.phone}</p>
+            <a href={`mailto:${contact_info.data.email}`} className='block'>{contact_info.data.email}</a>
+          </address>
+        )}
+
+        <div>
+          {social_heading && (
+            <PrismicRichText field={social_heading} components={components}/>
+          )}
+          {social_links?.data && (
+            <div className='flex gap-16'>
+              {social_links.data.social_links.map((social, index) => {
+                if (social.icon === 'Facebook') return <div key={index}><Facebook /></div>
+                if (social.icon === 'Instagram') return <div key={index}><Instagram /></div>
+                if (social.icon === 'Linkedin') return <div key={index}><LinkedIn /></div>
+                if (social.icon === 'Tiktok') return <div key={index}><Tiktok /></div>
+                if (social.icon === 'X') return <div key={index}><X /></div>
+                if (social.icon === 'Whatsapp') return <div key={index}><WhatsApp /></div>
+              })}
+            </div>
+          )}
+        </div>
 
         <div className={realisationSectionClasses.imageMobile()}>
           {medias.map(({image}: { image: any }, index: any) => (

@@ -3,10 +3,9 @@ import {PrismicImage, PrismicRichText} from "@prismicio/react"
 
 import {observerCVA} from "@/styles/global.classes"
 
-import {useIntersectionObserver} from "../../../../hooks/useIntersectionObserver"
 import {featuredCardSectionClasses} from "./featured-card.section.classes"
+import {useIntersectionObserver} from "../../../../hooks/useIntersectionObserver"
 import {combineClasses} from "../../../../utils/combineClasses"
-import {realisationSectionClasses} from "../RealisationSection/realisation.section.classes"
 import {Button} from "../../../Button/Button"
 
 
@@ -24,9 +23,6 @@ export const FeaturedCardSection: FC<Props> = ({ slice }) => {
     }
   })
   const { project, button_link } = slice?.primary || {}
-  console.log({ slice })
-  const medias = [project.data.project_main_image].concat(...project.data.medias.map(({image}) => image))
-  console.log({ medias })
 
   return (
     <section className={combineClasses(featuredCardSectionClasses.root())}>
@@ -39,15 +35,6 @@ export const FeaturedCardSection: FC<Props> = ({ slice }) => {
           )
         }
       >
-        <div className={
-          combineClasses(
-            realisationSectionClasses.imageDesktop(),
-            observerCVA.root({ isVisible: hasBeenVisible }))
-        }>
-          {medias.map((image, index) => (
-            <PrismicImage className='w-full h-full object-cover block' key={index} field={image} />
-          ))}
-        </div>
         <div>
           <PrismicImage className='w-full h-full object-cover block' field={project.data.project_main_image} />
           <PrismicRichText field={project.data.project_title} components={components}/>

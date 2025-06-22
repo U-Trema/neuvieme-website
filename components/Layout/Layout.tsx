@@ -13,7 +13,6 @@ type Props = {
 export const Layout: FC<Props> = ({ children, nav }) => {
   const { width } = useViewportSize()
   const { elementRef, scrollInfo } = useElementPosition(width)
-  console.log({ nav })
 
   return (
     <main ref={elementRef}>

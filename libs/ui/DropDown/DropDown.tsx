@@ -26,7 +26,6 @@ export const DropDown: FC<Props> = ({ list, label }) => {
   const dropdownRef = useOutsideClick<HTMLDivElement>(() => {
     setIsOpen(false)
   })
-  console.log({ list })
 
   return (
     <div ref={dropdownRef} className='relative'>

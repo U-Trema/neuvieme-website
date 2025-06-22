@@ -1,17 +1,17 @@
+import React, {useEffect, useRef} from "react"
 import {GetStaticPropsContext} from "next"
 import {createClient} from "@/prismicio"
 import {SliceZone} from "@prismicio/react"
 import {components} from "@/slices"
-import {isFilled} from "@prismicio/client"
 
 import {fetchNavigation} from "../../../libs/utils/fetchNavigation"
-import {useEffect, useRef} from "react"
 import {Scroll} from "../../../libs/ui/Scroll/Scroll"
+import {enrichSlices} from "../../../libs/utils/enrichSlices";
 
 
 type Params = { uid: string }
 
-export default function Advertising({ page }: any) {
+export default function Advertising({page}: any) {
   const ref = useRef<any>(null)
   const pref = useRef<any>(null)
 
@@ -56,25 +56,7 @@ export async function getStaticProps({ params, previewData }: GetStaticPropsCont
   const client = createClient({ previewData })
   const nav = await fetchNavigation(previewData)
   const page = await client.getByUID('advertising_productions', params!.uid)
-  const enrichedSlices = await Promise.all(
-    page.data.slices.map(async (slice) => {
-      if (slice.slice_type === "highlighted_heading_side_content" || slice.slice_type === "featured_card") {
-        const project = isFilled.link(slice.primary.project)
-          ? await client.getByID(slice.primary.project.id)
-          : null
-
-        return {
-          ...slice,
-          primary: {
-            ...slice.primary,
-            project
-          },
-        }
-      }
-
-      return slice
-    })
-  )
+  const enrichedSlices = await enrichSlices(page.data.slices, previewData)
 
   return {
     props: {
@@ -93,7 +75,7 @@ export async function getStaticProps({ params, previewData }: GetStaticPropsCont
 export async function getStaticPaths() {
   const client = createClient()
   const pages = await client.getAllByType('advertising_productions')
-  const paths = pages.map((page) => ({params: { uid: page.uid }}))
+  const paths = pages.map(({uid}) => ({params: {uid}}))
 
   return {paths, fallback: false}
 }

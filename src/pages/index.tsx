@@ -1,12 +1,12 @@
-import {useEffect, useRef} from "react"
+import React, {useEffect, useRef} from "react"
 import {GetStaticPropsContext} from "next"
 import {createClient} from "@/prismicio"
 import {SliceZone} from "@prismicio/react"
 import {components} from "@/slices"
-import {isFilled} from "@prismicio/client"
 
 import {Scroll} from "../../libs/ui/Scroll/Scroll"
 import {fetchNavigation} from "../../libs/utils/fetchNavigation"
+import {enrichSlices} from "../../libs/utils/enrichSlices";
 
 export default function Home({ page }: any) {
   const ref = useRef<any>(null)
@@ -60,36 +60,7 @@ export async function getStaticProps({ previewData }: GetStaticPropsContext) {
   const client = createClient({ previewData })
   const nav = await fetchNavigation(previewData)
   const page = await client.getSingle("home")
-
-  const enrichedSlices = await Promise.all(
-    page.data.slices.map(async (slice) => {
-      if (slice.slice_type === "contact_info_social_language") {
-        const contactInfo = isFilled.link(slice.primary.contact_info)
-          ? await client.getByID(slice.primary.contact_info.id)
-          : null
-
-        const languages = isFilled.link(slice.primary.languages)
-          ? await client.getByID(slice.primary.languages.id)
-          : null
-
-        const socialLinks = isFilled.link(slice.primary.social_links)
-          ? await client.getByID(slice.primary.social_links.id)
-          : null
-
-        return {
-          ...slice,
-          primary: {
-            ...slice.primary,
-            contact_info: contactInfo,
-            languages: languages,
-            social_links: socialLinks,
-          },
-        }
-      }
-
-      return slice
-    })
-  )
+  const enrichedSlices = await enrichSlices(page.data.slices, previewData)
 
   return {
     props: {
