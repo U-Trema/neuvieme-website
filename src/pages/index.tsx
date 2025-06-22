@@ -8,7 +8,6 @@ import {isFilled} from "@prismicio/client"
 import {Scroll} from "../../libs/ui/Scroll/Scroll"
 import {fetchNavigation} from "../../libs/utils/fetchNavigation"
 
-
 export default function Home({ page }: any) {
   const ref = useRef<any>(null)
   const pref = useRef<any>(null)
