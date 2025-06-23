@@ -7,6 +7,7 @@ import {components} from "@/slices"
 import {fetchNavigation} from "../../../libs/utils/fetchNavigation"
 import {Scroll} from "../../../libs/ui/Scroll/Scroll"
 import {enrichSlices} from "../../../libs/utils/enrichSlices";
+import {nextToPrismicLocale} from "../../../libs/utils/locales";
 
 
 type Params = { uid: string }
@@ -52,10 +53,11 @@ export default function Advertising({page}: any) {
   )
 }
 
-export async function getStaticProps({ params, previewData }: GetStaticPropsContext<Params>) {
-  const client = createClient({ previewData })
-  const nav = await fetchNavigation(previewData)
-  const page = await client.getByUID('advertising_productions', params!.uid)
+export async function getStaticProps({locale, params, previewData}: GetStaticPropsContext<Params>) {
+  const client = createClient({previewData})
+  const prismicLocale = nextToPrismicLocale(locale!)
+  const nav = await fetchNavigation({locale: prismicLocale, previewData})
+  const page = await client.getByUID('advertising_productions', params!.uid, {lang: prismicLocale})
   const enrichedSlices = await enrichSlices(page.data.slices, previewData)
 
   return {
@@ -74,8 +76,8 @@ export async function getStaticProps({ params, previewData }: GetStaticPropsCont
 
 export async function getStaticPaths() {
   const client = createClient()
-  const pages = await client.getAllByType('advertising_productions')
-  const paths = pages.map(({uid}) => ({params: {uid}}))
+  const pages = await client.getAllByType('advertising_productions', {lang: '*'})
+  const paths = pages.map(({uid, lang}) => ({params: {uid}, locale: lang}))
 
   return {paths, fallback: false}
 }

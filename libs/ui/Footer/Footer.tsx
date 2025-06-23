@@ -5,8 +5,8 @@ import {observerCVA} from "@/styles/global.classes"
 
 import {footerClasses} from "./footer.classes"
 import {Facebook} from "../icons/Facebook"
+import {LanguageSwitcher} from "../../../components/LanguageSwitcher/LanguageSwitcher";
 import {useIntersectionObserver} from "../../hooks/useIntersectionObserver"
-import {combineClasses} from "../../utils/combineClasses"
 import {Instagram} from "../icons/Instagram";
 import {LinkedIn} from "../icons/LinkedIn";
 import {Tiktok} from "../icons/Tiktok";
@@ -67,18 +67,8 @@ export const Footer: FC<Props> = ({ slice }) => {
           </div>
 
           <div>
-            {language_heading && (
-              <PrismicRichText field={language_heading} components={components}/>
-            )}
-            {languages?.data && (
-              <div className='flex gap-12'>
-                {languages.data.lang
-                  .filter(({active}: { active: any }) => active)
-                  .map((lang: any, index: any) => (
-                    <button key={index} className='leading-[150%] cursor-pointer'>{lang.label}</button>
-                ))}
-              </div>
-            )}
+            {language_heading && <PrismicRichText field={language_heading} components={components}/>}
+            {languages?.data && <LanguageSwitcher languages={languages.data.lang} />}
           </div>
         </div>
       </div>

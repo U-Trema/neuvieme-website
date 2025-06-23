@@ -7,6 +7,7 @@ import {DropDown} from "../../DropDown/DropDown"
 import {Button} from "../../Button/Button"
 import {navClasses} from "./nav.classes"
 import {combineClasses} from "../../../utils/combineClasses"
+import {LanguageSwitcher} from "../../../../components/LanguageSwitcher/LanguageSwitcher";
 
 type Props = {
   nav: any
@@ -20,7 +21,7 @@ export const Nav: FC<Props> = ({ nav, scrollInfo }) => {
   const router = useRouter()
   const [top, setTop] = useState<string>('-100%')
 
-  const { languages, principal, dropdown, dropdown_label } = nav || {}
+  const {languages = [], principal = [], dropdown = [], dropdown_label} = nav || {}
 
   useEffect(() => {
     if (router.route !== '/') return
@@ -45,14 +46,12 @@ export const Nav: FC<Props> = ({ nav, scrollInfo }) => {
       <ul className='items-center flex gap-32'>
         <li><DropDown list={list} label={dropdown_label} /></li>
 
-        { principal.map(({label, link}, index) => (
+        {principal.map(({label, link}, index) => (
           <li key={index}><Button label={label} variant='orange' as='a' href={link?.url || '#'} /></li>
         ))}
 
         <li className='flex gap-4'>
-          { languages.map((lang, index) => (
-            <Button key={index} label={lang.label} variant='yellowDark' as='button' onClick={() => console.log('change lang', lang.code)} />
-          ))}
+          {languages && <LanguageSwitcher languages={languages} isUiButton={true}/>}
         </li>
       </ul>
     </nav>

@@ -54,6 +54,12 @@ const rootCompoundClasses = [
   }
 ] as const
 
+const isActiveCompoundClasses = rootCompoundClasses.map(compoundClass => ({
+  ...compoundClass,
+  isActive: true,
+  class: compoundClass.class.replace('active:', '')
+}))
+
 export const buttonClasses = {
   root: cva([`relative block rounded-[198px] z-1 m-px px-12 py-9 bg-dark-primary text-text-primary cursor-pointer ease-in-out select-none items-center`], {
     variants: {
@@ -68,9 +74,16 @@ export const buttonClasses = {
       withRightIcon: {
         true: 'flex gap-[4px]',
         false: ''
-      }
+      },
+      isActive: {
+        true: '',
+        false: '',
+      },
     },
-    compoundVariants: [...rootCompoundClasses]
+    compoundVariants: [
+      ...rootCompoundClasses,
+      ...isActiveCompoundClasses
+    ]
   }),
   container: cva([`relative block rounded-[200px] overflow-hidden shadow-transparent`], {
     variants: {

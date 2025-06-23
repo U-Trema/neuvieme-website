@@ -1,4 +1,4 @@
-import React, {createElement, FC, useState} from 'react'
+import React, {FC, useState} from 'react'
 import {Button} from "../Button/Button"
 import {dropDownClasses} from "./dropdown.classes"
 import {ChevronDown} from "../icons/ChevronDown"

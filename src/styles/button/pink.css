@@ -6,24 +6,28 @@
   --color-btn-pink-focus: var(--btn-pink-focus);
 }
 
+.bg-btn-pink-focus {
+  background-color: var(--btn-pink-focus);
+}
+
 .conic-pink-btn {
   --angle: 92.7deg;
 
   border: none;
   background: linear-gradient(
-      var(--angle),
-      rgba(151, 36, 124, 0.12) 0.64%,
-      rgba(151, 36, 124, 0) 25.12%,
-      rgba(151, 36, 124, 0.8) 52.25%,
-      rgba(151, 36, 124, 0) 80.45%,
-      rgba(151, 36, 124, 0.8) 101.2%
+    var(--angle),
+    rgba(151, 36, 124, 0.12) 0.64%,
+    rgba(151, 36, 124, 0) 25.12%,
+    rgba(151, 36, 124, 0.8) 52.25%,
+    rgba(151, 36, 124, 0) 80.45%,
+    rgba(151, 36, 124, 0.8) 101.2%
   );
 }
 
 .trigger-animate-pink-button:has(:hover) {
   animation:
-      rotate-angle 2s cubic-bezier(.2, .8, .8, .2) both,
-      shadowPinkTransition .5s ease-in-out both;
+    rotate-angle 2s cubic-bezier(.2, .8, .8, .2) both,
+    shadowPinkTransition .5s ease-in-out both;
 }
 
 @keyframes shadowPinkTransition {

@@ -7,6 +7,7 @@ import {components} from "@/slices"
 import {fetchNavigation} from "../../libs/utils/fetchNavigation"
 import {Scroll} from "../../libs/ui/Scroll/Scroll";
 import {enrichSlices} from "../../libs/utils/enrichSlices";
+import {nextToPrismicLocale} from "../../libs/utils/locales";
 
 
 export default function About({page}: any) {
@@ -52,10 +53,11 @@ export default function About({page}: any) {
   )
 }
 
-export async function getStaticProps({ previewData }: GetStaticPropsContext) {
-  const client = createClient({ previewData })
-  const nav = await fetchNavigation(previewData)
-  const page = await client.getSingle("about")
+export async function getStaticProps({locale, previewData}: GetStaticPropsContext) {
+  const client = createClient({previewData})
+  const prismicLocale = nextToPrismicLocale(locale!)
+  const nav = await fetchNavigation({locale: prismicLocale, previewData})
+  const page = await client.getSingle('about', {lang: prismicLocale})
   const enrichedSlices = await enrichSlices(page.data.slices, previewData)
 
   return {

@@ -7,6 +7,7 @@ import {components} from "@/slices"
 import {Scroll} from "../../libs/ui/Scroll/Scroll"
 import {fetchNavigation} from "../../libs/utils/fetchNavigation"
 import {enrichSlices} from "../../libs/utils/enrichSlices";
+import {nextToPrismicLocale} from "../../libs/utils/locales";
 
 export default function Home({ page }: any) {
   const ref = useRef<any>(null)
@@ -37,9 +38,7 @@ export default function Home({ page }: any) {
     })
 
     return () => {
-      if (pref.current) {
-        return pref.current.removeEventListener('mousemove', updateCursorPosition)
-      }
+      if (pref.current) return pref.current.removeEventListener('mousemove', updateCursorPosition)
     }
   }, [ref.current])
 
@@ -56,20 +55,35 @@ export default function Home({ page }: any) {
   )
 }
 
-export async function getStaticProps({ previewData }: GetStaticPropsContext) {
-  const client = createClient({ previewData })
-  const nav = await fetchNavigation(previewData)
-  const page = await client.getSingle("home")
-  const enrichedSlices = await enrichSlices(page.data.slices, previewData)
+export async function getStaticProps({locale, previewData}: GetStaticPropsContext) {
+  try {
+    const client = createClient({previewData})
+    const prismicLocale = nextToPrismicLocale(locale!)
+    const nav = await fetchNavigation({locale: prismicLocale, previewData})
+    const page = await client.getSingle('home', {lang: prismicLocale})
+    const enrichedSlices = await enrichSlices(page.data.slices, previewData)
 
-  return {
-    props: {
-      nav,
-      page: {
-        ...page,
-        data: {
-          ...page.data,
-          slices: enrichedSlices
+    return {
+      props: {
+        nav,
+        page: {
+          ...page,
+          data: {
+            ...page.data,
+            slices: enrichedSlices
+          }
+        }
+      }
+    }
+  } catch (error) {
+    console.error('Error fetching document:', error)
+    return {
+      props: {
+        nav :{},
+        page: {
+          data: {
+            slices: []
+          }
         }
       }
     }

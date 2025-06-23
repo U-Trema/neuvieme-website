@@ -10,11 +10,11 @@ export async function enrichSlices(
   slices: Slice[],
   previewData?: any
 ): Promise<Slice[]> {
-  const client = createClient({ previewData })
+  const client = createClient({previewData})
 
   return await Promise.all(
     slices.map(async (slice) => {
-      const newSlice = { ...slice }
+      const newSlice = {...slice}
 
       await Promise.all(
         singleLinks.map(async (field) => {

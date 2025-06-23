@@ -6,24 +6,28 @@
   --color-btn-yellow-dark-focus: var(--btn-yellow-dark-focus);
 }
 
+.bg-btn-yellow-dark-focus {
+  background-color: var(--btn-yellow-dark-focus);
+}
+
 .conic-yellow-dark-btn {
   --angle: 92.7deg;
 
   border: none;
   background: linear-gradient(
-      var(--angle),
-      rgba(241, 154, 29, 0.12) 0.64%,
-      rgba(241, 154, 29, 0) 25.12%,
-      rgba(241, 154, 29, 0.8) 52.25%,
-      rgba(241, 154, 29, 0) 80.45%,
-      rgba(241, 154, 29, 0.8) 101.2%
+    var(--angle),
+    rgba(241, 154, 29, 0.12) 0.64%,
+    rgba(241, 154, 29, 0) 25.12%,
+    rgba(241, 154, 29, 0.8) 52.25%,
+    rgba(241, 154, 29, 0) 80.45%,
+    rgba(241, 154, 29, 0.8) 101.2%
   );
 }
 
 .trigger-animate-yellow-dark-button:has(:hover) {
   animation:
-      rotate-angle 2s cubic-bezier(.2, .8, .8, .2) both,
-      shadowYellowDarkTransition .5s ease-in-out both;
+    rotate-angle 2s cubic-bezier(.2, .8, .8, .2) both,
+    shadowYellowDarkTransition .5s ease-in-out both;
 }
 
 @keyframes shadowYellowDarkTransition {
