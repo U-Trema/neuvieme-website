@@ -52,6 +52,22 @@
 										"id": "mock_document_id"
 									}
 								}
+							],
+							[
+								"video",
+								{
+									"__TYPE__": "LinkContent",
+									"key": "e4362ab9-818c-4337-8dfe-3202a143881b",
+									"value": {
+										"__TYPE__": "FileLink",
+										"id": "mock_Media_link",
+										"kind": "file",
+										"name": "mock_name",
+										"url": "https://source.unsplash.com/daily",
+										"size": "0",
+										"text": "cause"
+									}
+								}
 							]
 						]
 					}

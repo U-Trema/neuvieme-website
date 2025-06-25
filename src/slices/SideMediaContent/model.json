@@ -62,9 +62,18 @@
                 }
               },
               "video": {
-                "type": "Embed",
+                "type": "Link",
                 "config": {
                   "label": "Video",
+                  "placeholder": "",
+                  "select": "media",
+                  "allowText": true
+                }
+              },
+              "embed": {
+                "type": "Embed",
+                "config": {
+                  "label": "Embed",
                   "placeholder": ""
                 }
               }
@@ -137,9 +146,18 @@
                 }
               },
               "video": {
+                "type": "Link",
+                "config": {
+                  "label": "Vidéo",
+                  "placeholder": "",
+                  "select": "media",
+                  "allowText": true
+                }
+              },
+              "embed": {
                 "type": "Embed",
                 "config": {
-                  "label": "video",
+                  "label": "Embed",
                   "placeholder": ""
                 }
               }
@@ -203,9 +221,18 @@
                 }
               },
               "video": {
+                "type": "Link",
+                "config": {
+                  "label": "Vidéo",
+                  "placeholder": "",
+                  "select": "media",
+                  "allowText": true
+                }
+              },
+              "embed": {
                 "type": "Embed",
                 "config": {
-                  "label": "video",
+                  "label": "Embed",
                   "placeholder": ""
                 }
               }

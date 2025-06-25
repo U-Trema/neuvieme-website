@@ -602,14 +602,24 @@ export interface ProjectDocumentDataMediasItem {
   image: prismic.ImageField<never>;
 
   /**
-   * Video field in *Project → Medias*
+   * Vidéo field in *Project → Medias*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.medias[].video
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  video: prismic.LinkToMediaField<prismic.FieldState, never>;
+
+  /**
+   * Embed field in *Project → Medias*
    *
    * - **Field Type**: Embed
    * - **Placeholder**: *None*
-   * - **API ID Path**: project.medias[].video
+   * - **API ID Path**: project.medias[].embed
    * - **Documentation**: https://prismic.io/docs/field#embed
    */
-  video: prismic.EmbedField;
+  embed: prismic.EmbedField;
 }
 
 type ProjectDocumentDataSlicesSlice = never;
@@ -1094,6 +1104,16 @@ export interface GalleryOverviewSliceDefaultPrimaryItemsItem {
   project: prismic.ContentRelationshipField<"project">;
 
   /**
+   * Caption field in *GalleryOverview → Default → Primary → Grid Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery_overview.default.primary.items[].caption
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  caption: prismic.KeyTextField;
+
+  /**
    * Image field in *GalleryOverview → Default → Primary → Grid Items*
    *
    * - **Field Type**: Image
@@ -1104,24 +1124,24 @@ export interface GalleryOverviewSliceDefaultPrimaryItemsItem {
   image: prismic.ImageField<never>;
 
   /**
-   * Video field in *GalleryOverview → Default → Primary → Grid Items*
+   * Vidéo field in *GalleryOverview → Default → Primary → Grid Items*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery_overview.default.primary.items[].video
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  video: prismic.LinkToMediaField<prismic.FieldState, never>;
+
+  /**
+   * Embed field in *GalleryOverview → Default → Primary → Grid Items*
    *
    * - **Field Type**: Embed
    * - **Placeholder**: *None*
-   * - **API ID Path**: gallery_overview.default.primary.items[].video
+   * - **API ID Path**: gallery_overview.default.primary.items[].embed
    * - **Documentation**: https://prismic.io/docs/field#embed
    */
-  video: prismic.EmbedField;
-
-  /**
-   * Caption field in *GalleryOverview → Default → Primary → Grid Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: gallery_overview.default.primary.items[].caption
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  caption: prismic.KeyTextField;
+  embed: prismic.EmbedField;
 }
 
 /**
@@ -1149,14 +1169,24 @@ export interface GalleryOverviewSlice5X1PrimaryItemsItem {
   image: prismic.ImageField<never>;
 
   /**
-   * Video field in *GalleryOverview → 5x1 → Primary → Grid Items*
+   * Vidéo field in *GalleryOverview → 5x1 → Primary → Grid Items*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery_overview.5X1.primary.items[].video
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  video: prismic.LinkToMediaField<prismic.FieldState, never>;
+
+  /**
+   * Embed field in *GalleryOverview → 5x1 → Primary → Grid Items*
    *
    * - **Field Type**: Embed
    * - **Placeholder**: *None*
-   * - **API ID Path**: gallery_overview.5X1.primary.items[].video
+   * - **API ID Path**: gallery_overview.5X1.primary.items[].embed
    * - **Documentation**: https://prismic.io/docs/field#embed
    */
-  video: prismic.EmbedField;
+  embed: prismic.EmbedField;
 }
 
 /**
@@ -1184,14 +1214,24 @@ export interface GalleryOverviewSlice1X1PrimaryItemsItem {
   image: prismic.ImageField<never>;
 
   /**
-   * Video field in *GalleryOverview → 1x1 → Primary → Items*
+   * Vidéo field in *GalleryOverview → 1x1 → Primary → Items*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery_overview.1X1.primary.items[].video
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  video: prismic.LinkToMediaField<prismic.FieldState, never>;
+
+  /**
+   * Embed field in *GalleryOverview → 1x1 → Primary → Items*
    *
    * - **Field Type**: Embed
    * - **Placeholder**: *None*
-   * - **API ID Path**: gallery_overview.1X1.primary.items[].video
+   * - **API ID Path**: gallery_overview.1X1.primary.items[].embed
    * - **Documentation**: https://prismic.io/docs/field#embed
    */
-  video: prismic.EmbedField;
+  embed: prismic.EmbedField;
 
   /**
    * Title Left field in *GalleryOverview → 1x1 → Primary → Items*
@@ -1249,14 +1289,24 @@ export interface GalleryOverviewSlice2X1PrimaryItemsItem {
   image: prismic.ImageField<never>;
 
   /**
-   * Video field in *GalleryOverview → 2x1 → Primary → Grid Items*
+   * Vidéo field in *GalleryOverview → 2x1 → Primary → Grid Items*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery_overview.2X1.primary.items[].video
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  video: prismic.LinkToMediaField<prismic.FieldState, never>;
+
+  /**
+   * Embed field in *GalleryOverview → 2x1 → Primary → Grid Items*
    *
    * - **Field Type**: Embed
    * - **Placeholder**: *None*
-   * - **API ID Path**: gallery_overview.2X1.primary.items[].video
+   * - **API ID Path**: gallery_overview.2X1.primary.items[].embed
    * - **Documentation**: https://prismic.io/docs/field#embed
    */
-  video: prismic.EmbedField;
+  embed: prismic.EmbedField;
 }
 
 /**
@@ -1284,14 +1334,24 @@ export interface GalleryOverviewSlice2X2PrimaryItemsItem {
   image: prismic.ImageField<never>;
 
   /**
-   * Video field in *GalleryOverview → 2x2 → Primary → Grid Items*
+   * Vidéo field in *GalleryOverview → 2x2 → Primary → Grid Items*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery_overview.2X2.primary.items[].video
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  video: prismic.LinkToMediaField<prismic.FieldState, never>;
+
+  /**
+   * Embed field in *GalleryOverview → 2x2 → Primary → Grid Items*
    *
    * - **Field Type**: Embed
    * - **Placeholder**: *None*
-   * - **API ID Path**: gallery_overview.2X2.primary.items[].video
+   * - **API ID Path**: gallery_overview.2X2.primary.items[].embed
    * - **Documentation**: https://prismic.io/docs/field#embed
    */
-  video: prismic.EmbedField;
+  embed: prismic.EmbedField;
 }
 
 /**
@@ -1558,16 +1618,6 @@ export interface HeroSectionSliceDefaultPrimary {
   description: prismic.RichTextField;
 
   /**
-   * Video field in *HeroSection → Default → Primary*
-   *
-   * - **Field Type**: Embed
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero_section.default.primary.video
-   * - **Documentation**: https://prismic.io/docs/field#embed
-   */
-  video: prismic.EmbedField;
-
-  /**
    * Background Image field in *HeroSection → Default → Primary*
    *
    * - **Field Type**: Image
@@ -1576,6 +1626,26 @@ export interface HeroSectionSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   background_image: prismic.ImageField<never>;
+
+  /**
+   * Vidéo field in *HeroSection → Default → Primary*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.video
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  video: prismic.LinkToMediaField<prismic.FieldState, never>;
+
+  /**
+   * Embed field in *HeroSection → Default → Primary*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.embed
+   * - **Documentation**: https://prismic.io/docs/field#embed
+   */
+  embed: prismic.EmbedField;
 
   /**
    * Button field in *HeroSection → Default → Primary*
@@ -1798,6 +1868,16 @@ export interface InteractiveCardSphereSliceDefaultPrimaryCardsItem {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * Vidéo field in *InteractiveCardSphere → Default → Primary → Cards*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: interactive_card_sphere.default.primary.cards[].video
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  video: prismic.LinkToMediaField<prismic.FieldState, never>;
 }
 
 /**
@@ -1939,12 +2019,22 @@ export interface SideMediaContentSliceMediaRightPrimaryMediasItem {
   /**
    * Video field in *SideMediaContent → Media Right → Primary → Medias*
    *
-   * - **Field Type**: Embed
+   * - **Field Type**: Link to Media
    * - **Placeholder**: *None*
    * - **API ID Path**: side_media_content.media_right.primary.medias[].video
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  video: prismic.LinkToMediaField<prismic.FieldState, never>;
+
+  /**
+   * Embed field in *SideMediaContent → Media Right → Primary → Medias*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: *None*
+   * - **API ID Path**: side_media_content.media_right.primary.medias[].embed
    * - **Documentation**: https://prismic.io/docs/field#embed
    */
-  video: prismic.EmbedField;
+  embed: prismic.EmbedField;
 }
 
 /**
@@ -1972,14 +2062,24 @@ export interface SideMediaContentSliceContactInfoMediaRightPrimaryMediasItem {
   image: prismic.ImageField<never>;
 
   /**
-   * video field in *SideMediaContent → Contact Info Media Right → Primary → Medias*
+   * Vidéo field in *SideMediaContent → Contact Info Media Right → Primary → Medias*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: side_media_content.contactInfoMediaRight.primary.medias[].video
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  video: prismic.LinkToMediaField<prismic.FieldState, never>;
+
+  /**
+   * Embed field in *SideMediaContent → Contact Info Media Right → Primary → Medias*
    *
    * - **Field Type**: Embed
    * - **Placeholder**: *None*
-   * - **API ID Path**: side_media_content.contactInfoMediaRight.primary.medias[].video
+   * - **API ID Path**: side_media_content.contactInfoMediaRight.primary.medias[].embed
    * - **Documentation**: https://prismic.io/docs/field#embed
    */
-  video: prismic.EmbedField;
+  embed: prismic.EmbedField;
 }
 
 /**
@@ -2007,14 +2107,24 @@ export interface SideMediaContentSliceSocialsMediaRightPrimaryMediasItem {
   image: prismic.ImageField<never>;
 
   /**
-   * video field in *SideMediaContent → Socials Media Right → Primary → Medias*
+   * Vidéo field in *SideMediaContent → Socials Media Right → Primary → Medias*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: side_media_content.socialsMediaRight.primary.medias[].video
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  video: prismic.LinkToMediaField<prismic.FieldState, never>;
+
+  /**
+   * Embed field in *SideMediaContent → Socials Media Right → Primary → Medias*
    *
    * - **Field Type**: Embed
    * - **Placeholder**: *None*
-   * - **API ID Path**: side_media_content.socialsMediaRight.primary.medias[].video
+   * - **API ID Path**: side_media_content.socialsMediaRight.primary.medias[].embed
    * - **Documentation**: https://prismic.io/docs/field#embed
    */
-  video: prismic.EmbedField;
+  embed: prismic.EmbedField;
 }
 
 /**

@@ -38,6 +38,15 @@
                 "config": {
                   "label": "Image"
                 }
+              },
+              "video": {
+                "type": "Link",
+                "config": {
+                  "label": "Vidéo",
+                  "placeholder": "",
+                  "select": "media",
+                  "allowText": true
+                }
               }
             }
           }

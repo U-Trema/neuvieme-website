@@ -28,19 +28,28 @@
             "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,embed,list-item,o-list-item,rtl"
           }
         },
-        "video": {
-          "type": "Embed",
-          "config": {
-            "label": "Video",
-            "placeholder": ""
-          }
-        },
         "background_image": {
           "type": "Image",
           "config": {
             "label": "Background Image",
             "constraint": {},
             "thumbnails": []
+          }
+        },
+        "video": {
+          "type": "Link",
+          "config": {
+            "label": "Vidéo",
+            "placeholder": "",
+            "select": "media",
+            "allowText": true
+          }
+        },
+        "embed": {
+          "type": "Embed",
+          "config": {
+            "label": "Embed",
+            "placeholder": ""
           }
         },
         "button": {

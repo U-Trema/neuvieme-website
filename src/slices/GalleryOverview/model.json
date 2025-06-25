@@ -28,6 +28,13 @@
                   ]
                 }
               },
+              "caption": {
+                "type": "Text",
+                "config": {
+                  "label": "Caption",
+                  "placeholder": ""
+                }
+              },
               "image": {
                 "type": "Image",
                 "config": {
@@ -35,16 +42,18 @@
                 }
               },
               "video": {
-                "type": "Embed",
+                "type": "Link",
                 "config": {
-                  "label": "Video",
-                  "placeholder": ""
+                  "label": "Vidéo",
+                  "placeholder": "",
+                  "select": "media",
+                  "allowText": true
                 }
               },
-              "caption": {
-                "type": "Text",
+              "embed": {
+                "type": "Embed",
                 "config": {
-                  "label": "Caption",
+                  "label": "Embed",
                   "placeholder": ""
                 }
               }
@@ -95,9 +104,18 @@
                 }
               },
               "video": {
+                "type": "Link",
+                "config": {
+                  "label": "Vidéo",
+                  "placeholder": "",
+                  "select": "media",
+                  "allowText": true
+                }
+              },
+              "embed": {
                 "type": "Embed",
                 "config": {
-                  "label": "Video",
+                  "label": "Embed",
                   "placeholder": ""
                 }
               }
@@ -139,9 +157,18 @@
                 }
               },
               "video": {
+                "type": "Link",
+                "config": {
+                  "label": "Vidéo",
+                  "placeholder": "",
+                  "select": "media",
+                  "allowText": true
+                }
+              },
+              "embed": {
                 "type": "Embed",
                 "config": {
-                  "label": "Video",
+                  "label": "Embed",
                   "placeholder": ""
                 }
               },
@@ -207,9 +234,18 @@
                 }
               },
               "video": {
+                "type": "Link",
+                "config": {
+                  "label": "Vidéo",
+                  "placeholder": "",
+                  "select": "media",
+                  "allowText": true
+                }
+              },
+              "embed": {
                 "type": "Embed",
                 "config": {
-                  "label": "Video",
+                  "label": "Embed",
                   "placeholder": ""
                 }
               }
@@ -251,9 +287,18 @@
                 }
               },
               "video": {
+                "type": "Link",
+                "config": {
+                  "label": "Vidéo",
+                  "placeholder": "",
+                  "select": "media",
+                  "allowText": true
+                }
+              },
+              "embed": {
                 "type": "Embed",
                 "config": {
-                  "label": "Video",
+                  "label": "Embed",
                   "placeholder": ""
                 }
               }

@@ -97,9 +97,18 @@
               }
             },
             "video": {
+              "type": "Link",
+              "config": {
+                "label": "Vidéo",
+                "placeholder": "",
+                "select": "media",
+                "allowText": true
+              }
+            },
+            "embed": {
               "type": "Embed",
               "config": {
-                "label": "Video",
+                "label": "Embed",
                 "placeholder": ""
               }
             }
