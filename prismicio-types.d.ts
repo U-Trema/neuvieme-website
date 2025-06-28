@@ -889,14 +889,34 @@ export interface CenteredStatementSliceCenteredCtaPrimary {
   statement: prismic.RichTextField;
 
   /**
-   * Cta field in *CenteredStatement → Centered Cta → Primary*
+   * Button Link field in *CenteredStatement → Centered Cta → Primary*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: centered_statement.centeredCta.primary.cta
+   * - **API ID Path**: centered_statement.centeredCta.primary.button_link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  cta: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+  button_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
+   * Button Color field in *CenteredStatement → Centered Cta → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Violet
+   * - **API ID Path**: centered_statement.centeredCta.primary.button_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  button_color: prismic.SelectField<
+    "Violet" | "Rose" | "Rouge" | "Orange" | "Jaune 1" | "Jaune 2",
+    "filled"
+  >;
 }
 
 /**
@@ -1056,6 +1076,20 @@ export interface FeaturedCardSliceDefaultPrimary {
     unknown,
     prismic.FieldState,
     never
+  >;
+
+  /**
+   * Button Color field in *FeaturedCard → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Violet
+   * - **API ID Path**: featured_card.default.primary.button_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  button_color: prismic.SelectField<
+    "Violet" | "Rose" | "Rouge" | "Orange" | "Jaune 1" | "Jaune 2",
+    "filled"
   >;
 }
 
@@ -1646,16 +1680,6 @@ export interface HeroSectionSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#embed
    */
   embed: prismic.EmbedField;
-
-  /**
-   * Button field in *HeroSection → Default → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: Bouton
-   * - **API ID Path**: hero_section.default.primary.button
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  button: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
 }
 
 /**
@@ -1952,14 +1976,34 @@ export interface IntroTextCtaSliceDefaultPrimary {
   headline: prismic.RichTextField;
 
   /**
-   * Call to Action field in *IntroTextCta → Default → Primary*
+   * Button Link field in *IntroTextCta → Default → Primary*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: intro_text_cta.default.primary.cta
+   * - **API ID Path**: intro_text_cta.default.primary.button_link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  cta: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+  button_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
+   * Button Color field in *IntroTextCta → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Violet
+   * - **API ID Path**: intro_text_cta.default.primary.button_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  button_color: prismic.SelectField<
+    "Violet" | "Rose" | "Rouge" | "Orange" | "Jaune 1" | "Jaune 2",
+    "filled"
+  >;
 }
 
 /**
@@ -2152,14 +2196,34 @@ export interface SideMediaContentSliceMediaRightPrimary {
   description: prismic.RichTextField;
 
   /**
-   * Cta field in *SideMediaContent → Media Right → Primary*
+   * Button Link field in *SideMediaContent → Media Right → Primary*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: side_media_content.media_right.primary.cta
+   * - **API ID Path**: side_media_content.media_right.primary.button_link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  cta: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+  button_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
+   * Button Color field in *SideMediaContent → Media Right → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Violet
+   * - **API ID Path**: side_media_content.media_right.primary.button_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  button_color: prismic.SelectField<
+    "Violet" | "Rose" | "Rouge" | "Orange" | "Jaune 1" | "Jaune 2",
+    "filled"
+  >;
 
   /**
    * Medias field in *SideMediaContent → Media Right → Primary*
@@ -2210,6 +2274,16 @@ export interface SideMediaContentSliceContactInfoMediaRightPrimary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   contact_info: prismic.ContentRelationshipField<"contact_info">;
+
+  /**
+   * Subtitle field in *SideMediaContent → Contact Info Media Right → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: side_media_content.contactInfoMediaRight.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subtitle: prismic.RichTextField;
 
   /**
    * Social Links field in *SideMediaContent → Contact Info Media Right → Primary*

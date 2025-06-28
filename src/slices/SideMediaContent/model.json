@@ -25,15 +25,31 @@
             "label": "Description"
           }
         },
-        "cta": {
+        "button_link": {
           "type": "Link",
           "config": {
-            "label": "Cta",
+            "label": "Button Link",
             "placeholder": "",
             "select": null,
             "allowTargetBlank": true,
             "allowText": true,
             "repeat": false
+          }
+        },
+        "button_color": {
+          "type": "Select",
+          "config": {
+            "label": "Button Color",
+            "placeholder": "",
+            "options": [
+              "Violet",
+              "Rose",
+              "Rouge",
+              "Orange",
+              "Jaune 1",
+              "Jaune 2"
+            ],
+            "default_value": "Violet"
           }
         },
         "medias": {
@@ -94,8 +110,10 @@
         "title": {
           "type": "StructuredText",
           "config": {
-            "single": "heading2",
-            "label": "Title"
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2"
           }
         },
         "contact_info": {
@@ -107,6 +125,15 @@
             "customtypes": [
               "contact_info"
             ]
+          }
+        },
+        "subtitle": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Subtitle",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2,heading3"
           }
         },
         "social_links": {

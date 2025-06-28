@@ -51,17 +51,6 @@
             "label": "Embed",
             "placeholder": ""
           }
-        },
-        "button": {
-          "type": "Link",
-          "config": {
-            "label": "Button",
-            "placeholder": "Bouton",
-            "select": null,
-            "allowTargetBlank": true,
-            "allowText": true,
-            "repeat": false
-          }
         }
       },
       "items": {}

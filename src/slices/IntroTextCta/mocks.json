@@ -19,14 +19,19 @@
 					}
 				]
 			},
-			"cta": {
-				"key": "8ca6c297-83ca-4a4e-89d6-379a0ec3bcd0",
+			"button_link": {
+				"key": "a8aaec40-9add-4d64-a031-4bac830d7847",
 				"__TYPE__": "LinkContent",
 				"value": {
 					"__TYPE__": "ExternalLink",
-					"url": "https://slicemachine.dev",
-					"text": "page"
+					"url": "http://twitter.com",
+					"text": "pot"
 				}
+			},
+			"button_color": {
+				"__TYPE__": "FieldContent",
+				"value": "Violet",
+				"type": "Select"
 			}
 		},
 		"items": []

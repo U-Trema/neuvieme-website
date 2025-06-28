@@ -36,15 +36,31 @@
             "label": "Statement"
           }
         },
-        "cta": {
+        "button_link": {
           "type": "Link",
           "config": {
-            "label": "Cta",
+            "label": "Button Link",
             "placeholder": "",
             "select": null,
             "allowTargetBlank": true,
             "allowText": true,
             "repeat": false
+          }
+        },
+        "button_color": {
+          "type": "Select",
+          "config": {
+            "label": "Button Color",
+            "placeholder": "",
+            "options": [
+              "Violet",
+              "Rose",
+              "Rouge",
+              "Orange",
+              "Jaune 1",
+              "Jaune 2"
+            ],
+            "default_value": "Violet"
           }
         }
       },

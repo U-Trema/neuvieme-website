@@ -116,14 +116,19 @@
 					}
 				]
 			},
-			"cta": {
-				"key": "d7e237f6-b3af-4dc7-80c6-a24c47eae771",
+			"button_link": {
+				"key": "53041085-1537-484e-ac1f-9143152a1920",
 				"__TYPE__": "LinkContent",
 				"value": {
 					"__TYPE__": "ExternalLink",
-					"url": "https://prismic.io",
-					"text": "opinion"
+					"url": "https://slicemachine.dev",
+					"text": "date"
 				}
+			},
+			"button_color": {
+				"__TYPE__": "FieldContent",
+				"value": "Jaune 2",
+				"type": "Select"
 			}
 		},
 		"items": []
@@ -138,7 +143,7 @@
 					{
 						"type": "heading2",
 						"content": {
-							"text": "Sound"
+							"text": "Helpful"
 						}
 					}
 				]
@@ -249,6 +254,17 @@
 					"__TYPE__": "DocumentLink",
 					"id": "mock_document_id"
 				}
+			},
+			"subtitle": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Baseball"
+						}
+					}
+				]
 			}
 		},
 		"items": [

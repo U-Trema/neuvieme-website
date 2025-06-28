@@ -32,14 +32,19 @@
 					}
 				]
 			},
-			"cta": {
-				"key": "61611744-9820-4db6-aa18-082536d297c2",
+			"button_link": {
+				"key": "6619e93a-01ed-4a7e-9c50-58efae7ce46b",
 				"__TYPE__": "LinkContent",
 				"value": {
 					"__TYPE__": "ExternalLink",
-					"url": "http://google.com",
-					"text": "daughter"
+					"url": "https://prismic.io",
+					"text": "sheet"
 				}
+			},
+			"button_color": {
+				"__TYPE__": "FieldContent",
+				"value": "Violet",
+				"type": "Select"
 			}
 		},
 		"items": [
