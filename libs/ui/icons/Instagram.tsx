@@ -13,5 +13,5 @@ export const Instagram = ({}) => {
         </clipPath>
       </defs>
     </svg>
-  );
-};
+  )
+}

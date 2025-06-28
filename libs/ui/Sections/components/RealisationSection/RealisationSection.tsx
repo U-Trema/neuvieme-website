@@ -7,12 +7,12 @@ import {useIntersectionObserver} from "../../../../hooks/useIntersectionObserver
 import {realisationSectionClasses} from "./realisation.section.classes"
 import {Button} from "../../../Button/Button"
 import {combineClasses} from "../../../../utils/combineClasses"
-import {Facebook} from "../../../icons/Facebook";
-import {Instagram} from "../../../icons/Instagram";
-import {LinkedIn} from "../../../icons/LinkedIn";
-import {Tiktok} from "../../../icons/Tiktok";
-import {X} from "../../../icons/X";
-import {WhatsApp} from "../../../icons/WhatsApp";
+import {Facebook} from "../../../icons/Facebook"
+import {Instagram} from "../../../icons/Instagram"
+import {LinkedIn} from "../../../icons/LinkedIn"
+import {Tiktok} from "../../../icons/Tiktok"
+import {X} from "../../../icons/X"
+import {WhatsApp} from "../../../icons/WhatsApp"
 
 
 type Props = any

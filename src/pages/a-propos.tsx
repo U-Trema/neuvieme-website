@@ -1,13 +1,13 @@
-import React, {useEffect, useRef} from "react";
+import React, {useEffect, useRef} from "react"
 import {GetStaticPropsContext} from "next"
 import {createClient} from "@/prismicio"
 import {SliceZone} from "@prismicio/react"
 import {components} from "@/slices"
 
 import {fetchNavigation} from "../../libs/utils/fetchNavigation"
-import {Scroll} from "../../libs/ui/Scroll/Scroll";
-import {enrichSlices} from "../../libs/utils/enrichSlices";
-import {nextToPrismicLocale} from "../../libs/utils/locales";
+import {Scroll} from "../../libs/ui/Scroll/Scroll"
+import {enrichSlices} from "../../libs/utils/enrichSlices"
+import {nextToPrismicLocale} from "../../libs/utils/locales"
 
 
 export default function About({page}: any) {

@@ -7,7 +7,7 @@ import {DropDown} from "../../DropDown/DropDown"
 import {Button} from "../../Button/Button"
 import {navClasses} from "./nav.classes"
 import {combineClasses} from "../../../utils/combineClasses"
-import {LanguageSwitcher} from "../../../../components/LanguageSwitcher/LanguageSwitcher";
+import {LanguageSwitcher} from "../../../../components/LanguageSwitcher/LanguageSwitcher"
 
 type Props = {
   nav: any

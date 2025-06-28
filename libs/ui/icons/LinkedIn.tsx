@@ -13,5 +13,5 @@ export const LinkedIn = ({}) => {
         </clipPath>
       </defs>
     </svg>
-  );
-};
+  )
+}

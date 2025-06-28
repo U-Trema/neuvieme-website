@@ -47,8 +47,8 @@ export const DropDown: FC<Props> = ({ list, label }) => {
                     href={item.href}
                     className="relative z-1 block select-none"
                     onClick={() => {
-                      if (item.onClick) item.onClick();
-                      setIsOpen(false);
+                      if (item.onClick) item.onClick()
+                      setIsOpen(false)
                     }}
                   >
                     {item.label}
@@ -57,8 +57,8 @@ export const DropDown: FC<Props> = ({ list, label }) => {
                   <p
                     className="relative z-1 block select-none"
                     onClick={() => {
-                      if (item.onClick) item.onClick();
-                      setIsOpen(false);
+                      if (item.onClick) item.onClick()
+                      setIsOpen(false)
                     }}
                   >
                     {item.label}

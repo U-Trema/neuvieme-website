@@ -6,8 +6,8 @@ import {components} from "@/slices"
 
 import {Scroll} from "../../libs/ui/Scroll/Scroll"
 import {fetchNavigation} from "../../libs/utils/fetchNavigation"
-import {enrichSlices} from "../../libs/utils/enrichSlices";
-import {nextToPrismicLocale} from "../../libs/utils/locales";
+import {enrichSlices} from "../../libs/utils/enrichSlices"
+import {nextToPrismicLocale} from "../../libs/utils/locales"
 
 export default function Home({ page }: any) {
   const ref = useRef<any>(null)

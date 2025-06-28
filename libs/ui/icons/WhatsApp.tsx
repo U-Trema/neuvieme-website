@@ -6,5 +6,5 @@ export const WhatsApp = ({}) => {
         fill="white"
       />
     </svg>
-  );
-};
+  )
+}

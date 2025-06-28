@@ -1,17 +1,17 @@
-import React, {FC, ReactNode, useEffect, useState} from "react"
+import React, {FC, ReactNode} from "react"
 import {PrismicRichText} from "@prismicio/react"
 
 import {observerCVA} from "@/styles/global.classes"
 
 import {footerClasses} from "./footer.classes"
 import {Facebook} from "../icons/Facebook"
-import {LanguageSwitcher} from "../../../components/LanguageSwitcher/LanguageSwitcher";
+import {Instagram} from "../icons/Instagram"
+import {LinkedIn} from "../icons/LinkedIn"
+import {Tiktok} from "../icons/Tiktok"
+import {WhatsApp} from "../icons/WhatsApp"
+import {X} from "../icons/X"
+import {LanguageSwitcher} from "../../../components/LanguageSwitcher/LanguageSwitcher"
 import {useIntersectionObserver} from "../../hooks/useIntersectionObserver"
-import {Instagram} from "../icons/Instagram";
-import {LinkedIn} from "../icons/LinkedIn";
-import {Tiktok} from "../icons/Tiktok";
-import {WhatsApp} from "../icons/WhatsApp";
-import {X} from "../icons/X";
 
 type Props = any
 

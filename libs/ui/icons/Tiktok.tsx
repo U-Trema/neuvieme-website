@@ -6,5 +6,5 @@ export const Tiktok = ({}) => {
         fill="white"
       />
     </svg>
-  );
-};
+  )
+}

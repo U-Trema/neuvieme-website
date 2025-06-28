@@ -1,7 +1,7 @@
 import {useRouter} from 'next/router'
 
-import {Button} from "../../libs/ui/Button/Button";
-import {prismicToNextLocale} from "../../libs/utils/locales";
+import {Button} from "../../libs/ui/Button/Button"
+import {prismicToNextLocale} from "../../libs/utils/locales"
 
 type Language = {
   label: string

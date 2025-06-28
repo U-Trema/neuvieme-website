@@ -6,5 +6,5 @@ export const X = ({}) => {
         fill="white"
       />
     </svg>
-  );
-};
+  )
+}
