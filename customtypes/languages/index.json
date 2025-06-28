@@ -34,6 +34,22 @@
                 "placeholder_true": "true",
                 "default_value": true
               }
+            },
+            "button_color": {
+              "type": "Select",
+              "config": {
+                "label": "Button Color",
+                "placeholder": "",
+                "options": [
+                  "Violet",
+                  "Rose",
+                  "Rouge",
+                  "Orange",
+                  "Jaune 1",
+                  "Jaune 2"
+                ],
+                "default_value": "Violet"
+              }
             }
           }
         }

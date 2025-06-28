@@ -21,23 +21,32 @@
           "placeholder": ""
         }
       },
+      "dropdown_color": {
+        "type": "Select",
+        "config": {
+          "label": "Dropdown Color",
+          "placeholder": "",
+          "options": [
+            "Violet",
+            "Rose",
+            "Rouge",
+            "Orange",
+            "Jaune 1",
+            "Jaune 2"
+          ],
+          "default_value": "Violet"
+        }
+      },
       "dropdown": {
         "type": "Group",
         "config": {
           "label": "Dropdown ",
           "repeat": true,
           "fields": {
-            "label": {
-              "type": "Text",
-              "config": {
-                "label": "Label",
-                "placeholder": "Libellé"
-              }
-            },
-            "link": {
+            "button_link": {
               "type": "Link",
               "config": {
-                "label": "Link",
+                "label": "Button Link",
                 "placeholder": "Lien",
                 "select": null,
                 "allowTargetBlank": true,
@@ -54,10 +63,10 @@
           "label": "principal",
           "repeat": true,
           "fields": {
-            "link": {
+            "button_link": {
               "type": "Link",
               "config": {
-                "label": "Link",
+                "label": "Button Link",
                 "placeholder": "Lien",
                 "select": null,
                 "allowTargetBlank": true,
@@ -65,11 +74,20 @@
                 "repeat": false
               }
             },
-            "label": {
-              "type": "Text",
+            "button_color": {
+              "type": "Select",
               "config": {
-                "label": "Label",
-                "placeholder": "Libellé"
+                "label": "Button Color",
+                "placeholder": "",
+                "options": [
+                  "Violet",
+                  "Rose",
+                  "Rouge",
+                  "Orange",
+                  "Jaune 1",
+                  "Jaune 2"
+                ],
+                "default_value": "Violet"
               }
             }
           }

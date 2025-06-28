@@ -2,6 +2,7 @@ import {useRouter} from 'next/router'
 
 import {Button} from "../../libs/ui/Button/Button"
 import {prismicToNextLocale} from "../../libs/utils/locales"
+import {prismicToNextColor} from "../../libs/utils/btnColor"
 
 type Language = {
   label: string
@@ -25,7 +26,7 @@ export function LanguageSwitcher({languages, isUiButton = false}: any) {
     <div className={isUiButton ? 'flex gap-4' : 'flex gap-12'}>
       {languages
         .filter(({active}) => active)
-        .map(({code, label}) => {
+        .map(({code, label, button_color}) => {
           const isActive = prismicToNextLocale(code) === router.locale
 
           return isUiButton ? (
@@ -34,7 +35,7 @@ export function LanguageSwitcher({languages, isUiButton = false}: any) {
               label={label}
               isActive={isActive}
               onClick={() => handleLocaleChange(code)}
-              variant='yellowDark'
+              variant={prismicToNextColor(button_color)}
               as='button'
             />
           ) : (

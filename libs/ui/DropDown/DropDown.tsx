@@ -1,10 +1,12 @@
 import React, {FC, useState} from 'react'
+import Link from "next/link"
+
 import {Button} from "../Button/Button"
 import {dropDownClasses} from "./dropdown.classes"
 import {ChevronDown} from "../icons/ChevronDown"
 import Check from "../icons/Check"
 import {useOutsideClick} from "../../hooks/useOutsideClick"
-import Link from "next/link"
+import {prismicToNextColor} from "../../utils/btnColor"
 
 type Item = {
   as: 'a' | 'p'
@@ -17,9 +19,10 @@ type Item = {
 export type Props = {
   list: Item[]
   label: string
+  variant: string
 }
 
-export const DropDown: FC<Props> = ({ list, label }) => {
+export const DropDown: FC<Props> = ({list, label, variant}) => {
   const [isOpen, setIsOpen] = useState(false)
   const toggle = () => setIsOpen(!isOpen)
 
@@ -31,7 +34,7 @@ export const DropDown: FC<Props> = ({ list, label }) => {
     <div ref={dropdownRef} className='relative'>
       <Button
         as='button'
-        variant='violet'
+        variant={prismicToNextColor(variant)}
         label={label}
         onClick={toggle}
         rightIcon={<ChevronDown />}

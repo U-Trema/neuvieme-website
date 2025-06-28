@@ -8,6 +8,7 @@ import {Button} from "../../Button/Button"
 import {navClasses} from "./nav.classes"
 import {combineClasses} from "../../../utils/combineClasses"
 import {LanguageSwitcher} from "../../../../components/LanguageSwitcher/LanguageSwitcher"
+import {prismicToNextColor} from "../../../utils/btnColor"
 
 type Props = {
   nav: any
@@ -17,11 +18,11 @@ type Props = {
   }
 }
 
-export const Nav: FC<Props> = ({ nav, scrollInfo }) => {
+export const Nav: FC<Props> = ({nav, scrollInfo}) => {
   const router = useRouter()
   const [top, setTop] = useState<string>('-100%')
 
-  const {languages = [], principal = [], dropdown = [], dropdown_label} = nav || {}
+  const {languages = [], principal = [], dropdown = [], dropdown_label, dropdown_color} = nav || {}
 
   useEffect(() => {
     if (router.route !== '/') return
@@ -30,11 +31,11 @@ export const Nav: FC<Props> = ({ nav, scrollInfo }) => {
     setTop(`${-(100 - (scrollInfo.scrollY / 4))}%`)
   }, [scrollInfo.scrollY])
 
-  const list = dropdown.map(({link, label}) => ({
+  const list = dropdown.map(({button_link}) => ({
     as: 'a' as const,
-    label,
-    href: link?.url,
-    active: router.asPath === link?.url
+    label: button_link.text,
+    href: button_link?.url,
+    active: router.asPath === button_link?.url
   }))
 
   const style = router.route === '/' ? { '--before-top': top } as any : null
@@ -44,10 +45,10 @@ export const Nav: FC<Props> = ({ nav, scrollInfo }) => {
       <Link href="/" className='table'><Logo /></Link>
 
       <ul className='items-center flex gap-32'>
-        <li><DropDown list={list} label={dropdown_label} /></li>
+        <li><DropDown list={list} label={dropdown_label} variant={dropdown_color} /></li>
 
-        {principal.map(({label, link}, index) => (
-          <li key={index}><Button label={label} variant='orange' as='a' href={link?.url || '#'} /></li>
+        {principal.map(({button_link, button_color}, index) => (
+          <li key={index}><Button label={button_link.text} variant={prismicToNextColor(button_color)} as='a' href={button_link?.url || '#'} /></li>
         ))}
 
         <li className='flex gap-4'>

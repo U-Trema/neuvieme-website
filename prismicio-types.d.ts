@@ -427,6 +427,20 @@ export interface LanguagesDocumentDataLangItem {
    * - **Documentation**: https://prismic.io/docs/field#boolean
    */
   active: prismic.BooleanField;
+
+  /**
+   * Button Color field in *Languages → Lang*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Violet
+   * - **API ID Path**: languages.lang[].button_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  button_color: prismic.SelectField<
+    "Violet" | "Rose" | "Rouge" | "Orange" | "Jaune 1" | "Jaune 2",
+    "filled"
+  >;
 }
 
 /**
@@ -466,24 +480,20 @@ export type LanguagesDocument<Lang extends string = string> =
  */
 export interface NavigationDocumentDataDropdownItem {
   /**
-   * Label field in *Navigation → Dropdown *
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: Libellé
-   * - **API ID Path**: navigation.dropdown[].label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  label: prismic.KeyTextField;
-
-  /**
-   * Link field in *Navigation → Dropdown *
+   * Button Link field in *Navigation → Dropdown *
    *
    * - **Field Type**: Link
    * - **Placeholder**: Lien
-   * - **API ID Path**: navigation.dropdown[].link
+   * - **API ID Path**: navigation.dropdown[].button_link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+  button_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
 }
 
 /**
@@ -491,24 +501,34 @@ export interface NavigationDocumentDataDropdownItem {
  */
 export interface NavigationDocumentDataPrincipalItem {
   /**
-   * Link field in *Navigation → principal*
+   * Button Link field in *Navigation → principal*
    *
    * - **Field Type**: Link
    * - **Placeholder**: Lien
-   * - **API ID Path**: navigation.principal[].link
+   * - **API ID Path**: navigation.principal[].button_link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+  button_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
 
   /**
-   * Label field in *Navigation → principal*
+   * Button Color field in *Navigation → principal*
    *
-   * - **Field Type**: Text
-   * - **Placeholder**: Libellé
-   * - **API ID Path**: navigation.principal[].label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Violet
+   * - **API ID Path**: navigation.principal[].button_color
+   * - **Documentation**: https://prismic.io/docs/field#select
    */
-  label: prismic.KeyTextField;
+  button_color: prismic.SelectField<
+    "Violet" | "Rose" | "Rouge" | "Orange" | "Jaune 1" | "Jaune 2",
+    "filled"
+  >;
 }
 
 /**
@@ -536,6 +556,21 @@ interface NavigationDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   dropdown_label: prismic.KeyTextField;
+
+  /**
+   * Dropdown Color field in *Navigation*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Violet
+   * - **API ID Path**: navigation.dropdown_color
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  dropdown_color: prismic.SelectField<
+    "Violet" | "Rose" | "Rouge" | "Orange" | "Jaune 1" | "Jaune 2",
+    "filled"
+  >;
 
   /**
    * Dropdown  field in *Navigation*
