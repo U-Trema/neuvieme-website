@@ -19,13 +19,13 @@ const components = {
 export const HighlightedHeadingSection: FC<Props> = ({ slice }) => {
   const [ elementRef, hasBeenVisible ] = useIntersectionObserver({
     options: {
-      rootMargin: '80px 0 0 0'
+      rootMargin: '80px 0px 0px 0px'
     }
   })
   const { project } = slice?.primary || {}
 
   return (
-    <section className={combineClasses(highlightedHeadingSectionClasses.root())}>
+    <div className={highlightedHeadingSectionClasses.root()}>
       <div
         ref={elementRef}
         className={
@@ -38,15 +38,19 @@ export const HighlightedHeadingSection: FC<Props> = ({ slice }) => {
         <PrismicRichText field={project.data.project_title} components={components}/>
         <p className='leading-[150%] md:text-base'>{project.data.client_name}</p>
       </div>
-      <div className={
-        combineClasses(
-          highlightedHeadingSectionClasses.text(),
-          observerCVA.root({ isVisible: hasBeenVisible }))
-      }>
+
+      <div
+        className={
+          combineClasses(
+          highlightedHeadingSectionClasses.wrapper(),
+          observerCVA.root({ isVisible: hasBeenVisible })
+          )
+        }
+      >
         <p className='leading-[150%] md:text-base'>{project.data.subtitle}</p>
         <PrismicRichText field={project.data.quote} components={components}/>
       </div>
-    </section>
+    </div>
   )
 }
 

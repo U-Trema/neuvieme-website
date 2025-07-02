@@ -24,6 +24,10 @@
   );
 }
 
+.active-status-yellow {
+  box-shadow: 0 4px 8px 0 #FECD0A80;
+}
+
 .trigger-animate-yellow-button:has(:hover) {
   animation:
     rotate-angle 2s cubic-bezier(.2, .8, .8, .2) both,

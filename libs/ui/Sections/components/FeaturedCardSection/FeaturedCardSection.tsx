@@ -25,7 +25,7 @@ export const FeaturedCardSection: FC<Props> = ({ slice }) => {
   const { project, button_link } = slice?.primary || {}
 
   return (
-    <section className={combineClasses(featuredCardSectionClasses.root())}>
+    <section className={featuredCardSectionClasses.root()}>
       <div
         ref={elementRef}
         className={
@@ -38,7 +38,10 @@ export const FeaturedCardSection: FC<Props> = ({ slice }) => {
         <div>
           <PrismicImage className='w-full h-full object-cover block' field={project.data.project_main_image} />
           <PrismicRichText field={project.data.project_title} components={components}/>
-          <Button label={button_link.text} variant='orange' as='a' href='#' />
+          <PrismicRichText field={project.data.quote}/>
+          <div className='w-fit'>
+            <Button label={button_link.text} variant='orange' as='a' href='#' />
+          </div>
         </div>
       </div>
     </section>

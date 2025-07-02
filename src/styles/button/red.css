@@ -24,6 +24,10 @@
   );
 }
 
+.active-status-red {
+  box-shadow: 0 4px 8px 0 #C6224480;
+}
+
 .trigger-animate-red-button:has(:hover) {
   animation:
     rotate-angle 2s cubic-bezier(.2, .8, .8, .2) both,

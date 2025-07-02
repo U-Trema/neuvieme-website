@@ -1,15 +1,27 @@
 import {cva} from "class-variance-authority";
 
 export const navMobileClasses = {
-  root: cva(['px-24 py-32 w-full transition-all duration-300 ease-in-out'], {
+  wrapper: cva([`
+    before:transition-all before:duration-300 before:ease-in-out
+    before:block before:absolute before:top-[0] before:-left-full
+    before:w-full before:h-full before:bg-primary-dark
+    `], {
     variants: {
       index: {
-        true: 'fixed top-0 z-[2000]',
-        false: 'sticky top-0'
+        true: 'fixed t-0 w-full z-[2100]',
+        false: ''
       },
       open: {
-        true: 'bg-dark-primary size-dvh',
-        false: 'bg-transparent'
+        true: 'before:left-[0] before:z-[1900]',
+        false: 'before:bg-transparent'
+      }
+    }
+  }),
+  root: cva(['px-24 w-full z-[1900] transition-all duration-300 ease-in-out'], {
+    variants: {
+      open: {
+        true: 'translate-[0%] relative',
+        false: '-translate-x-[200%] absolute'
       }
     }
   }),
@@ -17,7 +29,7 @@ export const navMobileClasses = {
     variants: {
       open: {
         true: 'opacity-100 translate-none',
-        false: 'opacity-0 translate-x-[200%]'
+        false: 'opacity-0 -translate-x-[200%]'
       }
     }
   })
@@ -27,8 +39,8 @@ export const navLinkClasses = {
   root: cva(['w-full size-dvh pt-[80px] transition-all duration-450 ease-in-out'], {
     variants: {
       open: {
-        true: 'translate-none',
-        false: 'translate-x-[200%]'
+        true: '-translate-x-[0%]',
+        false: '-translate-x-[200%]'
       }
     }
   })

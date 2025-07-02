@@ -18,13 +18,13 @@ const components = {
 export const HeadlineWithSubtextSection: FC<Props> = ({ slice }) => {
   const [ elementRef, hasBeenVisible ] = useIntersectionObserver({
     options: {
-      rootMargin: '80px 0 0 0'
+      rootMargin: '80px 0px 0px 0px'
     }
   })
   const { title, subtitle } = slice?.primary || {}
 
   return (
-    <section className={combineClasses(headlineWithSubtextSectionClasses.root())}>
+    <div className={headlineWithSubtextSectionClasses.root()}>
       <div
         ref={elementRef}
         className={
@@ -38,7 +38,7 @@ export const HeadlineWithSubtextSection: FC<Props> = ({ slice }) => {
 
         <PrismicRichText field={subtitle} components={components}/>
       </div>
-    </section>
+    </div>
   )
 }
 

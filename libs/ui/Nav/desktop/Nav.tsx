@@ -31,7 +31,7 @@ export const Nav: FC<Props> = ({nav, scrollInfo}) => {
     setTop(`${-(100 - (scrollInfo.scrollY / 4))}%`)
   }, [scrollInfo.scrollY])
 
-  const list = dropdown.map(({button_link}) => ({
+  const list = dropdown.map(({button_link}: {button_link: any}) => ({
     as: 'a' as const,
     label: button_link.text,
     href: button_link?.url,
@@ -47,12 +47,12 @@ export const Nav: FC<Props> = ({nav, scrollInfo}) => {
       <ul className='items-center flex gap-32'>
         <li><DropDown list={list} label={dropdown_label} variant={dropdown_color} /></li>
 
-        {principal.map(({button_link, button_color}, index) => (
+        {principal.map(({button_link, button_color}: {button_link: any; button_color: any}, index: number) => (
           <li key={index}><Button label={button_link.text} variant={prismicToNextColor(button_color)} as='a' href={button_link?.url || '#'} /></li>
         ))}
 
         <li className='flex gap-4'>
-          {languages && <LanguageSwitcher languages={languages} isUiButton={true}/>}
+          {languages && <LanguageSwitcher languages={languages} />}
         </li>
       </ul>
     </nav>

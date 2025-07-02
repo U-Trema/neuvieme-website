@@ -12,7 +12,7 @@ import {nextToPrismicLocale, prismicToNextLocale} from "../../../libs/utils/loca
 
 type Params = { uid: string }
 
-export default function Advertising({page}: any) {
+export default function Page({page}: any) {
   const ref = useRef<any>(null)
   const pref = useRef<any>(null)
 
@@ -45,7 +45,7 @@ export default function Advertising({page}: any) {
   }, [ref.current])
 
   return (
-    <div ref={pref} style={{ position: 'relative' }}>
+    <div ref={pref} style={{ position: 'relative' }} className='px-24 mt-64'>
       <Scroll />
       <SliceZone slices={page.data.slices} components={components} />
       <div className='cursor-follower' ref={ref} />

@@ -17,8 +17,14 @@ const GalleryOverview: FC<GalleryOverviewProps> = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      Placeholder component for gallery_overview (variation: {slice.variation})
-      Slices
+      {/* TODO slice => faut faire ça tavu */}
+      <p style={{ margin: '20px 0 0 0', backgroundColor: 'red', paddingBottom: 20 }}>
+        MANQUE LA SLICE ICI : slices/GalleryOverview/index.tsx
+      </p>
+      <p style={{ margin: '0 0 20px', backgroundColor: 'red' }}>
+        Placeholder component for gallery_overview (variation: {slice.variation})
+        Slices
+      </p>
     </section>
   )
 }

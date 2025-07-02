@@ -16,7 +16,6 @@ export const Scroll = () => {
   useEffect(() => {
     if (width < 768) return
     if (!parentRef.current) return
-    const canScroll = document.body.offsetHeight > window.innerHeight
 
     const handleScroll = () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop
@@ -27,16 +26,10 @@ export const Scroll = () => {
       setScrollPosition(position)
     }
 
-    if (canScroll) {
-      window.addEventListener('scroll', handleScroll)
-    } else {
-      parentRef.current.style.display = 'none'
-    }
+    window.addEventListener('scroll', handleScroll)
 
     return () => {
-      if (canScroll) {
-        window.removeEventListener('scroll', handleScroll)
-      }
+      window.removeEventListener('scroll', handleScroll)
     }
   }, [parentRef, width])
 

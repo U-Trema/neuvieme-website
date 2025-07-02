@@ -3,6 +3,7 @@ import Link from "next/link"
 import {buttonClasses} from "./button.classes"
 import {ChevronDown} from "../icons/ChevronDown"
 import {Variants} from "../../types/global.types"
+import {combineClasses} from "../../utils/combineClasses";
 
 type Props = {
   label: string | ReactNode
@@ -17,7 +18,7 @@ type Props = {
 
 export const Button: FC<Props> = ({ label, variant = 'orange', as = 'a', onClick, href = '/', target, rightIcon, isActive = false }) => {
   return (
-    <div className={buttonClasses.container({ variant })}>
+    <div className={combineClasses(buttonClasses.container({ variant }), isActive ? `active-status-${variant}` : '')}>
       {createElement(
         as === 'a'
           ? () =>
