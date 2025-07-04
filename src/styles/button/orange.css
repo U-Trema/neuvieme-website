@@ -24,6 +24,10 @@
   );
 }
 
+.active-status-orange {
+  box-shadow: 0 4px 8px 0 #E54D2480;
+}
+
 .trigger-animate-orange-button:has(:hover) {
   animation:
     rotate-angle 2s cubic-bezier(.2, .8, .8, .2) both,

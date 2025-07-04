@@ -10,12 +10,7 @@ type Language = {
   active: boolean
 }
 
-type LanguageSwitcherProps = {
-  languages: Language[]
-  isUiButton?: boolean
-}
-
-export function LanguageSwitcher({languages, isUiButton = false}: any) {
+export function LanguageSwitcher({languages}: any) {
   const router = useRouter()
 
   const handleLocaleChange = (locale: string) => (
@@ -23,13 +18,13 @@ export function LanguageSwitcher({languages, isUiButton = false}: any) {
   )
 
   return (
-    <div className={isUiButton ? 'flex gap-4' : 'flex gap-12'}>
+    <div className='flex gap-12'>
       {languages
-        .filter(({active}) => active)
-        .map(({code, label, button_color}) => {
+        .filter(({active}: { active: boolean }) => active)
+        .map(({code, label, button_color}: { code: string; label: string; button_color: string }) => {
           const isActive = prismicToNextLocale(code) === router.locale
 
-          return isUiButton ? (
+          return (
             <Button
               key={code}
               label={label}
@@ -38,14 +33,6 @@ export function LanguageSwitcher({languages, isUiButton = false}: any) {
               variant={prismicToNextColor(button_color)}
               as='button'
             />
-          ) : (
-            <button
-              key={code}
-              onClick={() => handleLocaleChange(code)}
-              className={`leading-[150%] cursor-pointer ${isActive ? 'font-bold underline' : ''}`}
-            >
-              {label}
-            </button>
           )
         })}
     </div>

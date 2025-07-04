@@ -17,25 +17,27 @@ export const NavMobile = ({ nav }: any) => {
   }
 
   return (
-    <nav className={navMobileClasses.root({ index: router.route === '/', open: isOpen })}>
-      <div className='flex items-center justify-between w-full'>
+    <nav className={navMobileClasses.wrapper({ index: router.route === '/', open: isOpen })}>
+      <div className='flex items-center justify-between w-full z-[2001] relative pt-32 px-24'>
         <Link href="/" className='table'><LogoMobile /></Link>
         <BurgerMenu onClick={toggleMenu} isOpen={isOpen} />
       </div>
 
-      <div className={navLinkClasses.root({ open: isOpen })}>
-        <ul className='flex flex-col gap-64'>
-          <li className={navMobileClasses.link({ open: isOpen })}>communication</li>
-          <li className={navMobileClasses.link({ open: isOpen })}>publicité</li>
-          <li className={navMobileClasses.link({ open: isOpen })}>production audiovisuel</li>
-          <li className={navMobileClasses.link({ open: isOpen })}>à propos</li>
-          <li className={navMobileClasses.link({ open: isOpen })}>
-            <div className='flex gap-5 justify-center'>
-              <div className='underline'>fr</div>
-              <div>en</div>
-            </div>
-          </li>
-        </ul>
+      <div className={navMobileClasses.root({ open: isOpen })}>
+        <div className={navLinkClasses.root({ open: isOpen })}>
+          <ul className='flex flex-col gap-64'>
+            <li className={navMobileClasses.link({ open: isOpen })}>communication</li>
+            <li className={navMobileClasses.link({ open: isOpen })}>publicité</li>
+            <li className={navMobileClasses.link({ open: isOpen })}>production audiovisuel</li>
+            <li className={navMobileClasses.link({ open: isOpen })}>à propos</li>
+            <li className={navMobileClasses.link({ open: isOpen })}>
+              <div className='flex gap-5 justify-center'>
+                <div className='underline'>fr</div>
+                <div>en</div>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   )
