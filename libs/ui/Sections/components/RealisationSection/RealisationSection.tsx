@@ -59,7 +59,7 @@ export const RealisationSection: FC<Props> = ({ slice }) => {
           )}
           {social_links?.data && (
             <div className='flex gap-16'>
-              {social_links.data.social_links.map((social, index) => {
+              {social_links.data.social_links.map((social: { icon: string }, index: number) => {
                 if (social.icon === 'Facebook') return <div key={index}><Facebook /></div>
                 if (social.icon === 'Instagram') return <div key={index}><Instagram /></div>
                 if (social.icon === 'Linkedin') return <div key={index}><LinkedIn /></div>
@@ -84,11 +84,11 @@ export const RealisationSection: FC<Props> = ({ slice }) => {
         )}
       </div>
 
-      <div className={
-        combineClasses(
-          realisationSectionClasses.imageDesktop(),
-          observerCVA.root({ isVisible: hasBeenVisible }))
-      }>
+      <div
+        className={
+          combineClasses(realisationSectionClasses.imageDesktop(), observerCVA.root({ isVisible: hasBeenVisible }))
+        }
+      >
         {medias.map(({image}: { image: any }, index: any) => (
           <PrismicImage className='w-full h-full object-cover block' key={index} field={image} />
         ))}
