@@ -14,11 +14,12 @@ type Props = {
   target?: '_blank' | '_self'
   rightIcon?: ReactNode
   isActive?: boolean
+  classnames?: string
 }
 
-export const Button: FC<Props> = ({ label, variant = 'orange', as = 'a', onClick, href = '/', target, rightIcon, isActive = false }) => {
+export const Button: FC<Props> = ({ label, variant = 'orange', as = 'a', onClick, href = '/', target, rightIcon, isActive = false, classnames }) => {
   return (
-    <div className={combineClasses(buttonClasses.container({ variant }), isActive ? `active-status-${variant}` : '')}>
+    <div className={combineClasses(buttonClasses.container({ variant }), isActive ? `active-status-${variant}` : '', classnames)}>
       {createElement(
         as === 'a'
           ? () =>
