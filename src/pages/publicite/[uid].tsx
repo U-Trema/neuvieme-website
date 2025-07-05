@@ -8,6 +8,7 @@ import {fetchNavigation} from "../../../libs/utils/fetchNavigation"
 import {Scroll} from "../../../libs/ui/Scroll/Scroll"
 import {enrichSlices} from "../../../libs/utils/enrichSlices"
 import {nextToPrismicLocale, prismicToNextLocale} from "../../../libs/utils/locales"
+import {useMediaQuery} from "@mantine/hooks";
 
 
 type Params = { uid: string }
@@ -16,7 +17,13 @@ export default function Page({page}: any) {
   const ref = useRef<any>(null)
   const pref = useRef<any>(null)
 
+  const matches = useMediaQuery('(max-width: 768px)', false, {
+    getInitialValueInEffect: true,
+  });
+
   useEffect(() => {
+    if (matches) return
+
     const cursorFollower = ref.current
     if (!ref.current) return
     if (!pref.current) return
@@ -42,13 +49,13 @@ export default function Page({page}: any) {
     return () => {
       if (pref.current) return pref.current.removeEventListener('mousemove', updateCursorPosition)
     }
-  }, [ref.current])
+  }, [ref.current, matches])
 
   return (
     <div ref={pref} style={{ position: 'relative' }} className='px-24 mt-64'>
       <Scroll />
       <SliceZone slices={page.data.slices} components={components} />
-      <div className='cursor-follower' ref={ref} />
+      {!matches && <div className='cursor-follower' ref={ref} />}
     </div>
   )
 }
