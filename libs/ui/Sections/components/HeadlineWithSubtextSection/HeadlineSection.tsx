@@ -12,11 +12,11 @@ type Props = any
 
 const components = {
   heading1: ({ children }: { children: ReactNode }) => (<h1 className={combineClasses(headlineWithSubtextSectionClasses.title(), 'relative z-[2000]')}>{children}</h1>),
-  p: ({ children }: { children: ReactNode }) => (<p className='leading-[150%] md:text-base'>{children}</p>),
+  paragraph: ({ children }: { children: ReactNode }) => (<p className='leading-[150%] md:text-base'>{children}</p>),
 }
 
 export const HeadlineWithSubtextSection: FC<Props> = ({ slice }) => {
-  const [ elementRef, hasBeenVisible ] = useIntersectionObserver({
+  const [ elementRef, hasBeenVisible, isIntersecting, entry ] = useIntersectionObserver({
     options: {
       rootMargin: '80px 0px 0px 0px'
     }
@@ -29,7 +29,7 @@ export const HeadlineWithSubtextSection: FC<Props> = ({ slice }) => {
         ref={elementRef}
         className={
           combineClasses(
-            observerCVA.root({ isVisible: hasBeenVisible }),
+            entry?.intersectionRatio < 1 && observerCVA.root({ isVisible: hasBeenVisible }),
             headlineWithSubtextSectionClasses.wrapper()
           )
         }
