@@ -21,6 +21,8 @@ export default function Page({page}: any) {
     getInitialValueInEffect: true,
   });
 
+  console.log(page.data.slices)
+
   useEffect(() => {
     if (matches) return
 
@@ -52,7 +54,7 @@ export default function Page({page}: any) {
   }, [ref.current, matches])
 
   return (
-    <div ref={pref} style={{ position: 'relative' }} className='px-24 mt-64'>
+    <div ref={pref} style={{ position: 'relative' }} className='px-24 md:px-0 pb-[160px]'>
       <Scroll />
       <SliceZone slices={page.data.slices} components={components} />
       {!matches && <div className='cursor-follower' ref={ref} />}

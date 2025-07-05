@@ -37,7 +37,9 @@
   --spacing-32: 2rem; /* 32px */
   --spacing-40: 2.5rem; /* 40px */
   --spacing-64: 4rem; /* 64px */
-  --spacing-80: 8rem; /* 80px */
+  --spacing-80: 5rem; /* 80px */
+  --spacing-120: 7.5rem; /* 120px */
+  --spacing-160: 10rem; /* 160px */
 
   /* font-size */
   --text-2rem: 2rem; /* 32px */

@@ -29,7 +29,7 @@ export const Button: FC<Props> = ({ label, variant = 'orange', as = 'a', onClick
           : as,
         {
           ...(onClick && { onClick }),
-          className: buttonClasses.root({ variant, withRightIcon: Boolean(rightIcon), isActive })
+          className: buttonClasses.root({ variant, withRightIcon: Boolean(rightIcon) })
         },
         label,
         rightIcon
