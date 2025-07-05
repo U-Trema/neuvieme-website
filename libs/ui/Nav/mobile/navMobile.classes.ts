@@ -4,7 +4,7 @@ export const navMobileClasses = {
   wrapper: cva([`
     before:transition-all before:duration-300 before:ease-in-out
     before:block before:absolute before:top-[0] before:-left-full
-    before:w-full before:h-full before:bg-primary-dark
+    before:w-full before:h-full before:bg-dark-primary
     `], {
     variants: {
       index: {
