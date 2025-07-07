@@ -52,7 +52,7 @@ export const Nav: FC<Props> = ({nav, scrollInfo}) => {
         ))}
 
         <li className='flex gap-4'>
-          {languages && <LanguageSwitcher languages={languages} />}
+          {languages && <LanguageSwitcher languages={languages} asButton={true}/>}
         </li>
       </ul>
     </nav>
