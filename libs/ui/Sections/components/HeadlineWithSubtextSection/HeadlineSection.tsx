@@ -12,7 +12,7 @@ type Props = any
 
 const components = {
   heading1: ({ children }: { children: ReactNode }) => (<h1 className={combineClasses(headlineWithSubtextSectionClasses.title(), 'relative z-[2000]')}>{children}</h1>),
-  paragraph: ({ children }: { children: ReactNode }) => (<p className='leading-[150%] md:text-base'>{children}</p>),
+  paragraph: ({ children }: { children: ReactNode }) => (<p className='leading-[150%] md:text-base font-semibold'>{children}</p>),
 }
 
 export const HeadlineWithSubtextSection: FC<Props> = ({ slice }) => {

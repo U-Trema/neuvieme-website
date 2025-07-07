@@ -4,13 +4,7 @@ import {Button} from "../../libs/ui/Button/Button"
 import {prismicToNextLocale} from "../../libs/utils/locales"
 import {prismicToNextColor} from "../../libs/utils/btnColor"
 
-type Language = {
-  label: string
-  code: string
-  active: boolean
-}
-
-export function LanguageSwitcher({languages}: any) {
+export function LanguageSwitcher({languages, asButton}: any) {
   const router = useRouter()
 
   const handleLocaleChange = (locale: string) => (
@@ -24,7 +18,7 @@ export function LanguageSwitcher({languages}: any) {
         .map(({code, label, button_color}: { code: string; label: string; button_color: string }) => {
           const isActive = prismicToNextLocale(code) === router.locale
 
-          return (
+          return asButton ? (
             <Button
               key={code}
               label={label}
@@ -33,6 +27,14 @@ export function LanguageSwitcher({languages}: any) {
               variant={prismicToNextColor(button_color)}
               as='button'
             />
+          ) : (
+            <button
+              key={code}
+              onClick={() => handleLocaleChange(code)}
+              className={`leading-[150%] cursor-pointer ${isActive ? 'font-bold underline' : ''}`}
+            >
+              {label}
+            </button>
           )
         })}
     </div>

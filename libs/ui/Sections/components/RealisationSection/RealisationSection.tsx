@@ -22,13 +22,18 @@ const components = {
   p: ({ children }: { children: ReactNode }) => (<p className='leading-[150%] md:text-base'>{children}</p>),
 }
 
+const subtitle_component = {
+  heading2: ({ children }: { children: ReactNode }) => (<p className='leading-[150%] text-lg font-semibold mt-40 mb-9'>{children}</p>),
+}
+
 export const RealisationSection: FC<Props> = ({ slice }) => {
-  const [ elementRef, hasBeenVisible ] = useIntersectionObserver({
+  const [ elementRef, hasBeenVisible, isIntersecting, entry ] = useIntersectionObserver({
     options: {
-      rootMargin: '80px 0 0 0'
+      rootMargin: '80px 0px 0px 0px'
     }
   })
-  const {title, description, medias = [], cta, contact_info, social_links, social_heading} = slice?.primary || {}
+
+  const {title, subtitle, description, medias = [], cta, contact_info, social_links, social_heading} = slice?.primary || {}
 
   return (
     <section className={combineClasses(realisationSectionClasses.root())}>
@@ -36,7 +41,7 @@ export const RealisationSection: FC<Props> = ({ slice }) => {
         ref={elementRef}
         className={
           combineClasses(
-            observerCVA.root({ isVisible: hasBeenVisible }),
+            entry?.intersectionRatio < 1 && observerCVA.root({ isVisible: hasBeenVisible }),
             realisationSectionClasses.wrapper()
           )
         }
@@ -56,6 +61,9 @@ export const RealisationSection: FC<Props> = ({ slice }) => {
         <div>
           {social_heading && (
             <PrismicRichText field={social_heading} components={components}/>
+          )}
+          {subtitle && (
+            <PrismicRichText field={subtitle} components={subtitle_component}/>
           )}
           {social_links?.data && (
             <div className='flex gap-16'>
