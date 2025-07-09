@@ -1,9 +1,11 @@
-import {FC, ReactNode} from "react"
-import {useViewportSize, useMediaQuery} from "@mantine/hooks"
+import {FC, ReactNode, useEffect} from "react"
+import {useViewportSize, useMediaQuery, useSessionStorage} from "@mantine/hooks"
 
 import {Nav} from "../../libs/ui/Nav/desktop/Nav"
 import {useElementPosition} from "../../libs/hooks/useElementPosition"
 import {NavMobile} from "../../libs/ui/Nav/mobile/NavMobile"
+import {Loader} from "../../libs/ui/Loader/Loader";
+import {useRouter} from "next/router";
 
 type Props = {
   children: ReactNode
@@ -11,6 +13,7 @@ type Props = {
 }
 
 export const Layout: FC<Props> = ({ children, nav }) => {
+  const router = useRouter()
   const { width } = useViewportSize()
   const { elementRef, scrollInfo } = useElementPosition(width)
 
@@ -18,8 +21,19 @@ export const Layout: FC<Props> = ({ children, nav }) => {
     getInitialValueInEffect: true,
   });
 
+  const [loaderPlayed, setLoaderPlayed] = useSessionStorage({
+    key: 'loader-played',
+    defaultValue: false
+  })
+
+  useEffect(() => {
+    setLoaderPlayed(false)
+  }, []);
+
   return (
     <main ref={elementRef}>
+      {(router.route === '/' && !loaderPlayed) && <Loader onComplete={setLoaderPlayed} />}
+      
       {width >= 768 && <Nav scrollInfo={scrollInfo} nav={nav} />}
       {!matches && <NavMobile nav={nav} />}
 

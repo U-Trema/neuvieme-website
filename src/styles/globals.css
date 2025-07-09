@@ -80,3 +80,15 @@ body.overflow-hidden {
     filter: blur(35px);
   }
 }
+
+.loader-circle {
+  background: conic-gradient(
+    #FFB400 0deg,
+    #F29200 15deg,
+    #EA5B0C 30deg,
+    #E30A12 45deg,
+    #961B81 60deg,
+    #7444C3 75deg,
+    #030708 90deg
+  );
+}
