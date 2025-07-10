@@ -2096,7 +2096,7 @@ export interface SideMediaContentSliceMediaRightPrimaryMediasItem {
   image: prismic.ImageField<never>;
 
   /**
-   * Video field in *SideMediaContent → Media Right → Primary → Medias*
+   * Media field in *SideMediaContent → Media Right → Primary → Medias*
    *
    * - **Field Type**: Link to Media
    * - **Placeholder**: *None*

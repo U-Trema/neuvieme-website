@@ -5,10 +5,15 @@ import {useRouter} from "next/router"
 import {LogoMobile} from "../../icons/LogoMobile"
 import {navLinkClasses, navMobileClasses} from "./navMobile.classes"
 import {BurgerMenu} from "../../BurgerMenu/BurgerMenu"
+import {Button} from "../../Button/Button";
+import {prismicToNextColor} from "../../../utils/btnColor";
+import {LanguageSwitcher} from "../../../../components/LanguageSwitcher/LanguageSwitcher";
 
 export const NavMobile = ({ nav }: any) => {
   const router = useRouter()
   const [isOpen, setIsOpen] = useState(false)
+
+  const {languages = [], principal = [], dropdown = []} = nav || {}
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
@@ -25,16 +30,17 @@ export const NavMobile = ({ nav }: any) => {
       <div className={navMobileClasses.root({ open: isOpen })}>
         <div className={navLinkClasses.root({ open: isOpen })}>
           <ul className='flex flex-col gap-64'>
-            <li className={navMobileClasses.link({ open: isOpen })}>communication</li>
-            <li className={navMobileClasses.link({ open: isOpen })}>publicité</li>
-            <li className={navMobileClasses.link({ open: isOpen })}>production audiovisuel</li>
-            <li className={navMobileClasses.link({ open: isOpen })}>à propos</li>
-            <li className={navMobileClasses.link({ open: isOpen })}>
-              <div className='flex gap-5 justify-center'>
-                <div className='underline'>fr</div>
-                <div>en</div>
-              </div>
-            </li>
+            {dropdown.map(({button_link}: {button_link: any}, index: number) => (
+              <li key={index} className={navMobileClasses.link({ open: isOpen })}>
+                <Link href={button_link?.url}>{button_link?.text}</Link>
+              </li>
+            ))}
+            {principal.map(({button_link}: {button_link: any}, index: number) => (
+              <li key={index} className={navMobileClasses.link({ open: isOpen })}>
+                <Link href={button_link?.url}>{button_link.text}</Link>
+              </li>
+            ))}
+            <LanguageSwitcher languages={languages} />{/* ui */}
           </ul>
         </div>
       </div>

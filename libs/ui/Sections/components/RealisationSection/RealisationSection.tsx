@@ -13,6 +13,8 @@ import {LinkedIn} from "../../../icons/LinkedIn"
 import {Tiktok} from "../../../icons/Tiktok"
 import {X} from "../../../icons/X"
 import {WhatsApp} from "../../../icons/WhatsApp"
+import {prismicToNextColor} from "../../../../utils/btnColor";
+import {Media} from "../../../Media/Media";
 
 
 type Props = any
@@ -33,7 +35,7 @@ export const RealisationSection: FC<Props> = ({ slice }) => {
     }
   })
 
-  const {title, subtitle, description, medias = [], cta, contact_info, social_links, social_heading} = slice?.primary || {}
+  const {title, subtitle, description, medias = [], button_link, button_color, contact_info, social_links, social_heading} = slice?.primary || {}
 
   return (
     <section className={combineClasses(realisationSectionClasses.root())}>
@@ -80,14 +82,14 @@ export const RealisationSection: FC<Props> = ({ slice }) => {
         </div>
 
         <div className={realisationSectionClasses.imageMobile()}>
-          {medias.map(({image}: { image: any }, index: any) => (
-            <PrismicImage className='w-full h-full object-cover block' key={index} field={image} />
+          {medias.map((media: any, index: any) => (
+            <Media key={index} media={media} className='w-full h-full object-cover block' />
           ))}
         </div>
 
-        {cta?.text && (
+        {button_link?.text && (
           <div className='flex justify-end md:mt-24'>
-            <Button label={cta.text} href={cta.href} variant='violet' />
+            <Button label={button_link.text} href={button_link.href} variant={prismicToNextColor(button_color)} />
           </div>
         )}
       </div>
@@ -97,8 +99,8 @@ export const RealisationSection: FC<Props> = ({ slice }) => {
           combineClasses(realisationSectionClasses.imageDesktop(), observerCVA.root({ isVisible: hasBeenVisible }))
         }
       >
-        {medias.map(({image}: { image: any }, index: any) => (
-          <PrismicImage className='w-full h-full object-cover block' key={index} field={image} />
+        {medias.map((media: any, index: any) => (
+          <Media key={index} media={media} className='w-full h-full object-cover block' />
         ))}
       </div>
     </section>

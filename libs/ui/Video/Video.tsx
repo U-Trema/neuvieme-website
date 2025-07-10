@@ -5,16 +5,18 @@ import {videoClasses} from "./video.classes"
 
 type Props = {
   source: string
+  className?: string
 }
 
 /**
- * Video component (homepage full-width video)
+ * Media component (homepage full-width video)
  * @param source
+ * @param className
  * @constructor
  */
-export const Video: FC<Props> = ({ source }) => {
+export const Video: FC<Props> = ({ source, className }) => {
   return (
-    <div className={styles.videoGradient}>
+    <div className={className || styles.videoGradient}>
       <video
         src={source}
         className={videoClasses.root()}

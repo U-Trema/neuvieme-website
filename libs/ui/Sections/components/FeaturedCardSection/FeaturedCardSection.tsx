@@ -3,6 +3,7 @@ import {PrismicImage, PrismicRichText} from "@prismicio/react"
 
 import {featuredCardSectionClasses} from "./featured-card.section.classes"
 import {Button} from "../../../Button/Button"
+import {prismicToNextColor} from "../../../../utils/btnColor";
 
 
 type Props = any
@@ -13,7 +14,7 @@ const components = {
 }
 
 export const FeaturedCardSection: FC<Props> = ({ slice }) => {
-  const { project, button_link } = slice?.primary || {}
+  const { project, button_link, button_color } = slice?.primary || {}
 
   return (
     <div className={featuredCardSectionClasses.wrapper()}>
@@ -28,7 +29,7 @@ export const FeaturedCardSection: FC<Props> = ({ slice }) => {
             <PrismicRichText field={project.data.quote} components={components} />
           </div>
           <div className='md:w-fit md:mt-12'>
-            <Button label={button_link.text} variant='orange' as='a' href='#' classnames='w-max' />
+            <Button label={button_link.text} variant={prismicToNextColor(button_color)} as='a' href='#' classnames='w-max' />
           </div>
         </div>
       </div>
