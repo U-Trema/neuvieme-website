@@ -12,38 +12,63 @@ export async function enrichSlices(
 ): Promise<Slice[]> {
   const client = createClient({previewData})
 
+  if (!Array.isArray(slices)) return []
+
   return await Promise.all(
     slices.map(async (slice) => {
+      if (!slice || !slice.primary || !slice.slice_type) return slice
+
       const newSlice = {...slice}
 
       await Promise.all(
         singleLinks.map(async (field) => {
-          if (!isFilled.link(slice.primary?.[field])) return;
-          newSlice.primary[field] = await client.getByID((<any>slice.primary[field]).id)
+          const linkField = slice.primary[field]
+          if (!linkField || !isFilled.link(linkField)) return
+
+          try {
+            newSlice.primary[field] = await client.getByID((<any>slice.primary[field]).id)
+          } catch (error) {
+            console.error(`Error fetching document for field ${field} in slice ${slice.slice_type}:`, error)
+          }
         })
       )
 
-      if (projectLinks.includes(slice.slice_type) && isFilled.link(slice.primary?.project)) {
-        newSlice.primary.project = await client.getByID(slice.primary.project.id)
+      if (projectLinks.includes(slice.slice_type) && slice.primary.project && isFilled.link(slice.primary.project)) {
+        try {
+          newSlice.primary.project = await client.getByID(slice.primary.project.id)
+        } catch (error) {
+          console.error(`Error fetching project for slice ${slice.slice_type}:`, error)
+        }
       }
 
-      if (Array.isArray(slice.primary?.cards)) {
+      if (Array.isArray(slice.primary.cards)) {
         newSlice.primary.cards = await Promise.all(
           slice.primary.cards.map(async (card: any) => {
-            if (!isFilled.link(card?.project)) return card
+            if (!card?.project || !isFilled.link(card.project)) return card
 
-            const doc = await client.getByID(card.project.id)
-            return {...card, project: doc}
+            try {
+              const doc = await client.getByID(card.project.id)
+              return {...card, project: doc}
+            } catch (error) {
+              console.error(`Error fetching card project in slice ${slice.slice_type}:`, error)
+              return card
+            }
           })
         )
       }
-      if (Array.isArray(slice.primary?.medias)) {
+
+      if (Array.isArray(slice.primary.medias)) {
         newSlice.primary.medias = await Promise.all(
           slice.primary.medias.map(async (media: any) => {
-            if (!isFilled.link(media?.project)) return media
+            if (!media?.project || !isFilled.link(media.project)) return media
 
-            const doc = await client.getByID(media.project.id)
-            return {...media, project: doc}
+            try {
+              const doc = await client.getByID(media.project.id)
+              return {...media, project: doc}
+            } catch (error) {
+              console.error(`Error fetching media project in slice ${slice.slice_type}:`, error)
+              return media
+            }
           })
         )
       }
