@@ -11,26 +11,49 @@ export const Loader = ({ onComplete }: { onComplete: (arg0: boolean) => void }) 
   const ref = useRef(null)
   const other = useRef(null)
   const loadingRef = useRef(null)
+
   useEffect(() => {
     if (ref.current) {
       document.body.style.overflowY = 'hidden'
-      tl.fromTo(
-        other.current,
-        { opacity: '1' },
-        { opacity: '0', duration: 1.5, zIndex: -1, onComplete: () => {
-            document.body.style.overflowY = 'auto'
-            onComplete(true);
-          }}, '+=2'
-      )
+      tl
+        .fromTo(
+          loadingRef.current,
+          { opacity: 1 },
+          {
+            opacity: 0,
+            duration: 0.5,
+            onComplete: () => { loaderTl.kill() },
+          },
+          '+=2'
+        )
+        .fromTo(
+          other.current,
+          { opacity: 1 },
+          {
+            opacity: 0,
+            duration: 1.5,
+            zIndex: -1,
+            overwrite: "auto",
+            onComplete: () => {
+              document.body.style.overflowY = "auto";
+              onComplete(true);
+            },
+          },
+          2
+        );
     }
-
     if (loadingRef.current) {
       loaderTl.fromTo(
         loadingRef.current,
         { rotation: 0 },
-        { rotation: 360, duration: 2, repeat: -1, ease: 'none' }
+        { rotation: 360, duration: 1.2, repeat: -1, ease: 'none' }
       )
     }
+
+    return () => {
+      tl.kill();
+      loaderTl.kill();
+    };
   }, [ref, other, loadingRef]);
 
   return (
@@ -44,7 +67,7 @@ export const Loader = ({ onComplete }: { onComplete: (arg0: boolean) => void }) 
         </div>
 
         <div className={loader.logo()}>
-          <Logo />
+          <Logo width="375" height=""/>
         </div>
       </div>
     </div>
