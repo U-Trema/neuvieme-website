@@ -14,7 +14,8 @@ const components = {
 export const GalleryOverview2x2Section: FC<Props> = ({ slice }) => {
   const { root, wrapper, title, gallery } = galleryOverviewSectionClasses;
 
-  console.log({ p: slice?.primary })
+  // TODO => ici il manque le projet qu'il faut fetch
+  console.log('%cnique tout', 'color: lime; font-size: 12px;', slice)
   // const { project, button_link } = slice?.primary || {}
 
   return (

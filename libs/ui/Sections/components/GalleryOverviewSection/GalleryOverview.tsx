@@ -28,7 +28,6 @@ export const GalleryOverviewSection: FC<Props> = ({ slice }) => {
   const { root, wrapper, title, gallery } = galleryOverviewSectionClasses;
   const VariationComponent = variationComponents[slice.variation] || GalleryOverviewDefaultSection;
 
-  console.log({ p: slice?.primary })
   // const { project, button_link } = slice?.primary || {}
 
   return (
