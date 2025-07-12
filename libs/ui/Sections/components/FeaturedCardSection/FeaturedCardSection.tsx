@@ -20,16 +20,16 @@ export const FeaturedCardSection: FC<Props> = ({ slice }) => {
     <div className={featuredCardSectionClasses.wrapper()}>
       <div className='md:w-[100%] lg:w-[75%] flex flex-col lg:flex-row gap-40 items-center'>
         <div className='w-full h-full lg:basis-[60%] aspect-video'>
-          <PrismicImage className='w-full h-full object-cover block' field={project.data.project_main_image} />
+          <PrismicImage className='w-full h-full object-cover block' field={project.data?.project_main_image} />
         </div>
 
         <div className='w-full flex justify-between lg:basis-[40%] lg:flex-col xl:flex-row md:pr-0'>
           <div>
-            <PrismicRichText field={project.data.project_title} components={components}/>
-            <PrismicRichText field={project.data.quote} components={components} />
+            <PrismicRichText field={project.data?.project_title} components={components}/>
+            <PrismicRichText field={project.data?.quote} components={components} />
           </div>
           <div className='md:w-fit md:mt-12'>
-            <Button label={button_link.text} variant={prismicToNextColor(button_color)} as='a' href='#' classnames='w-max' />
+            <Button label={button_link?.text} variant={prismicToNextColor(button_color)} as='a' href='#' classnames='w-max' />
           </div>
         </div>
       </div>
