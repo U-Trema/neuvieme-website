@@ -16,7 +16,7 @@ const components = {
 }
 
 export const HeadlineWithSubtextSection: FC<Props> = ({ slice }) => {
-  const [ elementRef, hasBeenVisible, isIntersecting, entry ] = useIntersectionObserver({
+  const [ elementRef, hasBeenVisible, entry ] = useIntersectionObserver({
     options: {
       rootMargin: '80px 0px 0px 0px'
     }
