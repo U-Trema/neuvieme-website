@@ -6,15 +6,15 @@ import {galleryOverviewSectionClasses} from "./gallery-overview.section.classes"
 
 type Props = any
 
-const components = {
-  heading2: ({ children }: { children: ReactNode }) => (<h2 className={galleryOverviewSectionClasses.title()}>{children}</h2>),
-  paragraph: ({ children }: { children: ReactNode }) => (<p className='text-sm'>{children}</p>),
-}
+// const components = {
+//   heading2: ({ children }: { children: ReactNode }) => (<h2 className={galleryOverviewSectionClasses.title()}>{children}</h2>),
+//   paragraph: ({ children }: { children: ReactNode }) => (<p className='text-sm'>{children}</p>),
+// }
 
 export const GalleryOverviewDefaultSection: FC<Props> = ({ slice }) => {
-  const { root, wrapper, title, gallery } = galleryOverviewSectionClasses;
+  // const { root, wrapper, title, gallery } = galleryOverviewSectionClasses;
 
-  console.log({ p: slice?.primary })
+  // console.log({ p: slice?.primary })
   // const { project, button_link } = slice?.primary || {}
 
   return (

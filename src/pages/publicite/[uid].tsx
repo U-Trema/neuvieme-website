@@ -21,8 +21,6 @@ export default function Page({page}: any) {
     getInitialValueInEffect: true,
   });
 
-  console.log(page.data.slices)
-
   useEffect(() => {
     if (matches) return
 

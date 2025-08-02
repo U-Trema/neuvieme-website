@@ -13,7 +13,6 @@ export type GalleryOverviewProps =
  * Component for "GalleryOverview" Slices.
  */
 const GalleryOverview: FC<GalleryOverviewProps> = ({ slice }) => {
-  return <div>cool</div>
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -25,5 +24,3 @@ const GalleryOverview: FC<GalleryOverviewProps> = ({ slice }) => {
 }
 
 export default GalleryOverview
-
-// n: "default" | "5X1" | "1X1" | "2X1" | "2X2"

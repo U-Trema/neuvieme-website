@@ -25,20 +25,16 @@ const components = {
 }
 
 export const GalleryOverviewSection: FC<Props> = ({ slice }) => {
-  const { root, wrapper, title, gallery } = galleryOverviewSectionClasses;
+  const { gallery } = galleryOverviewSectionClasses;
   const VariationComponent = variationComponents[slice.variation] || GalleryOverviewDefaultSection;
 
-  // const { project, button_link } = slice?.primary || {}
-
   return (
-    <div className={root()}>
-      <div className={wrapper()}>
-        {slice.primary.title && (
-          <h2 className={title()}>{slice.primary.title}</h2>
-        )}
-        <div className={gallery({ variation: slice.variation })}>
-          <VariationComponent slice={slice} />
-        </div>
+    <div>
+      {slice.primary.title && (
+        <PrismicRichText components={components} field={slice.primary.title} />
+      )}
+      <div className={gallery({ variation: slice.variation })}>
+        <VariationComponent slice={slice} />
       </div>
     </div>
   )
