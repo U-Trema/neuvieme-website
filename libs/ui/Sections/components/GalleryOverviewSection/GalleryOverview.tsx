@@ -29,7 +29,7 @@ export const GalleryOverviewSection: FC<Props> = ({ slice }) => {
   const VariationComponent = variationComponents[slice.variation] || GalleryOverviewDefaultSection;
 
   return (
-    <div>
+    <div className='px-24 md:px-0'>
       {slice.primary.title && (
         <PrismicRichText components={components} field={slice.primary.title} />
       )}
