@@ -1,0 +1,15 @@
+.inactive {
+  transform: translateX(0);
+}
+
+.active {
+  transform: translateX(-400px);
+}
+
+.coupe_decale {
+  transform: translateX(400px);
+}
+
+.open {
+  width: 400px !important;
+}
