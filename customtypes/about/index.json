@@ -11,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "testimonial_carousel": {
+              "type": "SharedSlice"
+            },
             "side_media_content": {
               "type": "SharedSlice"
             },

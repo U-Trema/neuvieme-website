@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type AboutDocumentDataSlicesSlice =
+  | TestimonialCarouselSlice
   | SideMediaContentSlice
   | HeadlineWithSubtextSlice;
 
@@ -258,7 +259,6 @@ export type ContactInfoDocument<Lang extends string = string> =
   >;
 
 type DigitalCreationDocumentDataSlicesSlice =
-  | TestimonialCarouselSlice
   | GalleryOverviewSlice
   | SideMediaContentSlice
   | IconTextGridSlice
@@ -266,11 +266,11 @@ type DigitalCreationDocumentDataSlicesSlice =
   | HeadlineWithSubtextSlice;
 
 /**
- * Content for Digital Creation documents
+ * Content for Communication documents
  */
 interface DigitalCreationDocumentData {
   /**
-   * Slice Zone field in *Digital Creation*
+   * Slice Zone field in *Communication*
    *
    * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
@@ -279,7 +279,7 @@ interface DigitalCreationDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
   slices: prismic.SliceZone<DigitalCreationDocumentDataSlicesSlice> /**
-   * Meta Title field in *Digital Creation*
+   * Meta Title field in *Communication*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A title of the page used for social media and search engines
@@ -290,7 +290,7 @@ interface DigitalCreationDocumentData {
   meta_title: prismic.KeyTextField;
 
   /**
-   * Meta Description field in *Digital Creation*
+   * Meta Description field in *Communication*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A brief summary of the page
@@ -301,7 +301,7 @@ interface DigitalCreationDocumentData {
   meta_description: prismic.KeyTextField;
 
   /**
-   * Meta Image field in *Digital Creation*
+   * Meta Image field in *Communication*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -313,7 +313,7 @@ interface DigitalCreationDocumentData {
 }
 
 /**
- * Digital Creation document from Prismic
+ * Communication document from Prismic
  *
  * - **API ID**: `digital_creation`
  * - **Repeatable**: `false`
@@ -657,6 +657,41 @@ export interface ProjectDocumentDataMediasItem {
   embed: prismic.EmbedField;
 }
 
+/**
+ * Item in *Project → Testimonials*
+ */
+export interface ProjectDocumentDataTestimonialsItem {
+  /**
+   * name field in *Project → Testimonials*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Full name of the person giving the testimonial
+   * - **API ID Path**: project.testimonials[].name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * quote field in *Project → Testimonials*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Testimonial text
+   * - **API ID Path**: project.testimonials[].quote
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  quote: prismic.RichTextField;
+
+  /**
+   * photo field in *Project → Testimonials*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.testimonials[].photo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  photo: prismic.ImageField<never>;
+}
+
 type ProjectDocumentDataSlicesSlice = never;
 
 /**
@@ -772,6 +807,19 @@ interface ProjectDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#group
    */
   medias: prismic.GroupField<Simplify<ProjectDocumentDataMediasItem>>;
+
+  /**
+   * Testimonials field in *Project*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.testimonials[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  testimonials: prismic.GroupField<
+    Simplify<ProjectDocumentDataTestimonialsItem>
+  >;
 
   /**
    * Slice Zone field in *Project*
@@ -1301,46 +1349,31 @@ export interface GalleryOverviewSlice1X1PrimaryItemsItem {
    * - **Documentation**: https://prismic.io/docs/field#embed
    */
   embed: prismic.EmbedField;
+}
+
+/**
+ * Item in *GalleryOverview → 1x1 → Primary → Services Icons*
+ */
+export interface GalleryOverviewSlice1X1PrimaryServicesIconsItem {
+  /**
+   * icon field in *GalleryOverview → 1x1 → Primary → Services Icons*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery_overview.1X1.primary.services_icons[].icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icon: prismic.ImageField<never>;
 
   /**
-   * Title Left field in *GalleryOverview → 1x1 → Primary → Items*
+   * Service field in *GalleryOverview → 1x1 → Primary → Services Icons*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: gallery_overview.1X1.primary.items[].title_left
+   * - **API ID Path**: gallery_overview.1X1.primary.services_icons[].service
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  title_left: prismic.KeyTextField;
-
-  /**
-   * sub Title Left field in *GalleryOverview → 1x1 → Primary → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: gallery_overview.1X1.primary.items[].sub_title_left
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  sub_title_left: prismic.KeyTextField;
-
-  /**
-   * Title Right field in *GalleryOverview → 1x1 → Primary → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: gallery_overview.1X1.primary.items[].title_rigth
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title_rigth: prismic.KeyTextField;
-
-  /**
-   * Sub Title Right field in *GalleryOverview → 1x1 → Primary → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: gallery_overview.1X1.primary.items[].sub_title_rigth
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  sub_title_rigth: prismic.KeyTextField;
+  service: prismic.KeyTextField;
 }
 
 /**
@@ -1458,16 +1491,6 @@ export type GalleryOverviewSliceDefault = prismic.SharedSliceVariation<
  */
 export interface GalleryOverviewSlice5X1Primary {
   /**
-   * Title field in *GalleryOverview → 5x1 → Primary*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: *None*
-   * - **API ID Path**: gallery_overview.5X1.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.TitleField;
-
-  /**
    * Grid Items field in *GalleryOverview → 5x1 → Primary*
    *
    * - **Field Type**: Group
@@ -1504,6 +1527,18 @@ export interface GalleryOverviewSlice1X1Primary {
    * - **Documentation**: https://prismic.io/docs/field#group
    */
   items: prismic.GroupField<Simplify<GalleryOverviewSlice1X1PrimaryItemsItem>>;
+
+  /**
+   * Services Icons field in *GalleryOverview → 1x1 → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery_overview.1X1.primary.services_icons[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  services_icons: prismic.GroupField<
+    Simplify<GalleryOverviewSlice1X1PrimaryServicesIconsItem>
+  >;
 }
 
 /**
@@ -2096,7 +2131,7 @@ export interface SideMediaContentSliceMediaRightPrimaryMediasItem {
   image: prismic.ImageField<never>;
 
   /**
-   * Media field in *SideMediaContent → Media Right → Primary → Medias*
+   * Video field in *SideMediaContent → Media Right → Primary → Medias*
    *
    * - **Field Type**: Link to Media
    * - **Placeholder**: *None*
@@ -2207,9 +2242,65 @@ export interface SideMediaContentSliceSocialsMediaRightPrimaryMediasItem {
 }
 
 /**
+ * Item in *SideMediaContent → 2x2 → Primary → Medias*
+ */
+export interface SideMediaContentSlice2X2PrimaryMediasItem {
+  /**
+   * Project field in *SideMediaContent → 2x2 → Primary → Medias*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: side_media_content.2X2.primary.medias[].project
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  project: prismic.ContentRelationshipField<"project">;
+
+  /**
+   * image field in *SideMediaContent → 2x2 → Primary → Medias*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: side_media_content.2X2.primary.medias[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Vidéo field in *SideMediaContent → 2x2 → Primary → Medias*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: side_media_content.2X2.primary.medias[].video
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  video: prismic.LinkToMediaField<prismic.FieldState, never>;
+
+  /**
+   * Embed field in *SideMediaContent → 2x2 → Primary → Medias*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: *None*
+   * - **API ID Path**: side_media_content.2X2.primary.medias[].embed
+   * - **Documentation**: https://prismic.io/docs/field#embed
+   */
+  embed: prismic.EmbedField;
+}
+
+/**
  * Primary content in *SideMediaContent → Media Right → Primary*
  */
 export interface SideMediaContentSliceMediaRightPrimary {
+  /**
+   * Layout direction field in *SideMediaContent → Media Right → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: side_media_content.media_right.primary.layout_direction
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  layout_direction: prismic.BooleanField;
+
   /**
    * Title field in *SideMediaContent → Media Right → Primary*
    *
@@ -2229,36 +2320,6 @@ export interface SideMediaContentSliceMediaRightPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   description: prismic.RichTextField;
-
-  /**
-   * Button Link field in *SideMediaContent → Media Right → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: side_media_content.media_right.primary.button_link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  button_link: prismic.LinkField<
-    string,
-    string,
-    unknown,
-    prismic.FieldState,
-    never
-  >;
-
-  /**
-   * Button Color field in *SideMediaContent → Media Right → Primary*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: *None*
-   * - **Default Value**: Violet
-   * - **API ID Path**: side_media_content.media_right.primary.button_color
-   * - **Documentation**: https://prismic.io/docs/field#select
-   */
-  button_color: prismic.SelectField<
-    "Violet" | "Rose" | "Rouge" | "Orange" | "Jaune 1" | "Jaune 2",
-    "filled"
-  >;
 
   /**
    * Medias field in *SideMediaContent → Media Right → Primary*
@@ -2409,12 +2470,63 @@ export type SideMediaContentSliceSocialsMediaRight =
   >;
 
 /**
+ * Primary content in *SideMediaContent → 2x2 → Primary*
+ */
+export interface SideMediaContentSlice2X2Primary {
+  /**
+   * Headline field in *SideMediaContent → 2x2 → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: side_media_content.2X2.primary.headline
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  headline: prismic.RichTextField;
+
+  /**
+   * Social Links field in *SideMediaContent → 2x2 → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: side_media_content.2X2.primary.social_links
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  social_links: prismic.ContentRelationshipField<"social_links">;
+
+  /**
+   * Medias field in *SideMediaContent → 2x2 → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: side_media_content.2X2.primary.medias[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  medias: prismic.GroupField<
+    Simplify<SideMediaContentSlice2X2PrimaryMediasItem>
+  >;
+}
+
+/**
+ * 2x2 variation for SideMediaContent Slice
+ *
+ * - **API ID**: `2X2`
+ * - **Description**: Displays content on the left and media (image or video) on the right.
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SideMediaContentSlice2X2 = prismic.SharedSliceVariation<
+  "2X2",
+  Simplify<SideMediaContentSlice2X2Primary>,
+  never
+>;
+
+/**
  * Slice variation for *SideMediaContent*
  */
 type SideMediaContentSliceVariation =
   | SideMediaContentSliceMediaRight
   | SideMediaContentSliceContactInfoMediaRight
-  | SideMediaContentSliceSocialsMediaRight;
+  | SideMediaContentSliceSocialsMediaRight
+  | SideMediaContentSlice2X2;
 
 /**
  * SideMediaContent Shared Slice
@@ -2443,16 +2555,6 @@ export interface TestimonialCarouselSliceDefaultPrimaryTestimonialsItem {
   project: prismic.ContentRelationshipField<"project">;
 
   /**
-   * Client Logo field in *TestimonialCarousel → Default → Primary → Testimonials*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: testimonial_carousel.default.primary.testimonials[].logo
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  logo: prismic.ImageField<never>;
-
-  /**
    * Client Name field in *TestimonialCarousel → Default → Primary → Testimonials*
    *
    * - **Field Type**: Text
@@ -2463,16 +2565,6 @@ export interface TestimonialCarouselSliceDefaultPrimaryTestimonialsItem {
   client_name: prismic.KeyTextField;
 
   /**
-   * Quote field in *TestimonialCarousel → Default → Primary → Testimonials*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: testimonial_carousel.default.primary.testimonials[].quote
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  quote: prismic.RichTextField;
-
-  /**
    * Organization field in *TestimonialCarousel → Default → Primary → Testimonials*
    *
    * - **Field Type**: Text
@@ -2481,6 +2573,16 @@ export interface TestimonialCarouselSliceDefaultPrimaryTestimonialsItem {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   organization: prismic.KeyTextField;
+
+  /**
+   * Quote field in *TestimonialCarousel → Default → Primary → Testimonials*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonial_carousel.default.primary.testimonials[].quote
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  quote: prismic.RichTextField;
 }
 
 /**
@@ -2578,6 +2680,7 @@ declare module "@prismicio/client" {
       ProjectDocument,
       ProjectDocumentData,
       ProjectDocumentDataMediasItem,
+      ProjectDocumentDataTestimonialsItem,
       ProjectDocumentDataSlicesSlice,
       SocialLinksDocument,
       SocialLinksDocumentData,
@@ -2603,6 +2706,7 @@ declare module "@prismicio/client" {
       GalleryOverviewSlice5X1PrimaryItemsItem,
       GalleryOverviewSlice5X1Primary,
       GalleryOverviewSlice1X1PrimaryItemsItem,
+      GalleryOverviewSlice1X1PrimaryServicesIconsItem,
       GalleryOverviewSlice1X1Primary,
       GalleryOverviewSlice2X1PrimaryItemsItem,
       GalleryOverviewSlice2X1Primary,
@@ -2647,10 +2751,13 @@ declare module "@prismicio/client" {
       SideMediaContentSliceContactInfoMediaRightPrimary,
       SideMediaContentSliceSocialsMediaRightPrimaryMediasItem,
       SideMediaContentSliceSocialsMediaRightPrimary,
+      SideMediaContentSlice2X2PrimaryMediasItem,
+      SideMediaContentSlice2X2Primary,
       SideMediaContentSliceVariation,
       SideMediaContentSliceMediaRight,
       SideMediaContentSliceContactInfoMediaRight,
       SideMediaContentSliceSocialsMediaRight,
+      SideMediaContentSlice2X2,
       TestimonialCarouselSlice,
       TestimonialCarouselSliceDefaultPrimaryTestimonialsItem,
       TestimonialCarouselSliceDefaultPrimary,

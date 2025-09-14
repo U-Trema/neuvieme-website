@@ -11,6 +11,15 @@
       "imageUrl": "",
       "docURL": "...",
       "primary": {
+        "layout_direction": {
+          "type": "Boolean",
+          "config": {
+            "label": "Layout direction",
+            "placeholder_false": "left",
+            "placeholder_true": "right",
+            "default_value": true
+          }
+        },
         "title": {
           "type": "StructuredText",
           "config": {
@@ -23,33 +32,6 @@
           "config": {
             "multi": "paragraph,strong,em,hyperlink",
             "label": "Description"
-          }
-        },
-        "button_link": {
-          "type": "Link",
-          "config": {
-            "label": "Button Link",
-            "placeholder": "",
-            "select": null,
-            "allowTargetBlank": true,
-            "allowText": true,
-            "repeat": false
-          }
-        },
-        "button_color": {
-          "type": "Select",
-          "config": {
-            "label": "Button Color",
-            "placeholder": "",
-            "options": [
-              "Violet",
-              "Rose",
-              "Rouge",
-              "Orange",
-              "Jaune 1",
-              "Jaune 2"
-            ],
-            "default_value": "Violet"
           }
         },
         "medias": {
@@ -197,6 +179,81 @@
     {
       "id": "socialsMediaRight",
       "name": "Socials Media Right",
+      "description": "Displays content on the left and media (image or video) on the right.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Headline",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink"
+          }
+        },
+        "social_links": {
+          "type": "Link",
+          "config": {
+            "label": "Social Links",
+            "select": "document",
+            "repeat": false,
+            "customtypes": [
+              "social_links"
+            ]
+          }
+        },
+        "medias": {
+          "type": "Group",
+          "config": {
+            "label": "Medias",
+            "repeat": true,
+            "fields": {
+              "project": {
+                "type": "Link",
+                "config": {
+                  "label": "Project",
+                  "select": "document",
+                  "repeat": false,
+                  "customtypes": [
+                    "project"
+                  ]
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "video": {
+                "type": "Link",
+                "config": {
+                  "label": "Vidéo",
+                  "placeholder": "",
+                  "select": "media",
+                  "allowText": true
+                }
+              },
+              "embed": {
+                "type": "Embed",
+                "config": {
+                  "label": "Embed",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "2X2",
+      "name": "2x2",
       "description": "Displays content on the left and media (image or video) on the right.",
       "version": "initial",
       "imageUrl": "",

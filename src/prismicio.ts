@@ -22,7 +22,7 @@ export const repositoryName =
 const routes: Route[] = [
   { type: "home", path: "/" },
   { type: "about", path: "/a-propos" },
-  { type: "digital_creation", path: "/digital" },
+  { type: "digital_creation", path: "/communication" },
   { type: "audio_realization", path: "/prod-audio" },
   { type: "advertising_productions", path: "/publicite/:uid" },
 ];

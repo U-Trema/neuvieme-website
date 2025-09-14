@@ -9,7 +9,7 @@ import {Scroll} from "../../libs/ui/Scroll/Scroll"
 import {enrichSlices} from "../../libs/utils/enrichSlices"
 import {nextToPrismicLocale} from "../../libs/utils/locales"
 
-export default function Digital({ page }: any) {
+export default function Communication({ page }: any) {
   const ref = useRef<any>(null)
   const pref = useRef<any>(null)
 

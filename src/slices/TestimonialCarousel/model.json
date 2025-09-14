@@ -27,23 +27,11 @@
                   ]
                 }
               },
-              "logo": {
-                "type": "Image",
-                "config": {
-                  "label": "Client Logo"
-                }
-              },
               "client_name": {
                 "type": "Text",
                 "config": {
-                  "label": "Client Name"
-                }
-              },
-              "quote": {
-                "type": "StructuredText",
-                "config": {
-                  "multi": "paragraph,strong,em",
-                  "label": "Quote"
+                  "label": "Client Name",
+                  "placeholder": ""
                 }
               },
               "organization": {
@@ -51,6 +39,15 @@
                 "config": {
                   "label": "Organization",
                   "placeholder": ""
+                }
+              },
+              "quote": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Quote",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,strong,em,heading6,heading5,heading4,heading3,heading2,heading1,preformatted"
                 }
               }
             }

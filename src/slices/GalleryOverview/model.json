@@ -71,15 +71,6 @@
       "imageUrl": "",
       "docURL": "...",
       "primary": {
-        "title": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Title",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "single": "heading1"
-          }
-        },
         "items": {
           "type": "Group",
           "config": {
@@ -171,32 +162,28 @@
                   "label": "Embed",
                   "placeholder": ""
                 }
-              },
-              "title_left": {
-                "type": "Text",
+              }
+            }
+          }
+        },
+        "services_icons": {
+          "type": "Group",
+          "config": {
+            "label": "Services Icons",
+            "repeat": true,
+            "fields": {
+              "icon": {
+                "type": "Image",
                 "config": {
-                  "label": "Title Left",
-                  "placeholder": ""
+                  "label": "icon",
+                  "constraint": {},
+                  "thumbnails": []
                 }
               },
-              "sub_title_left": {
+              "service": {
                 "type": "Text",
                 "config": {
-                  "label": "sub Title Left",
-                  "placeholder": ""
-                }
-              },
-              "title_rigth": {
-                "type": "Text",
-                "config": {
-                  "label": "Title Right",
-                  "placeholder": ""
-                }
-              },
-              "sub_title_rigth": {
-                "type": "Text",
-                "config": {
-                  "label": "Sub Title Right",
+                  "label": "Service",
                   "placeholder": ""
                 }
               }

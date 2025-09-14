@@ -116,19 +116,9 @@
 					}
 				]
 			},
-			"button_link": {
-				"key": "53041085-1537-484e-ac1f-9143152a1920",
-				"__TYPE__": "LinkContent",
-				"value": {
-					"__TYPE__": "ExternalLink",
-					"url": "https://slicemachine.dev",
-					"text": "date"
-				}
-			},
-			"button_color": {
-				"__TYPE__": "FieldContent",
-				"value": "Jaune 2",
-				"type": "Select"
+			"layout_direction": {
+				"__TYPE__": "BooleanContent",
+				"value": true
 			}
 		},
 		"items": []
@@ -387,6 +377,128 @@
 					"__TYPE__": "DocumentLink",
 					"id": "mock_document_id"
 				}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "2X2",
+		"primary": {
+			"headline": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Labore laborum ea magna laboris Lorem tempor reprehenderit officia ullamco laborum reprehenderit. Mollit sit occaecat aliquip exercitation tempor esse anim duis mollit reprehenderit nisi amet id in."
+						}
+					}
+				]
+			},
+			"social_links": {
+				"key": "0c87be8f-3c7a-47bf-a971-9c4452610da5",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "DocumentLink",
+					"id": "mock_document_id"
+				}
+			},
+			"medias": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"project",
+								{
+									"key": "384faf93-6041-4bbe-947c-920d86e351fd",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "DocumentLink",
+										"id": "mock_document_id"
+									}
+								}
+							],
+							[
+								"image",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1579931794097-0ad001e51edb",
+										"width": 3958,
+										"height": 3958
+									},
+									"url": "https://images.unsplash.com/photo-1579931794097-0ad001e51edb",
+									"width": 3958,
+									"height": 3958,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"alt": "luck",
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"video",
+								{
+									"key": "1894f556-9684-4569-b750-ebdbb8ad3019",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "FileLink",
+										"id": "mock_Media_link",
+										"kind": "file",
+										"name": "mock_name",
+										"url": "https://source.unsplash.com/daily",
+										"size": "0",
+										"text": "melted"
+									}
+								}
+							],
+							[
+								"embed",
+								{
+									"embed_url": "https://twitter.com/timbenniks/status/1304146886832594944",
+									"author_name": "Tim Benniks",
+									"author_url": "https://twitter.com/timbenniks",
+									"html": "<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">I’ve been diving deep on <a href=\"https://twitter.com/prismicio?ref_src=twsrc%5Etfw\">@prismicio</a> <a href=\"https://twitter.com/hashtag/slicemachine?src=hash&amp;ref_src=twsrc%5Etfw\">#slicemachine</a> today. I made all my own components and I used custom slices. It works like a charm with <a href=\"https://twitter.com/nuxt_js?ref_src=twsrc%5Etfw\">@nuxt_js</a>. Also\": I’m coding with this view. <a href=\"https://t.co/F0I8X9gz39\">pic.twitter.com/F0I8X9gz39</a></p>&mdash; Tim Benniks (@timbenniks) <a href=\"https://twitter.com/timbenniks/status/1304146886832594944?ref_src=twsrc%5Etfw\">September 10, 2020</a></blockquote>\n<script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>\n",
+									"type": "rich",
+									"cache_age": "3153600000",
+									"provider_name": "Twitter",
+									"provider_url": "http://www.twitter.com/",
+									"version": "1.0",
+									"all": {
+										"embed_url": "https://twitter.com/timbenniks/status/1304146886832594944",
+										"author_name": "Tim Benniks",
+										"author_url": "https://twitter.com/timbenniks",
+										"html": "<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">I’ve been diving deep on <a href=\"https://twitter.com/prismicio?ref_src=twsrc%5Etfw\">@prismicio</a> <a href=\"https://twitter.com/hashtag/slicemachine?src=hash&amp;ref_src=twsrc%5Etfw\">#slicemachine</a> today. I made all my own components and I used custom slices. It works like a charm with <a href=\"https://twitter.com/nuxt_js?ref_src=twsrc%5Etfw\">@nuxt_js</a>. Also\": I’m coding with this view. <a href=\"https://t.co/F0I8X9gz39\">pic.twitter.com/F0I8X9gz39</a></p>&mdash; Tim Benniks (@timbenniks) <a href=\"https://twitter.com/timbenniks/status/1304146886832594944?ref_src=twsrc%5Etfw\">September 10, 2020</a></blockquote>\n<script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>\n",
+										"width": 550,
+										"height": null,
+										"type": "rich",
+										"cache_age": "3153600000",
+										"provider_name": "Twitter",
+										"provider_url": "http://www.twitter.com/",
+										"version": "1.0"
+									},
+									"__TYPE__": "EmbedContent"
+								}
+							]
+						]
+					}
+				]
 			}
 		},
 		"items": [

@@ -1,7 +1,7 @@
 {
   "format": "page",
   "id": "digital_creation",
-  "label": "Digital Creation",
+  "label": "Communication",
   "repeatable": false,
   "status": true,
   "json": {
@@ -11,9 +11,6 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "testimonial_carousel": {
-              "type": "SharedSlice"
-            },
             "gallery_overview": {
               "type": "SharedSlice"
             },
