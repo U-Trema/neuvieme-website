@@ -34,8 +34,8 @@ export const Layout: FC<Props> = ({ children, nav }) => {
     <main ref={elementRef}>
       {(router.route === '/' && !loaderPlayed) && <Loader onComplete={setLoaderPlayed} />}
       
-      {/*{width >= 768 && <Nav scrollInfo={scrollInfo} nav={nav} />}*/}
-      {/*{!matches && <NavMobile nav={nav} />}*/}
+      {width >= 768 && <Nav scrollInfo={scrollInfo} nav={nav} />}
+      {!matches && <NavMobile nav={nav} />}
 
       {children}
     </main>

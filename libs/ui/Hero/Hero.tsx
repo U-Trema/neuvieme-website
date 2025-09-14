@@ -3,7 +3,7 @@ import { FC } from "react"
 import { Video } from "../Video/Video"
 import { AnimatedArrow } from "./AnimatedArrow"
 
-const DEFAULT_VIDEO = "/video_placeholder.mp4"
+const DEFAULT_VIDEO = "/intro_accueil.mp4"
 
 export const Hero: FC<any> = ({ slice }) => {
   const videoSource = slice?.primary?.video?.url ?? DEFAULT_VIDEO
