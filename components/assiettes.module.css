@@ -193,6 +193,7 @@
 .container p {
   font-size: 0.85rem;
   margin-bottom: 1vw;
+  color: var(--color-dark-primary)
 }
 
 .cross {
