@@ -13,6 +13,8 @@ class App {
     this.cross = document.querySelector(".js-cross")
 
     this.isDragging = false
+
+    this.targetVideo = null
   }
 
   init() {
@@ -98,7 +100,7 @@ class App {
 
   addEvents() {
     window.addEventListener("wheel", (e) => {
-      e.preventDefault()
+      // e.preventDefault()
 
       const deltaX = -e.deltaX * 7
       const deltaY = -e.deltaY * 7
@@ -127,7 +129,7 @@ class App {
 
     window.addEventListener("mousemove", (e) => {
       if (this.SHOW_DETAILS) {
-        this.handleCursor(e)
+        // this.handleCursor(e)
       }
     })
   }
@@ -196,6 +198,10 @@ class App {
     this.products.forEach(product => {
       product.addEventListener("click", (e) => {
         e.stopPropagation()
+
+        this.targetVideo = e.target
+        this.targetVideo?.play()
+
         this.showDetails(product)
       })
     })
@@ -212,7 +218,8 @@ class App {
     this.dom.classList.add("--is-details-showing")
 
     gsap.to(this.dom, {
-      x: "-50vw",
+      // x: "-50vw",
+      x: "-100vw",
       duration: 1.2,
       ease: "power3.inOut",
     })
@@ -265,7 +272,7 @@ class App {
     })
 
     gsap.to(this.details, {
-      x: "50vw",
+      x: "100vw",
       duration: 1.2,
       delay: .3,
       ease: "power3.inOut"
@@ -293,6 +300,10 @@ class App {
         stagger: 0.05,
       })
     })
+
+    if (this.targetVideo) {
+      this.targetVideo.pause()
+    }
   }
 
   flipProduct(product) {
@@ -331,9 +342,12 @@ class App {
     })
 
     const state = Flip.getState(this.currentProduct)
+    console.log('state ', state)
 
     const finalRect = this.originalParent.getBoundingClientRect()
     const currentRect = this.currentProduct.getBoundingClientRect()
+    console.log('final_rect: ', finalRect)
+    console.log('current_rect: ', currentRect)
 
     gsap.set(this.currentProduct, {
       position: "absolute",

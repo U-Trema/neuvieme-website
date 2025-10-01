@@ -58,20 +58,27 @@
 
 .product {
   position: relative;
-  width: 18.5vw;
+  /*width: 18.5vw;*/
+  width: 10vw;
   aspect-ratio: 1 / 1;
 }
-.product div {
-  width: 18.5vw;
-  aspect-ratio: 1 / 1;
+.product > div {
+  /*width: 18.5vw;*/
+  /*width: 10vw;*/
+  /*aspect-ratio: 1 / 1;*/
 }
-.product img {
+.product img, .product img, .product video {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  /*width: 100% !important;*/
+  /*height: 100% !important;*/
+  /*object-fit: contain;*/
   will-change: transform;
   transition: transform 300ms ease-in-out;
+
+  aspect-ratio: 16/9;
+  width: 100%;
+  height: auto;
+  max-height: 600px;
 }
 
 .product:hover {
@@ -81,10 +88,13 @@
 
 .details {
   position: fixed;
-  top: 0;
-  right: -50vw;
-  width: 50vw;
+  top: 45px;
+  /*right: -50vw;*/
+  /*width: 50vw;*/
+  right: -100vw;
+  width: 100vw;
   height: 100vh;
+  overflow: scroll;
   padding: 3vw 4vw;
   background-color: #f1f1f1;
   z-index: 2000;
@@ -138,7 +148,7 @@
   position: relative;
   height: 100%;
   line-height: 1.5;
-  display: grid;
+  /*display: grid;*/
   /*max-width: 15rem;*/
 
   p {
@@ -163,31 +173,32 @@
 
   [data-text] {
     font-size: 14px;
-    grid-area: 1 / -1;
-    bottom: 0;
-    left: 0;
+    /*grid-area: 1 / -1;*/
+    /*bottom: 0;*/
+    /*left: 0;*/
   }
 }
 
 .details__thumb {
   position: relative;
   width: 100%;
-  /*aspect-ratio: 1 / 1;*/
-  aspect-ratio: 16/9;
   z-index: 3;
   will-change: transform;
+  aspect-ratio: 16/9;
+  height: auto;
+  max-height: 600px;
 
   @media (max-width: 600px) {
     width: 100%;
   }
 
-  div,
-  img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+  /*div,*/
+  /*img {*/
+  /*  position: absolute;*/
+  /*  width: 100%;*/
+  /*  height: 100%;*/
+  /*  object-fit: cover;*/
+  /*}*/
 }
 
 .container p {
