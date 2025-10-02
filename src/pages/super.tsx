@@ -1,6 +1,7 @@
 import {NextPage} from "next";
 import styles from '../../components/assiettes.module.css'
 import {combineClasses} from "../../libs/utils/combineClasses";
+import React from "react";
 
 const a = ['1', '2', '3', '4', '5', '6', '7'];
 // const logo_un = <svg xmlns="http://www.w3.org/2000/svg" fill='#fff' width="209" height="256" viewBox="0 0 814 1000"><path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76.5 0-103.7 40.8-165.9 40.8s-105.6-57-155.5-127C46.7 790.7 0 663 0 541.8c0-194.4 126.4-297.5 250.8-297.5 66.1 0 121.2 43.4 162.7 43.4 39.5 0 101.1-46 176.3-46 28.5 0 130.9 2.6 198.3 99.2zm-234-181.5c31.1-36.9 53.1-88.1 53.1-139.3 0-7.1-.6-14.3-1.9-20.1-50.6 1.9-110.8 33.7-147.1 75.8-28.5 32.4-55.1 83.6-55.1 135.5 0 7.8 1.3 15.6 1.9 18.1 3.2.6 8.4 1.3 13.6 1.3 45.4 0 102.5-30.4 135.5-71.3z"/></svg>
@@ -9,7 +10,7 @@ const logo_un = '/intro_accueil.mp4'
 const logo_deux = '/intro_accueil.mp4'
 const logo_trois = '/intro_accueil.mp4'
 // const logo_quatre = <svg xmlns="http://www.w3.org/2000/svg" style={{ flex: 'none', lineHeight: 1 }} viewBox="0 0 24 24"><path fill="#4D6BFE" d="M23.748 4.482c-.254-.124-.364.113-.512.234-.051.039-.094.09-.137.136-.372.397-.806.657-1.373.626-.829-.046-1.537.214-2.163.848-.133-.782-.575-1.248-1.247-1.548-.352-.156-.708-.311-.955-.65-.172-.241-.219-.51-.305-.774-.055-.16-.11-.323-.293-.35-.2-.031-.278.136-.356.276-.313.572-.434 1.202-.422 1.84.027 1.436.633 2.58 1.838 3.393.137.093.172.187.129.323-.082.28-.18.552-.266.833-.055.179-.137.217-.329.14a5.526 5.526 0 0 1-1.736-1.18c-.857-.828-1.631-1.742-2.597-2.458a11.365 11.365 0 0 0-.689-.471c-.985-.957.13-1.743.388-1.836.27-.098.093-.432-.779-.428-.872.004-1.67.295-2.687.684a3.055 3.055 0 0 1-.465.137 9.597 9.597 0 0 0-2.883-.102c-1.885.21-3.39 1.102-4.497 2.623C.082 8.606-.231 10.684.152 12.85c.403 2.284 1.569 4.175 3.36 5.653 1.858 1.533 3.997 2.284 6.438 2.14 1.482-.085 3.133-.284 4.994-1.86.47.234.962.327 1.78.397.63.059 1.236-.03 1.705-.128.735-.156.684-.837.419-.961-2.155-1.004-1.682-.595-2.113-.926 1.096-1.296 2.746-2.642 3.392-7.003.05-.347.007-.565 0-.845-.004-.17.035-.237.23-.256a4.173 4.173 0 0 0 1.545-.475c1.396-.763 1.96-2.015 2.093-3.517.02-.23-.004-.467-.247-.588zM11.581 18c-2.089-1.642-3.102-2.183-3.52-2.16-.392.024-.321.471-.235.763.09.288.207.486.371.739.114.167.192.416-.113.603-.673.416-1.842-.14-1.897-.167-1.361-.802-2.5-1.86-3.301-3.307-.774-1.393-1.224-2.887-1.298-4.482-.02-.386.093-.522.477-.592a4.696 4.696 0 0 1 1.529-.039c2.132.312 3.946 1.265 5.468 2.774.868.86 1.525 1.887 2.202 2.891.72 1.066 1.494 2.082 2.48 2.914.348.292.625.514.891.677-.802.09-2.14.11-3.054-.614zm1-6.44a.306.306 0 0 1 .415-.287.302.302 0 0 1 .2.288.306.306 0 0 1-.31.307.303.303 0 0 1-.304-.308zm3.11 1.596c-.2.081-.399.151-.59.16a1.245 1.245 0 0 1-.798-.254c-.274-.23-.47-.358-.552-.758a1.73 1.73 0 0 1 .016-.588c.07-.327-.008-.537-.239-.727-.187-.156-.426-.199-.688-.199a.559.559 0 0 1-.254-.078.253.253 0 0 1-.114-.358c.028-.054.16-.186.192-.21.356-.202.767-.136 1.146.016.352.144.618.408 1.001.782.391.451.462.576.685.914.176.265.336.537.445.848.067.195-.019.354-.25.452z"/></svg>
-const logo_quatre = '/video.mp4'
+const logo_quatre = 'https://neuvieme.cdn.prismic.io/neuvieme/aN7J9p5xUNkB1bPU_27_juin_Neuvieme.mp4'
 // const logo_cinq = <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" viewBox="0 0 256 233"><path d="M186.18182 0h46.54545v46.54545h-46.54545z"/><path fill="#F7D046" d="M209.45454 0h46.54545v46.54545h-46.54545z"/><path d="M0 0h46.54545v46.54545H0zM0 46.54545h46.54545V93.0909H0zM0 93.09091h46.54545v46.54545H0zM0 139.63636h46.54545v46.54545H0zM0 186.18182h46.54545v46.54545H0z"/><path fill="#F7D046" d="M23.27273 0h46.54545v46.54545H23.27273z"/><path fill="#F2A73B" d="M209.45454 46.54545h46.54545V93.0909h-46.54545zM23.27273 46.54545h46.54545V93.0909H23.27273z"/><path d="M139.63636 46.54545h46.54545V93.0909h-46.54545z"/><path fill="#F2A73B" d="M162.90909 46.54545h46.54545V93.0909h-46.54545zM69.81818 46.54545h46.54545V93.0909H69.81818z"/><path fill="#EE792F" d="M116.36364 93.09091h46.54545v46.54545h-46.54545zM162.90909 93.09091h46.54545v46.54545h-46.54545zM69.81818 93.09091h46.54545v46.54545H69.81818z"/><path d="M93.09091 139.63636h46.54545v46.54545H93.09091z"/><path fill="#EB5829" d="M116.36364 139.63636h46.54545v46.54545h-46.54545z"/><path fill="#EE792F" d="M209.45454 93.09091h46.54545v46.54545h-46.54545zM23.27273 93.09091h46.54545v46.54545H23.27273z"/><path d="M186.18182 139.63636h46.54545v46.54545h-46.54545z"/><path fill="#EB5829" d="M209.45454 139.63636h46.54545v46.54545h-46.54545z"/><path d="M186.18182 186.18182h46.54545v46.54545h-46.54545z"/><path fill="#EB5829" d="M23.27273 139.63636h46.54545v46.54545H23.27273z"/><path fill="#EA3326" d="M209.45454 186.18182h46.54545v46.54545h-46.54545zM23.27273 186.18182h46.54545v46.54545H23.27273z"/></svg>
 const logo_cinq = '/video.mp4'
 // const logo_six = <svg width="60" height="60" fill="none" xmlns="http://www.w3.org/2000/svg"><mask id="manifest-a" style={{ maskType: 'luminance' }} maskUnits="userSpaceOnUse" x="10" y="0" width="40" height="60"><path d="M49.6 0H10.4v60h39.2V0Z" fill="#fff"/></mask><g mask="url(#manifest-a)"><path fill-rule="evenodd" clip-rule="evenodd" d="M29.2 0c-8 .8-8.2 12.6-.4 13.9l.5.1v1.3a103.8 103.8 0 0 0-.2 4.9l-.3.1-.8.6c0 .2 0 .2-.6.2-.8 0-1.3.2-1.7.7l-.3.2a176.9 176.9 0 0 1-2.4-3.6l-.3-.5.2-.3C27 13 21.2 6 16.2 9.6c-5 3.7-.5 11.5 5.2 9.1l1 1.3a173.2 173.2 0 0 0 2 2.6c.1.1.1.1-.2.2-.9.3-1.7 1-1.9 1.7v.1a2.7 2.7 0 0 0-2.7 2.6c0 .5 0 .5-.2.6a12.3 12.3 0 0 0-4.6 6.8c0 .3 0 .2-.4.3-.8.1-1.3.5-1.8 1.1-.7 1-.8 1.7-.3 2.7.2.4.2.3 0 .7-3 4.1-2.4 9 1.6 12.9 2.5 2.5 6.2 4 10.2 4.4 1.6.1 1.7.2 2.1.7 2.7 3.4 5 3.4 7.5 0 .4-.5.6-.6 2.2-.7 6-.5 11.1-3.8 13-8.6 1.2-3 .8-5.9-1.2-8.7-.2-.4-.2-.3 0-.7.4-1 .4-1.8-.3-2.7-.5-.6-1-1-1.8-1-.4-.2-.4-.1-.4-.4a12.4 12.4 0 0 0-4.6-6.7c-.2-.2-.2-.2-.2-.7 0-1.4-1.2-2.5-2.7-2.6v-.1c-.2-.7-1-1.4-2-1.7-.3 0-.2 0-.2-.2a32.8 32.8 0 0 1 2-2.6l1-1.3c5.8 2.4 10.3-5.4 5.3-9-5-3.8-11 3.3-6.7 8l.2.2-.4.5a259.4 259.4 0 0 0-2.4 3.6l-.2-.2c-.5-.5-1-.7-1.7-.7L32 21c-.2-.4-.7-.7-1.1-.8-.2 0-.2 0-.2-2.2v-4l.4-.1c8.9-1.5 7-14.7-2-13.9ZM29 1.8c-3 .5-5 3.3-4.5 6l.1.7c1.6 4.7 9.2 4.7 10.8 0l.1-.6c.7-3.5-2.7-6.8-6.5-6.1Zm-10.3 8.6a3.8 3.8 0 0 0-3 4.6l.5 1c1.8 2.4 5 2.2 6.4-.4l.2-.7c.7-2.4-1.4-5-4-4.5Zm21.3 0a3.7 3.7 0 0 0-1.8 6.3c1.6 1.5 4.1 1.2 5.5-.6.3-.3.5-.7.6-1 .7-2.4-1.6-5.2-4.3-4.7ZM29.6 21.3c-1 .2-1.4 1.2-.9 2.5.2.4.2.4.5.4h.5c.3.2.3.2.6 0h.5c.3 0 .3 0 .4-.4.7-1.6 0-2.8-1.6-2.5Zm-2.8 1c-.9.2-1.2 1.3-.6 2.5.2.4.2.4.5.3h.4c.4.1.4.1.5-.1l.4-.4v-.3c-.3-.4-.4-.9-.4-1.6 0-.5-.2-.6-.8-.4Zm5.6.4c0 .7-.1 1.2-.4 1.6-.2.2-.2.2 0 .3l.3.4c.2.2.2.2.6.1h.4c.3.1.2.1.5-.3.6-1.4.2-2.5-1-2.6h-.4v.5Zm-8 1c-1.4.3-1.9 1.9-1 3 .2.3.2.3.4.1.4-.2.8-.2 1.2-.2h.2c0-.4.3-.7.5-1 .2-.2.2-.2 0-.3-.3-.4-.5-1.2-.5-1.7h-.9Zm10.4-.1c0 .5-.3 1.3-.6 1.7-.1.1-.1.1 0 .4.3.2.5.5.6.8 0 .2 0 .2.2.1.4 0 .8 0 1.1.2.3.2.2.2.5 0 .7-1 .5-2.5-.5-3-.4-.2-1.3-.3-1.3-.2Zm-6.2 1.6c-.9.5-1 1.5-.2 2.7.3.4.3.4.4.3.5-.8 1.9-.8 2.4 0 .1.2.7-.7.9-1.3.2-1.1-1-2.3-1.6-1.5l-.3.6c-.1.4-.3.4-.4 0l-.5-.8h-.7Zm-6.7.3c-1.7.2-2 2.6-.4 3.7l1.2.5v-.3c-.2-.6 0-1.4.4-1.9l-.2-.4c-.4-.4-.6-.9-.7-1.4 0-.3 0-.3-.3-.2Zm15.9 0v.3c-.2.5-.4.9-.8 1.3-.2.3-.2.3-.1.4.4.5.6 1.3.4 2v.2l1.2-.5c1.4-1 1.4-3 0-3.6l-.7-.1Zm-11.1.4c-1.1.2-1.3 2-.4 3.1l.2.2h.1c.5-.3 1-.4 1.8-.2l.2-.4a2.6 2.6 0 0 1-1.4-2.4V26a15.9 15.9 0 0 1-.5 0Zm6.3 0c-.2 0-.2 0-.1.3 0 1-.5 1.9-1.4 2.4l.2.4c.8-.2 1.3-.1 1.8.2h.1l.2-.2c.7-.8.7-2.3.1-2.8-.1-.2-.6-.4-.8-.3Zm-8.5 1.4c-1.4.4-1.5 2.2-.2 3.4.9.8 0 .6-1-.2-.2-.3-.2-.3-.4-.2-.9 0-2.2-.7-2.9-1.6-.1-.3-.1-.3-.2-.1a15.9 15.9 0 0 0-3.2 5.7c-.2.7-.2.6 0 .7 4.5.8 7.4 5.5 7.5 11.9 0 1.4 0 1.3.5 1.1.3 0 .4-.2.6-.8 1.1-3 2-4.2 3.7-4.6.3 0 .3 0 .3-.2 0-.3.4-1.2.6-1.3.3-.4.8.3 1 1.3 0 .2 0 .2.3.2 1.6.4 2.5 1.6 3.7 4.6.2.6.3.7.6.8.5.2.4.3.5-1.1 0-6.4 3-11.1 7.4-12 .3 0 .3 0 0-.6-.9-2.6-1.7-4.1-3.1-5.7-.1-.2-.1-.2-.3 0-.7 1-2 1.7-2.8 1.7l-.5.2c-1 .8-1.8 1-1 .2 1-.9 1.2-1.7.8-2.6-.4-.7-1.5-1.1-1.6-.6 0 .9-.4 1.5-1 1.9v.3c.3.5.2 1.2-.3 1.7s-.8.5-.4 0c.5-.5.5-1.2-.1-1.4l-1.4.1c0 .3-.4 1-.6 1.3-.2.2-.3.1-.1-.3.5-1.4 0-2.6-1-2.6s-1.4 1.2-.8 2.6c.1.4 0 .5-.2.3-.2-.3-.5-1-.5-1.3 0-.1-1-.2-1.4 0-.6.1-.6.8-.1 1.4.4.4 0 .4-.4 0-.5-.6-.7-1.3-.4-1.8.2-.2.2-.2 0-.3-.5-.4-.8-1-1-1.9v-.2h-.6Zm-9.6 8.5c-2 .3-1.7 2.6.6 4.4.8.6.8.6 2 1.2 4.4 2.3 5.5 3.7 5.5 6.7 0 .2.2.2.4.1V46c-.2-3.6-1.7-7-3.8-8.6a6.8 6.8 0 0 0-4.7-1.6Zm29.1 0c-3.8.4-6.7 4-7.3 9.1l-.1 3.3c.2.1.4 0 .4-.1 0-3 1.1-4.4 5.5-6.7 1.2-.6 1.2-.6 2-1.2 2.8-2.2 2.5-4.7-.5-4.4Zm-30.6 4.6c-1.6 1.7-2 5.3-1 7.8 1.4 3.6 6.2 6.9 10.4 7.2 1.8.2 2.3.2 2.1-.1a63.6 63.6 0 0 1-2.4-4.4c-.7-1-.7-1.7-.2-2.3.3-.3.1-1.8-.3-2.8-.3-.4-.3-.4-.5-.1-2.5 3.8-7.7.9-7.6-4.3 0-.7 0-.7-.2-1h-.3Zm32.8 0c-.2.3-.2.3-.2 1 .1 5.2-5 8-7.6 4.3-.2-.3-.2-.3-.4.1-.5 1-.7 2.5-.3 2.8.5.6.4 1.3-.2 2.3l-.5 1c-.6 1-1.6 3-2 3.4-.1.3-.2.3 1 .2 2.1-.1 3-.3 4.9-1 6.5-3 9.1-8.9 6-13.7-.4-.6-.4-.5-.7-.3Zm-31.4 1c-.3 1 .3 3 1.4 4.2.3.3.3.3.2 0-.5-1.3-.3-2.8.4-3.3.1 0-.1-.2-1-.7l-.7-.2c-.3-.2-.3-.2-.3 0Zm30.1 0-.6.2c-1 .5-1.3.6-1.1.7.7.5.9 2 .4 3.3-.1.3-.1.3.2 0 1-1.1 1.7-3.2 1.4-4.3h-.3Zm-15.3 2c-1.4.3-2.6 1.7-3.6 4-.4 1.3-.7 1.4-2.3 1.7-1 .1-1.1.4-.4 1.4.5.8 1.2 1.8 1.8 3l2.3 3.7c2.1 2.6 4 2.2 6.2-1.5l1.2-2.2 1.9-3c.7-1 .6-1.3-.4-1.4-1.6-.3-1.9-.4-2.4-1.6-1.1-2.9-2.7-4.4-4.3-4ZM26 49.1c-.4.2-.5.5-.3.8 0 .2.4.4.6.2l.3.1c.6.4.8.3.6-.2-.3-.7-.8-1.1-1.2-.9Zm7.2 0c-.3.2-.8 1-.7 1.2 0 .2.2.2.7 0l.3-.2c.2.2.5 0 .6-.2.3-.5-.3-1-.9-.8Z" fill="#22110C"/><path d="M33 25.9c-.2 0-.2 0-.1.3 0 1-.5 1.9-1.4 2.4l.2.4c.8-.2 1.3-.1 1.8.2h.1l.2-.2c.7-.8.7-2.3.1-2.8-.1-.2-.6-.4-.8-.3Zm4.8-.4v.3c-.2.5-.4.9-.8 1.3-.2.3-.2.3-.1.4.4.5.6 1.3.4 2v.2l1.2-.5c1.4-1 1.4-3 0-3.6l-.7-.1Zm-3-1.9c0 .5-.3 1.3-.6 1.7-.1.1-.1.1 0 .4.3.2.5.5.6.8 0 .2 0 .2.2.1.4 0 .8 0 1.1.2.3.2.2.2.5 0 .7-1 .5-2.5-.5-3-.4-.2-1.3-.3-1.3-.2Zm-2.4-.9c0 .7-.1 1.2-.4 1.6-.2.2-.2.2 0 .3l.3.4c.2.2.2.2.6.1h.4c.3.1.2.1.5-.3.6-1.4.2-2.5-1-2.6h-.4v.5Zm-2.8-1.4c-1 .2-1.4 1.2-.9 2.5.2.4.2.4.5.4h.5c.3.2.3.2.6 0h.5c.3 0 .3 0 .4-.4.7-1.6 0-2.8-1.6-2.5Zm-1 3.9c-.9.5-1 1.5-.2 2.7.3.4.3.4.4.3.5-.8 1.9-.8 2.4 0 .1.2.7-.7.9-1.3.2-1.1-1-2.3-1.6-1.5l-.3.6c-.1.4-.3.4-.4 0l-.5-.8h-.7Zm-1.9.8c-1.1 0-1.3 1.8-.4 3l.2.2h.1c.5-.3 1-.4 1.8-.2l.2-.4a2.6 2.6 0 0 1-1.4-2.4V26a13.7 13.7 0 0 1-.5 0Zm-2.4-2.4a2 2 0 0 0-.9 3.1c.2.3.2.3.4.1.4-.2.8-.2 1.2-.2h.2c0-.4.3-.7.5-1 .2-.2.2-.2 0-.3-.3-.4-.5-1.2-.5-1.7h-.9Zm2.5-1.3c-.9.2-1.2 1.3-.6 2.5.2.4.2.4.5.3h.4c.4.1.4.1.5-.1l.4-.4v-.3c-.3-.4-.4-.9-.4-1.6 0-.5-.2-.6-.8-.4ZM22 25.5c-1.8.2-2 2.6-.5 3.7l1.2.5v-.3c-.2-.6 0-1.4.4-1.9l-.2-.4c-.4-.4-.6-.9-.7-1.4 0-.3 0-.3-.3-.2Z" fill="#2430F0"/><path d="M44 35.8c-3.8.4-6.7 4-7.3 9.1l-.1 3.3c.2.1.4 0 .4-.1 0-3 1.1-4.4 5.5-6.7 1.2-.6 1.2-.6 2-1.2 2.8-2.2 2.5-4.7-.5-4.4Z" fill="#2BE1B7"/><path d="M46.2 40.5c-.2.2-.2.2-.2 1 .1 5-5 8-7.6 4.2-.2-.3-.2-.3-.4.1-.5 1-.6 2.5-.3 2.8.5.6.4 1.3-.2 2.3l-.5 1c-.6 1-1.6 3-2 3.4-.1.3-.2.3 1 .2 2.1-.1 3-.3 4.9-1 6.5-3 9.1-8.9 6-13.7-.4-.6-.4-.5-.7-.3Zm-32.8-.1c-1.6 1.7-2 5.3-1 7.8 1.4 3.6 6.2 6.9 10.4 7.2 1.8.2 2.3.2 2.1-.1a63.6 63.6 0 0 1-2.4-4.4c-.7-1-.7-1.7-.2-2.3.3-.3.1-1.8-.3-2.8-.3-.4-.3-.4-.5-.1-2.5 3.8-7.7.9-7.6-4.3 0-.7 0-.7-.2-1h-.3Z" fill="#2BE1B7"/><path d="M15 35.8c-2.1.3-1.8 2.6.5 4.4.8.6.8.6 2 1.2 4.4 2.3 5.5 3.7 5.5 6.7 0 .2.2.2.4.1V46c-.2-3.6-1.7-7-3.8-8.6a6.8 6.8 0 0 0-4.7-1.6Z" fill="#2BE1B7"/><path d="M24.5 27.3c-1.4.4-1.5 2.2-.2 3.4.9.8 0 .6-1-.2-.2-.3-.2-.3-.4-.2-.9 0-2.2-.7-2.9-1.6-.1-.3-.1-.3-.2-.1a15.9 15.9 0 0 0-3.2 5.7c-.2.7-.2.6 0 .7 4.5.8 7.4 5.5 7.5 11.9 0 1.4 0 1.3.5 1.1.3 0 .4-.2.6-.8 1.1-3 2-4.2 3.7-4.6.3 0 .3 0 .3-.2 0-.3.4-1.2.6-1.3.3-.4.8.3 1 1.3 0 .2 0 .2.3.2 1.6.4 2.5 1.6 3.7 4.6.2.6.3.7.6.8.5.2.4.3.5-1.1 0-6.4 3-11.1 7.4-12 .3 0 .3 0 0-.6-.9-2.6-1.7-4.1-3.1-5.7-.1-.2-.1-.2-.3 0-.7 1-2 1.7-2.8 1.7l-.5.2c-1 .8-1.8 1-1 .2 1-.9 1.2-1.7.8-2.6-.4-.7-1.5-1.1-1.6-.6 0 .9-.4 1.5-1 1.9v.3c.3.5.2 1.2-.3 1.7s-.8.5-.4 0c.5-.5.5-1.2-.1-1.4l-1.4.1c0 .3-.4 1-.6 1.3-.2.2-.3.1-.1-.3.5-1.4 0-2.6-1-2.6s-1.4 1.2-.8 2.6c.1.4 0 .5-.2.3-.2-.3-.5-1-.5-1.3 0-.1-1-.2-1.4 0-.6.1-.6.8-.1 1.4.4.4 0 .4-.4 0-.5-.6-.7-1.3-.4-1.8.2-.2.2-.2 0-.3-.5-.4-.8-1-1-1.9v-.2h-.6Z" fill="#2430F0"/><path fill-rule="evenodd" clip-rule="evenodd" d="M29.6 43.4c-1.3.3-2.6 1.7-3.6 4-.4 1.3-.7 1.4-2.3 1.7-1 .1-1.1.4-.4 1.4.5.8 1.2 1.8 1.8 3l2.3 3.7c2.1 2.6 4 2.2 6.2-1.5l1.2-2.2 1.9-3c.7-1 .6-1.3-.4-1.4-1.6-.3-1.9-.4-2.4-1.6-1.1-2.9-2.7-4.4-4.3-4ZM25.8 50c-.2-.3 0-.6.3-.8.4-.2 1 .2 1.2 1 .2.4 0 .5-.6.1h-.3c-.2 0-.5 0-.6-.3Zm6.8.4c-.1-.2.4-1 .7-1.2.6-.3 1.2.3 1 .8-.2.2-.5.4-.7.2l-.3.1c-.5.3-.6.3-.7.1Z" fill="#F2C79C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M22.8 15c-.4-1.8-1.8-3.1-3.8-2.8-1.6.3-3 1.5-3.3 2.8l.5 1c1.8 2.4 5 2.2 6.4-.4l.2-.7Zm1.8-6.5-.1-.6a6 6 0 0 1 4.7-4.3 5.4 5.4 0 0 1 6.3 4.3l-.1.6c-1.6 4.7-9.2 4.7-10.8 0Z" fill="#2430F0"/><path d="M40 10.4a3.7 3.7 0 0 0-2.9 4.5 4.2 4.2 0 0 1 3.2-2.7c2-.3 3.5 1.1 4 2.8.7-2.3-1.6-5-4.3-4.6ZM24.5 7.9a6 6 0 0 1 4.7-4.3 5.4 5.4 0 0 1 6.3 4.3c.7-3.5-2.7-6.8-6.5-6.1-3 .5-5 3.3-4.5 6ZM19 12.2c2-.3 3.4 1 3.8 2.7.7-2.4-1.4-5-4-4.5a3.8 3.8 0 0 0-3 4.6c.3-1.3 1.6-2.5 3.2-2.8Z" fill="#2430F0"/><path d="M38.2 16.7c1.6 1.5 4.1 1.2 5.5-.6.3-.3.5-.7.6-1-.5-1.8-2-3.2-4-2.9a4.2 4.2 0 0 0-3.2 2.7c.2.7.5 1.3 1.1 1.8Z" fill="#2430F0"/><path fill-rule="evenodd" clip-rule="evenodd" d="M25.3 6a6.3 6.3 0 0 1 4-2.4c2.3-.4 4.4.7 5.5 2.5l.6-.7a5.7 5.7 0 0 0-10.7-.2l.6.8Z" fill="#F2C79C"/><path d="M25.3 6c.8 1 1.9 2 2 2l1.2-1.1L30 5.7c.1 0 .7.5 1.2 1.1l1 1.2c.2 0 1.6-1 2.6-2a5.4 5.4 0 0 0-5.6-2.4 7 7 0 0 0-4 2.4Zm-9.6 9a4.3 4.3 0 0 1 3.3-2.8 3 3 0 0 1 2.8 1l.2-1.6c-.8-1-2-1.4-3.3-1.2a3.8 3.8 0 0 0-3 4.5Z" fill="#2BE1B7"/><path d="M15.7 15c.9.5 2 .7 2.3.5.3-.1.4-.8.4-1.5 0-.6 0-1 .2-1.1l1.2.5c.7.4 1.4.7 1.6.6.1 0 .3-.4.4-.9a3 3 0 0 0-2.8-.9 4.3 4.3 0 0 0-3.3 2.7Z" fill="#2BE1B7"/><path fill-rule="evenodd" clip-rule="evenodd" d="M37.4 12.5c0 .4 1.1 2.4 1.4 2.5.2 0 .7-.4 1.2-.7.5-.3.8-.6 1-.6l.4.6c.3.4.6 1 .8 1a8 8 0 0 0 2.2-1c0-2.2-2-4.3-4.4-3.9-1.2.2-2.2 1-2.6 2Z" fill="#2BE1B7"/><path d="m45 41.3-.7.3c-1 .5-1.3.6-1.1.7.7.5.9 2 .4 3.3-.1.3-.1.3.2 0 1-1.1 1.7-3.2 1.4-4.3h-.3Zm-30.2 0c-.3 1.1.3 3.2 1.4 4.3.3.3.3.3.2 0-.5-1.3-.3-2.8.4-3.3.1 0-.1-.2-1-.7l-.7-.2c-.3-.2-.3-.2-.3 0Zm27.9 3.2c0-.2-.1-.3-.3-.3 0 0-.2.1-.2.3l.2.2c.2 0 .3-.1.3-.2Z" fill="#fff"/><path opacity=".2" fill-rule="evenodd" clip-rule="evenodd" d="M35.2 8.9c-2 2-5.8 3.3-10.1.5C27.2 13 33.5 13 35.2 9ZM22 16.4c-2 .9-4.8 0-6.1-.9l.3.6c1.6 2 4.3 2.1 5.8.3Zm22-.8c-1.1 1-3.5 1.9-6.3.6l.5.5c1.6 1.5 4.1 1.2 5.5-.6.1-.2.3-.3.3-.5Z" fill="#22110C"/><path d="M24.5 7.9a6 6 0 0 1 4.7-4.3 5.4 5.4 0 0 1 6.3 4.3c.7-3.5-2.7-6.8-6.5-6.1-3 .5-5 3.3-4.5 6Z" fill="#2430F0"/><path fill-rule="evenodd" clip-rule="evenodd" d="M25.3 6a6.3 6.3 0 0 1 4-2.4c2.3-.4 4.4.7 5.5 2.5l.6-.7a5.7 5.7 0 0 0-10.7-.2l.6.8Z" fill="#2BE1B7"/><path fill-rule="evenodd" clip-rule="evenodd" d="M31.4 22c-.3-.6-1-.9-1.8-.7a1 1 0 0 0-1 .8c.3-.3 1-.4 1.4-.4.4 0 1 0 1.4.3Zm-3.9.4c-.4 0-1.2.3-1.5.7 0-.4.4-.7.8-.8.4-.1.6-.1.7.1Zm-2.3 1.3v-.1h-.9c-.6.2-1.1.7-1.3 1.3.5-.6 1.3-1.2 2.2-1.2Zm-4.7 3.5c.2-.7 1-1.4 1.5-1.4h.3a2.6 2.6 0 0 1 0-.2l-.1-.1H22c-1 0-1.5.8-1.5 1.7Zm9.1-1.6c-.3-.3-.9-.4-1.6.2l.6-.6h.7l.3.4Zm2.3.2c-.3-.6-1-1-1.3-.4l-.2.2c.3-.2.8-.4 1.5.2Zm-4.7.3V26a14.1 14.1 0 0 1-.5 0c-.6 0-.9.6-1 1.2.2-.7 1-1 1.5-1Zm7.6 1.3c.2-.4 1.2 0 1.6.7l.2.5c-.3-.7-1.1-1-1.8-1.2Zm-3.2 2.7c0-.1 1-.2 1.4 0 .2 0 .3 0 .3.2-.3-.3-1-.2-1.7-.2ZM29 29c.2-.2.5-.4.9-.4s.6.2.8.4c-.2-.2-.5-.3-.8-.3l-.9.3Zm-2.5 1.4.4-.3 1.4.1c-.8 0-1.5 0-1.8.2ZM25 27.5c-.6.2-1.5.5-1.7 1.3 0-.7.4-1.2 1-1.4h.7v.1Zm9-4.3c-.2-.5-.6-.8-1.3-.9h-.4v.2c.4 0 1.3.3 1.6.7Zm2.8 1.8a1 1 0 0 0-.8-1c-.4-.3-1.3-.4-1.3-.3v.1c.8 0 1.7.6 2.1 1.2Zm2.6 2.3c-.2-.7-1-1.4-1.5-1.4h-.3v-.3l.8.1c.6.3 1 1 1 1.6Zm-5.3-.2c0-.4-.1-.7-.4-.8-.1-.2-.6-.4-.8-.3h.1c-.1 0-.2 0-.2.2.5 0 1.3.2 1.5.9Z" fill="#fff" style={{mixBlendMode: 'hard-light'}} opacity=".2"/><path fill-rule="evenodd" clip-rule="evenodd" d="M45.8 36.1c-1.3 0-3 .4-4 1a11 11 0 0 0-4.7 6.3c-.1.7-.2.9-.3.8.8-4.7 3.6-8 7.2-8.4.8 0 1.4 0 1.8.3Zm-31.8 0c1.5-.1 3.1.3 4.3 1a11.3 11.3 0 0 1 4.9 7c-.5-2.8-1.8-5.4-3.6-6.7a6.8 6.8 0 0 0-4.7-1.6 2 2 0 0 0-.8.3Zm12.6 10.2a4.6 4.6 0 0 1 3.3-1.4c.8 0 2.4.2 3.6 1.6-1.1-2.2-2.5-3.3-4-3-1 .1-2 1.1-3 2.8Z" fill="#fff" fill-opacity=".4" style={{mixBlendMode: 'hard-light'}}/><path opacity=".2" fill-rule="evenodd" clip-rule="evenodd" d="m45.2 42-1.7.6-.3-.3c-.2-.1 0-.2 1-.7.3 0 .6-.2.7-.3h.2l.1.7Zm-30.5 0 1.8.6.3-.3c.1 0-.1-.2-1-.7a19 19 0 0 1-.7-.3h-.3v.6Zm7.5 8.5c0 1.1.3 2.5.5 3v.3c.2.5-1.2 1.3-6.6-1.1 2 1.5 4.4 2.5 6.7 2.7 1.8.2 2.3.2 2.1-.1a63.5 63.5 0 0 1-2.7-4.8Zm21.7 2.2c-5.4 2.4-6.8 1.6-6.7 1.1v-.2c.3-.6.7-2 .6-3.1l-.3.4-.5 1c-.6 1-1.6 3-2 3.4v.2h1c2.1-.1 3-.3 4.9-1l3-1.8Zm-19.1.3c1.2 1.9 1.7 2.6 2.3 3.3 2.4 2.6 4.4 2.2 6.9-1.5a46 46 0 0 0-.4.9c-2.3 3.7-4 4.1-6.2 1.5a24.7 24.7 0 0 1-2.6-4.2Z" fill="#22110C"/><path d="M30 40.1c-.5 0-1 3-1.3 3l-.5.5 1.8-.4 2 .6a3 3 0 0 0-.8-.6c-.2 0-.8-3-1.2-3ZM27 32c-.2 0-1-.6-1-1.5.1-.2.4-.5.4-.1s.5 1 .6 1.2c.2.1.3.3 0 .3Zm-4.6-1.5c-1 0-2.2-1.3-2.9-2.1l.4-.4 1 1.3 2 .6.4-.6.4.7 1 1c.4.6-1 0-1.2-.1l-.6-.4h-.5Zm3.1-1.5c-.4-.5-.2-1.1-.3-1.6l1.1 2v.2c-.2 0-.4-.2-.8-.6Zm3.6 2.6c-.4 0-.7-.9-.7-1.5l.4-.2.2 1c0 .2.5.8.1.7Zm3.8.4c.2 0 1-.6 1-1.5-.1-.2-.3-.5-.3-.1s-.5 1-.7 1.2c-.1.1-.3.3 0 .3Zm4.6-1.5c1 0 2.3-1.3 3-2.1L40 28l-.9 1.3-2 .6-.4-.6-.5.7c-.1.3-.6.6-1 1-.3.6 1 0 1.2-.1.2 0 .5-.3.6-.4h.5ZM34.4 29c.4-.5.3-1.1.3-1.6l-1 2v.2c.1 0 .4-.2.7-.6Zm-3.6 2.6c.4 0 .7-.9.7-1.5l-.3-.2-.2 1c-.1.2-.5.8-.2.7Z" fill="#000" fill-opacity=".2"/><path opacity=".2" d="M25.9 50c-.2 0 .2-.2.1-.5.3-.1.7 0 1 .3.5.3.5 1.2.5 1.6 0 .4-1.5-1.4-1.6-1.4Zm8.1 0c.2 0-.2-.2 0-.5-.3-.1-.8 0-1.1.3-.4.4-.4 1.2-.4 1.6 0 .4 1.5-1.4 1.6-1.4Z" fill="#22110C"/><path opacity=".2" fill-rule="evenodd" clip-rule="evenodd" d="M18.3 41.3c2.2 1.3 4.2 2.5 4.2 4v.1c-.7-1.4-2.2-2.5-5-4a7.8 7.8 0 0 1-2-1.2c-1.8-1.4-2.4-3-1.6-4-.6 2.2 2 3.7 4.4 5.1Z" fill="#22110C"/><path opacity=".2" fill-rule="evenodd" clip-rule="evenodd" d="M14 36.2h-.1c-.3 1.1.2 2 1.1 2.8.9.8 2.1 1.6 3.4 2.3 1 .6 2 1.2 2.8 1.9.8.6 1.3 1.3 1.3 2v.2c-.7-1.4-2.2-2.5-5-4a17 17 0 0 1-2-1.2 5 5 0 0 1-1.8-2.2c-.3-.7-.2-1.3.2-1.7Zm-.3 1.8a8.2 8.2 0 0 0 3.7 3.4c2.9 1.5 4.4 2.6 5 4v-.1c0-.8-.4-1.4-1.2-2-.8-.7-1.8-1.4-2.9-2C17.1 40.6 16 40 15 39c-.9-.8-1.4-1.6-1.1-2.7-.4.5-.4 1-.2 1.7Zm28 3.3c-2.2 1.3-4.2 2.5-4.2 4 .7-1.3 2.2-2.4 5-3.9 1.2-.6 1.2-.6 2-1.2 1.8-1.4 2.3-3 1.6-3.8.5 2-2 3.5-4.4 5Z" fill="#22110C"/><path opacity=".2" fill-rule="evenodd" clip-rule="evenodd" d="M46.2 38c-.2.8-.8 1.5-1.7 2.2a8.3 8.3 0 0 1-2 1.3c-2.8 1.4-4.3 2.5-5 3.8 0-.8.5-1.5 1.3-2.1.7-.7 1.8-1.3 2.8-2a14 14 0 0 0 3.4-2.1c.8-.8 1.3-1.7 1.1-2.7.4.4.4 1 .1 1.7Zm0-1.5c.3.4.3 1 0 1.6a8.2 8.2 0 0 1-3.7 3.4c-2.8 1.3-4.3 2.4-5 3.8 0-.8.5-1.4 1.3-2 .8-.7 1.8-1.4 2.9-2 1.2-.7 2.4-1.4 3.3-2.2.8-.8 1.3-1.7 1.2-2.6Z" fill="#22110C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M13.1 40.8c0 1.7 0 9 8.8 9 0-.5.1-.8.4-1.2.3-.3.1-1.8-.3-2.8l-.3-.3-.2.2c-2.5 3.8-7.7.9-7.6-4.3 0-.7 0-.7-.2-1h-.2l-.4.4Z" fill="#000" fill-opacity=".2" style={{mixBlendMode: 'multiply'}}/><path opacity=".2" fill-rule="evenodd" clip-rule="evenodd" d="M47 40.9c0 1.9-.3 9-8.9 9H38c0-.5 0-1-.3-1.3-.4-.3-.2-1.8.3-2.8l.2-.3.2.2c2.6 3.8 7.7.9 7.6-4.3v-.8l.2-.1.3-.2.4.5v.1ZM28.5 22.4c0 .4 0 .9.2 1.4.2.4.2.4.5.4h.5c.3.2.3.2.5 0h.6c.2 0 .2 0 .4-.4.3-.5.3-1 .3-1.4-.1.6-.4 1.5-1 1.5a2 2 0 0 1-.5 0h-.6c-.5 0-.8-.9-1-1.5Zm3.4 2c.3-.5.5-1 .5-1.7v-.3a3 3 0 0 1-.4 2.2c-.2-.1-.2-.1 0-.3Zm2.2-.7-.3 1v.2l-.3.3h-.2a1 1 0 0 0-.4 0h-.1l.3-.2.4-.2c.3-.3.5-.7.6-1Zm.7-.1c0 .5-.3 1.3-.6 1.7v.3c.4-.5.8-1.5.6-2Zm2.2 1.6c0 .3-.2 1-.5 1.2-.3.3-.4.3-.6.2h-.5l.7.2.2.1.2-.2c.4-.4.5-1 .5-1.5Zm2.5 1.9a3 3 0 0 1-1 1.9c-.5.5-1 .5-1.1-.2v-.2l-.1.8v.3l1.2-.5c.8-.5 1-1.4 1-2.1Zm-1.8-1.3c0 .5-.3.9-.7 1.3-.2.3-.2.3-.1.4.4-.3.7-1 .8-1.7Zm-3.5 1.6c0 .4-.1.8-.3 1-.3.3-.7.4-1 .4l-.7.1c.5 0 .8 0 1.2.3h.1l.2-.2c.3-.4.5-1 .5-1.6Zm-2.8 1.3c.5-.2 1.3-1 1.3-2 0 .8-.5 1.5-1.3 1.9v.1Zm.7-2c-.2.5-.5 1.2-1 1a3 3 0 0 0-2.2 0c-.5.2-.8-.4-1-.8l.5 1 .3.4v-.1c.6-.8 2-.8 2.5 0 .1.2.7-.6.8-1.3v-.2Zm-6.4.7c0 .5.2 1.1.6 1.6l.1.2h.2c.3-.2.7-.3 1.2-.3-.3 0-.5-.2-.7-.1-.3 0-.8 0-1-.5-.2-.1-.3-.5-.4-1Zm1.5-.8c0 1.1.8 1.9 1.3 2.1v-.1a2.6 2.6 0 0 1-1.3-2Zm-1.5-1c.2-.2.2-.2 0-.3-.3-.4-.5-1.2-.5-1.7-.2.5.2 1.5.5 2Zm-2.7-.4a2 2 0 0 0 .4 1.5l.2.2h.2c.3-.2.5-.3.8-.3H24c-.3.1-.4 0-.7-.2l-.4-1.2Zm3-1.3a2.8 2.8 0 0 0 .3 1l.1.3h.7c0-.1-.1-.2-.3-.2l-.4-.2a3 3 0 0 1-.5-1Zm1.5-1.5v.3c0 .7.2 1.2.5 1.6v.3a3 3 0 0 1-.5-2.2Zm-4.9 6.2v.2c-.1.7-.6.7-1.3.2-.6-.6-.8-1.3-.8-1.8 0 .7.2 1.5 1 2l1.2.5v-.3c-.1-.2-.1-.5 0-.8Zm.4-1c.2-.2.2-.2 0-.5a2.3 2.3 0 0 1-.8-1.5c0 .9.5 1.6.8 2Z" fill="#22110C"/><path d="M42.8 43.8c0-.4.3-.8.8-.8.4 0 .8.4.8.8s-.4.7-.8.7a.8.8 0 0 1-.8-.7Zm-27.2 0c0-.4.3-.8.8-.8.4 0 .7.4.7.8s-.3.7-.7.7a.8.8 0 0 1-.8-.7Zm2.1.7c0-.2-.1-.3-.3-.3 0 0-.2.1-.2.3l.2.2c.2 0 .3-.1.3-.2Z" fill="#fff"/></g></svg>
@@ -26,19 +27,7 @@ const imgs7 = [logo_trois, logo_sept, logo_cinq, logo_deux, logo_six, logo_un, l
 
 
 const Super: NextPage = () => {
-  function handleMouseOver(e: any) {
-    e.target.play()
-  }
-  function handleMouseLeave(e: any) {
-    e.target.pause()
-  }
-
-  const style = {
-    aspectRatio: '16/9',
-    width: '100%',
-    height: 'auto',
-    maxHeight: '600px'
-  }
+  const style = {}
   return (
     <div className={combineClasses(styles.container, 'js-container')}>
       <div className={combineClasses(styles.grid, 'js-grid')}>
@@ -57,7 +46,9 @@ const Super: NextPage = () => {
           {a.map((item, index) => {
             return (
               <div key={index} className={combineClasses(styles.product, 'js-product')}>
-                <div data-id={item}><video style={style} src={imgs2[index]} muted /></div>
+                <div data-id={item}>
+                <video style={style} src={imgs2[index]} muted/>
+                </div>
               </div>
             )
           }).reverse()}
@@ -109,71 +100,59 @@ const Super: NextPage = () => {
         </div>
       </div>
 
-      <div className={combineClasses(styles.details, 'js-details')}>
-        <div className={combineClasses(styles.details__title, 'js-details__title')}>
-          <p data-title="1" data-text>Lorem ipsum.</p>
-          {/*<p data-title="2" data-text>Rustic Urn</p>
+      <div className={combineClasses(styles.details, 'js-details')} style={{ position: 'relative' }}>
+        <div className={styles.details_wrapper}>
+          <div className={combineClasses(styles.details__title, 'js-details__title')}>
+            <p className='font-black leading-40 !text-2xl' data-title="1" data-text>Lorem ipsum.</p>
+            {/*<p data-title="2" data-text>Rustic Urn</p>
           <p data-title="3" data-text>Golden Vessel</p>
           <p data-title="4" data-text>Sunlit Amphora</p>
           <p data-title="5" data-text>Midnight Reliquary</p>
           <p data-title="6" data-text>Amber Ewer</p>
           <p data-title="7" data-text>Sylvan Chalice</p>*/}
-        </div>
-        <div className={combineClasses(styles.details__body, 'js-details__body')}>
-          <div className={combineClasses(styles.details__thumb, 'js-details__thumb')} />
-          <div className={combineClasses(styles.details__texts, 'js-details__texts')}>
-            <p data-desc="1" data-text>
-              {/*<span>$300,00</span>*/}
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi debitis delectus
-              deleniti dignissimos doloremque eius enim ex itaque magnam maxime molestias, odit, officia
-              omnis perspiciatis possimus praesentium ratione recusandae, reiciendis saepe sint vero voluptate.
-              {/*<button>Add to cart</button>*/}
-            </p>
+          </div>
+          <div className={combineClasses(styles.details__body, 'js-details__body')}>
+            <div className={styles.details__thumb__container}>
+              <div className={combineClasses(styles.details__thumb, 'js-details__thumb')}/>
+            </div>
+            <div className={combineClasses(styles.details__texts, 'js-details__texts')}>
+              <p data-desc="1" data-text>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi debitis delectus
+                deleniti dignissimos doloremque eius enim ex itaque magnam maxime molestias, odit, officia
+                omnis perspiciatis possimus praesentium ratione recusandae, reiciendis saepe sint vero voluptate.
+              </p>
+              <p data-desc="1" data-text>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi debitis delectus
+                deleniti dignissimos doloremque eius enim ex itaque magnam maxime molestias, odit, officia
+                omnis perspiciatis possimus praesentium ratione recusandae, reiciendis saepe sint vero voluptate.
+              </p>
+              <p data-desc="1" data-text>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi debitis delectus
+                deleniti dignissimos doloremque eius enim ex itaque magnam maxime molestias, odit, officia
+                omnis perspiciatis possimus praesentium ratione recusandae, reiciendis saepe sint vero voluptate.
+              </p>
+              <p data-desc="1" data-text>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi debitis delectus
+                deleniti dignissimos doloremque eius enim ex itaque magnam maxime molestias, odit, officia
+                omnis perspiciatis possimus praesentium ratione recusandae, reiciendis saepe sint vero voluptate.
+              </p>
+              <p data-desc="1" data-text>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi debitis delectus
+                deleniti dignissimos doloremque eius enim ex itaque magnam maxime molestias, odit, officia
+                omnis perspiciatis possimus praesentium ratione recusandae, reiciendis saepe sint vero voluptate.
+              </p>
+              <p data-desc="1" data-text>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi debitis delectus
+                deleniti dignissimos doloremque eius enim ex itaque magnam maxime molestias, odit, officia
+                omnis perspiciatis possimus praesentium ratione recusandae, reiciendis saepe sint vero voluptate.
+              </p>
+              <p data-desc="1" data-text>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi debitis delectus
+                deleniti dignissimos doloremque eius enim ex itaque magnam maxime molestias, odit, officia
+                omnis perspiciatis possimus praesentium ratione recusandae, reiciendis saepe sint vero voluptate.
+              </p>
 
-            <p data-desc="1" data-text>
-              {/*<span>$300,00</span>*/}
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi debitis delectus
-              deleniti dignissimos doloremque eius enim ex itaque magnam maxime molestias, odit, officia
-              omnis perspiciatis possimus praesentium ratione recusandae, reiciendis saepe sint vero voluptate.
-              {/*<button>Add to cart</button>*/}
-            </p>
-            <p data-desc="1" data-text>
-              {/*<span>$300,00</span>*/}
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi debitis delectus
-              deleniti dignissimos doloremque eius enim ex itaque magnam maxime molestias, odit, officia
-              omnis perspiciatis possimus praesentium ratione recusandae, reiciendis saepe sint vero voluptate.
-              {/*<button>Add to cart</button>*/}
-            </p>
-            <p data-desc="1" data-text>
-              {/*<span>$300,00</span>*/}
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi debitis delectus
-              deleniti dignissimos doloremque eius enim ex itaque magnam maxime molestias, odit, officia
-              omnis perspiciatis possimus praesentium ratione recusandae, reiciendis saepe sint vero voluptate.
-              {/*<button>Add to cart</button>*/}
-            </p>
-            <p data-desc="1" data-text>
-              {/*<span>$300,00</span>*/}
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi debitis delectus
-              deleniti dignissimos doloremque eius enim ex itaque magnam maxime molestias, odit, officia
-              omnis perspiciatis possimus praesentium ratione recusandae, reiciendis saepe sint vero voluptate.
-              {/*<button>Add to cart</button>*/}
-            </p>
-            <p data-desc="1" data-text>
-              {/*<span>$300,00</span>*/}
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi debitis delectus
-              deleniti dignissimos doloremque eius enim ex itaque magnam maxime molestias, odit, officia
-              omnis perspiciatis possimus praesentium ratione recusandae, reiciendis saepe sint vero voluptate.
-              {/*<button>Add to cart</button>*/}
-            </p>
-            <p data-desc="1" data-text>
-              {/*<span>$300,00</span>*/}
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi debitis delectus
-              deleniti dignissimos doloremque eius enim ex itaque magnam maxime molestias, odit, officia
-              omnis perspiciatis possimus praesentium ratione recusandae, reiciendis saepe sint vero voluptate.
-              {/*<button>Add to cart</button>*/}
-            </p>
-
-            {/*<p data-desc="2" data-text>
+              {/*<p data-desc="2" data-text>
               <span>$220,00</span>
               With its earthy tones and natural speckled finish, this rustic vase evokes the charm of handcrafted
               pottery. Its organic look and timeless shape give a sense of authenticity, making it an ideal piece to
@@ -218,16 +197,17 @@ const Super: NextPage = () => {
               or eclectic décors.
               <button>Add to cart</button>
             </p>*/}
+            </div>
           </div>
         </div>
       </div>
 
-      {/*<div className={combineClasses(styles.cross, 'js-cross')}>
+      <div className={combineClasses(styles.cross, 'js-cross')}>
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M18 6L6 18" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M6 6L18 18" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M18 6L6 18" stroke="#000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M6 6L18 18" stroke="#000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
-      </div>*/}
+      </div>
 
       <div style={{ position: 'fixed', bottom: 120, right: 50, zIndex: 2000, color: '#fff', display: 'flex', gap: '10px', alignItems: 'center' }}>
         <svg viewBox="0 0 64 64" width={48} height={48} xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#ffffff"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"><line x1="32" y1="8" x2="32" y2="56"></line><line x1="56" y1="32" x2="8" y2="32"></line><polyline points="40 16 32 8 24 16"></polyline><polyline points="24 48 32 56 40 48"></polyline><polyline points="48 40 56 32 48 24"></polyline><polyline points="16 24 8 32 16 40"></polyline></g></svg>
@@ -238,82 +218,3 @@ const Super: NextPage = () => {
 }
 
 export default Super;
-
-/*
-import { useRef, useState } from "react";
-import { useGSAP } from '@gsap/react';
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { Draggable } from "gsap/dist/Draggable";
-import gsap from "gsap";
-import { Assiettes } from "../../components/Assiettes";
-
-const Super = () => {
-  const ref = useRef<HTMLDivElement>(null);
-  const [zoom, setZoom] = useState(0);
-
-  if (typeof window !== 'undefined') {
-    gsap.registerPlugin(ScrollTrigger, Draggable);
-  }
-
-  useGSAP(() => {
-    if (ref.current) {
-      // Draggable.create('.containerr', {
-      // bounds: {top: 50, left: 100, width: 100, height: 100},
-      Draggable.create('.dragg', {
-        bounds: '.containerr',
-        inertia: true,
-        edgeResistance: 0.8,
-        dragClickables: false
-      })
-    }
-  });
-
-  const plus = (val: number) => {
-    if (ref?.current) {
-      setZoom(zoom + val)
-      ref.current.style.transform = `perspective(50px) translate3d(0px, 0px, ${zoom}px)`
-    }
-  }
-
-  const moins = (val: number) => {
-    if (ref?.current) {
-      setZoom(zoom - val)
-      ref.current.style.transform = `perspective(50px) translate3d(0px, 0px, -${zoom}px)`
-    }
-  }
-
-  console.log('zoom', zoom)
-  return (
-    <div id='ab' className='ppp' style={{ width: '100vw', height: '100vh', overflow: 'hidden', background: 'orange' }}>
-      <div className='containerr' style={{ width: '100%', height: '100%' }}>
-        <div
-          className='dragg'
-          ref={ref}
-          style={{
-            background: 'violet',
-            transition: '.3s ease-in',
-            // width: '100%',
-            width: 'calc(150vw + 30vw)',
-            height: '160vh',
-            transform: `perspective(50px) translate3d(0px, 0px, ${zoom}px)`,
-        }}
-        >
-          <div style={{ paddingTop: '0px' }} />
-          <Assiettes />
-          {/!*<div style={{ paddingTop: '300px' }} />
-          <h1>Lorem ipsum dolor sit amet.</h1>
-          <hr/><hr/><hr/><hr/>
-          <button onClick={() => plus(5)}>click</button>
-          <div style={{ marginTop: '300px' }} />
-
-          <div data-clickable="true" style={{ marginLeft: '250px' }} onClick={() => moins(5)}>moins</div>
-          <div data-clickable="true" style={{ marginLeft: '250px' }} onClick={() => plus(5)}>plus</div>
-          <div style={{ position: 'absolute', top: '50%', left: '50%' }}>{JSON.stringify(zoom)}</div>*!/}
-        </div>
-      </div>
-    </div>
-  )
-}
-
-export default Super
-*/

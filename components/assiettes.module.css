@@ -95,7 +95,8 @@
   width: 100vw;
   height: 100vh;
   overflow: scroll;
-  padding: 3vw 4vw;
+  /*padding: 3vw 4vw;*/
+  padding-bottom: 200px; /* TODO trouver meilleur que ça */
   background-color: #f1f1f1;
   z-index: 2000;
 
@@ -105,6 +106,13 @@
     height: 100%;
   }
 }
+
+.details_wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
 @media (max-width: 600px) {
   .details {
     width: 90%;
@@ -116,17 +124,12 @@
 }
 
 .details__title {
-  margin-bottom: 4vw;
   position: relative;
   display: grid;
 }
 @media (max-width: 600px) {
   .details__title {
     margin-bottom: 8vw;
-  }
-
-  .details__title p {
-    font-size: 2rem;
   }
 }
 
@@ -173,32 +176,24 @@
 
   [data-text] {
     font-size: 14px;
-    /*grid-area: 1 / -1;*/
-    /*bottom: 0;*/
-    /*left: 0;*/
   }
 }
 
+.details__thumb__container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
 .details__thumb {
   position: relative;
-  width: 100%;
   z-index: 3;
   will-change: transform;
-  aspect-ratio: 16/9;
-  height: auto;
-  max-height: 600px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 
   @media (max-width: 600px) {
     width: 100%;
   }
-
-  /*div,*/
-  /*img {*/
-  /*  position: absolute;*/
-  /*  width: 100%;*/
-  /*  height: 100%;*/
-  /*  object-fit: cover;*/
-  /*}*/
 }
 
 .container p {
@@ -209,16 +204,21 @@
 
 .cross {
   position: fixed;
-  width: 3vw;
-  height: 3vw;
-  transform: translate(50%, 50%) scale(0);
+  width: 24px;
+  height: 24px;
+  /*transform: translate(50%, 50%) scale(0);*/
   z-index: 2001;
   pointer-events: none;
 
   svg {
-    width: 3vw;
-    height: 3vw;
+    width: 24px;
+    height: 24px;
   }
+}
+
+/* Hide the cross when hovering the details thumb (or its children like the video) */
+.container:has(.details__thumb:hover) .cross {
+  opacity: 0;
 }
 
 .--is-details-showing {

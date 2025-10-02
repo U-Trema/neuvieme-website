@@ -129,7 +129,7 @@ class App {
 
     window.addEventListener("mousemove", (e) => {
       if (this.SHOW_DETAILS) {
-        // this.handleCursor(e)
+        this.handleCursor(e)
       }
     })
   }
@@ -200,7 +200,9 @@ class App {
         e.stopPropagation()
 
         this.targetVideo = e.target
+
         this.targetVideo?.play()
+        this.targetVideo.setAttribute("loop", "true")
 
         this.showDetails(product)
       })
@@ -390,9 +392,10 @@ class App {
 
     gsap.to(this.cross, {
       x: x - this.cross.offsetWidth / 2,
-      y: y - this.cross.offsetHeight / 2,
-      right: `calc(50vw - ${this.cross.offsetWidth}px)`,
-      duration: 0.4,
+      y: y - this.cross.offsetHeight,
+      right: `calc(0vw - ${this.cross.offsetWidth}px)`,
+      top: '-90px',
+      duration: 0.1,
       ease: "power2.out"
     })
   }
