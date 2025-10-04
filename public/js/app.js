@@ -201,15 +201,18 @@ class App {
 
         this.targetVideo = e.target
 
-        this.targetVideo?.play()
         this.targetVideo.setAttribute("loop", "true")
+        this.targetVideo.setAttribute("play", "true")
+        this.targetVideo.setAttribute("controls", "true")
 
         this.showDetails(product)
       })
     })
 
     this.dom.addEventListener("click", (e) => {
-      if (this.SHOW_DETAILS) this.hideDetails()
+      if (this.SHOW_DETAILS) {
+        this.hideDetails()
+      }
     })
   }
 
@@ -305,6 +308,7 @@ class App {
 
     if (this.targetVideo) {
       this.targetVideo.pause()
+      this.targetVideo.removeAttribute("controls")
     }
   }
 

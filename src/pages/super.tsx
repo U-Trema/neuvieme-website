@@ -36,7 +36,7 @@ const Super: NextPage = () => {
             return (
               <div key={index} className={combineClasses(styles.product, 'js-product')}>
                 <div data-id={item}>
-                  <video style={style} src={imgs[index]} muted />
+                  <video style={style} src={imgs[index]} muted controls={false} />
                 </div>
               </div>
             )
@@ -47,7 +47,7 @@ const Super: NextPage = () => {
             return (
               <div key={index} className={combineClasses(styles.product, 'js-product')}>
                 <div data-id={item}>
-                <video style={style} src={imgs2[index]} muted/>
+                <video style={style} src={imgs2[index]} muted controls={false}/>
                 </div>
               </div>
             )
@@ -57,7 +57,7 @@ const Super: NextPage = () => {
           {a.map((item, index) => {
             return (
               <div key={index} className={combineClasses(styles.product, 'js-product')}>
-                <div data-id={item}><video style={style} src={imgs3[index]} muted /></div>
+                <div data-id={item}><video style={style} src={imgs3[index]} muted controls={false} /></div>
               </div>
             )
           }).reverse()}
@@ -66,7 +66,7 @@ const Super: NextPage = () => {
           {a.map((item, index) => {
             return (
               <div key={index} className={combineClasses(styles.product, 'js-product')}>
-                <div data-id={item}><video style={style} src={imgs4[index]} muted /></div>
+                <div data-id={item}><video style={style} src={imgs4[index]} muted controls={false} /></div>
               </div>
             )
           })}
@@ -75,7 +75,7 @@ const Super: NextPage = () => {
           {a.map((item, index) => {
             return (
               <div key={index} className={combineClasses(styles.product, 'js-product')}>
-                <div data-id={item}><video style={style} src={imgs5[index]} muted /></div>
+                <div data-id={item}><video style={style} src={imgs5[index]} muted controls={false} /></div>
               </div>
             )
           }).reverse()}
@@ -84,7 +84,7 @@ const Super: NextPage = () => {
           {a.map((item, index) => {
             return (
               <div key={index} className={combineClasses(styles.product, 'js-product')}>
-                <div data-id={item}><video style={style} src={imgs6[index]} muted /></div>
+                <div data-id={item}><video style={style} src={imgs6[index]} muted controls={false} /></div>
               </div>
             )
           })}
@@ -93,7 +93,25 @@ const Super: NextPage = () => {
           {a.map((item, index) => {
             return (
               <div key={index} className={combineClasses(styles.product, 'js-product')}>
-                <div data-id={item}><video style={style} src={imgs7[index]} muted /></div>
+                <div data-id={item}><video style={style} src={imgs7[index]} muted controls={false} /></div>
+              </div>
+            )
+          }).reverse()}
+        </div>
+        <div className={combineClasses(styles.column, 'js-column')}>
+          {a.map((item, index) => {
+            return (
+              <div key={index} className={combineClasses(styles.product, 'js-product')}>
+                <div data-id={item}><video style={style} src={imgs7[index]} muted controls={false} /></div>
+              </div>
+            )
+          }).reverse()}
+        </div>
+        <div className={combineClasses(styles.column, 'js-column')}>
+          {a.map((item, index) => {
+            return (
+              <div key={index} className={combineClasses(styles.product, 'js-product')}>
+                <div data-id={item}><video style={style} src={imgs7[index]} muted controls={false} /></div>
               </div>
             )
           }).reverse()}
@@ -104,99 +122,30 @@ const Super: NextPage = () => {
         <div className={styles.details_wrapper}>
           <div className={combineClasses(styles.details__title, 'js-details__title')}>
             <p className='font-black leading-40 !text-2xl' data-title="1" data-text>Lorem ipsum.</p>
-            {/*<p data-title="2" data-text>Rustic Urn</p>
-          <p data-title="3" data-text>Golden Vessel</p>
-          <p data-title="4" data-text>Sunlit Amphora</p>
-          <p data-title="5" data-text>Midnight Reliquary</p>
-          <p data-title="6" data-text>Amber Ewer</p>
-          <p data-title="7" data-text>Sylvan Chalice</p>*/}
           </div>
+
           <div className={combineClasses(styles.details__body, 'js-details__body')}>
             <div className={styles.details__thumb__container}>
               <div className={combineClasses(styles.details__thumb, 'js-details__thumb')}/>
             </div>
-            <div className={combineClasses(styles.details__texts, 'js-details__texts')}>
-              <p data-desc="1" data-text>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi debitis delectus
-                deleniti dignissimos doloremque eius enim ex itaque magnam maxime molestias, odit, officia
-                omnis perspiciatis possimus praesentium ratione recusandae, reiciendis saepe sint vero voluptate.
-              </p>
-              <p data-desc="1" data-text>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi debitis delectus
-                deleniti dignissimos doloremque eius enim ex itaque magnam maxime molestias, odit, officia
-                omnis perspiciatis possimus praesentium ratione recusandae, reiciendis saepe sint vero voluptate.
-              </p>
-              <p data-desc="1" data-text>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi debitis delectus
-                deleniti dignissimos doloremque eius enim ex itaque magnam maxime molestias, odit, officia
-                omnis perspiciatis possimus praesentium ratione recusandae, reiciendis saepe sint vero voluptate.
-              </p>
-              <p data-desc="1" data-text>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi debitis delectus
-                deleniti dignissimos doloremque eius enim ex itaque magnam maxime molestias, odit, officia
-                omnis perspiciatis possimus praesentium ratione recusandae, reiciendis saepe sint vero voluptate.
-              </p>
-              <p data-desc="1" data-text>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi debitis delectus
-                deleniti dignissimos doloremque eius enim ex itaque magnam maxime molestias, odit, officia
-                omnis perspiciatis possimus praesentium ratione recusandae, reiciendis saepe sint vero voluptate.
-              </p>
-              <p data-desc="1" data-text>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi debitis delectus
-                deleniti dignissimos doloremque eius enim ex itaque magnam maxime molestias, odit, officia
-                omnis perspiciatis possimus praesentium ratione recusandae, reiciendis saepe sint vero voluptate.
-              </p>
-              <p data-desc="1" data-text>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi debitis delectus
-                deleniti dignissimos doloremque eius enim ex itaque magnam maxime molestias, odit, officia
-                omnis perspiciatis possimus praesentium ratione recusandae, reiciendis saepe sint vero voluptate.
-              </p>
 
-              {/*<p data-desc="2" data-text>
-              <span>$220,00</span>
-              With its earthy tones and natural speckled finish, this rustic vase evokes the charm of handcrafted
-              pottery. Its organic look and timeless shape give a sense of authenticity, making it an ideal piece to
-              display dried flowers or simply as a decorative object that adds warmth and artisanal beauty to your home.
-              <button>Add to cart</button>
-            </p>
-            <p data-desc="3" data-text>
-              <span>$240,00</span>
-              Bright and cheerful, the yellow vase radiates positivity. Its glossy surface reflects light beautifully,
-              creating a lively focal point in any setting. Perfect for fresh blooms or displayed on its own, this vase
-              captures the essence of sunshine and joy, effortlessly transforming spaces with a vibrant, uplifting touch
-              of color.
-              <button>Add to cart</button>
-            </p>
-            <p data-desc="4" data-text>
-              <span>$300,00</span>
-              Generous in size and striking in presence, the large yellow vase makes a bold decorative statement. Its
-              smooth curves and sunny shade are perfect for standing on the floor or dressing up a wide console. Both
-              functional and eye-catching, it brings vitality and a contemporary edge to your interior design.
-              <button>Add to cart</button>
-            </p>
-            <p data-desc="5" data-text>
-              <span>$390,00</span>
-              Sleek and sophisticated, the black vase embodies timeless elegance. Its deep, rich tone makes it
-              versatile, pairing effortlessly with minimalist or luxurious décors. Whether holding fresh greenery or
-              standing alone as a sculptural accent, this piece exudes modern refinement and bold simplicity, creating
-              contrast and balance within any interior style.
-              <button>Add to cart</button>
-            </p>
-            <p data-desc="6" data-text>
-              <span>$340,00</span>
-              A playful mix of texture and color, the speckled yellow vase is both lively and unique. Its dotted surface
-              creates movement and character, while the bright golden base ensures it remains eye-catching. Perfect for
-              adding personality to your shelf or table, it combines artistic charm with a cheerful, inviting presence.
-              <button>Add to cart</button>
-            </p>
-            <p data-desc="7" data-text>
-              <span>$240,00</span>
-              Crafted from natural wood, this vase celebrates organic beauty and timeless simplicity. The warm tones and
-              smooth grain bring an earthy elegance to interiors. Perfect for dried arrangements or as a stand-alone
-              piece, it highlights craftsmanship and natural textures, making it a versatile addition to rustic, modern,
-              or eclectic décors.
-              <button>Add to cart</button>
-            </p>*/}
+            <div className={combineClasses(styles.details__texts, 'js-details__texts')}>
+              <div>
+                <p data-desc="1" data-text>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi debitis delectus
+                  deleniti dignissimos doloremque eius enim ex itaque magnam maxime molestias, odit, officia
+                  omnis perspiciatis possimus praesentium ratione recusandae, reiciendis saepe sint vero voluptate.
+                </p>
+                <p data-desc="1" data-text>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi debitis delectus
+                  deleniti dignissimos doloremque eius enim ex itaque magnam maxime molestias, odit, officia
+                  omnis perspiciatis possimus praesentium ratione recusandae, reiciendis saepe sint vero voluptate.
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi debitis delectus
+                  deleniti dignissimos doloremque eius enim ex itaque magnam maxime molestias, odit, officia
+                  omnis perspiciatis possimus praesentium ratione recusandae, reiciendis saepe sint vero voluptate.
+                </p>
+              </div>
+              <img src="https://placehold.co/400x400" alt="placeholder" />
             </div>
           </div>
         </div>

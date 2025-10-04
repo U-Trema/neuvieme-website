@@ -50,23 +50,19 @@
   display: flex;
   flex-direction: column;
   gap: 5vw;
+  padding-bottom: 5vw;
 }
 
 .column:nth-child(even) {
-  margin-top: 10vw;
+  margin-top: 5vw;
 }
 
 .product {
   position: relative;
-  /*width: 18.5vw;*/
   width: 10vw;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 16/9;
 }
-.product > div {
-  /*width: 18.5vw;*/
-  /*width: 10vw;*/
-  /*aspect-ratio: 1 / 1;*/
-}
+
 .product img, .product img, .product video {
   position: absolute;
   /*width: 100% !important;*/
@@ -151,6 +147,9 @@
   position: relative;
   height: 100%;
   line-height: 1.5;
+  display: flex;
+  gap: 50px;
+  justify-content: space-between;
   /*display: grid;*/
   /*max-width: 15rem;*/
 
