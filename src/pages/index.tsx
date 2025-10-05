@@ -49,7 +49,6 @@ export default function Home({ page }: any) {
     }
   }, [ref.current, matches])
 
-  console.log(slices)
   return (
     <>
       <SliceZone slices={[heroSlice]} components={components} />
