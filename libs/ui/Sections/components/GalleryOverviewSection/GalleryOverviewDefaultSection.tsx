@@ -12,6 +12,9 @@ type Props = any
 // }
 
 export const GalleryOverviewDefaultSection: FC<Props> = ({ slice }) => {
+  if (!slice.primary.items.length) return null
+
+  console.log('slice: ', slice)
   // const { root, wrapper, title, gallery } = galleryOverviewSectionClasses;
 
   // console.log({ p: slice?.primary })

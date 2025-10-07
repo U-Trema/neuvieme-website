@@ -2453,6 +2453,16 @@ export interface SideMediaContentSliceSocialsMediaRightPrimary {
   medias: prismic.GroupField<
     Simplify<SideMediaContentSliceSocialsMediaRightPrimaryMediasItem>
   >;
+
+  /**
+   * description field in *SideMediaContent → Socials Media Right → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: side_media_content.socialsMediaRight.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
 }
 
 /**

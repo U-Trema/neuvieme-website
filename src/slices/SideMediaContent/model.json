@@ -247,6 +247,15 @@
               }
             }
           }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "description",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "multi": "paragraph"
+          }
         }
       },
       "items": {}
