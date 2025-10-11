@@ -377,6 +377,17 @@
 					"__TYPE__": "DocumentLink",
 					"id": "mock_document_id"
 				}
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Mollit officia occaecat quis voluptate consectetur aliquip reprehenderit amet est magna consectetur labore qui. In sint tempor exercitation magna quis non aliquip nulla id pariatur duis do anim. Enim do aliqua excepteur enim dolore aute officia deserunt culpa occaecat labore consequat dolore excepteur."
+						}
+					}
+				]
 			}
 		},
 		"items": [
@@ -497,6 +508,17 @@
 								}
 							]
 						]
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Velit irure mollit est irure. Reprehenderit et consequat nulla pariatur ea est ut pariatur minim enim Lorem fugiat."
+						}
 					}
 				]
 			}

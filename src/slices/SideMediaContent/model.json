@@ -247,6 +247,15 @@
               }
             }
           }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "description",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "multi": "paragraph"
+          }
         }
       },
       "items": {}
@@ -277,6 +286,15 @@
             "customtypes": [
               "social_links"
             ]
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "description",
+            "placeholder": "description",
+            "allowTargetBlank": false,
+            "multi": "paragraph"
           }
         },
         "medias": {

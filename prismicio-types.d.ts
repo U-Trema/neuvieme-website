@@ -2453,6 +2453,16 @@ export interface SideMediaContentSliceSocialsMediaRightPrimary {
   medias: prismic.GroupField<
     Simplify<SideMediaContentSliceSocialsMediaRightPrimaryMediasItem>
   >;
+
+  /**
+   * description field in *SideMediaContent → Socials Media Right → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: side_media_content.socialsMediaRight.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
 }
 
 /**
@@ -2492,6 +2502,16 @@ export interface SideMediaContentSlice2X2Primary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   social_links: prismic.ContentRelationshipField<"social_links">;
+
+  /**
+   * description field in *SideMediaContent → 2x2 → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: description
+   * - **API ID Path**: side_media_content.2X2.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
 
   /**
    * Medias field in *SideMediaContent → 2x2 → Primary*

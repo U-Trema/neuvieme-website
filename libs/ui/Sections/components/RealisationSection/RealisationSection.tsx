@@ -4,7 +4,7 @@ import {PrismicImage, PrismicRichText} from "@prismicio/react"
 import {observerCVA} from "@/styles/global.classes"
 
 import {useIntersectionObserver} from "../../../../hooks/useIntersectionObserver"
-import {realisationSectionClasses} from "./realisation.section.classes"
+import {media_right, realisationSectionClasses, socialsMediaRight} from "./realisation.section.classes"
 import {Button} from "../../../Button/Button"
 import {combineClasses} from "../../../../utils/combineClasses"
 import {Facebook} from "../../../icons/Facebook"
@@ -29,16 +29,31 @@ const subtitle_component = {
 }
 
 export const RealisationSection: FC<Props> = ({ slice }) => {
-  const [ elementRef, hasBeenVisible, isIntersecting, entry ] = useIntersectionObserver({
+  const [ elementRef, hasBeenVisible, entry ] = useIntersectionObserver({
     options: {
       rootMargin: '80px 0px 0px 0px'
     }
   })
 
+  console.log('*** slice', slice)
   const {title, subtitle, description, medias = [], button_link, button_color, contact_info, social_links, social_heading} = slice?.primary || {}
 
+  const styles = {
+    socialsMediaRight: socialsMediaRight.root() as any,
+    '2X2': media_right.root() as any
+  } as any
+
+  const stylesMobile = {
+    socialsMediaRight: socialsMediaRight.mobile() as any,
+    '2X2': media_right.mobile() as any
+  } as any
+
+  const stylesMedia = {
+    '2X2': media_right.media() as any
+  } as any
+
   return (
-    <section className={combineClasses(realisationSectionClasses.root())}>
+    <div className={combineClasses(realisationSectionClasses.root({ left: slice.primary.layout_direction }))}>
       <div
         ref={elementRef}
         className={
@@ -50,7 +65,9 @@ export const RealisationSection: FC<Props> = ({ slice }) => {
       >
         <PrismicRichText field={title} components={components}/>
 
-        <PrismicRichText field={description} components={components}/>
+        <div className={slice.variation === 'socialsMediaRight' ? 'mb-6' : ''}>
+          <PrismicRichText field={description} components={components} />
+        </div>
 
         {contact_info?.data && (
           <address className='not-italic'>
@@ -81,8 +98,9 @@ export const RealisationSection: FC<Props> = ({ slice }) => {
           )}
         </div>
 
-        <div className={realisationSectionClasses.imageMobile()}>
-          {medias.map((media: any, index: any) => (
+        {/* mobile */}
+        <div className={stylesMobile[slice.variation] || realisationSectionClasses.imageMobile()}>
+          {medias.map((media: any, index: number) => (
             <Media key={index} media={media} className='w-full h-full object-cover block' />
           ))}
         </div>
@@ -94,16 +112,22 @@ export const RealisationSection: FC<Props> = ({ slice }) => {
         )}
       </div>
 
+      {/* desktop */}
       <div
         className={
-          combineClasses(realisationSectionClasses.imageDesktop(), observerCVA.root({ isVisible: hasBeenVisible }))
+          combineClasses(
+            styles[slice.variation] || realisationSectionClasses.imageDesktop(),
+            observerCVA.root({ isVisible: hasBeenVisible })
+          )
         }
       >
-        {medias.map((media: any, index: any) => (
-          <Media key={index} media={media} className='w-full h-full object-cover block' />
+        {medias.map((media: any, index: number) => (
+          <div key={index} className={combineClasses(stylesMedia[slice.variation], 'h-full')}>
+            <Media key={index} media={media} className='w-full h-full object-cover block' />
+          </div>
         ))}
       </div>
-    </section>
+    </div>
   )
 }
 

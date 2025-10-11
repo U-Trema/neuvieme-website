@@ -59,8 +59,9 @@
 
 .product {
   position: relative;
-  width: 10vw;
+  width: 18vw;
   aspect-ratio: 16/9;
+  padding: 50px;
 }
 
 .product img, .product img, .product video {
