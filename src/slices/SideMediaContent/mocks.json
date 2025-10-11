@@ -359,17 +359,6 @@
 					}
 				]
 			},
-			"headline": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Minim qui qui aliqua id ea excepteur irure anim pariatur sint."
-						}
-					}
-				]
-			},
 			"social_links": {
 				"key": "12bd27ce-7978-47c2-a91d-c7215aa67240",
 				"__TYPE__": "LinkContent",
@@ -384,7 +373,7 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Mollit officia occaecat quis voluptate consectetur aliquip reprehenderit amet est magna consectetur labore qui. In sint tempor exercitation magna quis non aliquip nulla id pariatur duis do anim. Enim do aliqua excepteur enim dolore aute officia deserunt culpa occaecat labore consequat dolore excepteur."
+							"text": "Ex nisi ipsum nisi occaecat nulla do tempor commodo mollit cillum amet ut et laborum adipisicing."
 						}
 					}
 				]
@@ -401,17 +390,6 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "2X2",
 		"primary": {
-			"headline": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Labore laborum ea magna laboris Lorem tempor reprehenderit officia ullamco laborum reprehenderit. Mollit sit occaecat aliquip exercitation tempor esse anim duis mollit reprehenderit nisi amet id in."
-						}
-					}
-				]
-			},
 			"social_links": {
 				"key": "0c87be8f-3c7a-47bf-a971-9c4452610da5",
 				"__TYPE__": "LinkContent",
@@ -517,7 +495,7 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Velit irure mollit est irure. Reprehenderit et consequat nulla pariatur ea est ut pariatur minim enim Lorem fugiat."
+							"text": "Commodo non esse reprehenderit mollit. Occaecat quis aliqua voluptate quis quis nostrud nulla commodo. Do anim ex anim occaecat."
 						}
 					}
 				]

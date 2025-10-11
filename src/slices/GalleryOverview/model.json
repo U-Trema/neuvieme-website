@@ -294,6 +294,59 @@
         }
       },
       "items": {}
+    },
+    {
+      "id": "3X1",
+      "name": "3x1",
+      "description": "Standard gallery overview section with text and a 2x2 plus 1 grid image arrangement.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "items": {
+          "type": "Group",
+          "config": {
+            "label": "Grid Items",
+            "repeat": true,
+            "fields": {
+              "project": {
+                "type": "Link",
+                "config": {
+                  "label": "Project",
+                  "select": "document",
+                  "repeat": false,
+                  "customtypes": [
+                    "project"
+                  ]
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image"
+                }
+              },
+              "video": {
+                "type": "Link",
+                "config": {
+                  "label": "Vidéo",
+                  "placeholder": "",
+                  "select": "media",
+                  "allowText": true
+                }
+              },
+              "embed": {
+                "type": "Embed",
+                "config": {
+                  "label": "Embed",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

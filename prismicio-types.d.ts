@@ -1457,6 +1457,51 @@ export interface GalleryOverviewSlice2X2PrimaryItemsItem {
 }
 
 /**
+ * Item in *GalleryOverview → 3x1 → Primary → Grid Items*
+ */
+export interface GalleryOverviewSlice3X1PrimaryItemsItem {
+  /**
+   * Project field in *GalleryOverview → 3x1 → Primary → Grid Items*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery_overview.3X1.primary.items[].project
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  project: prismic.ContentRelationshipField<"project">;
+
+  /**
+   * Image field in *GalleryOverview → 3x1 → Primary → Grid Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery_overview.3X1.primary.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Vidéo field in *GalleryOverview → 3x1 → Primary → Grid Items*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery_overview.3X1.primary.items[].video
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  video: prismic.LinkToMediaField<prismic.FieldState, never>;
+
+  /**
+   * Embed field in *GalleryOverview → 3x1 → Primary → Grid Items*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery_overview.3X1.primary.items[].embed
+   * - **Documentation**: https://prismic.io/docs/field#embed
+   */
+  embed: prismic.EmbedField;
+}
+
+/**
  * Primary content in *GalleryOverview → Default → Primary*
  */
 export interface GalleryOverviewSliceDefaultPrimary {
@@ -1621,6 +1666,34 @@ export type GalleryOverviewSlice2X2 = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *GalleryOverview → 3x1 → Primary*
+ */
+export interface GalleryOverviewSlice3X1Primary {
+  /**
+   * Grid Items field in *GalleryOverview → 3x1 → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery_overview.3X1.primary.items[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  items: prismic.GroupField<Simplify<GalleryOverviewSlice3X1PrimaryItemsItem>>;
+}
+
+/**
+ * 3x1 variation for GalleryOverview Slice
+ *
+ * - **API ID**: `3X1`
+ * - **Description**: Standard gallery overview section with text and a 2x2 plus 1 grid image arrangement.
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type GalleryOverviewSlice3X1 = prismic.SharedSliceVariation<
+  "3X1",
+  Simplify<GalleryOverviewSlice3X1Primary>,
+  never
+>;
+
+/**
  * Slice variation for *GalleryOverview*
  */
 type GalleryOverviewSliceVariation =
@@ -1628,7 +1701,8 @@ type GalleryOverviewSliceVariation =
   | GalleryOverviewSlice5X1
   | GalleryOverviewSlice1X1
   | GalleryOverviewSlice2X1
-  | GalleryOverviewSlice2X2;
+  | GalleryOverviewSlice2X2
+  | GalleryOverviewSlice3X1;
 
 /**
  * GalleryOverview Shared Slice
@@ -2423,14 +2497,14 @@ export type SideMediaContentSliceContactInfoMediaRight =
  */
 export interface SideMediaContentSliceSocialsMediaRightPrimary {
   /**
-   * Headline field in *SideMediaContent → Socials Media Right → Primary*
+   * Description field in *SideMediaContent → Socials Media Right → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: side_media_content.socialsMediaRight.primary.headline
+   * - **API ID Path**: side_media_content.socialsMediaRight.primary.description
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  headline: prismic.RichTextField;
+  description: prismic.RichTextField;
 
   /**
    * Social Links field in *SideMediaContent → Socials Media Right → Primary*
@@ -2453,16 +2527,6 @@ export interface SideMediaContentSliceSocialsMediaRightPrimary {
   medias: prismic.GroupField<
     Simplify<SideMediaContentSliceSocialsMediaRightPrimaryMediasItem>
   >;
-
-  /**
-   * description field in *SideMediaContent → Socials Media Right → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: side_media_content.socialsMediaRight.primary.description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  description: prismic.RichTextField;
 }
 
 /**
@@ -2484,14 +2548,14 @@ export type SideMediaContentSliceSocialsMediaRight =
  */
 export interface SideMediaContentSlice2X2Primary {
   /**
-   * Headline field in *SideMediaContent → 2x2 → Primary*
+   * Description field in *SideMediaContent → 2x2 → Primary*
    *
    * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: side_media_content.2X2.primary.headline
+   * - **Placeholder**: description
+   * - **API ID Path**: side_media_content.2X2.primary.description
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  headline: prismic.RichTextField;
+  description: prismic.RichTextField;
 
   /**
    * Social Links field in *SideMediaContent → 2x2 → Primary*
@@ -2502,16 +2566,6 @@ export interface SideMediaContentSlice2X2Primary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   social_links: prismic.ContentRelationshipField<"social_links">;
-
-  /**
-   * description field in *SideMediaContent → 2x2 → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: description
-   * - **API ID Path**: side_media_content.2X2.primary.description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  description: prismic.RichTextField;
 
   /**
    * Medias field in *SideMediaContent → 2x2 → Primary*
@@ -2732,12 +2786,15 @@ declare module "@prismicio/client" {
       GalleryOverviewSlice2X1Primary,
       GalleryOverviewSlice2X2PrimaryItemsItem,
       GalleryOverviewSlice2X2Primary,
+      GalleryOverviewSlice3X1PrimaryItemsItem,
+      GalleryOverviewSlice3X1Primary,
       GalleryOverviewSliceVariation,
       GalleryOverviewSliceDefault,
       GalleryOverviewSlice5X1,
       GalleryOverviewSlice1X1,
       GalleryOverviewSlice2X1,
       GalleryOverviewSlice2X2,
+      GalleryOverviewSlice3X1,
       HeadlineWithSubtextSlice,
       HeadlineWithSubtextSliceDefaultPrimary,
       HeadlineWithSubtextSliceVariation,
