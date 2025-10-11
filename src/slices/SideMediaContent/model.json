@@ -288,6 +288,15 @@
             ]
           }
         },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "description",
+            "placeholder": "description",
+            "allowTargetBlank": false,
+            "multi": "paragraph"
+          }
+        },
         "medias": {
           "type": "Group",
           "config": {

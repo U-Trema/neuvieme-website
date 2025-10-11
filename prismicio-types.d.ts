@@ -2504,6 +2504,16 @@ export interface SideMediaContentSlice2X2Primary {
   social_links: prismic.ContentRelationshipField<"social_links">;
 
   /**
+   * description field in *SideMediaContent → 2x2 → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: description
+   * - **API ID Path**: side_media_content.2X2.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
    * Medias field in *SideMediaContent → 2x2 → Primary*
    *
    * - **Field Type**: Group

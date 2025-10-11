@@ -1,14 +1,10 @@
 import {FC, ReactNode} from "react"
-import {PrismicRichText} from "@prismicio/react"
+import {PrismicImage, PrismicRichText} from "@prismicio/react"
 
 import {observerCVA} from "@/styles/global.classes"
 
 import {useIntersectionObserver} from "../../../../hooks/useIntersectionObserver"
-import {
-  media_right,
-  realisationSectionClasses,
-  socialsMediaRight
-} from "./realisation.section.classes"
+import {media_right, realisationSectionClasses, socialsMediaRight} from "./realisation.section.classes"
 import {Button} from "../../../Button/Button"
 import {combineClasses} from "../../../../utils/combineClasses"
 import {Facebook} from "../../../icons/Facebook"
@@ -39,20 +35,21 @@ export const RealisationSection: FC<Props> = ({ slice }) => {
     }
   })
 
+  console.log('*** slice', slice)
   const {title, subtitle, description, medias = [], button_link, button_color, contact_info, social_links, social_heading} = slice?.primary || {}
 
   const styles = {
     socialsMediaRight: socialsMediaRight.root() as any,
-    media_right: media_right.root() as any
+    '2X2': media_right.root() as any
   } as any
 
   const stylesMobile = {
     socialsMediaRight: socialsMediaRight.mobile() as any,
-    media_right: media_right.mobile() as any
+    '2X2': media_right.mobile() as any
   } as any
 
   const stylesMedia = {
-    media_right: media_right.media() as any
+    '2X2': media_right.media() as any
   } as any
 
   return (

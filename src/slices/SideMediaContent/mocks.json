@@ -510,6 +510,17 @@
 						]
 					}
 				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Velit irure mollit est irure. Reprehenderit et consequat nulla pariatur ea est ut pariatur minim enim Lorem fugiat."
+						}
+					}
+				]
 			}
 		},
 		"items": [
