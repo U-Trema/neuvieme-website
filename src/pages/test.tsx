@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import {Button} from "../../libs/ui/Button/Button"
 import {DropDown} from "../../libs/ui/DropDown/DropDown"
 import {Scroll} from "../../libs/ui/Scroll/Scroll"
+import {Video} from "../../libs/ui/Video/Video";
 
 const Test = () => {
   const router = useRouter()

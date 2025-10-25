@@ -7,6 +7,7 @@ import {GalleryOverview5x1Section} from "./GalleryOverview5x1Section";
 import {GalleryOverview1x1Section} from "./GalleryOverview1x1Section";
 import {GalleryOverview2x1Section} from "./GalleryOverview2x1Section";
 import {GalleryOverview2x2Section} from "./GalleryOverview2x2Section";
+import {GalleryOverview3X1Section} from "./GalleryOverview3X1Section";
 
 
 type Props = any
@@ -17,6 +18,7 @@ const variationComponents: Record<string, FC<Props>> = {
   "1X1": GalleryOverview1x1Section,
   "2X1": GalleryOverview2x1Section,
   "2X2": GalleryOverview2x2Section,
+  "3X1": GalleryOverview3X1Section
 };
 
 const components = {
@@ -29,14 +31,14 @@ export const GalleryOverviewSection: FC<Props> = ({ slice }) => {
   const VariationComponent = variationComponents[slice.variation] || GalleryOverviewDefaultSection;
 
   return (
-    <div className='px-24 md:px-0'>
+    <>
       {slice.primary.title && (
         <PrismicRichText components={components} field={slice.primary.title} />
       )}
-      <div className={gallery({ variation: slice.variation })}>
+      <div className={gallery({ variation: ['2X2'].includes(slice.variation) ? slice.variation : '' })}>
         <VariationComponent slice={slice} />
       </div>
-    </div>
+    </>
   )
 }
 

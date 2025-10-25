@@ -1,22 +1,14 @@
-import React, {FC, ReactNode} from "react"
-import {PrismicImage, PrismicRichText} from "@prismicio/react"
+import React, {FC} from "react"
+import {PrismicImage} from "@prismicio/react"
 
-import {galleryOverview2x2SectionClasses, galleryOverviewSectionClasses} from "./gallery-overview.section.classes"
-import {combineClasses} from "../../../../utils/combineClasses";
-
+import {galleryOverview2x2SectionClasses} from "./gallery-overview.section.classes"
 
 type Props = any
-
-const components = {
-  heading2: ({ children }: { children: ReactNode }) => (<h2 className={galleryOverviewSectionClasses.title()}>{children}</h2>),
-  paragraph: ({ children }: { children: ReactNode }) => (<p className='text-sm'>{children}</p>),
-}
 
 export const GalleryOverview2x2Section: FC<Props> = ({ slice }) => {
   const { project } = slice.primary.items?.[0];
 
   const medias = project?.data?.medias;
-  console.log('medias', medias);
 
   if (!project) return null;
   if (!medias) return null;

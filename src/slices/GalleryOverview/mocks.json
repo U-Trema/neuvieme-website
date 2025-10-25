@@ -645,6 +645,14 @@
 									},
 									"__TYPE__": "EmbedContent"
 								}
+							],
+							[
+								"video_aws",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "hunt",
+									"type": "Text"
+								}
 							]
 						]
 					}

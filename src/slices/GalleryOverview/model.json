@@ -341,6 +341,13 @@
                   "label": "Embed",
                   "placeholder": ""
                 }
+              },
+              "video_aws": {
+                "type": "Text",
+                "config": {
+                  "label": "video AWS",
+                  "placeholder": "Vidéo AWS AMAZON"
+                }
               }
             }
           }

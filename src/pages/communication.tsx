@@ -44,7 +44,7 @@ export default function Communication({ page }: any) {
   }, [ref.current])
 
   return (
-    <div ref={pref} style={{ position: 'relative' }}>
+    <div ref={pref} style={{ position: 'relative', paddingBottom: 500 }}>
       <Scroll />
       <SliceZone slices={page.data.slices} components={components} />
       <div className='cursor-follower' ref={ref} />

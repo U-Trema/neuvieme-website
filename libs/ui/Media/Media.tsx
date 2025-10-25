@@ -10,10 +10,13 @@ import {combineClasses} from "../../utils/combineClasses";
 type Props = {
   media: SideMediaContentSliceMediaRightPrimaryMediasItem
   className?: string
+  videoAspectSquare?: boolean
 }
 
-export const Media: FC<Props> = ({media, className}) => {
-  if ((media?.video as FilledLinkToMediaField)?.url) return <Video source={(media.video as FilledLinkToMediaField).url} className={className} autoHeight />
+export const Media: FC<Props> = ({media, className, videoAspectSquare}) => {
+  if ((media?.video as FilledLinkToMediaField)?.url) {
+    return <Video source={(media.video as FilledLinkToMediaField).url} className={className} aspectSquare={videoAspectSquare} />
+  }
   if (media?.embed?.html) return <Embed embed={media.embed} className={className} />
   if (media?.image?.url) return <PrismicImage field={media.image} className={className} />
 

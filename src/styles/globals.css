@@ -3,6 +3,7 @@
 @import "./animations.css";
 @import "./utilities.css";
 @import "./button/buttons.css";
+@import "./embla.css";
 
 @tailwind utilities;
 
