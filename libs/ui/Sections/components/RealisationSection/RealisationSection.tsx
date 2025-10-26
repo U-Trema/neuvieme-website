@@ -21,11 +21,12 @@ import {WhatsApp} from "../../../icons/WhatsApp"
 import {prismicToNextColor} from "../../../../utils/btnColor";
 import {Media} from "../../../Media/Media";
 import realisationStyles from "./realisation.module.css"
+import {GradientText} from "../../../GradientText/GradientText";
 
 type Props = any
 
 const components = {
-  heading2: ({ children }: { children: ReactNode }) => (<h2 className={combineClasses(realisationSectionClasses.title(), 'relative z-[2000]')}>{children}</h2>),
+  heading2: ({ children }: { children: ReactNode }) => (<h2 className={combineClasses(realisationSectionClasses.title(), 'relative z-[2000]')}><GradientText>{children}</GradientText></h2>),
   p: ({ children }: { children: ReactNode }) => (<p className='leading-[150%] md:text-base'>{children}</p>),
   listItem: ({ children }: { children: ReactNode }) => (<li className='list-disc'>{children}</li>)
 }
