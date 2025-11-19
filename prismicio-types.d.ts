@@ -1499,6 +1499,16 @@ export interface GalleryOverviewSlice3X1PrimaryItemsItem {
    * - **Documentation**: https://prismic.io/docs/field#embed
    */
   embed: prismic.EmbedField;
+
+  /**
+   * video AWS field in *GalleryOverview → 3x1 → Primary → Grid Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Vidéo AWS AMAZON
+   * - **API ID Path**: gallery_overview.3X1.primary.items[].video_aws
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  video_aws: prismic.KeyTextField;
 }
 
 /**

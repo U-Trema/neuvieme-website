@@ -20,13 +20,13 @@ const IconTextGrid: FC<IconTextGridProps> = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className='px-24 pt-64 md:pt-120 md:pb-160 md:ps-160'>
-        <ul className='md:ps-12 flex flex-wrap justify-between gap-[48px]'>
+      <div className='px-24 py-64 lg:pt-120 lg:pb-160 md:ps-160'>
+        <ul className='md:ps-12 grid grid-cols-3 grid-rows-2 gap-[48px] list-none p-0 m-0'>
           {items.map((item, index) => {
             return (
-              <li key={index} className='w-[30%] flex column justify-center items-center flex-col'>
-                <div className='mb-[4px]'><PrismicImage field={item.icon} alt=""/></div>
-                <p className='font-medium text-base'>{item.label}</p>
+              <li key={index} className='flex column justify-center items-center flex-col'>
+                <div className='mb-[4px]'><PrismicImage field={item.icon} alt="" width={24} /></div>
+                <p className='font-medium text-base text-center'>{item.label}</p>
               </li>
             )
           })}

@@ -21,7 +21,6 @@ export const BaseSection: FC<any> = memo(({ slice }) => {
       rootMargin: "80px 0 0 0",
     },
   })
-  console.log({prim: slice?.primary})
 
   const { eyebrow, headline, cta, button_link, button_color } = slice.primary || {}
 

@@ -1,7 +1,7 @@
 import {cva} from "class-variance-authority";
 
 export const realisationSectionClasses = {
-  root: cva(['py-64 xl:py-[150px] px-24 md:px-[0px] md:ps-[160px] md:flex md:justify-between md:items-center md:gap-[60px] xl:gap-[150px]'], {
+  root: cva(['py-32 xl:py-[150px] px-24 md:px-[0px] md:ps-[160px] md:flex md:justify-between md:items-center md:gap-[60px] xl:gap-[150px]'], {
     variants: {
       left: {
         true: 'flex-row-reverse !pr-40',
@@ -16,13 +16,20 @@ export const realisationSectionClasses = {
 }
 
 export const socialsMediaRight = {
-  root: cva(['hidden md:block basis-1/2 xl:basis-3/5 shrink-0 z-[200] h-auto aspect-[16/9] box-content']),
-  mobile: cva(['my-24 md:hidden'])
+  root: cva(['hidden lg:block basis-1/2 xl:basis-3/5 shrink-0 z-[200] h-auto aspect-[16/9] box-content']),
+  mobile: cva(['lg:hidden mt-64'])
 }
 
 export const media_right = {
-  root: cva(['hidden md:flex basis-1/2 xl:basis-3/5 gap-12 flex-wrap']),
+  root: cva(['hidden md:block basis-1/2 xl:basis-3/5 shrink-0 z-[200] h-auto aspect-[16/9] box-content']),
   mobile: cva([]),
-  media: cva(['basis-[calc(50%-12px)] aspect-1']),
+  media: cva(['w-full h-full aspect-4/3']),
+  mediaMobile: cva([]),
+}
+
+export const media_right_grid = {
+  root: cva(['hidden md:flex basis-1/2 xl:basis-3/5 gap-12 flex-wrap']),
+  mobile: cva(['flex flex-col gap-12 mt-64 p-12 md:hidden']),
+  media: cva(['basis-[calc(50%-12px)] aspect-4/3']),
   mediaMobile: cva([]),
 }

@@ -15,9 +15,10 @@ type Props = {
   rightIcon?: ReactNode
   isActive?: boolean
   classnames?: string
+  rounded?: boolean
 }
 
-export const Button: FC<Props> = ({ label, variant = 'orange', as = 'a', onClick, href = '/', target, rightIcon, isActive = false, classnames }) => {
+export const Button: FC<Props> = ({ label, variant = 'orange', as = 'a', onClick, href = '/', target, rightIcon, isActive = false, classnames, rounded = false }) => {
   return (
     <div className={combineClasses(buttonClasses.container({ variant }), isActive ? `active-status-${variant}` : '', classnames)}>
       {createElement(
@@ -30,7 +31,7 @@ export const Button: FC<Props> = ({ label, variant = 'orange', as = 'a', onClick
           : as,
         {
           ...(onClick && { onClick }),
-          className: buttonClasses.root({ variant, withRightIcon: Boolean(rightIcon) })
+          className: buttonClasses.root({ variant, withRightIcon: Boolean(rightIcon), rounded })
         },
         label,
         rightIcon

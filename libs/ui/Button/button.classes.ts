@@ -79,6 +79,10 @@ export const buttonClasses = {
         true: '',
         false: '',
       },
+      rounded: {
+        true: 'py-12',
+        false: 'py-9'
+      }
     },
     compoundVariants: [
       ...rootCompoundClasses,

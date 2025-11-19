@@ -1,25 +1,66 @@
-import React, {FC, ReactNode} from "react"
-import {PrismicImage, PrismicRichText} from "@prismicio/react"
-
-import {galleryOverviewSectionClasses} from "./gallery-overview.section.classes"
-
+import React, {FC} from "react"
+import {
+  PrevButton,
+  NextButton,
+  usePrevNextButtons
+} from './EmblaCarouselArrowButtons'
+import useEmblaCarousel from 'embla-carousel-react'
+import {PrismicImage} from "@prismicio/react";
+import {useViewportSize} from "@mantine/hooks";
 
 type Props = any
 
-// const components = {
-//   heading2: ({ children }: { children: ReactNode }) => (<h2 className={galleryOverviewSectionClasses.title()}>{children}</h2>),
-//   paragraph: ({ children }: { children: ReactNode }) => (<p className='text-sm'>{children}</p>),
-// }
+const EmblaCarousel = (props: any) => {
+  const { slides, options } = props
+  const { width } = useViewportSize()
+  const [emblaRef, emblaApi] = useEmblaCarousel(options)
 
-export const GalleryOverview5x1Section: FC<Props> = ({ slice }) => {
-  // const { root, wrapper, title, gallery } = galleryOverviewSectionClasses;
+  const {
+    prevBtnDisabled,
+    nextBtnDisabled,
+    onPrevButtonClick,
+    onNextButtonClick
+  } = usePrevNextButtons(emblaApi)
 
-  // console.log({ p: slice?.primary })
-  // const { project, button_link } = slice?.primary || {}
+  const slidesPerView = width >= 768 ? 3 : 1.5
+  const slideStyle = {
+    flex: `0 0 calc(${100 / slidesPerView}% - ${100 * (slidesPerView - 1) / slidesPerView}px)`,
+    minWidth: 0
+  }
 
   return (
-    <div>
-      GalleryOverview5x1Section
+    <section className="embla" style={{ [('--slides-per-view' as any)]: slidesPerView }}>
+      <div className="embla__viewport" ref={emblaRef}>
+        <div className="embla__container">
+          {slides.map((slide: any, index: number) => (
+            <div className="embla__slide" key={index} style={slideStyle}>
+              <div className="embla__slide__number">
+                <PrismicImage field={slide.image} className='h-full w-full object-cover' />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="embla__controls">
+        <div className="embla__buttons">
+          <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
+          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
+        </div>
+      </div>
+    </section>
+  )
+}
+
+const OPTIONS = { loop: true }
+
+// https://codesandbox.io/p/sandbox/rmcj2l?file=%2Fsrc%2Fjs%2FEmblaCarousel.jsx
+export const GalleryOverview5x1Section: FC<Props> = ({ slice }) => {
+  if (!slice.primary.items.length) return null
+
+  return (
+    <div className='gallery_overview_5x1_section md:pl-[152px] pt-40 md:pt-120 md:pb-160 overflow-hidden'>
+      <EmblaCarousel slides={slice.primary.items} options={OPTIONS} />
     </div>
   )
 }

@@ -1,10 +1,15 @@
 import {FC, ReactNode} from "react"
-import {PrismicImage, PrismicRichText} from "@prismicio/react"
+import {PrismicRichText} from "@prismicio/react"
 
 import {observerCVA} from "@/styles/global.classes"
 
 import {useIntersectionObserver} from "../../../../hooks/useIntersectionObserver"
-import {media_right, realisationSectionClasses, socialsMediaRight} from "./realisation.section.classes"
+import {
+  media_right,
+  media_right_grid,
+  realisationSectionClasses,
+  socialsMediaRight
+} from "./realisation.section.classes"
 import {Button} from "../../../Button/Button"
 import {combineClasses} from "../../../../utils/combineClasses"
 import {Facebook} from "../../../icons/Facebook"
@@ -15,13 +20,15 @@ import {X} from "../../../icons/X"
 import {WhatsApp} from "../../../icons/WhatsApp"
 import {prismicToNextColor} from "../../../../utils/btnColor";
 import {Media} from "../../../Media/Media";
-
+import realisationStyles from "./realisation.module.css"
+import {GradientText} from "../../../GradientText/GradientText";
 
 type Props = any
 
 const components = {
-  heading2: ({ children }: { children: ReactNode }) => (<h2 className={combineClasses(realisationSectionClasses.title(), 'relative z-[2000]')}>{children}</h2>),
+  heading2: ({ children }: { children: ReactNode }) => (<h2 className={combineClasses(realisationSectionClasses.title(), 'relative z-[2000]')}><GradientText>{children}</GradientText></h2>),
   p: ({ children }: { children: ReactNode }) => (<p className='leading-[150%] md:text-base'>{children}</p>),
+  listItem: ({ children }: { children: ReactNode }) => (<li className='list-disc'>{children}</li>)
 }
 
 const subtitle_component = {
@@ -35,21 +42,24 @@ export const RealisationSection: FC<Props> = ({ slice }) => {
     }
   })
 
-  console.log('*** slice', slice)
   const {title, subtitle, description, medias = [], button_link, button_color, contact_info, social_links, social_heading} = slice?.primary || {}
 
   const styles = {
     socialsMediaRight: socialsMediaRight.root() as any,
-    '2X2': media_right.root() as any
+    media_right: media_right.root() as any,
+    '2X2': media_right_grid.root() as any
   } as any
 
   const stylesMobile = {
     socialsMediaRight: socialsMediaRight.mobile() as any,
-    '2X2': media_right.mobile() as any
+    media_right: media_right.mobile() as any,
+    '2X2': media_right_grid.mobile() as any
   } as any
 
   const stylesMedia = {
-    '2X2': media_right.media() as any
+    socialsMediaRight: 'h-full',
+    media_right: media_right.media() as any,
+    '2X2': media_right_grid.media() as any
   } as any
 
   return (
@@ -65,7 +75,7 @@ export const RealisationSection: FC<Props> = ({ slice }) => {
       >
         <PrismicRichText field={title} components={components}/>
 
-        <div className={slice.variation === 'socialsMediaRight' ? 'mb-6' : ''}>
+        <div className={combineClasses(slice.variation === 'socialsMediaRight' ? 'mb-6' : '', realisationStyles.ul)}>
           <PrismicRichText field={description} components={components} />
         </div>
 
@@ -122,8 +132,8 @@ export const RealisationSection: FC<Props> = ({ slice }) => {
         }
       >
         {medias.map((media: any, index: number) => (
-          <div key={index} className={combineClasses(stylesMedia[slice.variation], 'h-full')}>
-            <Media key={index} media={media} className='w-full h-full object-cover block' />
+          <div key={index} className={combineClasses(stylesMedia[slice.variation])}>
+            <Media key={index} media={media} className='w-full h-full object-cover block' videoAspectSquare />
           </div>
         ))}
       </div>

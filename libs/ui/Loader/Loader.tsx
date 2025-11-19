@@ -67,7 +67,7 @@ export const Loader = ({ onComplete }: { onComplete: (arg0: boolean) => void }) 
         </div>
 
         <div className={loader.logo()}>
-          <Logo width="375" height=""/>
+          <Logo width="" height="" classnames='!w-[100%] md:w-[375px]'/>
         </div>
       </div>
     </div>

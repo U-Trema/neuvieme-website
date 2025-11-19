@@ -15,10 +15,12 @@
     "@prismicio/next": "^2.0.1",
     "@prismicio/react": "^3.2.1",
     "class-variance-authority": "^0.7.1",
+    "embla-carousel-autoplay": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
     "gsap": "^3.13.0",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
-    "next": "15.3.3",
+    "next": "15.4.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

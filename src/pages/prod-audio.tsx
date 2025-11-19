@@ -5,9 +5,9 @@ import {SliceZone} from "@prismicio/react"
 import {components} from "@/slices"
 
 import {fetchNavigation} from "../../libs/utils/fetchNavigation"
-import {Scroll} from "../../libs/ui/Scroll/Scroll"
 import {enrichSlices} from "../../libs/utils/enrichSlices"
 import {nextToPrismicLocale} from "../../libs/utils/locales"
+import Script from "next/script";
 
 export default function Audio({ page }: any) {
   const ref = useRef<any>(null)
@@ -45,7 +45,7 @@ export default function Audio({ page }: any) {
 
   return (
     <div ref={pref} style={{ position: 'relative' }}>
-      <Scroll />
+      <Script type="module" src="/js/app.js" strategy='lazyOnload' />
       <SliceZone slices={page.data.slices} components={components} />
       <div className='cursor-follower' ref={ref} />
     </div>

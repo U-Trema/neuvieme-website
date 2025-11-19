@@ -9,9 +9,9 @@ export const Hero: FC<any> = ({ slice }) => {
   const videoSource = slice?.primary?.video?.url ?? DEFAULT_VIDEO
 
   return (
-    <header className="relative">
+    <header className="relative h-[70vh] md:h-auto">
       <AnimatedArrow />
-      <Video source={videoSource} />
+      <Video source={videoSource} hero />
     </header>
   )
 }
