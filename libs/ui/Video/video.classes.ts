@@ -10,6 +10,10 @@ export const videoClasses = {
       aspectSquare: {
         true: '!h-[100%] aspect-square',
         false: ''
+      },
+      hero: {
+        true: '!h-[70vh] md:!h-[90vh]',
+        false: ''
       }
     }
   })

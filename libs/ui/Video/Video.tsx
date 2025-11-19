@@ -9,6 +9,7 @@ type Props = {
   className?: string
   aspectSquare?: boolean
   autoHeight?: boolean
+  hero?: boolean
 }
 
 /**
@@ -19,12 +20,12 @@ type Props = {
  * @param autoHeight
  * @constructor
  */
-export const Video: FC<Props> = ({ source, className, aspectSquare, autoHeight }) => {
+export const Video: FC<Props> = ({ source, className, aspectSquare, autoHeight, hero }) => {
   return (
     <div className={combineClasses('flex items-center h-[100%]', className || styles.videoGradient)}>
       <video
         src={source}
-        className={videoClasses.root({ autoHeight, aspectSquare })}
+        className={videoClasses.root({ autoHeight, aspectSquare, hero })}
         autoPlay
         loop
         muted

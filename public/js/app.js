@@ -2,7 +2,7 @@ import { preloadImages } from './utils.js'
 
 class App {
   constructor() {
-    if (window.location.pathname !== '/super') return
+    if (window.location.pathname !== '/prod-audio') return
     this.dom = document.querySelector(".js-container")
     this.grid = document.querySelector(".js-grid")
     this.products = [...document.querySelectorAll(".js-product div")]
@@ -18,7 +18,7 @@ class App {
   }
 
   init() {
-    if (window.location.pathname !== '/super') return
+    if (window.location.pathname !== '/prod-audio') return
     this.intro()
   }
 
@@ -348,12 +348,9 @@ class App {
     })
 
     const state = Flip.getState(this.currentProduct)
-    console.log('state ', state)
 
     const finalRect = this.originalParent.getBoundingClientRect()
     const currentRect = this.currentProduct.getBoundingClientRect()
-    console.log('final_rect: ', finalRect)
-    console.log('current_rect: ', currentRect)
 
     gsap.set(this.currentProduct, {
       position: "absolute",
@@ -398,7 +395,7 @@ class App {
       x: x - this.cross.offsetWidth / 2,
       y: y - this.cross.offsetHeight,
       right: `calc(0vw - ${this.cross.offsetWidth}px)`,
-      top: '-90px',
+      top: '-45px',
       duration: 0.1,
       ease: "power2.out"
     })

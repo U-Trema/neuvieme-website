@@ -12,13 +12,13 @@ export type FeaturedCardProps = SliceComponentProps<Content.FeaturedCardSlice>
 /**
  * Component for "FeaturedCard" Slices.
  */
-const FeaturedCard: FC<FeaturedCardProps> = ({ slice }) => {
+const FeaturedCard: FC<FeaturedCardProps> = ({ slice, context }) => {
   return (
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <FeaturedCardSection slice={slice}/>
+      <FeaturedCardSection slice={slice} context={context} />
     </section>
   )
 }

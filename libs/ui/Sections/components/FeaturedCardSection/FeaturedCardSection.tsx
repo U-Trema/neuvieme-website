@@ -29,7 +29,7 @@ export const FeaturedCardSection: FC<Props> = ({ slice }) => {
             <PrismicRichText field={project.data?.quote} components={components} />
           </div>
           <div className='md:w-fit md:mt-12'>
-            <Button label={button_link?.text} variant={prismicToNextColor(button_color)} as='a' href='#' classnames='w-max' />
+            <Button label={button_link?.text} variant={prismicToNextColor(button_color)} as='a' href={`/publicite/${project.uid}`} classnames='w-max' />
           </div>
         </div>
       </div>

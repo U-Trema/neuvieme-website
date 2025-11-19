@@ -28,6 +28,9 @@ export const Layout: FC<Props> = ({ children, nav }) => {
 
   useEffect(() => {
     setLoaderPlayed(false)
+    return () => {
+      setLoaderPlayed(true)
+    }
   }, []);
 
   return (
