@@ -289,3 +289,7 @@ body {
     align-items: center;
   }
 }
+
+.hidden-controls {
+  display: none !important;
+}

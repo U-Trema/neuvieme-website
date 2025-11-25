@@ -93,7 +93,7 @@ const InteractiveCardSphere: FC<InteractiveCardSphereProps> = ({ slice }) => {
 
               <div className={combineClasses(styles.details__texts, 'js-details__texts')}>
                 <div>
-                  <PrismicRichText field={cards[state].project?.data.long_text} components={components}/>
+                  <PrismicRichText field={cards[state]?.long_text} components={components}/>
                 </div>
 
                 <PrismicImage field={cards[state].image} style={{ display: 'block', width: '400px', height: '400px' }} />
@@ -108,8 +108,13 @@ const InteractiveCardSphere: FC<InteractiveCardSphereProps> = ({ slice }) => {
             <path d="M6 6L18 18" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </div>
+      </div>
 
-        <div style={{ position: 'fixed', bottom: 120, right: 50, zIndex: 2000, color: '#fff', display: 'flex', gap: '10px', alignItems: 'center' }}>
+      <div className='js-control_buttons' style={{ position: 'fixed', bottom: 120, right: 50, zIndex: 1000, color: '#fff', display: 'flex', gap: '10px', alignItems: 'center' }}>
+        <div className='js-scale' style={{ cursor: 'pointer' }}>+</div>
+        <div className='js-unscale' style={{ cursor: 'pointer' }}>-</div>
+
+        <div>
           <svg viewBox="0 0 64 64" width={48} height={48} xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#ffffff"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"><line x1="32" y1="8" x2="32" y2="56"></line><line x1="56" y1="32" x2="8" y2="32"></line><polyline points="40 16 32 8 24 16"></polyline><polyline points="24 48 32 56 40 48"></polyline><polyline points="48 40 56 32 48 24"></polyline><polyline points="16 24 8 32 16 40"></polyline></g></svg>
           <p style={{ fontSize: 14, width: 150, flexShrink: 0, marginBottom: 0, color: '#fff' }}>glisser pour explorer</p>
         </div>
