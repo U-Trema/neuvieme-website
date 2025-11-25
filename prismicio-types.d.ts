@@ -732,6 +732,17 @@ interface ProjectDocumentData {
   subtitle: prismic.KeyTextField;
 
   /**
+   * Long Text field in *Project*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.long_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  long_text: prismic.RichTextField;
+
+  /**
    * Client Logo field in *Project*
    *
    * - **Field Type**: Image
