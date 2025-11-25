@@ -2049,6 +2049,16 @@ export interface InteractiveCardSphereSliceDefaultPrimaryCardsItem {
   title: prismic.KeyTextField;
 
   /**
+   * Long Text field in *InteractiveCardSphere → Default → Primary → Cards*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: interactive_card_sphere.default.primary.cards[].long_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  long_text: prismic.RichTextField;
+
+  /**
    * Image field in *InteractiveCardSphere → Default → Primary → Cards*
    *
    * - **Field Type**: Image

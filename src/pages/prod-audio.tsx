@@ -12,6 +12,7 @@ import Script from "next/script";
 export default function Audio({ page }: any) {
   const ref = useRef<any>(null)
   const pref = useRef<any>(null)
+  console.log({ page })
 
   useEffect(() => {
     const cursorFollower = ref.current

@@ -56,8 +56,8 @@
 							[
 								"video",
 								{
-									"__TYPE__": "LinkContent",
 									"key": "e4362ab9-818c-4337-8dfe-3202a143881b",
+									"__TYPE__": "LinkContent",
 									"value": {
 										"__TYPE__": "FileLink",
 										"id": "mock_Media_link",
@@ -67,6 +67,20 @@
 										"size": "0",
 										"text": "cause"
 									}
+								}
+							],
+							[
+								"long_text",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Tempor sit fugiat consectetur deserunt aliquip voluptate ullamco esse enim sunt aliquip proident incididunt quis. Et in sunt amet elit esse dolore velit laborum."
+											}
+										}
+									]
 								}
 							]
 						]

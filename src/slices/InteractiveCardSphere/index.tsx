@@ -1,15 +1,22 @@
-import React, {FC, useState} from "react"
+import React, {FC, ReactNode, useState} from "react"
 import { Content } from "@prismicio/client"
-import {PrismicImage, SliceComponentProps} from "@prismicio/react"
+import {PrismicImage, PrismicRichText, PrismicText, SliceComponentProps} from "@prismicio/react"
 import {combineClasses} from "../../../libs/utils/combineClasses";
 import styles from "../../../components/assiettes.module.css";
 import {GradientText} from "../../../libs/ui/GradientText/GradientText";
+import {
+  featuredCardSectionClasses
+} from "../../../libs/ui/Sections/components/FeaturedCardSection/featured-card.section.classes";
 
 /**
  * Props for `InteractiveCardSphere`.
  */
 export type InteractiveCardSphereProps =
   SliceComponentProps<Content.InteractiveCardSphereSlice>
+
+const components = {
+  paragraph: ({ children }: { children: ReactNode }) => (<p data-text>{children}</p>),
+}
 
 /**
  * Component for "InteractiveCardSphere" Slices.
@@ -86,19 +93,7 @@ const InteractiveCardSphere: FC<InteractiveCardSphereProps> = ({ slice }) => {
 
               <div className={combineClasses(styles.details__texts, 'js-details__texts')}>
                 <div>
-                  <p data-desc="1" data-text>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi debitis delectus
-                    deleniti dignissimos doloremque eius enim ex itaque magnam maxime molestias, odit, officia
-                    omnis perspiciatis possimus praesentium ratione recusandae, reiciendis saepe sint vero voluptate.
-                  </p>
-                  <p data-desc="1" data-text>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi debitis delectus
-                    deleniti dignissimos doloremque eius enim ex itaque magnam maxime molestias, odit, officia
-                    omnis perspiciatis possimus praesentium ratione recusandae, reiciendis saepe sint vero voluptate.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi debitis delectus
-                    deleniti dignissimos doloremque eius enim ex itaque magnam maxime molestias, odit, officia
-                    omnis perspiciatis possimus praesentium ratione recusandae, reiciendis saepe sint vero voluptate.
-                  </p>
+                  <PrismicRichText field={cards[state].project?.data.long_text} components={components}/>
                 </div>
 
                 <PrismicImage field={cards[state].image} style={{ display: 'block', width: '400px', height: '400px' }} />
