@@ -18,8 +18,7 @@ const components = {
 }
 
 const componentsDescription = {
-  paragraph: ({ children }: { children: ReactNode }) => (<p className='leading-[150%] text-base'>{children}</p>),
-
+  paragraph: ({ children }: { children: ReactNode }) => (<p className='leading-[150%] md:text-base mt-24 md:mt-0'>{children}</p>),
 }
 
 export const HighlightedHeadingSection: FC<Props> = ({ slice }) => {
@@ -42,12 +41,12 @@ export const HighlightedHeadingSection: FC<Props> = ({ slice }) => {
     >
       <div className={highlightedHeadingSectionClasses.wrapper()}>
         <PrismicRichText field={title.length ? title : project.data?.project_title} components={components}/>
-        <p className='leading-[150%] md:text-base'>{subtitle.length ? subtitle : project.data?.client_name}</p>
+        <p className='leading-[150%] md:text-base'>{subtitle?.length ? subtitle : project.data?.client_name}</p>
       </div>
 
       <div className={highlightedHeadingSectionClasses.wrapper()}>
         { description.length ?
-          <PrismicRichText field={description} components={components}/>:
+          <PrismicRichText field={description} components={componentsDescription}/>:
           <p className='leading-[150%] md:text-base mt-24 md:mt-0'>{project.data?.subtitle}</p>
         }
       </div>

@@ -5,7 +5,7 @@ export function getDeepestChild(element: any) {
   if (Array.isArray(element)) return getDeepestChild(element[0]);
 
   // Si l'élément n'a pas de props ou de children, c'est une feuille
-  if (!element.props || !element.props.children) return element.replace(' ', '_');
+  if (!element.props || !element.props.children) return element.replace(' ', '_').toLowerCase();
 
   const children = element.props.children;
 

@@ -6,14 +6,17 @@ import {observerCVA} from "@/styles/global.classes"
 import {useIntersectionObserver} from "../../../../hooks/useIntersectionObserver"
 import {headlineWithSubtextSectionClasses} from "./headline.section.classes"
 import {combineClasses} from "../../../../utils/combineClasses"
-import {GradientText} from "../../../GradientText/GradientText";
-import {getDeepestChild} from "../../../../utils/getDeepestChild";
+import {GradientText} from "../../../GradientText/GradientText"
+import {getDeepestChild} from "../../../../utils/getDeepestChild"
+import {normalizeForMatch} from "../../../../utils/normalizeForMatch"
 
 
 type Props = any
 
 const components = {
-  heading1: ({ children }: { children: ReactNode }) => (<h1 id={getDeepestChild(children)} className={combineClasses(headlineWithSubtextSectionClasses.title(), 'relative z-[2000]')}><GradientText>{children}</GradientText></h1>),
+  heading1: ({ children }: { children: ReactNode }) => (
+    <h1 id={normalizeForMatch(getDeepestChild(children))} className={combineClasses(headlineWithSubtextSectionClasses.title(), 'relative z-[2000]')}><GradientText>{children}</GradientText></h1>
+  ),
   paragraph: ({ children }: { children: ReactNode }) => (<p className='leading-[150%] md:text-base font-semibold'>{children}</p>),
 }
 
