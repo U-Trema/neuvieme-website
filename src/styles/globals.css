@@ -4,6 +4,7 @@
 @import "./utilities.css";
 @import "./button/buttons.css";
 @import "./embla.css";
+@import "./product-embla.css";
 
 @tailwind utilities;
 

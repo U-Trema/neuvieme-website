@@ -119,6 +119,16 @@
 			"layout_direction": {
 				"__TYPE__": "BooleanContent",
 				"value": true
+			},
+			"button_link": {
+				"key": "b3789448-43c7-4867-a801-47b4139e75e5",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev",
+					"text": "taken",
+					"variant": "Rose"
+				}
 			}
 		},
 		"items": []

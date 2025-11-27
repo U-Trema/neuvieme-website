@@ -245,6 +245,11 @@
   opacity: 0;
 }
 
+/* Hide the cross when hovering the product carousel */
+.container:has(:global(.productCarousel):hover) .cross {
+  opacity: 0;
+}
+
 .--is-details-showing {
   cursor: pointer;
 

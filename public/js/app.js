@@ -107,8 +107,6 @@ class App {
 
   addEvents() {
     window.addEventListener("wheel", (e) => {
-      // e.preventDefault()
-
       const deltaX = -e.deltaX * 7
       const deltaY = -e.deltaY * 7
 
@@ -132,12 +130,10 @@ class App {
 
     this.scale_button.addEventListener("click", (e) => {
       this.scale_window()
-      this.control_buttons.classList.add('hidden-controls')
     })
 
     this.unscale_button.addEventListener("click", (e) => {
       this.unscale_window()
-      this.control_buttons.classList.remove('hidden-controls')
     })
 
     window.addEventListener("resize", () => {
@@ -155,7 +151,6 @@ class App {
     if (this.scale_position >= 2) return
     const timeline = gsap.timeline()
 
-    console.log(this.scale_position)
     timeline.to(this.dom, {
       scale: this.scale_position += 1,
       duration: 1,
@@ -251,6 +246,9 @@ class App {
 
     this.dom.addEventListener("click", (e) => {
       if (this.SHOW_DETAILS) {
+        if (e.target.closest('.productCarousel')) {
+          return
+        }
         this.hideDetails()
       }
     })
@@ -302,6 +300,12 @@ class App {
         stagger: .05,
       })
     }
+
+    const timeline = gsap.timeline()
+
+    timeline.to(this.dom, {
+      scale: this.scale_position = 1
+    })
   }
 
   hideDetails() {
@@ -353,6 +357,8 @@ class App {
     if (this.targetVideo) {
       this.targetVideo.pause()
       this.targetVideo.removeAttribute("controls")
+      this.targetVideo.currentTime = 0
+      this.targetVideo.load()
     }
   }
 
