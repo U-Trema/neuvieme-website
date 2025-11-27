@@ -42,7 +42,7 @@ export const Nav: FC<Props> = ({nav, scrollInfo}) => {
 
   return (
     <nav style={style} className={combineClasses(navClasses.root({ index: router.route === '/' }), 'animate-bg')}>
-      <Link href="/" className='table'><Logo /></Link>
+      <Link href="/" className='table relative z-[10001]'><Logo /></Link>
 
       <ul className='items-center flex gap-32'>
         <li><DropDown list={list} label={dropdown_label} variant={dropdown_color} /></li>

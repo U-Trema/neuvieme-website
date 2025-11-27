@@ -53,7 +53,7 @@ export default function Home({ page }: any) {
     <>
       <SliceZone slices={[heroSlice]} components={components} />
 
-      <div ref={pref} style={{ position: 'relative' }}>
+      <div ref={pref} style={{ position: 'relative', top: '-50px', zIndex: 9999 }}>
         <Scroll />
         <SliceZone slices={slices} components={components} />
         {!matches && <div className='cursor-follower' ref={ref} />}

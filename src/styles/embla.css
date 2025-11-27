@@ -4,7 +4,7 @@
   .embla {
     max-width: 100%;
     margin: auto;
-    --slide-height: 70vh;
+    --slide-height: 80vh;
     --slide-spacing: 1rem;
     --slide-size: 100%;
     --detail-high-contrast: rgb(101, 101, 101);

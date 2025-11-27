@@ -45,7 +45,7 @@ export default function About({page}: any) {
   }, [ref.current])
 
   return (
-    <div ref={pref} style={{ position: 'relative' }}>
+    <div ref={pref} style={{ position: 'relative', top: '-50px', zIndex: 9999 }}>
       <Scroll />
       <SliceZone slices={page.data.slices} components={components} />
       <div className='cursor-follower' ref={ref} />

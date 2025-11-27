@@ -17,6 +17,10 @@ export const Media: FC<Props> = ({media, className, videoAspectSquare}) => {
   if ((media?.video as FilledLinkToMediaField)?.url) {
     return <Video source={(media.video as FilledLinkToMediaField).url} className={className} aspectSquare={videoAspectSquare} />
   }
+  if ((media?.video as FilledLinkToMediaField)?.text) {
+    return <Video source={(media.video as any).text} className={className} aspectSquare={videoAspectSquare} />
+  }
+
   if (media?.embed?.html) return <Embed embed={media.embed} className={className} />
   if (media?.image?.url) return <PrismicImage field={media.image} className={className} />
   if (!(media.project as any)?.data?.medias?.[0].length) return null
