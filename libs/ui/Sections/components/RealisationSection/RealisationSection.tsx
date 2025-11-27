@@ -118,7 +118,7 @@ export const RealisationSection: FC<Props> = ({ slice }) => {
 
         {button_link?.text && (
           <div className='flex justify-end md:mt-24'>
-            <Button label={button_link.text} href={button_link.href} variant={prismicToNextColor(button_color)} />
+            <Button label={button_link.text} href={button_link.href || button_link.url} variant={prismicToNextColor(button_color)} />
           </div>
         )}
       </div>

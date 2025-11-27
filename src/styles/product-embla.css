@@ -1,7 +1,6 @@
 .productCarousel {
   position: relative;
   z-index: 9999;
-  background: #eeeeee;
 
   .embla {
     max-width: 48rem;
@@ -47,6 +46,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 0.6rem;
     align-items: center;
+    grid-column-start: 3;
   }
   .embla__button {
     -webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);

@@ -101,8 +101,8 @@ const InteractiveCardSphere: FC<InteractiveCardSphereProps> = ({ slice }) => {
                   )}
                 </div>
 
-                <div>
-                  <ProductCarousel carousel={cards[state].project.data.medias} defaultImage={cards[state]?.image} />
+                <div className='shrink-0 basis-1/3'>
+                  <ProductCarousel carousel={cards[state]?.project?.data?.medias} defaultImage={cards[state]?.image} />
                 </div>
               </div>
             </div>
