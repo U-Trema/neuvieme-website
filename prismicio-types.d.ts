@@ -2427,6 +2427,22 @@ export interface SideMediaContentSliceMediaRightPrimary {
   description: prismic.RichTextField;
 
   /**
+   * button_link field in *SideMediaContent → Media Right → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: lien
+   * - **API ID Path**: side_media_content.media_right.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    "Violet" | "Rose" | "Rouge" | "Orange"
+  >;
+
+  /**
    * Medias field in *SideMediaContent → Media Right → Primary*
    *
    * - **Field Type**: Group

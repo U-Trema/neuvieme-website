@@ -34,6 +34,23 @@
             "label": "Description"
           }
         },
+        "button_link": {
+          "type": "Link",
+          "config": {
+            "label": "button_link",
+            "placeholder": "lien",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false,
+            "variants": [
+              "Violet",
+              "Rose",
+              "Rouge",
+              "Orange"
+            ]
+          }
+        },
         "medias": {
           "type": "Group",
           "config": {

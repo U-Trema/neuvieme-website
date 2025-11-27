@@ -1,4 +1,4 @@
-import { preloadImages } from './utils.js'
+import {preloadImages} from './utils.js'
 
 class App {
   constructor() {
@@ -11,6 +11,11 @@ class App {
     this.detailsThumb = this.details.querySelector(".js-details__thumb")
 
     this.cross = document.querySelector(".js-cross")
+    this.scale_button = document.querySelector(".js-scale")
+    this.unscale_button = document.querySelector(".js-unscale")
+    this.control_buttons = document.querySelector(".js-control_buttons")
+
+    this.scale_position = .5
 
     this.isDragging = false
 
@@ -27,7 +32,7 @@ class App {
 
     const timeline = gsap.timeline()
 
-    timeline.set(this.dom, { scale: .5 })
+    timeline.set(this.dom, {scale: this.scale_position})
     timeline.set(this.products, {
       scale: 0.5,
       opacity: 0,
@@ -52,6 +57,7 @@ class App {
         this.addEvents()
         this.observeProducts()
         this.handleDetails()
+        this.scale_position = 1
       }
     })
   }
@@ -67,6 +73,7 @@ class App {
 
     gsap.set(this.grid, {
       x: centerX,
+      scx: centerX,
       y: centerY
     })
   }
@@ -100,8 +107,6 @@ class App {
 
   addEvents() {
     window.addEventListener("wheel", (e) => {
-      // e.preventDefault()
-
       const deltaX = -e.deltaX * 7
       const deltaY = -e.deltaY * 7
 
@@ -121,7 +126,15 @@ class App {
         duration: 0.3,
         ease: "power3.out"
       })
-    }, { passive: false })
+    }, {passive: false})
+
+    this.scale_button.addEventListener("click", (e) => {
+      this.scale_window()
+    })
+
+    this.unscale_button.addEventListener("click", (e) => {
+      this.unscale_window()
+    })
 
     window.addEventListener("resize", () => {
       this.updateBounds()
@@ -131,6 +144,28 @@ class App {
       if (this.SHOW_DETAILS) {
         this.handleCursor(e)
       }
+    })
+  }
+
+  scale_window() {
+    if (this.scale_position >= 2) return
+    const timeline = gsap.timeline()
+
+    timeline.to(this.dom, {
+      scale: this.scale_position += 1,
+      duration: 1,
+      ease: "power3.inOut",
+    })
+  }
+
+  unscale_window() {
+    if (this.scale_position <= .5) return
+    const timeline = gsap.timeline()
+
+    timeline.to(this.dom, {
+      scale: this.scale_position -= .5,
+      duration: 1,
+      ease: "power3.inOut"
     })
   }
 
@@ -211,6 +246,9 @@ class App {
 
     this.dom.addEventListener("click", (e) => {
       if (this.SHOW_DETAILS) {
+        if (e.target.closest('.productCarousel')) {
+          return
+        }
         this.hideDetails()
       }
     })
@@ -233,6 +271,9 @@ class App {
       x: 0,
       duration: 1.2,
       ease: "power3.inOut",
+      onComplete: () => {
+        this.control_buttons.classList.add('hidden-controls')
+      }
     })
 
     this.flipProduct(product)
@@ -259,6 +300,12 @@ class App {
         stagger: .05,
       })
     }
+
+    const timeline = gsap.timeline()
+
+    timeline.to(this.dom, {
+      scale: this.scale_position = 1
+    })
   }
 
   hideDetails() {
@@ -273,6 +320,7 @@ class App {
       ease: "power3.inOut",
       onComplete: () => {
         this.details.classList.remove("--is-showing")
+        this.control_buttons.classList.remove('hidden-controls')
       }
     })
 
@@ -309,6 +357,8 @@ class App {
     if (this.targetVideo) {
       this.targetVideo.pause()
       this.targetVideo.removeAttribute("controls")
+      this.targetVideo.currentTime = 0
+      this.targetVideo.load()
     }
   }
 
