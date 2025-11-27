@@ -52,7 +52,7 @@ export default function Page({page}: any) {
   }, [ref.current, matches])
 
   return (
-    <div ref={pref} style={{ position: 'relative' }} className='pb-[160px]'>
+    <div ref={pref} style={{ position: 'relative', top: '-50px', zIndex: 9999 }} className='pb-[160px]'>
       <Scroll />
       <SliceZone slices={page.data.slices} components={components} />
       {!matches && <div className='cursor-follower' ref={ref} />}
