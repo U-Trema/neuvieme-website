@@ -79,26 +79,3 @@ async function enrichProjectList(
     })
   )
 }
-
-/* **** on effacera quand toutes les query seront terminées *****
-- advertising_productions ✓
-highlighted_heading_side_content ✓
-featured_card ✓
-gallery_overview ✓
-
-- digital_creation
-testimonial_carousel
-gallery_overview ✓
-side_media_content ✓
-
-----------------------------
-- audio_realization
-interactive_card_sphere
-
-- about
-side_media_content ✓
-
-- home
-contact_info_social_language ✓
-side_media_content ✓
-*/
