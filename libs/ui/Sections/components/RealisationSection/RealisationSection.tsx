@@ -43,7 +43,7 @@ export const RealisationSection: FC<Props> = ({ slice }) => {
   })
 
   const {title, subtitle, description, medias = [], button_link, button_color, contact_info, social_links, social_heading} = slice?.primary || {}
-  console.log(slice)
+
   const styles = {
     socialsMediaRight: socialsMediaRight.root() as any,
     media_right: media_right.root() as any,

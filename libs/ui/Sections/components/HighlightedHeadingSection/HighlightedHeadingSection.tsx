@@ -29,7 +29,6 @@ export const HighlightedHeadingSection: FC<Props> = ({ slice }) => {
     }
   })
   const { project, description, subtitle, title } = slice?.primary || {}
-  console.log(description)
 
   return (
     <div

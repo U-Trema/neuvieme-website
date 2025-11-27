@@ -14,7 +14,6 @@ type Props = any
 export const GalleryOverview2x1Section: FC<Props> = ({ slice }) => {
   // const { root, wrapper, title, gallery } = galleryOverviewSectionClasses;
 
-  // console.log({ p: slice?.primary })
   // const { project, button_link } = slice?.primary || {}
 
   return (
