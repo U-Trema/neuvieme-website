@@ -62,6 +62,7 @@ export const RealisationSection: FC<Props> = ({ slice }) => {
     '2X2': media_right_grid.media() as any
   } as any
 
+  console.log('__ slice __', slice)
   return (
     <div className={combineClasses(realisationSectionClasses.root({ left: slice.primary.layout_direction }))}>
       <div
@@ -131,11 +132,13 @@ export const RealisationSection: FC<Props> = ({ slice }) => {
           )
         }
       >
-        {medias.map((media: any, index: number) => (
-          <div key={index} className={combineClasses(stylesMedia[slice.variation])}>
-            <Media key={index} media={media} className='w-full h-full object-cover block' videoAspectSquare />
-          </div>
-        ))}
+        {medias.map((media: any, index: number) => {
+          return (
+            <div key={index} className={combineClasses(stylesMedia[slice.variation])}>
+              <Media key={index} media={media} className='w-full h-full object-cover block' videoAspectSquare/>
+            </div>
+          );
+        })}
       </div>
     </div>
   )
