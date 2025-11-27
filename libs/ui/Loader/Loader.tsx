@@ -5,14 +5,25 @@ import {loader} from "./loader.classes";
 import {combineClasses} from "../../utils/combineClasses";
 
 export const Loader = ({ onComplete }: { onComplete: (arg0: boolean) => void }) => {
-  const tl = gsap.timeline({ repeat: 0 });
-  const loaderTl = gsap.timeline({ repeat: 0 });
-
   const ref = useRef(null)
   const other = useRef(null)
   const loadingRef = useRef(null)
+  const tlRef = useRef<gsap.core.Timeline | null>(null)
+  const loaderTlRef = useRef<gsap.core.Timeline | null>(null)
 
   useEffect(() => {
+    if (tlRef.current) {
+      tlRef.current.kill();
+    }
+    if (loaderTlRef.current) {
+      loaderTlRef.current.kill();
+    }
+
+    const tl = gsap.timeline({ repeat: 0 });
+    const loaderTl = gsap.timeline({ repeat: 0 });
+    tlRef.current = tl;
+    loaderTlRef.current = loaderTl;
+
     if (ref.current) {
       document.body.style.overflowY = 'hidden'
       tl
@@ -51,10 +62,11 @@ export const Loader = ({ onComplete }: { onComplete: (arg0: boolean) => void }) 
     }
 
     return () => {
-      tl.kill();
-      loaderTl.kill();
+      if (tlRef.current) tlRef.current.kill();
+      if (loaderTlRef.current) loaderTlRef.current.kill();
+      document.body.style.overflowY = "auto";
     };
-  }, [ref, other, loadingRef]);
+  }, []);
 
   return (
     <div ref={other} className={loader.root()}>

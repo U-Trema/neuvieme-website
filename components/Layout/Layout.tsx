@@ -27,11 +27,10 @@ export const Layout: FC<Props> = ({ children, nav }) => {
   })
 
   useEffect(() => {
-    setLoaderPlayed(false)
-    return () => {
-      setLoaderPlayed(true)
+    if (router.route === '/') {
+      setLoaderPlayed(false)
     }
-  }, []);
+  }, [router.route, setLoaderPlayed]);
 
   return (
     <main ref={elementRef}>
