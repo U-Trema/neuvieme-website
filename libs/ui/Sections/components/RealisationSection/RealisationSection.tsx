@@ -18,10 +18,10 @@ import {LinkedIn} from "../../../icons/LinkedIn"
 import {Tiktok} from "../../../icons/Tiktok"
 import {X} from "../../../icons/X"
 import {WhatsApp} from "../../../icons/WhatsApp"
-import {prismicToNextColor} from "../../../../utils/btnColor";
-import {Media} from "../../../Media/Media";
+import {prismicToNextColor} from "../../../../utils/btnColor"
+import {Media} from "../../../Media/Media"
 import realisationStyles from "./realisation.module.css"
-import {GradientText} from "../../../GradientText/GradientText";
+import {GradientText} from "../../../GradientText/GradientText"
 
 type Props = any
 

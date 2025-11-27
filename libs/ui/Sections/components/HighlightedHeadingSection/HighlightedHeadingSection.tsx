@@ -6,7 +6,7 @@ import {observerCVA} from "@/styles/global.classes"
 import {useIntersectionObserver} from "../../../../hooks/useIntersectionObserver"
 import {highlightedHeadingSectionClasses} from "./highlighted-heading.section.classes"
 import {combineClasses} from "../../../../utils/combineClasses"
-import {GradientText} from "../../../GradientText/GradientText";
+import {GradientText} from "../../../GradientText/GradientText"
 
 
 type Props = any

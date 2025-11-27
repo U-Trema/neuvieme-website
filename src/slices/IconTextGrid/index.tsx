@@ -1,8 +1,8 @@
 import { FC } from "react"
 import { Content } from "@prismicio/client"
 import {PrismicImage, SliceComponentProps} from "@prismicio/react"
-import {normalizeForMatch} from "../../../libs/utils/normalizeForMatch";
-import {similarity} from "../../../libs/utils/matchClosest";
+import {normalizeForMatch} from "../../../libs/utils/normalizeForMatch"
+import {similarity} from "../../../libs/utils/matchClosest"
 
 /**
  * Props for `IconTextGrid`.
@@ -49,7 +49,7 @@ const IconTextGrid: FC<IconTextGridProps> = ({ slice }) => {
     const offsetPosition = elementPosition + window.scrollY - offset
 
     window.scrollTo({ top: offsetPosition, behavior: "smooth" })
-  };
+  }
 
   return (
     <section
@@ -59,7 +59,6 @@ const IconTextGrid: FC<IconTextGridProps> = ({ slice }) => {
       <div className='px-24 py-64 lg:pt-120 lg:pb-160 md:ps-160'>
         <ul className='md:ps-12 grid grid-cols-3 grid-rows-2 gap-[48px] list-none p-0 m-0'>
           {items.map((item, index) => {
-            console.log({ item })
             return (
               <li key={index} className='cursor-pointer flex column justify-center items-center flex-col' onClick={() => scrollTo(item.label)}>
                 <div className='mb-[4px]'><PrismicImage field={item.icon} alt="" width={24} /></div>
