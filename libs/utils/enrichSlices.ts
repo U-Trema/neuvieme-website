@@ -15,7 +15,7 @@ export async function enrichSlices(
 
   const client = createClient({previewData})
 
-  return await Promise.all(
+  const enrichedSlices = await Promise.all(
     slices.map(async (slice) => {
       if (!slice || !slice.primary || !slice.slice_type) return slice
 
@@ -57,6 +57,8 @@ export async function enrichSlices(
       return newSlice
     })
   )
+
+  return enrichedSlices.filter((slice): slice is Slice => Boolean(slice && typeof slice === 'object' && 'slice_type' in slice))
 }
 
 async function enrichProjectList(

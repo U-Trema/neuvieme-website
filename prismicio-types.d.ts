@@ -966,6 +966,46 @@ export interface SocialLinksDocumentDataSocialLinksItem {
 }
 
 /**
+ * Item in *Social Links → Agency Social Links*
+ */
+export interface SocialLinksDocumentDataAgencySocialLinksItem {
+  /**
+   * Icon field in *Social Links → Agency Social Links*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: social_links.agency_social_links[].icon
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  icon: prismic.SelectField<
+    | "Facebook"
+    | "Whatsapp"
+    | "Linkedin"
+    | "Instagram"
+    | "X"
+    | "Tiktok"
+    | "Youtube"
+    | "Threads"
+  >;
+
+  /**
+   * Profile URL field in *Social Links → Agency Social Links*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: social_links.agency_social_links[].profile_url
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  profile_url: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
  * Content for Social Links documents
  */
 interface SocialLinksDocumentData {
@@ -980,6 +1020,17 @@ interface SocialLinksDocumentData {
    */
   social_links: prismic.GroupField<
     Simplify<SocialLinksDocumentDataSocialLinksItem>
+  > /**
+   * Agency Social Links field in *Social Links*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: social_links.agency_social_links[]
+   * - **Tab**: Neuvieme
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */;
+  agency_social_links: prismic.GroupField<
+    Simplify<SocialLinksDocumentDataAgencySocialLinksItem>
   >;
 }
 
@@ -2878,6 +2929,7 @@ declare module "@prismicio/client" {
       SocialLinksDocument,
       SocialLinksDocumentData,
       SocialLinksDocumentDataSocialLinksItem,
+      SocialLinksDocumentDataAgencySocialLinksItem,
       AllDocumentTypes,
       CenteredStatementSlice,
       CenteredStatementSliceCenteredTextDefaultPrimary,

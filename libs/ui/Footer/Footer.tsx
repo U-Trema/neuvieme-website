@@ -1,4 +1,5 @@
 import React, {FC, ReactNode} from "react"
+import {isFilled} from "@prismicio/client"
 import {PrismicRichText} from "@prismicio/react"
 
 import {observerCVA} from "@/styles/global.classes"
@@ -8,6 +9,8 @@ import {Facebook} from "../icons/Facebook"
 import {Instagram} from "../icons/Instagram"
 import {LinkedIn} from "../icons/LinkedIn"
 import {Tiktok} from "../icons/Tiktok"
+import {Threads} from "../icons/Threads"
+import {YouTube} from "../icons/YouTube"
 import {WhatsApp} from "../icons/WhatsApp"
 import {X} from "../icons/X"
 import {LanguageSwitcher} from "../../../components/LanguageSwitcher/LanguageSwitcher"
@@ -17,6 +20,19 @@ type Props = any
 
 const components = {
   heading3: ({ children }: { children: ReactNode }) => (<h3 className='mb-4 font-black'>{children}</h3>),
+}
+
+function renderSocialIcon(icon: string) {
+  if (icon === 'Facebook') return <Facebook />
+  if (icon === 'Instagram') return <Instagram />
+  if (icon === 'Linkedin') return <LinkedIn />
+  if (icon === 'Tiktok') return <Tiktok />
+  if (icon === 'Threads') return <Threads />
+  if (icon === 'X') return <X />
+  if (icon === 'Youtube') return <YouTube />
+  if (icon === 'Whatsapp') return <WhatsApp />
+
+  return null
 }
 
 export const Footer: FC<Props> = ({ slice }) => {
@@ -54,13 +70,23 @@ export const Footer: FC<Props> = ({ slice }) => {
             )}
             {social_links?.data && (
               <div className='flex gap-16'>
-                {social_links.data.social_links.map((social: any, index: any) => {
-                  if (social.icon === 'Facebook') return <div key={index}><Facebook /></div>
-                  if (social.icon === 'Instagram') return <div key={index}><Instagram /></div>
-                  if (social.icon === 'Linkedin') return <div key={index}><LinkedIn /></div>
-                  if (social.icon === 'Tiktok') return <div key={index}><Tiktok /></div>
-                  if (social.icon === 'X') return <div key={index}><X /></div>
-                  if (social.icon === 'Whatsapp') return <div key={index}><WhatsApp /></div>
+                {social_links.data.agency_social_links.map((social: any, index: any) => {
+                  const icon = renderSocialIcon(social.icon)
+                  if (!icon) return null
+                  if (!isFilled.link(social.profile_url) || !social.profile_url.url) return <div key={index}>{icon}</div>
+
+                  return (
+                    <a
+                      key={index}
+                      href={social.profile_url.url}
+                      target={social.profile_url.target || undefined}
+                      rel={social.profile_url.target === '_blank' ? 'noopener noreferrer' : undefined}
+                      aria-label={social.icon}
+                      className='block'
+                    >
+                      {icon}
+                    </a>
+                  )
                 })}
               </div>
             )}

@@ -16,6 +16,8 @@ import {Facebook} from "../../../icons/Facebook"
 import {Instagram} from "../../../icons/Instagram"
 import {LinkedIn} from "../../../icons/LinkedIn"
 import {Tiktok} from "../../../icons/Tiktok"
+import {Threads} from "../../../icons/Threads"
+import {YouTube} from "../../../icons/YouTube"
 import {X} from "../../../icons/X"
 import {WhatsApp} from "../../../icons/WhatsApp"
 import {prismicToNextColor} from "../../../../utils/btnColor"
@@ -43,6 +45,11 @@ export const RealisationSection: FC<Props> = ({ slice }) => {
   })
 
   const {title, subtitle, description, medias = [], button_link, button_color, contact_info, social_links, social_heading} = slice?.primary || {}
+
+  const isContactSection = slice.variation === 'contactInfoMediaRight'
+  const links = isContactSection
+    ? social_links?.data?.agency_social_links ?? []
+    : social_links?.data?.social_links ?? []
 
   const styles = {
     socialsMediaRight: socialsMediaRight.root() as any,
@@ -96,12 +103,14 @@ export const RealisationSection: FC<Props> = ({ slice }) => {
           )}
           {social_links?.data && (
             <div className='flex gap-16'>
-              {social_links.data.social_links.map((social: { icon: string }, index: number) => {
+              { links.map((social: { icon: string }, index: number) => {
                 if (social.icon === 'Facebook') return <div key={index}><Facebook /></div>
                 if (social.icon === 'Instagram') return <div key={index}><Instagram /></div>
                 if (social.icon === 'Linkedin') return <div key={index}><LinkedIn /></div>
                 if (social.icon === 'Tiktok') return <div key={index}><Tiktok /></div>
+                if (social.icon === 'Threads') return <div key={index}><Threads /></div>
                 if (social.icon === 'X') return <div key={index}><X /></div>
+                if (social.icon === 'Youtube') return <div key={index}><YouTube /></div>
                 if (social.icon === 'Whatsapp') return <div key={index}><WhatsApp /></div>
               })}
             </div>
